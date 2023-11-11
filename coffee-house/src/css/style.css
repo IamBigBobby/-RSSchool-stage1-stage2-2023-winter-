@@ -35,4 +35,9 @@ h3 {
   line-height: 125%;
 }
 
+.wrapper {
+  max-width: 1440px;
+  margin: auto;
+}
+
 /*# sourceMappingURL=style.css.map */
