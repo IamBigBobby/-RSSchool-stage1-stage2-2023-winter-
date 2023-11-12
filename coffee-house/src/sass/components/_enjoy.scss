@@ -1,0 +1,29 @@
+.enjoy {
+    max-width: 1360px;
+
+    padding: 100px;
+
+    border-radius: 40px;
+
+    background-image: url('/src/img/img-enjoy.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.enjoy__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-self: stretch;
+    gap: 25px;
+
+    width: 530px;
+}
+
+.enjoy__container p {
+    @include font($size: 1.6rem, $weight: 400, $line-height: 150%);
+
+    color: $color-text-light;
+}

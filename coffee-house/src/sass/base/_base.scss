@@ -17,6 +17,14 @@ body {
 
 h1 {
     @include font($size: 7.2rem, $weight: 600, $line-height: 105%);
+
+    color: $color-text-light;
+
+    span {
+        font-style: italic;
+
+        color: $color-text-accent;
+    }
 }
 
 h2 {
