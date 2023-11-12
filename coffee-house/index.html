@@ -10,17 +10,22 @@
     <title>Document</title>
 </head>
 <body>
-    <header class="header wrapper">
-        <object class="logo" data="./src/svg/logo.svg" type="image/svg+xml" width="690px" height="414px"></object>
-        <div class="navigation">
-            <ul class="navigation__list">
-                <li class="navigation__link"><a href="#">Favorite coffee</a></li>
-                <li class="navigation__link"><a href="#">About</a></li>
-                <li class="navigation__link"><a href="#">Mobile app</a></li>
-                <li class="navigation__link"><a href="#">Contact us</a></li>
-            </ul>
-        </div>
-        <div class="menu-link"></div>
-    </header>
+    <div class="wrapper">
+        <header class="header">
+            <object class="headr__logo" data="./src/svg/logo.svg" type="image/svg+xml"></object>
+            <div class="navigation">
+                <ul class="navigation__list">
+                    <li class="navigation__link "><a class="text-link" href="#">Favorite coffee</a></li>
+                    <li class="navigation__link"><a class="text-link" href="#">About</a></li>
+                    <li class="navigation__link"><a class="text-link" href="#">Mobile app</a></li>
+                    <li class="navigation__link"><a class="text-link" href="#">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="header__menu-link">
+                <div class="text-link">Menu</div>
+                <object class="menu-link__icon" data="./src/svg/coffee-cup.svg" type="image/svg+xml"></object>
+            </div>
+        </header>
+    </div>
 </body>
 </html>

@@ -4,6 +4,9 @@
 @import "abstracts/constants";
 // base
 @import "base/base";
+@import "base/normalize";
 // layout
 @import "layout/wrapper";
-@import "layout/header"
+@import "layout/header";
+// components
+@import "components/navigation";
