@@ -28,6 +28,8 @@ h1 {
 }
 
 h2 {
+    margin: 0;
+
     text-align: center;
 
     @include font($size: 6rem, $weight: 600, $line-height: 125%);

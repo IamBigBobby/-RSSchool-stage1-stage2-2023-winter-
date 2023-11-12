@@ -1,0 +1,55 @@
+.carousel {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    // align-items: center;
+    gap: 50px;
+}
+.carousel__slide {
+    display: block;
+}
+.carousel__container {
+    flex-grow: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel__item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-width: 480px;
+}
+.carousel__img {
+    display: block;
+
+    margin-bottom: 20px;
+}
+.carousel__describe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    text-align: center;
+}
+.carousel__name-item{
+    @include font($size: 2.4rem, $weight: 600, $line-height: 125%);
+}
+.carousel__price-item {
+    @include font($size: 2.4rem, $weight: 600, $line-height: 125%);
+}
+// .carousel__slide_left {
+//     position: relative;
+//     top: 20px;
+//     left: 5px;
+// }
+// .carousel__slide_right {
+//     position: relative;
+//     top: 20px;
+//     right: 5px;
+// }
