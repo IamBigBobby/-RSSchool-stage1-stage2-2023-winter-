@@ -28,7 +28,15 @@ h1 {
 }
 
 h2 {
+    text-align: center;
+
     @include font($size: 6rem, $weight: 600, $line-height: 125%);
+
+    span {
+        font-style: italic;
+
+        color: $color-text-accent;
+    }
 }
 
 h3 {

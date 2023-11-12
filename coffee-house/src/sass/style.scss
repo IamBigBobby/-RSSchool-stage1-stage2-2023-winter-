@@ -5,10 +5,11 @@
 // base
 @import "base/base";
 @import "base/normalize";
-@import "base/buttons";
 // layout
 @import "layout/wrapper";
 @import "layout/header";
+@import "layout/enjoy";
+@import "layout/favourites-coffee";
 // components
 @import "components/navigation";
-@import "components/enjoy"
+@import "components/buttons";

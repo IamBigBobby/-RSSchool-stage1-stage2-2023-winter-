@@ -33,10 +33,15 @@ h1 span {
 }
 
 h2 {
+  text-align: center;
   font-size: 6rem;
   font-style: normal;
   font-weight: 600;
   line-height: 125%;
+}
+h2 span {
+  font-style: italic;
+  color: #B0907A;
 }
 
 h3 {
@@ -362,26 +367,6 @@ template {
   display: none;
 }
 
-.button {
-  font-size: 1.6rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 150%;
-  color: #403F3D;
-}
-
-.button_primary {
-  width: 200px;
-  padding: 20px 78px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  background-color: #E1D4C9;
-  border: none;
-  border-radius: 100px;
-}
-
 .wrapper {
   max-width: 1440px;
   margin: auto;
@@ -407,32 +392,15 @@ template {
   display: block;
 }
 
-.navigation__list {
-  padding-left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  list-style-type: none;
-}
-
-.navigation__link {
-  display: block;
-}
-
-.navigation__link a {
-  text-decoration: none;
-  color: #403F3D;
-}
-
 .enjoy {
   max-width: 1360px;
   padding: 100px;
   border-radius: 40px;
-  background-image: url("/src/img/img-enjoy.jpg");
+  background-image: url("/assets/img/img-enjoy.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
+  margin-bottom: 100px;
 }
 
 .enjoy__container {
@@ -451,6 +419,50 @@ template {
   font-weight: 400;
   line-height: 150%;
   color: #E1D4C9;
+}
+
+.favourites-coffee {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.navigation__list {
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  list-style-type: none;
+}
+
+.navigation__link {
+  display: block;
+}
+
+.navigation__link a {
+  text-decoration: none;
+  color: #403F3D;
+}
+
+.button {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  color: #403F3D;
+}
+
+.button_primary {
+  width: 200px;
+  padding: 20px 78px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background-color: #E1D4C9;
+  border: none;
+  border-radius: 100px;
 }
 
 /*# sourceMappingURL=style.css.map */
