@@ -18,3 +18,16 @@
     border: none;
     border-radius: 100px;
 }
+
+.button_app {
+    display: flex;
+    width: 200px;
+    padding: 12px 20px;
+    align-items: center;
+    gap: 8px;
+
+    border-radius: 100px;
+    border: 1px solid $color-border-dark;
+
+    background-color: $color-background-body;
+}
