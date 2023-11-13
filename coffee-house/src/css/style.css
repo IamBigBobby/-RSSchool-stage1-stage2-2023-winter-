@@ -494,6 +494,7 @@ template {
   align-items: center;
   justify-content: center;
   gap: 100px;
+  margin-bottom: 100px;
 }
 
 .mobile-app h2 {
@@ -525,6 +526,70 @@ template {
   font-style: normal;
   font-weight: 600;
   line-height: 140%;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 100px;
+  background-color: #665F55;
+  border-radius: 40px;
+}
+
+.footer h2 {
+  text-align: left;
+  color: #E1D4C9;
+}
+
+.footer__left, .footer__right {
+  width: 530px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.footer__social {
+  display: flex;
+  gap: 12px;
+}
+
+.footer__social-icon {
+  display: block;
+}
+
+.footer__right {
+  padding: 32px 0px 28px 0px;
+}
+
+.footer__header-contact {
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  color: #E1D4C9;
+}
+
+.footer__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer_contacts-container {
+  display: flex;
+  gap: 8px;
+}
+
+.footer__contacts-icon {
+  display: block;
+}
+
+.footer__contacts-item {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  color: #E1D4C9;
 }
 
 .navigation__list {
