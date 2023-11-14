@@ -382,6 +382,10 @@ template {
   margin-bottom: 20px;
 }
 
+.header__link-logo {
+  display: block;
+}
+
 .header__menu-link {
   display: flex;
   justify-content: center;
@@ -391,6 +395,15 @@ template {
 
 .menu-link__icon {
   display: block;
+}
+
+.header__menu-link-wrapper {
+  text-decoration: none;
+  color: #403F3D;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
 }
 
 .enjoy {
