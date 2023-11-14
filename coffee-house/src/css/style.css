@@ -680,6 +680,55 @@ template {
   color: #E1D4C9;
 }
 
+.menu__tea-category {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.menu__food-item {
+  width: 310px;
+  border: 1px solid #C1B6AD;
+  border-radius: 40px;
+}
+
+.menu__item-img {
+  display: block;
+  border-radius: 40px;
+  width: 100%;
+  height: auto;
+}
+
+.menu__item-description {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.menu__item-name {
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.menu__item-about {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  text-align: left;
+}
+
+.menu__item-price {
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+}
+
 .navigation__list {
   padding-left: 0;
   display: flex;
