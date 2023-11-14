@@ -18,6 +18,10 @@
     gap: 8px;
 }
 
+.header__menu-link_active {
+    border-bottom: 2px solid $color-background-backdrop;
+}
+
 .menu-link__icon {
     display: block;
 }
