@@ -374,6 +374,12 @@ template {
   padding: 20px 40px;
 }
 
+.wrapper-menu {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -603,6 +609,14 @@ template {
   font-weight: 600;
   line-height: 150%;
   color: #E1D4C9;
+}
+
+.main-menu {
+  flex: 1;
+}
+
+.footer-menu {
+  flex-shrink: 0;
 }
 
 .navigation__list {
