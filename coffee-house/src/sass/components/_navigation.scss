@@ -11,6 +11,15 @@
 
 .navigation__link {
     display: block;
+
+    position: relative;
+
+    &::before {
+        @extend %hover-link;
+    }
+    &:hover::before {
+        @extend %before-hover-link;
+    }
 }
 
 .navigation__link a {

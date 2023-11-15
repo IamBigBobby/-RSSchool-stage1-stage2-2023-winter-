@@ -2,6 +2,25 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+.navigation__link::before, .header__menu-link-wrapper::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #403F3D; /*?*/
+  transition: 1s;
+  opacity: 0;
+}
+
+.navigation__link:hover::before, .header__menu-link-wrapper:hover::before {
+  width: 100%;
+  transition: 1s;
+  opacity: 1;
+}
+
 /*80% opacity */
 * {
   box-sizing: border-box;
@@ -408,6 +427,7 @@ template {
 }
 
 .header__menu-link-wrapper {
+  position: relative;
   text-decoration: none;
   color: #403F3D;
   font-size: 1.6rem;
@@ -415,7 +435,6 @@ template {
   font-weight: 600;
   line-height: 150%;
 }
-
 .header__logo {
   display: block;
 }
@@ -746,8 +765,8 @@ template {
 
 .navigation__link {
   display: block;
+  position: relative;
 }
-
 .navigation__link a {
   text-decoration: none;
   color: #403F3D;

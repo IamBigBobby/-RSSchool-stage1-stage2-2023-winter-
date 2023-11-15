@@ -27,11 +27,21 @@
 }
 
 .header__menu-link-wrapper {
+    position: relative;
+
     text-decoration: none;
     color: $color-text-dark;
     @include font($size: 1.6rem, $weight: 600, $line-height: 150%);
+
+    &::before {
+        @extend %hover-link;
+    }
+    &:hover::before {
+        @extend %before-hover-link;
+    }
 }
 
 .header__logo {
     display: block;
 }
+
