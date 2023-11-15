@@ -5,6 +5,10 @@
 }
 
 .button_primary {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
     width: 200px;
 
     padding: 20px 78px;
@@ -17,7 +21,38 @@
     background-color: $color-background-body;
     border: none;
     border-radius: 100px;
+
+    cursor: pointer;
 }
+
+.button_primary .button_primary-name {
+    position: relative;
+    right: -10px;
+
+    transition: 1s;
+}
+
+.button_primary .menu-link__icon {
+    opacity: 0;
+    transition: 1s;
+    visibility: hidden;
+}
+
+.button_primary:hover .menu-link__icon {
+    opacity: 1;
+    transition: 1s;
+    visibility: visible;
+}
+
+.button_primary:hover .button_primary-name {
+    right: 0px;
+
+    transition: 1s;
+}
+
+
+
+
 
 .button_app {
     display: flex;

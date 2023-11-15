@@ -468,6 +468,10 @@ template {
   color: #E1D4C9;
 }
 
+.enjoy__menu-link-wrapper {
+  text-decoration: none;
+}
+
 .favourites-coffee {
   display: flex;
   flex-direction: column;
@@ -781,6 +785,9 @@ template {
 }
 
 .button_primary {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
   width: 200px;
   padding: 20px 78px;
   display: flex;
@@ -790,6 +797,30 @@ template {
   background-color: #E1D4C9;
   border: none;
   border-radius: 100px;
+  cursor: pointer;
+}
+
+.button_primary .button_primary-name {
+  position: relative;
+  right: -10px;
+  transition: 1s;
+}
+
+.button_primary .menu-link__icon {
+  opacity: 0;
+  transition: 1s;
+  visibility: hidden;
+}
+
+.button_primary:hover .menu-link__icon {
+  opacity: 1;
+  transition: 1s;
+  visibility: visible;
+}
+
+.button_primary:hover .button_primary-name {
+  right: 0px;
+  transition: 1s;
 }
 
 .button_app {
