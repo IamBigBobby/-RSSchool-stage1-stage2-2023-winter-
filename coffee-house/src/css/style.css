@@ -416,6 +416,10 @@ template {
   line-height: 150%;
 }
 
+.header__logo {
+  display: block;
+}
+
 .enjoy {
   max-width: 1360px;
   padding: 100px;
