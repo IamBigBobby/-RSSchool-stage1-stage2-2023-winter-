@@ -505,6 +505,12 @@ template {
   background-size: cover;
   background-position: 50% 50%;
   border-radius: 20px;
+  background-size: 100%;
+  transition: background-size 1s;
+}
+
+.about__container-img-item:hover {
+  background-size: 110%;
 }
 
 .about__container-img-item:nth-child(1) {
