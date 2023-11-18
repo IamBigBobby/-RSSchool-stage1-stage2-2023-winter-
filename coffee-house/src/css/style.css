@@ -839,11 +839,8 @@ template {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   gap: 50px;
-}
-
-.carousel__slide {
-  display: block;
 }
 
 .carousel__container {
