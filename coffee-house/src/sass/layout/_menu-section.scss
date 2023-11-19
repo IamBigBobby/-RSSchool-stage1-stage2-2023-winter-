@@ -38,6 +38,17 @@
     border: 1px solid $color-border-light;
     
     border-radius: 100px;
+
+    transition: 1s;
+
+    background-color: transparent;
+
+    cursor: pointer;
+}
+.menu__tag:hover {
+    transition: 1s;
+    background-color: $color-background-container;
+    color: $color-text-light;
 }
 .menu__tag-icon {
     display: block;

@@ -747,6 +747,15 @@ template {
   gap: 8px;
   border: 1px solid #C1B6AD;
   border-radius: 100px;
+  transition: 1s;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.menu__tag:hover {
+  transition: 1s;
+  background-color: #665F55;
+  color: #E1D4C9;
 }
 
 .menu__tag-icon {
