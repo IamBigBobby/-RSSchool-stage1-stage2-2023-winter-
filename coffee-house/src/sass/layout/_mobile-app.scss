@@ -28,3 +28,6 @@
     text-align: left;
     @include font($size: 1rem, $weight: 600, $line-height: 140%);
 }
+.mobile-app__button-name-container {
+    transition: 1s;
+}

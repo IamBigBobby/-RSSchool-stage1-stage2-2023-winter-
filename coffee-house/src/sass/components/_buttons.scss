@@ -65,4 +65,26 @@
     border: 1px solid $color-border-dark;
 
     background-color: $color-background-body;
+
+    transition: background-color 1s;
+
+    cursor: pointer;
+
+    &:hover {
+        background-color: $color-border-dark;
+    }
+
+    &:hover .mobile-app__button-name-container {
+        transition: 1s;
+        color: $color-text-light;
+    }
+
+    & path {
+        transition: 1s;
+    }
+
+    &:hover path {
+        transition: 1s;
+        fill: #E1D4C9;
+    }
 }

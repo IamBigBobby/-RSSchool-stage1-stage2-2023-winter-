@@ -584,6 +584,10 @@ template {
   line-height: 140%;
 }
 
+.mobile-app__button-name-container {
+  transition: 1s;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
@@ -838,6 +842,22 @@ template {
   border-radius: 100px;
   border: 1px solid #665F55;
   background-color: #E1D4C9;
+  transition: background-color 1s;
+  cursor: pointer;
+}
+.button_app:hover {
+  background-color: #665F55;
+}
+.button_app:hover .mobile-app__button-name-container {
+  transition: 1s;
+  color: #E1D4C9;
+}
+.button_app path {
+  transition: 1s;
+}
+.button_app:hover path {
+  transition: 1s;
+  fill: #E1D4C9;
 }
 
 .carousel {
