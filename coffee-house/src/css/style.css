@@ -588,6 +588,10 @@ template {
   transition: 1s;
 }
 
+.mobile-app__link-mobile-app {
+  text-decoration: none;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
