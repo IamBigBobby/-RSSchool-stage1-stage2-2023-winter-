@@ -802,11 +802,12 @@ template {
   width: 100%;
   height: auto;
   transition: 1s;
+  transform: scale(1.1);
 }
 
 .menu__food-item:hover .menu__item-img {
   transition: 1s;
-  transform: scale(1.1);
+  transform: scale(1);
 }
 
 .menu__item-description {

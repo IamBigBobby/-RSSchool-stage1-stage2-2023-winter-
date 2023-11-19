@@ -85,7 +85,7 @@
     
     cursor: pointer;
 }
-.menu__item-img-wrapper {
+.menu__item-img-wrapper {   
     overflow: hidden;
     border-radius: 40px;
 }
@@ -97,10 +97,12 @@
     height: auto;
 
     transition: 1s;
+
+    transform: scale(1.1);
 }
 .menu__food-item:hover .menu__item-img {
     transition: 1s;
-    transform: scale(1.1);
+    transform: scale(1);
 }
 .menu__item-description {
     padding: 20px;
