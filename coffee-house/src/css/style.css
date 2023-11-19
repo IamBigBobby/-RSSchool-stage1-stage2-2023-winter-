@@ -21,6 +21,25 @@ body {
   opacity: 1;
 }
 
+.footer__contacts-info a::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #E1D4C9; /*?*/
+  transition: 1s;
+  opacity: 0;
+}
+
+.footer__contacts-info a:hover::before {
+  width: 100%;
+  transition: 1s;
+  opacity: 1;
+}
+
 /*80% opacity */
 * {
   box-sizing: border-box;
@@ -660,6 +679,15 @@ template {
   color: #E1D4C9;
 }
 
+.footer__contacts-info a {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  text-decoration: none;
+  position: relative;
+  color: #E1D4C9;
+}
 .footer__social-icon {
   cursor: pointer;
   fill: transparent;

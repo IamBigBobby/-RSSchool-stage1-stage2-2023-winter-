@@ -55,6 +55,20 @@
 
     color: $color-text-light;
 }
+.footer__contacts-info a{
+    @include font($size: 1.6rem, $weight: 600, $line-height: 150%);
+    text-decoration: none;
+    position: relative;
+
+    color: $color-text-light;
+
+    &::before {
+        @extend %hover-link-footer;
+    }
+    &:hover::before {
+        @extend %before-hover-link-footer;
+    }
+}
 .footer__social-icon {
     cursor: pointer;
     fill: transparent;
