@@ -50,8 +50,29 @@
 .footer__contacts-icon {
     display: block;
 }
-.footer__contacts-item {
+.footer__contacts-info {
     @include font($size: 1.6rem, $weight: 600, $line-height: 150%);
 
     color: $color-text-light;
+}
+.footer__social-icon {
+    cursor: pointer;
+    fill: transparent;
+
+    transition: 1s;
+
+    &:hover {
+        transition: 1s;
+        fill: $color-background-body;
+    }
+
+    & path {
+        transition: 1s;
+        stroke: $color-text-light;
+    }
+
+    &:hover path {
+        transition: 1s;
+        stroke: $color-text-dark;
+    }
 }

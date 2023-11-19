@@ -652,12 +652,30 @@ template {
   display: block;
 }
 
-.footer__contacts-item {
+.footer__contacts-info {
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 600;
   line-height: 150%;
   color: #E1D4C9;
+}
+
+.footer__social-icon {
+  cursor: pointer;
+  fill: transparent;
+  transition: 1s;
+}
+.footer__social-icon:hover {
+  transition: 1s;
+  fill: #E1D4C9;
+}
+.footer__social-icon path {
+  transition: 1s;
+  stroke: #E1D4C9;
+}
+.footer__social-icon:hover path {
+  transition: 1s;
+  stroke: #403F3D;
 }
 
 .main-menu {
