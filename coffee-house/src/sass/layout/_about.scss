@@ -17,14 +17,13 @@
 }
 .about__container-img-item {
     background-repeat: no-repeat;
-    background-size: cover;
     background-position: 50% 50%;
     border-radius: 20px;
-    background-size: 100%;
+    background-size: 110%;
     transition: background-size 1s;
 }
 .about__container-img-item:hover {
-    background-size: 110%;
+    background-size: 100%;
 }
 .about__container-img-item:nth-child(1) {
     background-image: url('/assets/jpg/about-1.jpg');
