@@ -82,6 +82,12 @@
     width: 310px;
     border: 1px solid $color-border-light;
     border-radius: 40px;
+    
+    cursor: pointer;
+}
+.menu__item-img-wrapper {
+    overflow: hidden;
+    border-radius: 40px;
 }
 .menu__item-img {
     display: block;
@@ -89,6 +95,12 @@
 
     width: 100%;
     height: auto;
+
+    transition: 1s;
+}
+.menu__food-item:hover .menu__item-img {
+    transition: 1s;
+    transform: scale(1.1);
 }
 .menu__item-description {
     padding: 20px;
