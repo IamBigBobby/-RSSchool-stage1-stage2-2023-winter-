@@ -26,28 +26,28 @@
     background-size: 100%;
 }
 .about__container-img-item:nth-child(1) {
-    background-image: url('../../../assets/jpg/about-1.jpg');
+    background-image: url('../../assets/jpg/about-1.jpg');
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 5;
 }
 .about__container-img-item:nth-child(2) {
-    background-image: url('../../../assets/jpg/about-2.jpg');
+    background-image: url('../../assets/jpg/about-2.jpg');
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 5;
     grid-row-end: 8;
 }
 .about__container-img-item:nth-child(3) {
-    background-image: url('../../../assets/jpg/about-3.jpg');
+    background-image: url('../../assets/jpg/about-3.jpg');
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 4;
 }
 .about__container-img-item:nth-child(4) {
-    background-image: url('../../../assets/jpg/about-4.jpg');
+    background-image: url('../../assets/jpg/about-4.jpg');
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 4;
