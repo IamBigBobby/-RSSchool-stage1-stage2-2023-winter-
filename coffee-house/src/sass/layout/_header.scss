@@ -1,0 +1,47 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+
+    margin-bottom: 20px;
+}
+
+.header__link-logo {
+    display: block;
+}
+
+.header__menu-link {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.header__menu-link_active {
+    border-bottom: 2px solid $color-background-backdrop;
+}
+
+.menu-link__icon {
+    display: block;
+}
+
+.header__menu-link-wrapper {
+    position: relative;
+
+    text-decoration: none;
+    color: $color-text-dark;
+    @include font($size: 1.6rem, $weight: 600, $line-height: 150%);
+
+    &::before {
+        @extend %hover-link;
+    }
+    &:hover::before {
+        @extend %before-hover-link;
+    }
+}
+
+.header__logo {
+    display: block;
+}
+
