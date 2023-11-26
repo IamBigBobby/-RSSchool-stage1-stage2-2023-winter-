@@ -885,11 +885,22 @@ template {
   right: -10px;
   transition: 1s;
 }
+@media (max-width: 768px) {
+  .button_primary .button_primary-name {
+    right: 0px;
+  }
+}
 
 .button_primary .menu-link__icon {
   opacity: 0;
   transition: 1s;
   visibility: hidden;
+}
+@media (max-width: 768px) {
+  .button_primary .menu-link__icon {
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
 .button_primary:hover .menu-link__icon {
@@ -898,6 +909,11 @@ template {
   visibility: visible;
 }
 
+@media (max-width: 768px) {
+  .button_primary .menu-link__icon {
+    transition: none;
+  }
+}
 .button_primary:hover .button_primary-name {
   right: 0px;
   transition: 1s;
