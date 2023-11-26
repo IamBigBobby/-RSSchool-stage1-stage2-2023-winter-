@@ -1,0 +1,1 @@
+import { hideHower } from "./js/hideHower";
