@@ -587,9 +587,13 @@ template {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 100px;
   margin-bottom: 100px;
+}
+@media screen and (max-width: 1230px) {
+  .mobile-app {
+    flex-wrap: wrap;
+  }
 }
 
 .mobile-app h2 {
