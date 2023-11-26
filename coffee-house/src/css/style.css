@@ -427,6 +427,20 @@ template {
   margin-bottom: 20px;
 }
 
+.header__links {
+  width: 893px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+}
+@media (max-width: 768px) {
+  .header__links {
+    display: none;
+  }
+}
+
 .header__link-logo {
   display: block;
 }
@@ -461,13 +475,18 @@ template {
 
 .enjoy {
   max-width: 1360px;
-  padding: 100px 60px;
+  padding: 100px;
   border-radius: 40px;
   background-image: url("../../assets/jpg/img-enjoy.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
   margin-bottom: 100px;
+}
+@media (max-width: 768px) {
+  .enjoy {
+    padding: 100px 60px;
+  }
 }
 
 .enjoy__container {

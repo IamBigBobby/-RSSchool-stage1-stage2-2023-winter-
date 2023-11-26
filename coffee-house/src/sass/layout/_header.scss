@@ -6,6 +6,19 @@
 
     margin-bottom: 20px;
 }
+.header__links {
+    width: 893px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    align-self: stretch;
+
+    @include media-tablet {
+        display: none;
+    }
+}
 
 .header__link-logo {
     display: block;

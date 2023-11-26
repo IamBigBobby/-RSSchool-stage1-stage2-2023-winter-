@@ -1,7 +1,7 @@
 .enjoy {
     max-width: 1360px;
 
-    padding: 100px 60px;
+    padding: 100px;
 
     border-radius: 40px;
 
@@ -11,6 +11,10 @@
     background-position: 50% 50%;
 
     margin-bottom: 100px;
+
+    @include media-tablet {
+        padding: 100px 60px;
+    }
 }
 
 .enjoy__container{
