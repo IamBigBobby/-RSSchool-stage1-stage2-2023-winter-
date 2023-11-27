@@ -632,6 +632,9 @@ template {
 
 .mobile-app__img {
   display: block;
+  width: 100%;
+  max-width: 630px;
+  height: auto;
 }
 
 .mobile-app__describe {
