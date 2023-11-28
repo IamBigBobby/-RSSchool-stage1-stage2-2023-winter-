@@ -31,8 +31,7 @@ h1 {
     }
 
     @include media-mobilesmall {
-        // @include font($size: 4.2rem, $weight: 600, $line-height: 115%);
-        font-size: 4.2rem;
+        @include font($size: 4.2rem, $weight: 600, $line-height: 115%);
     }
 }
 
@@ -47,6 +46,10 @@ h2 {
         font-style: italic;
 
         color: $color-text-accent;
+    }
+
+    @include media-mobilesmall {
+        @include font($size: 3.2rem, $weight: 600, $line-height: 125%);
     }
 }
 

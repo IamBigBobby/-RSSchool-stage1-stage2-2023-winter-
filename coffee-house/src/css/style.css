@@ -74,6 +74,9 @@ h1 span {
 @media (max-width: 700px) {
   h1 {
     font-size: 4.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 115%;
   }
 }
 
@@ -88,6 +91,14 @@ h2 {
 h2 span {
   font-style: italic;
   color: #B0907A;
+}
+@media (max-width: 700px) {
+  h2 {
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+  }
 }
 
 h3 {
