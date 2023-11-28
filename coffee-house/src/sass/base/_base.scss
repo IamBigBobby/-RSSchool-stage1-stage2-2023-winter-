@@ -22,10 +22,17 @@ h1 {
 
     color: $color-text-light;
 
+    margin: 0;
+
     span {
         font-style: italic;
 
         color: $color-text-accent;
+    }
+
+    @include media-mobilesmall {
+        // @include font($size: 4.2rem, $weight: 600, $line-height: 115%);
+        font-size: 4.2rem;
     }
 }
 

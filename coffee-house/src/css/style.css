@@ -65,10 +65,16 @@ h1 {
   font-weight: 600;
   line-height: 105%;
   color: #E1D4C9;
+  margin: 0;
 }
 h1 span {
   font-style: italic;
   color: #B0907A;
+}
+@media (max-width: 700px) {
+  h1 {
+    font-size: 4.2rem;
+  }
 }
 
 h2 {
@@ -130,11 +136,6 @@ main {
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
-h1 {
-  font-size: 7.2rem;
-  margin: 0;
-}
-
 /* Grouping content
    ========================================================================== */
 /**
