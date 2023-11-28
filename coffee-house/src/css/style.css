@@ -1116,7 +1116,11 @@ template {
 .carousel__img {
   display: block;
   margin-bottom: 20px;
-  width: 100%;
+}
+@media (max-width: 700px) {
+  .carousel__img {
+    width: 100%;
+  }
 }
 
 .carousel__describe {
