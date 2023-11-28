@@ -15,6 +15,10 @@
     @include media-tablet {
         padding: 100px 60px;
     }
+
+    @include media-mobilesmall {
+        padding: 60px 16px;
+    }
 }
 
 .enjoy__container{
