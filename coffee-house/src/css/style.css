@@ -580,9 +580,19 @@ template {
     background-size: 105%;
   }
 }
+@media (max-width: 700px) {
+  .about__container-img-item {
+    background-size: 210%;
+  }
+}
 
 .about__container-img-item:hover {
   background-size: 100%;
+}
+@media (max-width: 700px) {
+  .about__container-img-item:hover {
+    background-size: 210%;
+  }
 }
 
 .about__container-img-item:nth-child(1) {

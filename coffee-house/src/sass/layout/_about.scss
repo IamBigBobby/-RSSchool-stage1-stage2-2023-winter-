@@ -31,9 +31,17 @@
     @media screen and (max-width: 1230px) {
         background-size: 105%;
     }
+
+    @include media-mobilesmall {
+        background-size: 210%;
+    }
 }
 .about__container-img-item:hover {
     background-size: 100%;
+
+    @include media-mobilesmall {
+        background-size: 210%;
+    }
 }
 .about__container-img-item:nth-child(1) {
     background-image: url('../../assets/jpg/about-1.jpg');
