@@ -13,6 +13,11 @@
         flex-direction: column;
         gap: 100px;
     }
+
+    @include media-mobilesmall {
+        padding: 60px 16px;
+        gap: 40px;
+    }
 }
 .footer-menu {
     flex-shrink: 0;

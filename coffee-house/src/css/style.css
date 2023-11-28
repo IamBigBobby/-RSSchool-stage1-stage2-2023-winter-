@@ -720,6 +720,12 @@ template {
     gap: 100px;
   }
 }
+@media (max-width: 700px) {
+  .footer {
+    padding: 60px 16px;
+    gap: 40px;
+  }
+}
 
 .footer-menu {
   flex-shrink: 0;
