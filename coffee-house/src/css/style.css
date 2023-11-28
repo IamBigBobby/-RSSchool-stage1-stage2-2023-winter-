@@ -1107,6 +1107,15 @@ template {
   line-height: 125%;
 }
 
+.carousel__slide {
+  display: block;
+}
+@media (max-width: 700px) {
+  .carousel__slide {
+    display: none;
+  }
+}
+
 .pagination {
   display: flex;
   justify-content: center;
