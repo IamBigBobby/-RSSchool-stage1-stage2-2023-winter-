@@ -657,6 +657,11 @@ template {
     flex-wrap: wrap;
   }
 }
+@media (max-width: 700px) {
+  .mobile-app {
+    gap: 40px;
+  }
+}
 
 .mobile-app h2 {
   text-align: left;
