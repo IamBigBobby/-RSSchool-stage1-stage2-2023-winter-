@@ -23,7 +23,7 @@
     color: $color-text-light;
 }
 .footer__left, .footer__right {
-    width: 530px;
+    max-width: 530px;
 
     display: flex;
     flex-direction: column;

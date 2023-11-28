@@ -496,7 +496,7 @@ template {
   align-items: flex-start;
   align-self: stretch;
   gap: 25px;
-  width: 530px;
+  max-width: 530px;
 }
 
 .enjoy__container p {
@@ -693,7 +693,7 @@ template {
 }
 
 .footer__left, .footer__right {
-  width: 530px;
+  max-width: 530px;
   display: flex;
   flex-direction: column;
   gap: 40px;
