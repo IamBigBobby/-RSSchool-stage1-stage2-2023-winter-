@@ -661,6 +661,7 @@ template {
 
 .mobile-app__button-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 

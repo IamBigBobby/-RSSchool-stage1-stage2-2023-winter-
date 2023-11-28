@@ -29,6 +29,7 @@
 }
 .mobile-app__button-container {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 }
 .mobile-app__button-name-container div:first-child {
