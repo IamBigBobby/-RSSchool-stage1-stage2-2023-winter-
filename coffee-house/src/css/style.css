@@ -852,12 +852,21 @@ template {
   flex-wrap: wrap;
   gap: 40px;
 }
+@media (max-width: 768px) {
+  .menu__tea-category {
+    justify-content: center;
+  }
+}
 
 .menu__food-item {
   width: 310px;
   border: 1px solid #C1B6AD;
   border-radius: 40px;
   cursor: pointer;
+}
+
+.menu__food-item:nth-child(n+5):nth-child(-n+8) {
+  display: none;
 }
 
 .menu__item-img-wrapper {
