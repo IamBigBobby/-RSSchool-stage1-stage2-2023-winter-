@@ -90,18 +90,20 @@
 
     transition: 1s;
 
-    &:hover {
-        transition: 1s;
-        fill: $color-background-body;
-    }
-
-    & path {
-        transition: 1s;
-        stroke: $color-text-light;
-    }
-
-    &:hover path {
-        transition: 1s;
-        stroke: $color-text-dark;
+    @media (hover: hover) {
+        &:hover {
+            transition: 1s;
+            fill: $color-background-body;
+        }
+    
+        & path {
+            transition: 1s;
+            stroke: $color-text-light;
+        }
+    
+        &:hover path {
+            transition: 1s;
+            stroke: $color-text-dark;
+        }
     }
 }

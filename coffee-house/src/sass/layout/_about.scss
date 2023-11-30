@@ -36,11 +36,13 @@
         background-size: 210%;
     }
 }
-.about__container-img-item:hover {
-    background-size: 100%;
-
-    @include media-mobilesmall {
-        background-size: 210%;
+@media (hover: hover) {
+    .about__container-img-item:hover {
+        background-size: 100%;
+    
+        @include media-mobilesmall {
+            background-size: 210%;
+        }
     }
 }
 .about__container-img-item:nth-child(1) {

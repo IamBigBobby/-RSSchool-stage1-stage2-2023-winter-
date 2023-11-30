@@ -83,21 +83,23 @@
 
     cursor: pointer;
 
-    &:hover {
-        background-color: $color-border-dark;
-    }
-
-    &:hover .mobile-app__button-name-container {
-        transition: 1s;
-        color: $color-text-light;
-    }
-
-    & path {
-        transition: 1s;
-    }
-
-    &:hover path {
-        transition: 1s;
-        fill: #E1D4C9;
-    }
+    @media (hover: hover) {
+        &:hover {
+            background-color: $color-border-dark;
+        }
+    
+        &:hover .mobile-app__button-name-container {
+            transition: 1s;
+            color: $color-text-light;
+        }
+    
+        & path {
+            transition: 1s;
+        }
+    
+        &:hover path {
+            transition: 1s;
+            fill: #E1D4C9;
+        }
+    }   
 }
