@@ -53,10 +53,12 @@
 
     cursor: pointer;
 }
-.menu__tag:hover {
-    transition: 1s;
-    background-color: $color-background-container;
-    color: $color-text-light;
+@media (hover: hover) {
+    .menu__tag:hover {
+        transition: 1s;
+        background-color: $color-background-container;
+        color: $color-text-light;
+    }
 }
 .menu__tag-icon {
     display: block;
@@ -123,9 +125,11 @@
         display: none;
     }
 }
-.menu__food-item:hover .menu__item-img {
-    transition: 1s;
-    transform: scale(1);
+@media (hover: hover) {
+    .menu__food-item:hover .menu__item-img {
+        transition: 1s;
+        transform: scale(1);
+    }
 }
 .menu__item-description {
     padding: 20px;

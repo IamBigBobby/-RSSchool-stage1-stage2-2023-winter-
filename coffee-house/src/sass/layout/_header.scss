@@ -46,12 +46,7 @@
     color: $color-text-dark;
     @include font($size: 1.6rem, $weight: 600, $line-height: 150%);
 
-    &::before {
-        @extend %hover-link;
-    }
-    &:hover::before {
-        @extend %before-hover-link;
-    }
+    @include hover-link-header
 }
 
 .header__logo {
