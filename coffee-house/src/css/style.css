@@ -1225,6 +1225,15 @@ template {
   height: 2px;
   background-color: #665F55;
   border-radius: 100px;
+  transition: 1s;
+}
+
+.burger-menu__first-span {
+  transform: translateY(200%) rotate(45deg);
+}
+
+.burger-menu__second-span {
+  transform: translateY(-200%) rotate(-45deg);
 }
 
 /*# sourceMappingURL=style.css.map */
