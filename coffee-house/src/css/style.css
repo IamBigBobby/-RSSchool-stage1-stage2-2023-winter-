@@ -1225,7 +1225,7 @@ template {
   height: 2px;
   background-color: #665F55;
   border-radius: 100px;
-  transition: 1s;
+  transition: 0.5s;
 }
 
 .burger-menu__first-span {
