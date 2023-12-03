@@ -6,6 +6,19 @@
 
     margin-bottom: 20px;
 }
+.header__links {
+    width: 893px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    align-self: stretch;
+
+    @include media-tablet {
+        display: none;
+    }
+}
 
 .header__link-logo {
     display: block;
@@ -33,12 +46,7 @@
     color: $color-text-dark;
     @include font($size: 1.6rem, $weight: 600, $line-height: 150%);
 
-    &::before {
-        @extend %hover-link;
-    }
-    &:hover::before {
-        @extend %before-hover-link;
-    }
+    @include hover-link-header
 }
 
 .header__logo {

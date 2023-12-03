@@ -11,6 +11,14 @@
     background-position: 50% 50%;
 
     margin-bottom: 100px;
+
+    @include media-tablet {
+        padding: 100px 60px;
+    }
+
+    @include media-mobilesmall {
+        padding: 60px 16px;
+    }
 }
 
 .enjoy__container{
@@ -21,7 +29,7 @@
     align-self: stretch;
     gap: 25px;
 
-    width: 530px;
+    max-width: 530px;
 }
 
 .enjoy__container p {

@@ -26,6 +26,10 @@
     display: block;
 
     margin-bottom: 20px;
+
+    @include media-mobilesmall {
+        width: 100%;
+    }
 }
 .carousel__describe {
     display: flex;
@@ -40,4 +44,11 @@
 }
 .carousel__price-item {
     @include font($size: 2.4rem, $weight: 600, $line-height: 125%);
+}
+.carousel__slide {
+    display: block;
+
+    @include media-mobilesmall {
+        display: none;
+    }
 }

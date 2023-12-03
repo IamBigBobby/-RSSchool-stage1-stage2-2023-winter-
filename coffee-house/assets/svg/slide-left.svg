@@ -2,17 +2,19 @@
 <rect x="0.5" y="0.5" width="59" height="59" rx="29.5" stroke="#665F55"/>
 <path d="M36.5 30H24M24 30L30 24M24 30L30 36" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
 <style type="text/css">
-    svg {
-        cursor: pointer;
-        transition: 1s;
-        fill: transparent;
-    }
-    svg:hover {
-        fill: #665F55;
-    }
+    @media (hover: hover) {
+        svg {
+            cursor: pointer;
+            transition: 1s;
+            fill: transparent;
+        }
+        svg:hover {
+            fill: #665F55;
+        }
     
-    svg:hover path {
-      stroke: #E1D4C9;
+        svg:hover path {
+            stroke: #E1D4C9;
+        }
     }
 </style>
 </svg>

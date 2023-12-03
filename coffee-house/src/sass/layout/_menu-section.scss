@@ -9,6 +9,10 @@
     text-align: center;
 
     @include font($size: 6rem, $weight: 600, $line-height: 125%);
+
+    @include media-mobilesmall {
+        @include font($size: 3.2rem, $weight: 600, $line-height: 125%);
+    }
 }
 
 .menu {
@@ -22,6 +26,10 @@
     justify-content: center;
     align-items: center;
     gap: 16px;
+
+    @include media-mobilesmall {
+        gap: 8px;
+    }
 }
 
 .menu__tag {
@@ -45,10 +53,12 @@
 
     cursor: pointer;
 }
-.menu__tag:hover {
-    transition: 1s;
-    background-color: $color-background-container;
-    color: $color-text-light;
+@media (hover: hover) {
+    .menu__tag:hover {
+        transition: 1s;
+        background-color: $color-background-container;
+        color: $color-text-light;
+    }
 }
 .menu__tag-icon {
     display: block;
@@ -77,6 +87,10 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 40px;
+
+    @include media-tablet {
+        justify-content: center; 
+    }
 }
 .menu__food-item {
     width: 310px;
@@ -84,6 +98,12 @@
     border-radius: 40px;
     
     cursor: pointer;
+}
+.menu__refresh-button {
+    display: none;
+    @include media-tablet {
+        display: block;
+    }
 }
 .menu__item-img-wrapper {   
     overflow: hidden;
@@ -100,9 +120,16 @@
 
     transform: scale(1.1);
 }
-.menu__food-item:hover .menu__item-img {
-    transition: 1s;
-    transform: scale(1);
+@include media-tablet {
+    .menu__food-item:nth-child(n+5):nth-child(-n+8) {
+        display: none;
+    }
+}
+@media (hover: hover) {
+    .menu__food-item:hover .menu__item-img {
+        transition: 1s;
+        transform: scale(1);
+    }
 }
 .menu__item-description {
     padding: 20px;
