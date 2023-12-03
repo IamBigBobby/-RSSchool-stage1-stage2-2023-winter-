@@ -1,1 +1,1 @@
-import { hideHower } from "./js/hideHower";
+import { burgerLogic } from "./js/burgerLogic.js";
