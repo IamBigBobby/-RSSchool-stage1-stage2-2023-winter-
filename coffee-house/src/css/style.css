@@ -385,6 +385,7 @@ template {
   max-width: 1440px;
   margin: auto;
   padding: 20px 40px;
+  overflow: hidden;
 }
 @media (max-width: 700px) {
   .wrapper {
@@ -416,7 +417,29 @@ template {
 }
 @media (max-width: 768px) {
   .header__links {
-    display: none;
+    position: fixed;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 100px;
+    top: 100px;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: #E1D4C9;
+    margin: 0;
+    padding: 60px 40px;
+    z-index: 1;
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+    transition: 0.2s;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__links_hide {
+    right: 0px;
   }
 }
 
@@ -999,6 +1022,12 @@ template {
   align-items: center;
   gap: 40px;
   list-style-type: none;
+}
+@media (max-width: 768px) {
+  .navigation__list {
+    flex-direction: column;
+    gap: 60px;
+  }
 }
 
 .navigation__link {
