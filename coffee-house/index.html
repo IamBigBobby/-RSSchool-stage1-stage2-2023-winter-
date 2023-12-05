@@ -55,7 +55,26 @@
             <section id="favourites-coffee" class="favourites-coffee">
                 <h2>Choose your <span>favorite</span> coffee</h2>
                 <div class="carousel">
-                    <object class="carousel__slide carousel__slide_left" data="./assets/svg/slide-left.svg" type="image/svg+xml"></object>
+                    <svg class="carousel__slide carousel__slide_left" width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.5" y="0.5" width="59" height="59" rx="29.5" stroke="#665F55"/>
+                        <path d="M36.5 30H24M24 30L30 24M24 30L30 36" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
+                        <style type="text/css">
+                            @media (hover: hover) {
+                                svg {
+                                    cursor: pointer;
+                                    transition: 1s;
+                                    fill: transparent;
+                                }
+                                svg:hover {
+                                    fill: #665F55;
+                                }
+                            
+                                svg:hover path {
+                                    stroke: #E1D4C9;
+                                }
+                            }
+                        </style>
+                    </svg>
                     <div class="carousel__container">
                         <div class="carousel__item">
                             <img src="./assets/png/coffee-slider-1.png" alt="coffee" class="carousel__img">
@@ -66,7 +85,26 @@
                             </div>
                         </div>
                     </div>
-                    <object class="carousel__slide carousel__slide_right" data="./assets/svg/slide-right.svg" type="image/svg+xml"></object>
+                    <svg class="carousel__slide carousel__slide_right" width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.5" y="0.5" width="59" height="59" rx="29.5" stroke="#665F55"/>
+                        <path d="M24 30H36.5M36.5 30L30.5 24M36.5 30L30.5 36" stroke="#403F3D" stroke-linecap="round" stroke-linejoin="round"/>
+                        <style type="text/css">
+                            @media (hover: hover) {
+                                svg {
+                                    cursor: pointer;
+                                    transition: 1s;
+                                    fill: transparent;
+                                }
+                                svg:hover {
+                                    fill: #665F55;
+                                }
+                            
+                                svg:hover path {
+                                    stroke: #E1D4C9;
+                                }
+                            }
+                        </style>
+                    </svg>
                 </div>
                 <div class="pagination">
                     <span class="pagination__stick pagination__stick_active"></span>
