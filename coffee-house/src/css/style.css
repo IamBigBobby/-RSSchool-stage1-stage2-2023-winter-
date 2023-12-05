@@ -1163,7 +1163,7 @@ template {
   justify-content: center;
   align-items: center;
   gap: 300px;
-  left: 0px;
+  left: 780px;
   transition: 1s;
 }
 
@@ -1236,6 +1236,7 @@ template {
 
 .pagination__stick_active {
   background-color: #665F55;
+  transition: 1s;
 }
 
 .burger-menu {
