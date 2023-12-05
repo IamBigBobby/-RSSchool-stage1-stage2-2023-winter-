@@ -18,4 +18,6 @@
 
 .pagination__stick_active {
     background-color: $color-border-dark;
+
+    transition: 1s;
 }
