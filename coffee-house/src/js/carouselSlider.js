@@ -1,3 +1,5 @@
+export {moveSlider, moveSliderLeft, moveSliderRight};
+
 import { paginationSLideLeft } from "./paginationLogic.js";
 import { paginationSLideRight } from "./paginationLogic.js";
 
@@ -6,12 +8,12 @@ const slideLeft = document.querySelector('.carousel__slide_left');
 const carousel = document.querySelector('.carousel__container');
 let slideRange = -780;
 
-export function moveSlider() {
+function moveSlider() {
     slideRight.addEventListener('click', moveSliderLeft);
 
     slideLeft.addEventListener('click', moveSliderRight);
 }
-export function moveSliderLeft() {
+function moveSliderLeft() {
     slideRange += 780;
         
     if (slideRange > 780) {
@@ -20,7 +22,7 @@ export function moveSliderLeft() {
     carousel.style.left = -slideRange + 'px';
     paginationSLideRight();
 }
-export function moveSliderRight() {
+function moveSliderRight() {
     slideRange -= 780;
         
     if (slideRange < -780) {

@@ -1,10 +1,12 @@
+export {touchSlider};
+
 let slideRange = 0;
 let startX;
 let endX;
 let xDiff;
 const carousel = document.querySelector('.carousel__container');
 
-export function touchSlider() {    
+function touchSlider() {    
     carousel.addEventListener('touchstart', touchStart);
     carousel.addEventListener('touchmove', touchMove);
     carousel.addEventListener('touchend', touchEnd);

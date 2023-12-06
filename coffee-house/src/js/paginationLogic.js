@@ -1,3 +1,5 @@
+export {paginationSLideLeft, paginationSLideRight, animateIndicator}
+
 const paginationContainer = document.querySelector('.pagination');
 let indicator = document.querySelector('.pagination__indicator');
 let animationStopped = false;
@@ -6,7 +8,7 @@ const step = 2;
 const intervalUp = 400;
 const intervalDown = 1;
 
-export async function paginationSLideRight() {
+async function paginationSLideRight() {
     let activePagination = document.querySelector('.pagination__stick_active');
 
     if (activePagination.nextElementSibling === null) {
@@ -24,7 +26,7 @@ export async function paginationSLideRight() {
     animationStopped = true;
 }
 
-export function paginationSLideLeft() {
+function paginationSLideLeft() {
     let activePagination = document.querySelector('.pagination__stick_active');
     const paginationContainer = document.querySelector('.pagination');
 
@@ -37,12 +39,8 @@ export function paginationSLideLeft() {
     activePagination.previousElementSibling.classList.toggle('pagination__stick_active');
 }
 
-export function animateIndicator(animationIndicator) {
+function animateIndicator(animationIndicator) {
     animationStopped = false;
-
-    if (animationStopped) {
-        return;
-    }
 
     animationIndicator.style.left = leftValue + 'px';
 
@@ -64,7 +62,6 @@ export function animateIndicator(animationIndicator) {
             setTimeout(animateBackward, intervalDown);
             return;
         }
-        console.log(leftValue);
     }
 
     function animateBackward() {
