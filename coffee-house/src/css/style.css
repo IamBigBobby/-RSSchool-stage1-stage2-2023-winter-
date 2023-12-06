@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-family: "Inter", sans-serif;
 }
@@ -1251,9 +1252,19 @@ template {
   background-color: #C1B6AD;
 }
 
-.pagination__stick_active {
+.pagination__stick {
+  position: relative;
+  overflow: hidden;
+}
+
+.pagination__stick .pagination__indicator {
+  width: 40px;
+  height: 4px;
+  position: absolute;
+  left: -40px; /* Начальное значение должно быть отрицательным */
+  display: block;
   background-color: #665F55;
-  transition: 1s;
+  transition: left 1s;
 }
 
 .burger-menu {

@@ -16,8 +16,17 @@
     background-color: $color-border-light;
 }
 
-.pagination__stick_active {
-    background-color: $color-border-dark;
+.pagination__stick {
+    position: relative;
+    overflow: hidden;
+}
 
-    transition: 1s;
+.pagination__stick .pagination__indicator {
+    width: 40px;
+    height: 4px;
+    position: absolute;
+    left: -40px; /* Начальное значение должно быть отрицательным */
+    display: block;
+    background-color: $color-border-dark;
+    transition: left 1s;
 }
