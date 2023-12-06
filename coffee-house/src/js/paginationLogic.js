@@ -1,12 +1,12 @@
 const paginationContainer = document.querySelector('.pagination');
 let indicator = document.querySelector('.pagination__indicator');
 let animationStopped = false;
-let leftValue = -40;
+let leftValue = -42;
 const step = 2;
 const intervalUp = 400;
 const intervalDown = 1;
 
-export function paginationSLideRight() {
+export async function paginationSLideRight() {
     let activePagination = document.querySelector('.pagination__stick_active');
 
     if (activePagination.nextElementSibling === null) {
@@ -18,7 +18,9 @@ export function paginationSLideRight() {
     activePagination.classList.toggle('pagination__stick_active');
     activePagination.nextElementSibling.classList.toggle('pagination__stick_active');
 
-    animateIndicator(activePagination.nextElementSibling.querySelector('.pagination__indicator'));
+    leftValue = -42;
+
+    await animateIndicator(activePagination.nextElementSibling.querySelector('.pagination__indicator'));
     animationStopped = true;
 }
 
@@ -36,21 +38,27 @@ export function paginationSLideLeft() {
 }
 
 export function animateIndicator(animationIndicator) {
+    animationStopped = false;
+
+    if (animationStopped) {
+        return;
+    }
+
     animationIndicator.style.left = leftValue + 'px';
 
     function animateForward() {
-        
-        if (animationStopped === true) {
+
+        if (animationStopped) {
             setTimeout(animateBackward, intervalDown);
             animationStopped = false;
-            indicator.style.left = '-40px';
+            leftValue = -42;
             return;
         }
 
         leftValue += step;
         animationIndicator.style.left = leftValue + 'px';
 
-        if (leftValue <= 0 && !animationStopped) {
+        if (leftValue < 0 && !animationStopped) {
             setTimeout(animateForward, intervalUp);
         } else {
             setTimeout(animateBackward, intervalDown);
@@ -63,7 +71,7 @@ export function animateIndicator(animationIndicator) {
         leftValue -= step;
         animationIndicator.style.left = leftValue + 'px';
 
-        if (leftValue >= -40 && !animationStopped) {
+        if (leftValue > -40 && !animationStopped) {
             setTimeout(animateBackward, intervalDown);
         }
     }
@@ -71,6 +79,11 @@ export function animateIndicator(animationIndicator) {
 }
 
 animateIndicator(indicator);
+
+
+
+
+
 
 
 

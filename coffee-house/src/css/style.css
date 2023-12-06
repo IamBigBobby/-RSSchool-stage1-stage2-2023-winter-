@@ -1264,7 +1264,7 @@ template {
   left: -40px; /* Начальное значение должно быть отрицательным */
   display: block;
   background-color: #665F55;
-  transition: left 1s;
+  transition: 1s;
 }
 
 .burger-menu {
