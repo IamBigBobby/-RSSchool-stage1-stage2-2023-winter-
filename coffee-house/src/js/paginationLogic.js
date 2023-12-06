@@ -1,9 +1,10 @@
 export {paginationSLideLeft, paginationSLideRight, animateIndicator}
+import { moveSliderLeft, moveSliderRight } from "./carouselSlider.js";
 
 const paginationContainer = document.querySelector('.pagination');
 let indicator = document.querySelector('.pagination__indicator');
 let animationStopped = false;
-let leftValue = -42;
+let leftValue = -45;
 const step = 2;
 const intervalUp = 400;
 const intervalDown = 1;
@@ -15,7 +16,7 @@ async function paginationSLideRight() {
         paginationContainer.lastElementChild.classList.toggle('pagination__stick_active');
         paginationContainer.firstElementChild.classList.toggle('pagination__stick_active');
 
-        leftValue = -42;
+        leftValue = -45;
         await animateIndicator(paginationContainer.firstElementChild.querySelector('.pagination__indicator'));
         animationStopped = true;
         return;
@@ -24,7 +25,7 @@ async function paginationSLideRight() {
     activePagination.classList.toggle('pagination__stick_active');
     activePagination.nextElementSibling.classList.toggle('pagination__stick_active');
 
-    leftValue = -42;
+    leftValue = -45;
     await animateIndicator(activePagination.nextElementSibling.querySelector('.pagination__indicator'));
     animationStopped = true;
 }
@@ -37,7 +38,7 @@ async function paginationSLideLeft() {
         paginationContainer.firstElementChild.classList.toggle('pagination__stick_active');
         paginationContainer.lastElementChild.classList.toggle('pagination__stick_active');
 
-        leftValue = -42;
+        leftValue = -45;
         await animateIndicator(paginationContainer.lastElementChild.querySelector('.pagination__indicator'));
         animationStopped = true;
         return;
@@ -45,41 +46,44 @@ async function paginationSLideLeft() {
     activePagination.classList.toggle('pagination__stick_active');
     activePagination.previousElementSibling.classList.toggle('pagination__stick_active');
 
-    leftValue = -42;
+    leftValue = -45;
     await animateIndicator(activePagination.previousElementSibling.querySelector('.pagination__indicator'));
     animationStopped = true;
 }
 
-function animateIndicator(animationIndicator) {
+    function animateIndicator(animationIndicator) {
     animationStopped = false;
 
     animationIndicator.style.left = leftValue + 'px';
 
-    function animateForward() {
+    async function animateForward() {
 
         if (animationStopped) {
             setTimeout(animateBackward, intervalDown);
             animationStopped = false;
-            leftValue = -42;
+            leftValue = -45;
             return;
         }
 
         leftValue += step;
         animationIndicator.style.left = leftValue + 'px';
 
-        if (leftValue < 0 && !animationStopped) {
+        if (leftValue < 5 && !animationStopped) {
             setTimeout(animateForward, intervalUp);
         } else {
+            await paginationSLideRight();
             setTimeout(animateBackward, intervalDown);
+            moveSliderLeft();
             return;
         }
+        // console.log(leftValue);
     }
 
     function animateBackward() {
         leftValue -= step;
         animationIndicator.style.left = leftValue + 'px';
 
-        if (leftValue > -40 && !animationStopped) {
+        if (leftValue > -45 && !animationStopped) {
             setTimeout(animateBackward, intervalDown);
         }
     }
@@ -87,8 +91,6 @@ function animateIndicator(animationIndicator) {
 }
 
 animateIndicator(indicator);
-
-
 
 
 

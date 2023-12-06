@@ -13,22 +13,23 @@ function moveSlider() {
 
     slideLeft.addEventListener('click', moveSliderRight);
 }
-function moveSliderLeft() {
+async function moveSliderLeft() {
     slideRange += 780;
+    await paginationSLideLeft();
         
     if (slideRange > 780) {
         slideRange = -780;
     }
     carousel.style.left = -slideRange + 'px';
-    paginationSLideRight();
 }
-function moveSliderRight() {
+async function moveSliderRight() {
     slideRange -= 780;
+    await paginationSLideRight();
         
     if (slideRange < -780) {
         slideRange = 780;
     }
     carousel.style.left = -slideRange + 'px';
-    paginationSLideLeft();
+    console.log(slideRange);
 }
 moveSlider();
