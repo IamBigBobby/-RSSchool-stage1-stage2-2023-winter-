@@ -71,7 +71,7 @@ async function paginationSLideLeft() {
         if (leftValue < 5 && !animationStopped) {
             setTimeout(animateForward, intervalUp);
         } else {
-            await paginationSLideRight();
+            // await paginationSLideRight();
             setTimeout(animateBackward, intervalDown);
             moveSliderLeft();
             return;
