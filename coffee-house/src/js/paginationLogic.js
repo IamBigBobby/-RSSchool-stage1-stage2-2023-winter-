@@ -14,6 +14,10 @@ async function paginationSLideRight() {
     if (activePagination.nextElementSibling === null) {
         paginationContainer.lastElementChild.classList.toggle('pagination__stick_active');
         paginationContainer.firstElementChild.classList.toggle('pagination__stick_active');
+
+        leftValue = -42;
+        await animateIndicator(paginationContainer.firstElementChild.querySelector('.pagination__indicator'));
+        animationStopped = true;
         return;
     }
 
@@ -21,22 +25,29 @@ async function paginationSLideRight() {
     activePagination.nextElementSibling.classList.toggle('pagination__stick_active');
 
     leftValue = -42;
-
     await animateIndicator(activePagination.nextElementSibling.querySelector('.pagination__indicator'));
     animationStopped = true;
 }
 
-function paginationSLideLeft() {
+async function paginationSLideLeft() {
     let activePagination = document.querySelector('.pagination__stick_active');
     const paginationContainer = document.querySelector('.pagination');
 
     if (activePagination.previousElementSibling === null) {
         paginationContainer.firstElementChild.classList.toggle('pagination__stick_active');
         paginationContainer.lastElementChild.classList.toggle('pagination__stick_active');
+
+        leftValue = -42;
+        await animateIndicator(paginationContainer.lastElementChild.querySelector('.pagination__indicator'));
+        animationStopped = true;
         return;
     }
     activePagination.classList.toggle('pagination__stick_active');
     activePagination.previousElementSibling.classList.toggle('pagination__stick_active');
+
+    leftValue = -42;
+    await animateIndicator(activePagination.previousElementSibling.querySelector('.pagination__indicator'));
+    animationStopped = true;
 }
 
 function animateIndicator(animationIndicator) {
