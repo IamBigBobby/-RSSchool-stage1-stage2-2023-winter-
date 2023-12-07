@@ -13,23 +13,24 @@ function moveSlider() {
 
     slideLeft.addEventListener('click', moveSliderRight);
 }
-async function moveSliderLeft() {
+function moveSliderLeft() {
     slideRange += 780;
-    await paginationSLideLeft();
+    // await paginationSLideRight();
         
     if (slideRange > 780) {
         slideRange = -780;
     }
     carousel.style.left = -slideRange + 'px';
+    console.log(`left-slide:${slideRange}`)
 }
-async function moveSliderRight() {
+function moveSliderRight() {
     slideRange -= 780;
-    await paginationSLideRight();
+    // await paginationSLideLeft();
         
     if (slideRange < -780) {
         slideRange = 780;
     }
     carousel.style.left = -slideRange + 'px';
-    console.log(slideRange);
+    console.log(`right-slide:${slideRange}`)
 }
 moveSlider();
