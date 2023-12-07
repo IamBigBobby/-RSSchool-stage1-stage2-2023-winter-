@@ -20,12 +20,25 @@ function updateProgressBar(indicator, activeStick) {
         if (width <= 0) {
             moveSliderLeft();
             let nextActivePagination = activeStick.nextElementSibling;
-            activeStick.classList.remove('pagination__stick_active');
-            nextActivePagination.classList.add('pagination__stick_active');
-            let nextIndicator = nextActivePagination.querySelector('.pagination__indicator');
-            clearInterval(id);
-            console.log(nextActivePagination, nextIndicator);
-            updateProgressBar(nextIndicator, nextActivePagination);
+            if (nextActivePagination !== null) {
+                activeStick.classList.remove('pagination__stick_active');
+                nextActivePagination.classList.add('pagination__stick_active');
+                let nextIndicator = nextActivePagination.querySelector('.pagination__indicator');
+
+                clearInterval(id);
+
+                updateProgressBar(nextIndicator, nextActivePagination);
+            } else {
+                let paginationContainer = document.querySelector('.pagination');
+                activeStick.classList.remove('pagination__stick_active');
+                let firstActivePagination = paginationContainer.firstElementChild;
+                firstActivePagination.classList.add('pagination__stick_active');
+                let firstIndicator = firstActivePagination.querySelector('.pagination__indicator');
+
+                clearInterval(id);
+
+                updateProgressBar(firstIndicator, firstActivePagination);
+            }
         }
 
         width += direction;
@@ -37,6 +50,7 @@ function updateProgressBar(indicator, activeStick) {
 }
 
 updateProgressBar(indicator, activeStick);
+
 
 
 
