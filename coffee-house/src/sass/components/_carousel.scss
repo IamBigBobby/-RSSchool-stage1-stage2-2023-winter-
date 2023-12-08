@@ -3,43 +3,35 @@
 
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     // align-items: center;
     gap: 50px;
+
+    @media screen and (max-width: 700px) {
+        width: auto;
+    }
 }
 .carousel__container {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 300px;
 
-    left: 780px;
+    left: 348px;
 
     transition: 1s;
-
-    @media (max-width: 700px) {
-        left: 0px;
-        gap: 0px;
-        justify-content: flex-start;
-    }
 }
 .carousel__wrapper{
-    width: 85%;
+    width: 348px;
     overflow: hidden;
 
-    @media (max-width: 700px) {
-        width: 348px;
-    }
 }
 .carousel__item{
+    width: 348px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    @media (max-width: 700px) {
-        width: 348px;
-    }
 }
 .carousel__img {
     display: block;

@@ -3,7 +3,7 @@ export {moveSlider, moveSliderLeft, moveSliderRight, slideLeft, slideRight, caro
 const slideRight = document.querySelector('.carousel__slide_right');
 const slideLeft = document.querySelector('.carousel__slide_left');
 const carousel = document.querySelector('.carousel__container');
-let slideRange = -780;
+let slideRange = -348;
 
 function moveSlider() {
     slideRight.addEventListener('click', moveSliderLeft);
@@ -11,19 +11,19 @@ function moveSlider() {
     slideLeft.addEventListener('click', moveSliderRight);
 }
 function moveSliderLeft() {
-    slideRange += 780;
+    slideRange += 348;
         
-    if (slideRange > 780) {
-        slideRange = -780;
+    if (slideRange > 348) {
+        slideRange = -348;
     }
     carousel.style.left = -slideRange + 'px';
     console.log(`left-slide:${slideRange}`);
 }
 function moveSliderRight() {
-    slideRange -= 780;
+    slideRange -= 348;
         
-    if (slideRange < -780) {
-        slideRange = 780;
+    if (slideRange < -348) {
+        slideRange = 348;
     }
     carousel.style.left = -slideRange + 'px';
     console.log(`right-slide:${slideRange}`);
