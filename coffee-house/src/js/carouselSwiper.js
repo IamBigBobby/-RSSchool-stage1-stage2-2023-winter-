@@ -1,6 +1,6 @@
 export {touchSlider};
 
-let slideRange = 0;
+let slideRange = -348;
 let startX;
 let endX;
 let xDiff;
@@ -30,8 +30,8 @@ function touchEnd() {
     if (xDiff > 0) {
         slideRange += 348;
 
-        if (slideRange > 696) {
-            slideRange = 0;
+        if (slideRange > 348) {
+            slideRange = -348;
         }
 
         carousel.style.left = -slideRange + 'px';
@@ -40,8 +40,8 @@ function touchEnd() {
     if (xDiff < 0) {
         slideRange -= 348;
 
-        if (slideRange < 0) {
-            slideRange = 696;
+        if (slideRange < -348) {
+            slideRange = 348;
         }
 
         carousel.style.left = -slideRange + 'px';
