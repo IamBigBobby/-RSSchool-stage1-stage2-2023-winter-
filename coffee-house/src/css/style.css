@@ -1257,8 +1257,8 @@ template {
   display: block;
   height: 100%;
   width: 0;
-  background-color: #4CAF50;
-  transition: width 1s;
+  background-color: #665F55;
+  transition: width 0.1s;
 }
 
 .burger-menu {
