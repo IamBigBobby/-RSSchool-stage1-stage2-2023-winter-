@@ -1,4 +1,4 @@
-export {moveSliderLeft};
+export {moveSliderLeft, breakPaginationRight, breakPaginationLeft, slideRange};
 import { updateProgressBar, animationIntervalId } from "./paginationLogic.js";
 
 const slideRight = document.querySelector('.carousel__slide_right');
