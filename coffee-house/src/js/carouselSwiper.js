@@ -1,3 +1,4 @@
+import { animationIntervalId } from "./paginationLogic.js";
 export {touchSlider};
 
 let slideRange = -348;
@@ -13,6 +14,8 @@ function touchSlider() {
 }
 
 function touchStart(event) {
+    clearInterval(animationIntervalId);
+
     const firstTouch = event.touches[0];
     startX = firstTouch.clientX;
 }

@@ -1,11 +1,14 @@
-
-export { updateProgressBar };
+export { updateProgressBar ,animationIntervalId};
 import { moveSliderLeft } from "./carouselSlider.js";
 
 let indicator = document.querySelector('.pagination__stick_active .pagination__indicator');
 let activeStick = document.querySelector('.pagination__stick_active');
+
 const slideRight = document.querySelector('.carousel__slide_right');
 const slideLeft = document.querySelector('.carousel__slide_left');
+
+const carousel = document.querySelector('.carousel__container');
+
 let animationIntervalId;
 
 function updateProgressBar(indicator, activeStick) {
@@ -50,6 +53,7 @@ function updateProgressBar(indicator, activeStick) {
     id = setInterval(progressStatus, 150);
     animationIntervalId = id;
 }
+
 
 slideRight.addEventListener('click', function () {
     clearInterval(animationIntervalId);
