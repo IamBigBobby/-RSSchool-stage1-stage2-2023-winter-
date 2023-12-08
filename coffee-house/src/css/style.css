@@ -1258,7 +1258,7 @@ template {
   height: 100%;
   width: 0;
   background-color: #4CAF50;
-  transition: width 0.1s ease;
+  transition: width 1s;
 }
 
 .burger-menu {

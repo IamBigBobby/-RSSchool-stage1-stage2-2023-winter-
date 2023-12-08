@@ -1,25 +1,113 @@
+// export { updateProgressBar };
+// import { moveSliderLeft } from "./carouselSlider.js";
+
+// let indicator = document.querySelector('.pagination__stick_active .pagination__indicator');
+// let activeStick = document.querySelector('.pagination__stick_active');
+// const slideRight = document.querySelector('.carousel__slide_right');
+// let animationIntervalId;
+
+// function updateProgressBar(indicator, activeStick) {
+//     console.log('работает');
+//     let width = 1;
+//     let direction = 1;
+//     let id;
+
+//     function progressStatus() {
+//         let nextActivePagination = activeStick.nextElementSibling;
+//         if (width >= 100 || width <= 0) {
+//             direction *= -1;
+//             clearTimeout(id);
+//             id = setTimeout(progressStatus, direction === 1 ? 100 : 5);
+//         }
+//         if (width <= 0) {
+//             moveSliderLeft();
+
+//             if (nextActivePagination !== null) {
+//                 activeStick.classList.remove('pagination__stick_active');
+//                 nextActivePagination.classList.add('pagination__stick_active');
+//                 let nextIndicator = nextActivePagination.querySelector('.pagination__indicator');
+
+//                 clearTimeout(id);
+
+//                 updateProgressBar(nextIndicator, nextActivePagination);
+//             } else {
+//                 let paginationContainer = document.querySelector('.pagination');
+//                 activeStick.classList.remove('pagination__stick_active');
+//                 let firstActivePagination = paginationContainer.firstElementChild;
+//                 firstActivePagination.classList.add('pagination__stick_active');
+//                 let firstIndicator = firstActivePagination.querySelector('.pagination__indicator');
+
+//                 clearTimeout(id);
+
+//                 updateProgressBar(firstIndicator, firstActivePagination);
+//             }
+//         }
+
+//         width += direction;
+//         indicator.style.width = `${width}%`;
+//         console.log(direction, width)
+//     }
+//     id = setTimeout(progressStatus, 100);
+//     animationIntervalId = id;
+// } 
+
+// slideRight.addEventListener('click', function(){
+//     clearTimeout(animationIntervalId);
+//     let currentPagination = document.querySelector('.pagination__stick_active');
+//     let currentIndicator = document.querySelector('.pagination__stick_active .pagination__indicator');
+//     clearTimeout (function(){
+//         let width = 1;
+//         let direction = 1;
+//         width -= direction;
+//         currentIndicator.style.width = `${width}%`;  
+//     }, 1000);
+
+//     let nextCurrentPagination = currentPagination.nextElementSibling;
+//     // console.log(currentPagination, nextCurrentPagination);
+
+//     if (nextCurrentPagination !== null) {
+//         currentPagination.classList.remove('pagination__stick_active');
+//         nextCurrentPagination.classList.add('pagination__stick_active');
+//         let nextIndicator = nextCurrentPagination.querySelector('.pagination__indicator');
+
+//         updateProgressBar(nextIndicator, nextCurrentPagination);
+//     } else {
+//         let paginationContainer = document.querySelector('.pagination');
+//         currentPagination.classList.remove('pagination__stick_active');
+//         let firstActivePagination = paginationContainer.firstElementChild;
+//         firstActivePagination.classList.add('pagination__stick_active');
+//         let firstIndicator = firstActivePagination.querySelector('.pagination__indicator');
+
+//         updateProgressBar(firstIndicator, firstActivePagination);
+//     }
+
+// }); 
+// updateProgressBar(indicator, activeStick);
+
 export { updateProgressBar };
 import { moveSliderLeft } from "./carouselSlider.js";
 
 let indicator = document.querySelector('.pagination__stick_active .pagination__indicator');
 let activeStick = document.querySelector('.pagination__stick_active');
+const slideRight = document.querySelector('.carousel__slide_right');
+let animationIntervalId;
 
 function updateProgressBar(indicator, activeStick) {
     console.log('работает');
     let width = 1;
-    let direction = 1; // Направление анимации: 1 - вперед, -1 - назад
+    let direction = 1;
     let id;
 
     function progressStatus() {
+        let nextActivePagination = activeStick.nextElementSibling;
         if (width >= 100 || width <= 0) {
-            // Если достигли 100% или 0%, меняем направление анимации и устанавливаем соответствующий интервал
             direction *= -1;
             clearInterval(id);
             id = setInterval(progressStatus, direction === 1 ? 100 : 5);
         }
         if (width <= 0) {
             moveSliderLeft();
-            let nextActivePagination = activeStick.nextElementSibling;
+
             if (nextActivePagination !== null) {
                 activeStick.classList.remove('pagination__stick_active');
                 nextActivePagination.classList.add('pagination__stick_active');
@@ -43,13 +131,55 @@ function updateProgressBar(indicator, activeStick) {
 
         width += direction;
         indicator.style.width = `${width}%`;
+        console.log(direction, width);
     }
-
-    // Инициализация анимации с прямым направлением и интервалом 100 миллисекунд
-    id = setInterval(progressStatus, 100);
+    id = setInterval(progressStatus, 150);
+    animationIntervalId = id;
 }
 
+slideRight.addEventListener('click', function () {
+    clearInterval(animationIntervalId);
+
+    let currentPagination = document.querySelector('.pagination__stick_active');
+    let currentIndicator = document.querySelector('.pagination__stick_active .pagination__indicator');
+
+    // Эмулируем анимацию для демонстрации
+    let width = 1;
+    let direction = -1;
+
+    function animateWidth() {
+        width += direction;
+        currentIndicator.style.width = `${width}%`;
+
+        if (width > 0) {
+            requestAnimationFrame(animateWidth);
+        } else {
+            // Анимация завершена, обновляем стили и запускаем следующую анимацию
+            let nextCurrentPagination = currentPagination.nextElementSibling;
+
+            if (nextCurrentPagination !== null) {
+                currentPagination.classList.remove('pagination__stick_active');
+                nextCurrentPagination.classList.add('pagination__stick_active');
+                let nextIndicator = nextCurrentPagination.querySelector('.pagination__indicator');
+
+                updateProgressBar(nextIndicator, nextCurrentPagination);
+            } else {
+                let paginationContainer = document.querySelector('.pagination');
+                currentPagination.classList.remove('pagination__stick_active');
+                let firstActivePagination = paginationContainer.firstElementChild;
+                firstActivePagination.classList.add('pagination__stick_active');
+                let firstIndicator = firstActivePagination.querySelector('.pagination__indicator');
+
+                updateProgressBar(firstIndicator, firstActivePagination);
+            }
+        }
+    }
+
+    animateWidth();
+});
+
 updateProgressBar(indicator, activeStick);
+
 
 
 
