@@ -1,5 +1,4 @@
-import { animationIntervalId } from "./paginationLogic.js";
-export {touchSlider};
+import { updateProgressBarVariable } from "./paginationLogic";
 
 let slideRange = -348;
 let startX;
@@ -14,23 +13,22 @@ function touchSlider() {
 }
 
 function touchStart(event) {
-    clearInterval(animationIntervalId);
-
+    console.log('touchStart');
+    event.preventDefault();
+    
+    updateProgressBarVariable.pauseAnimation();
     const firstTouch = event.touches[0];
     startX = firstTouch.clientX;
 }
 
 function touchMove(event) {
-    if (!startX) {
-        return false;
-    }
     endX = event.touches[0].clientX;
     xDiff = startX - endX;
-    console.log(startX, endX, xDiff)
+    console.log('touchMove' ,startX, endX, xDiff)
 }
 
 function touchEnd() {
-    if (xDiff > 0) {
+    if (xDiff > 10) {
         slideRange += 348;
 
         if (slideRange > 348) {
@@ -40,7 +38,7 @@ function touchEnd() {
         carousel.style.left = -slideRange + 'px';
     }
 
-    if (xDiff < 0) {
+    if (xDiff < -10) {
         slideRange -= 348;
 
         if (slideRange < -348) {
@@ -49,5 +47,8 @@ function touchEnd() {
 
         carousel.style.left = -slideRange + 'px';
     }
+
+    updateProgressBarVariable.resumeAnimation();
 }
+
 touchSlider();

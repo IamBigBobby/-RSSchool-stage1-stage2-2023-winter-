@@ -20,9 +20,6 @@ function moveSliderLeft() {
         slideRange = -348;
     }
     carousel.style.left = -slideRange + 'px';
-    console.log(`left-slide:${slideRange}`);
-
-
 }
 function moveSliderRight() {
     slideRange -= 348;
@@ -31,7 +28,6 @@ function moveSliderRight() {
         slideRange = 348;
     }
     carousel.style.left = -slideRange + 'px';
-    console.log(`right-slide:${slideRange}`);
 }
 
 function breakPaginationRight() {
