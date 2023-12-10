@@ -30,16 +30,17 @@ function findItemName(data) {
             let itemImgElement = item.querySelector('.menu__item-img');
             foundNameElement = itemNameElement.textContent;
             foundImgElement = itemImgElement;
-            handleNameElement(foundNameElement, foundImgElement, data);
+            createModal(foundNameElement, foundImgElement, data);
         })
     });
 }
 
-function handleNameElement(name, img, data){
+function createModal(name, img, data){
     console.log(name, img, data);
     const product = data.find(item => item.name === name)
 
     console.log(product);
+
 }
 
 showModal();
