@@ -1339,10 +1339,6 @@ template {
   }
 }
 
-.modal__item-img-wrapper {
-  overflow: hidden;
-  border-radius: 40px;
-}
 @media screen and (max-width: 700px) {
   .modal__item-img-wrapper {
     display: none;
@@ -1351,11 +1347,10 @@ template {
 
 .modal__item-img {
   display: block;
-  border-radius: 40px;
-  width: 100%;
+  border-radius: 20px;
+  width: 340px;
   height: auto;
   transition: 1s;
-  transform: scale(1.1);
 }
 
 .modal__main-information {
