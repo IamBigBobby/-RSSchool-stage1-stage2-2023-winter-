@@ -1343,6 +1343,11 @@ template {
   overflow: hidden;
   border-radius: 40px;
 }
+@media screen and (max-width: 700px) {
+  .modal__item-img-wrapper {
+    display: none;
+  }
+}
 
 .modal__item-img {
   display: block;
@@ -1389,6 +1394,7 @@ template {
 
 .modal__size-variables, .modal__additives-variables {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   justify-content: flex-start;
   align-items: center;

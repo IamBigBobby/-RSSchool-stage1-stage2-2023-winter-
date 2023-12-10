@@ -35,6 +35,10 @@
 .modal__item-img-wrapper {   
     overflow: hidden;
     border-radius: 40px;
+
+    @media screen and (max-width: 700px) {
+        display: none;
+    }
 }
 .modal__item-img {
     display: block;
@@ -74,6 +78,7 @@
 }
 .modal__size-variables, .modal__additives-variables {
     display: flex;
+    flex-wrap: wrap;
     gap: 8px;
     justify-content: flex-start;
     align-items: center;
