@@ -48,11 +48,23 @@
     transform: scale(1.1);
 }
 
+
+
 .modal__main-information {
     display: flex;
     flex-direction: column;
     gap: 12;
     margin-bottom: 20px;
+}
+
+.modal__name-item {
+    @include font($size: 2.4rem, $weight: 600, $line-height: 125%);
+}
+.modal__about-item{
+    @include font($size: 1.6rem, $weight: 400, $line-height: 150%);
+}
+.modal__size-name, .modal__additives-name {
+    @include font($size: 1.6rem, $weight: 400, $line-height: 150%);
 }
 
 .modal__describe {
@@ -97,6 +109,8 @@
     padding: 3px;
     text-align: center;
     color: $color-text-dark;
+
+    @include font($size: 1.6rem, $weight: 600, $line-height: 150%);
 }
 
 .modal__total{
@@ -105,17 +119,25 @@
     align-items: center;
     gap: 8px;
 }
+.modal__total-name, .modal__total-price {
+    @include font($size: 2.4rem, $weight: 600, $line-height: 125%);
+}
 .modal__adition-information{
     display: flex;
     gap: 8px;
+    border-top: 1px solid $color-border-light;
 }
 .modal__info-empty{
     display: block;
     width: 30px;
     height: 30px;
+
+    margin-top: 12px;
 }
 .modal__adition-information-text{
     font-size: 10px;
     padding-top: 12px;
     padding-bottom: 12px;
+
+    @include font($size: 1.0rem, $weight: 600, $line-height: 140%);
 }
