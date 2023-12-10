@@ -25,7 +25,6 @@ function findItemName(data) {
 
     foodItems.forEach((item) => {
         item.addEventListener('click', function(event){
-            console.log('click');
             let itemNameElement = item.querySelector('.menu__item-name');
             let itemImgElement = item.querySelector('.menu__item-img');
             foundNameElement = itemNameElement.textContent;
@@ -36,9 +35,9 @@ function findItemName(data) {
 }
 
 function createModal(name, img, data){
-    console.log(name, img);
+    // console.log(name, img);
     const product = data.find(item => item.name === name)
-    console.log(product.sizes.l.size);
+    // console.log(product.sizes.l.size);
 
     let newModalWindow = document.createElement('div');
     newModalWindow.className = "modal";
@@ -127,6 +126,8 @@ function createModal(name, img, data){
         document.body.style.overflow = 'hidden';
     }
     closeModalWindow();
+    changeActiveButtons();
+    changePrice(product);
 }
 
 function closeModalWindow() {
@@ -141,8 +142,6 @@ function closeModalWindow() {
             } else {    
                 document.body.style.overflow = 'hidden';
             }
-            // Ваш код обработки события здесь
-            console.log('Click inside .modal');
         }
     });
 
@@ -153,8 +152,50 @@ function closeModalWindow() {
         } else {    
             document.body.style.overflow = 'hidden';
         }
-        console.log('click btn');
     });    
+}
+
+function changeActiveButtons() {
+    const sizeButtonsContainer = document.querySelector('.modal__size-variables');
+    const additivesButtonsContainer = document.querySelector('.modal__additives-variables');
+
+    sizeButtonsContainer.addEventListener('click', function(event) {
+        console.log(event.target);
+        const targetButton = event.target.closest('.modal__size-choise');
+
+        if (targetButton) {
+            const sizeButtons = sizeButtonsContainer.querySelectorAll('.modal__size-choise');
+            
+            sizeButtons.forEach((button) => {
+                button.classList.remove('modal__size-choise_active');
+            });
+
+            targetButton.classList.toggle('modal__size-choise_active');
+        }
+    });
+
+    additivesButtonsContainer.addEventListener('click', function(event) {
+        console.log(event.target);
+        const targetButton = event.target.closest('.modal__additives-choise');
+
+        if (targetButton) {
+            const additivesButtons = additivesButtonsContainer.querySelectorAll('.modal__additives-choise');
+            
+            additivesButtons.forEach((button) => {
+                button.classList.remove('modal__additives-choise_active');
+            });
+
+            targetButton.classList.toggle('modal__additives-choise_active');
+        }
+    });
+}
+
+
+
+
+
+function changePrice(product) {
+    console.log(product);
 }
 
 
