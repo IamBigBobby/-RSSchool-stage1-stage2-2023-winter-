@@ -109,7 +109,7 @@ function createModal(name, img, data){
                     The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.
                 </div>
             </div>
-            <div class="modal__close-button button_modal">
+            <div class="button_modal">
                 Close
             </div>
         </div>
@@ -121,6 +121,42 @@ function createModal(name, img, data){
 
     bodyElement.appendChild(newModalWindow);
 
+    if (document.body.style.overflow === 'hidden') {
+        document.body.style.overflow = '';
+    } else {    
+        document.body.style.overflow = 'hidden';
+    }
+    closeModalWindow();
 }
+
+function closeModalWindow() {
+    const overlay = document.querySelector('.modal');
+    const closeButtonModal = document.querySelector('.button_modal');
+
+    overlay.addEventListener('click', function(event){
+        if (event.currentTarget === overlay && !event.target.closest('.modal__window')) {
+            overlay.remove();
+            if (document.body.style.overflow === 'hidden') {
+                document.body.style.overflow = '';
+            } else {    
+                document.body.style.overflow = 'hidden';
+            }
+            // Ваш код обработки события здесь
+            console.log('Click inside .modal');
+        }
+    });
+
+    closeButtonModal.addEventListener('click', function(){
+        overlay.remove();
+        if (document.body.style.overflow === 'hidden') {
+            document.body.style.overflow = '';
+        } else {    
+            document.body.style.overflow = 'hidden';
+        }
+        console.log('click btn');
+    });    
+}
+
+
 
 showModal();

@@ -13,7 +13,7 @@
 }
 
 .modal__window {
-    position: relative;
+    position: fixed;
     width: 40vw;
     padding: 16px;
     border-radius: 40px;
@@ -30,6 +30,7 @@
     @include media-tablet {
         width: 90vw;
     }
+    z-index: 2;
 }
 
 .modal__item-img-wrapper {   
