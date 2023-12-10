@@ -4,6 +4,31 @@
     color: $color-text-dark;
 }
 
+.button_modal {
+    width: 100%;
+
+    padding: 20px 78px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    background-color: $color-background-body;
+    border-radius: 100px;
+
+    border: 1px solid $color-border-dark;
+
+    cursor: pointer;
+
+    transition: 1s;
+}
+
+.button_modal:hover {
+    background-color: $color-border-dark;
+    color: $color-text-light;
+}
+
 .button_primary {
     width: 200px;
 

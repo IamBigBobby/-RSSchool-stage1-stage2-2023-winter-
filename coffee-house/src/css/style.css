@@ -1067,6 +1067,25 @@ template {
   color: #403F3D;
 }
 
+.button_modal {
+  width: 100%;
+  padding: 20px 78px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background-color: #E1D4C9;
+  border-radius: 100px;
+  border: 1px solid #665F55;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.button_modal:hover {
+  background-color: #665F55;
+  color: #E1D4C9;
+}
+
 .button_primary {
   width: 200px;
   padding: 20px 78px;
@@ -1302,6 +1321,7 @@ template {
   padding: 16px;
   border-radius: 40px;
   display: flex;
+  gap: 20px;
   background-color: #E1D4C9;
 }
 @media screen and (max-width: 1500px) {
@@ -1313,6 +1333,96 @@ template {
   .modal__window {
     width: 90vw;
   }
+}
+
+.modal__item-img-wrapper {
+  overflow: hidden;
+  border-radius: 40px;
+}
+
+.modal__item-img {
+  display: block;
+  border-radius: 40px;
+  width: 100%;
+  height: auto;
+  transition: 1s;
+  transform: scale(1.1);
+}
+
+.modal__main-information {
+  display: flex;
+  flex-direction: column;
+  gap: 12;
+  margin-bottom: 20px;
+}
+
+.modal__describe {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modal__size-variables, .modal__additives-variables {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.modal__size-choise, .modal__additives-choise {
+  display: flex;
+  padding: 8px 16px 8px 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #C1B6AD;
+  border-radius: 100px;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.modal__size-choise_active, .modal__additives-choise_active {
+  background-color: #665F55;
+  color: #E1D4C9;
+}
+
+.modal__size-choise:hover, .modal__additives-choise:hover {
+  background-color: #665F55;
+  color: #E1D4C9;
+}
+
+.modal__size-variable-scale, .modal__additives-variable-scale {
+  border-radius: 50%;
+  background-color: #C1B6AD;
+  width: 30px;
+  height: 30px;
+  padding: 3px;
+  text-align: center;
+  color: #403F3D;
+}
+
+.modal__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal__adition-information {
+  display: flex;
+  gap: 8px;
+}
+
+.modal__info-empty {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+.modal__adition-information-text {
+  font-size: 10px;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 /*# sourceMappingURL=style.css.map */

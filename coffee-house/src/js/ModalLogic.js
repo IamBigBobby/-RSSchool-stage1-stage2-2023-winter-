@@ -29,17 +29,17 @@ function findItemName(data) {
             let itemNameElement = item.querySelector('.menu__item-name');
             let itemImgElement = item.querySelector('.menu__item-img');
             foundNameElement = itemNameElement.textContent;
-            foundImgElement = itemImgElement;
+            foundImgElement = itemImgElement.src;
             createModal(foundNameElement, foundImgElement, data);
         })
     });
 }
 
 function createModal(name, img, data){
-    console.log(name, img, data);
+    console.log(name, img);
     const product = data.find(item => item.name === name)
 
-    console.log(product);
+    console.log(product.price);
 
 }
 
