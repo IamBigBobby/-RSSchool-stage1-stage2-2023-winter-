@@ -47,8 +47,11 @@ function updateProgressBar(indicator, activeStick) {
                     }
                 }
             }
-            width += direction;
-            indicator && (indicator.style.width = `${width}%`);
+            if (indicator) {
+                width += direction;
+                indicator.style.width = `${width}%`;
+            }
+            return;
         }
     }
 

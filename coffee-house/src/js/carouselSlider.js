@@ -23,6 +23,8 @@ function moveSliderLeft() {
         slideRange = -348;
     }
     carousel.style.left = -slideRange + 'px';
+
+    return;
 }
 function moveSliderRight() {
     slideRange -= 348;
@@ -31,6 +33,8 @@ function moveSliderRight() {
         slideRange = 348;
     }
     carousel.style.left = -slideRange + 'px';
+
+    return;
 }
 
 function breakPaginationRight() {
