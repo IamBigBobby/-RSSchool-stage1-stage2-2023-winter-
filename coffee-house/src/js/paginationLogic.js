@@ -7,7 +7,6 @@ let activeStick = document.querySelector('.pagination__stick_active');
 let animationIntervalId;
 let animationPaused = false;
 
-
 let updateProgressBarVariable = updateProgressBar(indicator, activeStick);
 
 function updateProgressBar(indicator, activeStick) {
@@ -17,7 +16,7 @@ function updateProgressBar(indicator, activeStick) {
 
     function progressStatus() {
         if (!animationPaused) {
-                let nextActivePagination = activeStick.nextElementSibling;
+            let nextActivePagination = activeStick ? activeStick.nextElementSibling : null;
             if (width >= 100 || width <= 0) {
                 direction *= -1;
                 clearInterval(id);
@@ -27,7 +26,7 @@ function updateProgressBar(indicator, activeStick) {
                 moveSliderLeft();
 
                 if (nextActivePagination !== null) {
-                    activeStick.classList.remove('pagination__stick_active');
+                    activeStick && activeStick.classList.remove('pagination__stick_active');
                     nextActivePagination.classList.add('pagination__stick_active');
                     let nextIndicator = nextActivePagination.querySelector('.pagination__indicator');
 
@@ -36,20 +35,23 @@ function updateProgressBar(indicator, activeStick) {
                     updateProgressBar(nextIndicator, nextActivePagination);
                 } else {
                     let paginationContainer = document.querySelector('.pagination');
-                    activeStick.classList.remove('pagination__stick_active');
-                    let firstActivePagination = paginationContainer.firstElementChild;
-                    firstActivePagination.classList.add('pagination__stick_active');
-                    let firstIndicator = firstActivePagination.querySelector('.pagination__indicator');
+                    activeStick && activeStick.classList.remove('pagination__stick_active');
+                    let firstActivePagination = paginationContainer ? paginationContainer.firstElementChild : null;
+                    if (firstActivePagination) {
+                        firstActivePagination.classList.add('pagination__stick_active');
+                        let firstIndicator = firstActivePagination.querySelector('.pagination__indicator');
 
-                    clearInterval(id);
+                        clearInterval(id);
 
-                    updateProgressBar(firstIndicator, firstActivePagination);
+                        updateProgressBar(firstIndicator, firstActivePagination);
+                    }
                 }
             }
             width += direction;
-            indicator.style.width = `${width}%`;
+            indicator && (indicator.style.width = `${width}%`);
         }
     }
+
     id = setInterval(progressStatus, 150);
     animationIntervalId = id;
 
@@ -59,6 +61,7 @@ function updateProgressBar(indicator, activeStick) {
         },
         resumeAnimation: function () {
             animationPaused = false;
-        },
+        }
     };
 }
+

@@ -7,11 +7,14 @@ const carousel = document.querySelector('.carousel__container');
 let slideRange = -348;
 
 function moveSlider() {
-    slideRight.addEventListener('click', moveSliderLeft);
-    slideRight.addEventListener('click', breakPaginationRight)
+    if (carousel) {
+        slideRight.addEventListener('click', moveSliderLeft);
+        slideRight.addEventListener('click', breakPaginationRight)
 
-    slideLeft.addEventListener('click', moveSliderRight);
-    slideLeft.addEventListener('click', breakPaginationLeft);
+        slideLeft.addEventListener('click', moveSliderRight);
+        slideLeft.addEventListener('click', breakPaginationLeft);
+    }
+    return;
 }
 function moveSliderLeft() {
     slideRange += 348;
