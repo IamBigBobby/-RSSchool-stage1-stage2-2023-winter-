@@ -160,7 +160,6 @@ function changeActiveButtons() {
     const additivesButtonsContainer = document.querySelector('.modal__additives-variables');
 
     sizeButtonsContainer.addEventListener('click', function(event) {
-        console.log(event.target);
         const targetButton = event.target.closest('.modal__size-choise');
 
         if (targetButton) {
@@ -175,7 +174,6 @@ function changeActiveButtons() {
     });
 
     additivesButtonsContainer.addEventListener('click', function(event) {
-        console.log(event.target);
         const targetButton = event.target.closest('.modal__additives-choise');
 
         if (targetButton) {
@@ -193,10 +191,70 @@ function changeActiveButtons() {
 
 
 
-
 function changePrice(product) {
-    console.log(product);
+    let sizeChoiseElement = document.querySelectorAll('.modal__size-choise');
+    let additivesChoiseElement = document.querySelectorAll('.modal__additives-choise');
+    let price = document.querySelector('.modal__total-price');
+    let currentPrice;
+
+
+
+    sizeChoiseElement.forEach((element) => {
+        element.addEventListener('click', function(){
+
+            let sizeElement = element.querySelector('.modal__size-variable-scale');
+    
+            let sizeContent = sizeElement.textContent || sizeElement.innerText;
+
+            if (sizeContent === 'S') {
+                currentPrice = price.textContent;
+                currentPrice = parseFloat(product.price);
+
+                let additionalPriceS = parseFloat(product.sizes.s['add-price']);
+                let totalS = (currentPrice + additionalPriceS).toFixed(2);
+                price.textContent = `${parseFloat(totalS).toFixed(2)}$`;
+
+                return currentPrice = totalS;
+            }
+
+            if (sizeContent === 'M') {
+                currentPrice = price.textContent;
+                currentPrice = parseFloat(product.price);
+
+                let additionalPriceM = parseFloat(product.sizes.m['add-price']);
+                let totalM = (currentPrice + additionalPriceM).toFixed(2);
+                price.textContent = `${parseFloat(totalM).toFixed(2)}$`;
+
+                return currentPrice = totalM;
+            }
+            if (sizeContent === 'L') {
+                currentPrice = price.textContent;
+                currentPrice = parseFloat(product.price);
+
+                let additionalPriceL = parseFloat(product.sizes.l['add-price']);
+                let totalL = (currentPrice + additionalPriceL).toFixed(2);
+                price.textContent = `${parseFloat(totalL).toFixed(2)}$`;
+
+                return currentPrice = totalL;
+            }
+        });
+    });
+
+    additivesChoiseElement.forEach((element) => {
+        element.addEventListener('click', function(){
+            let additivesElement = element.querySelector('.modal__additives-variable-number');
+    
+            let additivesContent = additivesElement.textContent || additivesElement.innerText;
+    
+            console.log(additivesContent);
+            console.log(currentPrice);
+        });
+    });
+    
+
+
 }
+
 
 
 
