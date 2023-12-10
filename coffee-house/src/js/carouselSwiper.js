@@ -29,18 +29,24 @@ function touchStart(event) {
 function touchMove(event) {
     endX = event.touches[0].clientX;
     xDiff = startX - endX;
+
+    console.log(xDiff);
 }
 
 function touchEnd() {
-    if (xDiff > 20) {
+    if (xDiff > 20 ) {
         slideRange += 348;
-    } else if (xDiff < -20) {
+    }
+    
+    if (xDiff < -20) {
         slideRange -= 348;
     }
 
     if (slideRange > 348) {
         slideRange = -348;
-    } else if (slideRange < -348) {
+    }
+    
+    if (slideRange < -348) {
         slideRange = 348;
     }
 
@@ -87,6 +93,8 @@ function breakPaginationRightTouch() {
         }
 
         animateWidth();
+
+        xDiff = 0;
     }
 }
 
@@ -129,6 +137,8 @@ function breakPaginationLeftTouch() {
         }
 
         animateWidth();
+
+        xDiff = 0;
     }
 }
 
