@@ -852,6 +852,11 @@ template {
   margin-bottom: 100px;
 }
 
+@media (max-width: 768px) {
+  .menu__food-item:nth-child(n+5):nth-child(-n+8) {
+    display: none;
+  }
+}
 .menu h1 {
   color: #403F3D;
   text-align: center;
@@ -932,18 +937,22 @@ template {
   color: #E1D4C9;
 }
 
-.menu__coffee-category, .menu__tea-category {
+.menu__coffee-category, .menu__tea-category, .menu__dessert-category {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 40px;
 }
 @media (max-width: 768px) {
-  .menu__coffee-category, .menu__tea-category {
+  .menu__coffee-category, .menu__tea-category, .menu__dessert-category {
     justify-content: center;
     align-items: center;
     flex-direction: column;
   }
+}
+
+.menu__tea-category, .menu__dessert-category {
+  display: none;
 }
 
 .menu__food-item {
@@ -959,7 +968,8 @@ template {
 @media (max-width: 768px) {
   .menu__refresh-button {
     display: block;
-    margin: auto;
+    margin: 40px auto;
+    cursor: pointer;
   }
 }
 
@@ -977,11 +987,6 @@ template {
   transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
-  .menu__food-item:nth-child(n+5):nth-child(-n+8) {
-    display: none;
-  }
-}
 @media (hover: hover) {
   .menu__food-item:hover .menu__item-img {
     transition: 1s;
