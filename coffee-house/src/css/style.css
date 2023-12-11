@@ -932,15 +932,17 @@ template {
   color: #E1D4C9;
 }
 
-.menu__tea-category {
+.menu__coffee-category {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 40px;
 }
 @media (max-width: 768px) {
-  .menu__tea-category {
+  .menu__coffee-category {
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 }
 

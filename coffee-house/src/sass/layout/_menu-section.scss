@@ -82,14 +82,16 @@
     color: $color-text-light;
 }
 
-.menu__tea-category {
+.menu__coffee-category {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 40px;
 
     @include media-tablet {
-        justify-content: center; 
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
 }
 .menu__food-item {
