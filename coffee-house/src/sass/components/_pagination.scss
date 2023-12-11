@@ -8,6 +8,9 @@
 .pagination__stick {
     display: block;
 
+    position: relative;
+    overflow: hidden;
+
     width: 40px;
     height: 4px;
 
@@ -16,6 +19,12 @@
     background-color: $color-border-light;
 }
 
-.pagination__stick_active {
+
+.pagination__stick_active .pagination__indicator {
+    display: block;
+    height: 100%;
+    width: 0;
     background-color: $color-border-dark;
+    transition: width 0.1s;
 }
+
