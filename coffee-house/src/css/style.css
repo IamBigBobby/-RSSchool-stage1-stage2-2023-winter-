@@ -932,14 +932,14 @@ template {
   color: #E1D4C9;
 }
 
-.menu__coffee-category {
+.menu__coffee-category, .menu__tea-category {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 40px;
 }
 @media (max-width: 768px) {
-  .menu__coffee-category {
+  .menu__coffee-category, .menu__tea-category {
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -959,6 +959,7 @@ template {
 @media (max-width: 768px) {
   .menu__refresh-button {
     display: block;
+    margin: auto;
   }
 }
 
