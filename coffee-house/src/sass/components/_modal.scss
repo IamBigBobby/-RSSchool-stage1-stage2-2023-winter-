@@ -103,7 +103,15 @@
 .modal__size-choise:hover, .modal__additives-choise:hover {
     background-color: $color-background-container;
     color: $color-text-light;
+
+    @media (hover: hover) {
+        &:hover, &:focus {
+            background-color: $color-background-container;
+            color: $color-text-light;    
+        }
+    }
 }
+  
 .modal__size-variable-scale, .modal__additives-variable-scale {
     border-radius: 50%;
     background-color: $color-border-light;

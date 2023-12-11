@@ -1418,6 +1418,12 @@ template {
   background-color: #665F55;
   color: #E1D4C9;
 }
+@media (hover: hover) {
+  .modal__size-choise:hover:hover, .modal__size-choise:hover:focus, .modal__additives-choise:hover:hover, .modal__additives-choise:hover:focus {
+    background-color: #665F55;
+    color: #E1D4C9;
+  }
+}
 
 .modal__size-variable-scale, .modal__additives-variable-scale {
   border-radius: 50%;

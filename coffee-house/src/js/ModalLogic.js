@@ -1,6 +1,12 @@
-export { showModal }
+export { getData }
 
-function showModal() {
+
+let globalData;
+let productName;
+let sizePrice;
+let additivesPrice = 0;
+
+function getData() {
     let dataProducts = '../json/data.json';
 
     fetch(dataProducts)
@@ -11,7 +17,8 @@ function showModal() {
         return response.json();
     })
     .then(data => {
-        findItemName(data);
+        globalData = data;
+        findItemName(globalData);
     })
     .catch(error => {
         console.error(error.message);
@@ -37,6 +44,7 @@ function findItemName(data) {
 function createModal(name, img, data){
     // console.log(name, img);
     const product = data.find(item => item.name === name)
+    productName = product;
     // console.log(product.sizes.l.size);
 
     let newModalWindow = document.createElement('div');
@@ -56,15 +64,15 @@ function createModal(name, img, data){
             <div class="modal__size">
                 <div class="modal__size-name">Size</div>
                 <div class="modal__size-variables">
-                    <div class="modal__size-choise modal__size-choise_active">
-                        <div class="modal__size-variable-scale ">S</div>
+                    <div class="modal__size-choise modal__select modal__size-choise_active">
+                        <div class="modal__size-variable-scale">S</div>
                         <div class="modal__size-variable-number">${product.sizes.s.size}</div>
                     </div>
-                    <div class="modal__size-choise">
+                    <div class="modal__size-choise modal__select">
                         <div class="modal__size-variable-scale">M</div>
                         <div class="modal__size-variable-number">${product.sizes.m.size}</div>
                     </div>
-                    <div class="modal__size-choise">
+                    <div class="modal__size-choise modal__select">
                         <div class="modal__size-variable-scale">L</div>
                         <div class="modal__size-variable-number">${product.sizes.l.size}</div>
                     </div>
@@ -73,15 +81,15 @@ function createModal(name, img, data){
             <div class="modal__additives">
                 <div class="modal__additives-name">Additives</div>
                 <div class="modal__additives-variables">
-                    <div class="modal__additives-choise">
+                    <div class="modal__additives-choise modal__select">
                         <div class="modal__additives-variable-scale">1</div>
                         <div class="modal__additives-variable-number">Sugar</div>
                     </div>
-                    <div class="modal__additives-choise">
+                    <div class="modal__additives-choise modal__select">
                         <div class="modal__additives-variable-scale">2</div>
                         <div class="modal__additives-variable-number">Cinnamon</div>
                     </div>
-                    <div class="modal__additives-choise">
+                    <div class="modal__additives-choise modal__select">
                         <div class="modal__additives-variable-scale">3</div>
                         <div class="modal__additives-variable-number">Syrup</div>
                     </div>
@@ -127,7 +135,6 @@ function createModal(name, img, data){
     }
     closeModalWindow();
     changeActiveButtons();
-    changePrice(product);
 }
 
 function closeModalWindow() {
@@ -155,6 +162,7 @@ function closeModalWindow() {
     });    
 }
 
+
 function changeActiveButtons() {
     const sizeButtonsContainer = document.querySelector('.modal__size-variables');
     const additivesButtonsContainer = document.querySelector('.modal__additives-variables');
@@ -170,92 +178,50 @@ function changeActiveButtons() {
             });
 
             targetButton.classList.toggle('modal__size-choise_active');
+            changePriceSize(targetButton);
+            getSumOfPrice();
         }
     });
 
-    additivesButtonsContainer.addEventListener('click', function(event) {
+    additivesButtonsContainer.addEventListener('click', function (event) {
         const targetButton = event.target.closest('.modal__additives-choise');
 
-        if (targetButton) {
-            const additivesButtons = additivesButtonsContainer.querySelectorAll('.modal__additives-choise');
-            
-            additivesButtons.forEach((button) => {
-                button.classList.remove('modal__additives-choise_active');
-            });
-
+        if(targetButton){
             targetButton.classList.toggle('modal__additives-choise_active');
+            changePriceAddtiton(targetButton);
+            getSumOfPrice();
         }
     });
-}
-
-
-
-
-function changePrice(product) {
-    let sizeChoiseElement = document.querySelectorAll('.modal__size-choise');
-    let additivesChoiseElement = document.querySelectorAll('.modal__additives-choise');
-    let price = document.querySelector('.modal__total-price');
-    let currentPrice;
-
-
-
-    sizeChoiseElement.forEach((element) => {
-        element.addEventListener('click', function(){
-
-            let sizeElement = element.querySelector('.modal__size-variable-scale');
-    
-            let sizeContent = sizeElement.textContent || sizeElement.innerText;
-
-            if (sizeContent === 'S') {
-                currentPrice = price.textContent;
-                currentPrice = parseFloat(product.price);
-
-                let additionalPriceS = parseFloat(product.sizes.s['add-price']);
-                let totalS = (currentPrice + additionalPriceS).toFixed(2);
-                price.textContent = `${parseFloat(totalS).toFixed(2)}$`;
-
-                return currentPrice = totalS;
-            }
-
-            if (sizeContent === 'M') {
-                currentPrice = price.textContent;
-                currentPrice = parseFloat(product.price);
-
-                let additionalPriceM = parseFloat(product.sizes.m['add-price']);
-                let totalM = (currentPrice + additionalPriceM).toFixed(2);
-                price.textContent = `${parseFloat(totalM).toFixed(2)}$`;
-
-                return currentPrice = totalM;
-            }
-            if (sizeContent === 'L') {
-                currentPrice = price.textContent;
-                currentPrice = parseFloat(product.price);
-
-                let additionalPriceL = parseFloat(product.sizes.l['add-price']);
-                let totalL = (currentPrice + additionalPriceL).toFixed(2);
-                price.textContent = `${parseFloat(totalL).toFixed(2)}$`;
-
-                return currentPrice = totalL;
-            }
-        });
-    });
-
-    additivesChoiseElement.forEach((element) => {
-        element.addEventListener('click', function(){
-            let additivesElement = element.querySelector('.modal__additives-variable-number');
-    
-            let additivesContent = additivesElement.textContent || additivesElement.innerText;
-    
-            console.log(additivesContent);
-            console.log(currentPrice);
-        });
-    });
-    
-
 
 }
+function changePriceSize(button){
+    let size = button.querySelector('.modal__size-variable-scale').textContent;
+    sizePrice = parseFloat(productName.price);
+    // console.log(size);
+    console.log(productName.price);
 
+    if (size === 'S') {
+        sizePrice += parseFloat(productName.sizes.s['add-price']);
+    } 
+    if (size === 'M') {
+        sizePrice += parseFloat(productName.sizes.m['add-price']);
+    }
+    if (size === 'L') {
+        sizePrice += parseFloat(productName.sizes.l['add-price']);
+    }
+}
 
+function changePriceAddtiton(button){
+    if (button.classList.contains('modal__additives-choise_active')){
+        additivesPrice += 0.5;
+    } else if (!button.classList.contains('modal__additives-choise_active')) {
+        additivesPrice -= 0.5;
+    }
+}
 
-
-showModal();
+function getSumOfPrice() {
+    let finalPrice = document.querySelector('.modal__total-price');
+    let sum = (additivesPrice + sizePrice).toFixed(2);
+    finalPrice.textContent = `$${sum}`;
+}
+getData();
