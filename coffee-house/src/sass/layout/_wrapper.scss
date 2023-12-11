@@ -2,6 +2,12 @@
     max-width: $content-width;
     margin: auto;
     padding: 20px 40px;
+
+    overflow: hidden;
+
+    @include media-mobilesmall {
+        padding: 20px 16px 40px;
+    }
 }
 
 .wrapper-menu {

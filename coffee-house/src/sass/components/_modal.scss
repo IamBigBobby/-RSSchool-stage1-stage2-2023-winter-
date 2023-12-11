@@ -1,0 +1,154 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-background-backdrop;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1;
+}
+
+.modal__window {
+    position: fixed;
+    width: 40vw;
+    padding: 16px;
+    border-radius: 40px;
+
+    display: flex;
+    gap: 20px;
+
+    background-color: $color-background-body;
+
+    @media screen and (max-width: 1500px) {
+        width: 70vw;
+    }
+
+    @include media-tablet {
+        width: 90vw;
+    }
+    z-index: 2;
+}
+
+.modal__item-img-wrapper {   
+    
+
+    @media screen and (max-width: 700px) {
+        display: none;
+    }
+}
+.modal__item-img {
+    display: block;
+    border-radius: 20px;
+    width: 340px;
+    height: auto;
+
+    transition: 1s;
+}
+
+
+
+.modal__main-information {
+    display: flex;
+    flex-direction: column;
+    gap: 12;
+    margin-bottom: 20px;
+}
+
+.modal__name-item {
+    @include font($size: 2.4rem, $weight: 600, $line-height: 125%);
+}
+.modal__about-item{
+    @include font($size: 1.6rem, $weight: 400, $line-height: 150%);
+}
+.modal__size-name, .modal__additives-name {
+    @include font($size: 1.6rem, $weight: 400, $line-height: 150%);
+}
+
+.modal__describe {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.modal__size-variables, .modal__additives-variables {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-start;
+    align-items: center;
+}
+.modal__size-choise, .modal__additives-choise{
+    display: flex;
+    padding: 8px 16px 8px 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: none;
+
+    border: 1px solid $color-border-light;
+    border-radius: 100px;
+
+    transition: 1s;
+
+    cursor: pointer;
+}
+.modal__size-choise_active, .modal__additives-choise_active {
+    background-color: $color-background-container;
+    color: $color-text-light;
+}
+
+.modal__size-choise:hover, .modal__additives-choise:hover {
+    background-color: $color-background-container;
+    color: $color-text-light;
+
+    @media (hover: hover) {
+        &:hover, &:focus {
+            background-color: $color-background-container;
+            color: $color-text-light;    
+        }
+    }
+}
+  
+.modal__size-variable-scale, .modal__additives-variable-scale {
+    border-radius: 50%;
+    background-color: $color-border-light;
+    width: 30px;
+    height: 30px;
+    padding: 3px;
+    text-align: center;
+    color: $color-text-dark;
+
+    @include font($size: 1.6rem, $weight: 600, $line-height: 150%);
+}
+
+.modal__total{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+.modal__total-name, .modal__total-price {
+    @include font($size: 2.4rem, $weight: 600, $line-height: 125%);
+}
+.modal__adition-information{
+    display: flex;
+    gap: 8px;
+    border-top: 1px solid $color-border-light;
+}
+.modal__info-empty{
+    display: block;
+    width: 30px;
+    height: 30px;
+
+    margin-top: 12px;
+}
+.modal__adition-information-text{
+    font-size: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+    @include font($size: 1.0rem, $weight: 600, $line-height: 140%);
+}

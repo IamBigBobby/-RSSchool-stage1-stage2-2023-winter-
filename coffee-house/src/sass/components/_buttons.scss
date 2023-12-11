@@ -4,6 +4,32 @@
     color: $color-text-dark;
 }
 
+.button_modal {
+    width: 100%;
+
+    padding: 20px 78px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    background-color: $color-background-body;
+    border-radius: 100px;
+
+    border: 1px solid $color-border-dark;
+
+    cursor: pointer;
+    @include font($size: 1.6rem, $weight: 600, $line-height: 150%);
+
+    transition: 1s;
+}
+
+.button_modal:hover {
+    background-color: $color-border-dark;
+    color: $color-text-light;
+}
+
 .button_primary {
     width: 200px;
 
@@ -19,6 +45,7 @@
     border-radius: 100px;
 
     cursor: pointer;
+
 }
 
 .button_primary .button_primary-name {
@@ -26,12 +53,21 @@
     right: -10px;
 
     transition: 1s;
+
+    @include media-tablet {
+        right: 0px;
+    }
 }
 
 .button_primary .menu-link__icon {
     opacity: 0;
     transition: 1s;
     visibility: hidden;
+
+    @include media-tablet {
+        visibility: visible;
+        opacity: 1;
+    }
 }
 
 .button_primary:hover .menu-link__icon {
@@ -40,11 +76,18 @@
     visibility: visible;
 }
 
+@include media-tablet {
+    .button_primary .menu-link__icon  {
+        transition: none;
+    }   
+}
+
 .button_primary:hover .button_primary-name {
     right: 0px;
 
     transition: 1s;
 }
+
 
 
 
@@ -66,21 +109,23 @@
 
     cursor: pointer;
 
-    &:hover {
-        background-color: $color-border-dark;
-    }
-
-    &:hover .mobile-app__button-name-container {
-        transition: 1s;
-        color: $color-text-light;
-    }
-
-    & path {
-        transition: 1s;
-    }
-
-    &:hover path {
-        transition: 1s;
-        fill: #E1D4C9;
-    }
+    @media (hover: hover) {
+        &:hover {
+            background-color: $color-border-dark;
+        }
+    
+        &:hover .mobile-app__button-name-container {
+            transition: 1s;
+            color: $color-text-light;
+        }
+    
+        & path {
+            transition: 1s;
+        }
+    
+        &:hover path {
+            transition: 1s;
+            fill: #E1D4C9;
+        }
+    }   
 }

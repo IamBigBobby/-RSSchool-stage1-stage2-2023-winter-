@@ -7,19 +7,18 @@
     gap: 40px;
 
     list-style-type: none;
+
+    @include media-tablet {
+        flex-direction: column;
+        gap: 60px;
+    }
 }
 
 .navigation__link {
     display: block;
 
     position: relative;
-
-    &::before {
-        @extend %hover-link;
-    }
-    &:hover::before {
-        @extend %before-hover-link;
-    }
+    @include hover-link-header;
 }
 
 .navigation__link a {
