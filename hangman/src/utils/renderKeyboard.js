@@ -9,7 +9,6 @@ function renderWrapperKeyboard() {
 }
 
 function renderKeyboard() {
-    console.log('keyboard')
     const keyboardArr = [81, 87, 69, 82, 84, 89, 85, 73, 79, 80, 65, 83, 68, 70, 71, 72, 74, 75, 76, 90, 88, 67, 86, 66, 78, 77];
 
 
