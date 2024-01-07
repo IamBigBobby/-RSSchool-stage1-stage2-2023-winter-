@@ -1,1 +1,4 @@
-console.log("it's work!");
+import { renderMain, renderGallow } from "./utils/generateField.js";
+
+renderMain();
+renderGallow();
