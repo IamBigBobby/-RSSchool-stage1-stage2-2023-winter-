@@ -1,3 +1,8 @@
+.main {
+  margin: 0 auto;
+  width: 1440px;
+}
+
 .gallow__block {
   position: relative;
   background: url("../assets/svg/gallows.svg") center/contain no-repeat;
@@ -57,11 +62,6 @@
   background: url("../assets/svg/leg-two.svg") center/contain no-repeat;
   width: 33px;
   height: 40px;
-}
-
-.main {
-  margin: 0 auto;
-  width: 1440px;
 }
 
 /*# sourceMappingURL=style.css.map */
