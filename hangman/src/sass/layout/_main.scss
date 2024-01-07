@@ -1,4 +1,10 @@
 .main {
     margin: 0 auto;
     width: 1440px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
 }

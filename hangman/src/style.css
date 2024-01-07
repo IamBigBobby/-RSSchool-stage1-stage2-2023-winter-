@@ -1,6 +1,10 @@
 .main {
   margin: 0 auto;
   width: 1440px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .gallow__block {
@@ -62,6 +66,23 @@
   background: url("../assets/svg/leg-two.svg") center/contain no-repeat;
   width: 33px;
   height: 40px;
+}
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  align-self: flex-start;
+  width: 500px;
+}
+
+.keyboard__key {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */
