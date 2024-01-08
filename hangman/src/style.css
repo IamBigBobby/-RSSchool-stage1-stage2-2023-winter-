@@ -1,10 +1,28 @@
 .main {
   margin: 0 auto;
   max-width: 1440px;
-  display: flex;
+  display: grid;
+  grid-template-areas: "left right-top" "left right-bottom";
+  grid-template-columns: 1fr 1fr;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+}
+@media screen and (max-width: 700px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+.gallow {
+  grid-area: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
 }
 
 .gallow__block {
@@ -68,11 +86,22 @@
   height: 40px;
 }
 
+@media screen and (max-width: 700px) {
+  .gallow__game-name {
+    order: -1;
+  }
+}
 .keyboard {
+  grid-area: right-bottom;
   display: flex;
   flex-wrap: wrap;
   align-self: flex-start;
-  width: 550px;
+  max-width: 550px;
+}
+@media screen and (max-width: 700px) {
+  .keyboard {
+    order: 1;
+  }
 }
 
 .keyboard__key {
@@ -83,6 +112,10 @@
   padding: 5px;
   margin: 5px;
   text-align: center;
+}
+
+.info-block {
+  grid-area: right-top;
 }
 
 /*# sourceMappingURL=style.css.map */

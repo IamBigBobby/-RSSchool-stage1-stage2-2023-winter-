@@ -1,14 +1,14 @@
-export { renderMain, renderGallow }
+export { renderMain, renderGallow };
 
 function renderMain() {
-  let main = document.createElement('main')
-  main.className = 'main'
-  document.body.prepend(main)
+  let main = document.createElement('main');
+  main.className = 'main';
+  document.body.prepend(main);
 }
 
 function renderGallow() {
-  let gallow = document.createElement('div')
-  gallow.className = 'gallow'
+  let gallow = document.createElement('div');
+  gallow.className = 'gallow';
 
   gallow.innerHTML = `
     <div class="gallow__block">
@@ -20,8 +20,8 @@ function renderGallow() {
         <div class="gallow__leg-two"></div>
     </div>
     <div class="gallow__game-name">HANGMAN GAME</div>
-`
+`;
 
-  let main = document.querySelector('.main')
-  main.prepend(gallow)
+  let main = document.querySelector('.main');
+  main.prepend(gallow);
 }
