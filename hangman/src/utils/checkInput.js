@@ -1,6 +1,7 @@
 export { checkInput };
+import { saveGameForRealode } from './saveData.js';
 
-function checkInput(letter, answer) {
+function checkInput(letter, answer, question) {
   console.log(letter, answer);
   const answerBlock = document.querySelector('.info-block__answer');
   const oldInvisibleAnswer = answerBlock.innerHTML;
@@ -22,6 +23,7 @@ function checkInput(letter, answer) {
         console.log('you win');
       }
 
+      saveGameForRealode(newInvisibleAnswer, question, numberOfFail);
       return;
     }
   }
@@ -34,6 +36,8 @@ function checkInput(letter, answer) {
   }
 
   renderLittleMan(numberOfFail);
+
+  saveGameForRealode(oldInvisibleAnswer, question, numberOfFail);
 
   if (numberOfFail === 6) {
     console.log('you lose');

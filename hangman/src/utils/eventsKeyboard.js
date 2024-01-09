@@ -7,11 +7,19 @@ function eventsKeyboard() {
 
   keyboardKeys.forEach((key) => {
     key.addEventListener('click', function (event) {
-      checkInput(key.innerHTML, questionData.questions[0].answer);
+      checkInput(
+        key.innerHTML,
+        questionData.questions[0].answer,
+        questionData.questions[0].question,
+      );
     });
   });
 
   document.addEventListener('keydown', function (event) {
-    checkInput(event.key.toUpperCase(), questionData.questions[0].answer);
+    checkInput(
+      event.key.toUpperCase(),
+      questionData.questions[0].answer,
+      questionData.questions[0].question,
+    );
   });
 }
