@@ -118,4 +118,8 @@
   grid-area: right-top;
 }
 
+.info-block__answer {
+  letter-spacing: 5px;
+}
+
 /*# sourceMappingURL=style.css.map */

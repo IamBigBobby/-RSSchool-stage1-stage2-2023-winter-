@@ -19,7 +19,9 @@ function createQuestionBlock() {
 
   infoblock.innerHTML = `
   <div class="info-block__question">${questionData.questions[0].question}</div>
-  <div class="info-block__answer">${questionData.questions[0].answer}</div>
+  <div class="info-block__answer">${'_'.repeat(
+    questionData.questions[0].answer.length,
+  )}</div>
   `;
 
   document.querySelector('.keyboard').after(infoblock);
