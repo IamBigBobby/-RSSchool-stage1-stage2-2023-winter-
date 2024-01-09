@@ -1,4 +1,4 @@
-export { fetchData, createQuestionBlock };
+export { fetchData, createQuestionBlock, questionData };
 
 let questionData;
 
