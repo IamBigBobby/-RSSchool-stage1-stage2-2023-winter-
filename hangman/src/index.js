@@ -4,7 +4,7 @@ import {
   renderWrapperKeyboard,
 } from './utils/renderKeyboard.js';
 import { eventsKeyboard } from './utils/eventsKeyboard.js';
-import { fetchData } from './utils/generadeQuestion.js';
+import { createQuestion } from './utils/generadeQuestion.js';
 
 // render field
 renderMain();
@@ -18,4 +18,4 @@ renderKeyboard();
 eventsKeyboard();
 
 // generateQuestionBlock
-fetchData();
+createQuestion();

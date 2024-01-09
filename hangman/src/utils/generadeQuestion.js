@@ -1,13 +1,14 @@
-export { fetchData, createQuestionBlock, questionData };
+export { createQuestion, createQuestionBlock, questionData };
 
 let questionData;
 
-function fetchData() {
+function createQuestion() {
   fetch('./src/data.json')
     .then((response) => response.json())
     .then((data) => {
       questionData = data;
       createQuestionBlock();
+      creatFailedAttemptCounter();
     })
     .catch((error) => console.error(error));
 }
@@ -25,4 +26,15 @@ function createQuestionBlock() {
   `;
 
   document.querySelector('.keyboard').after(infoblock);
+}
+
+function creatFailedAttemptCounter() {
+  let attemptCounter = document.createElement('div');
+  attemptCounter.className = 'info-block__counter';
+
+  attemptCounter.innerHTML = `
+  fail attempts <span info-block__fail-attemts>0</span>/6
+  `;
+
+  document.querySelector('.info-block__answer').after(attemptCounter);
 }
