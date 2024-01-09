@@ -33,7 +33,7 @@ function creatFailedAttemptCounter() {
   attemptCounter.className = 'info-block__counter';
 
   attemptCounter.innerHTML = `
-  fail attempts <span info-block__fail-attemts>0</span>/6
+  fail attempts <span class="info-block__fail-attemts">0</span>/6
   `;
 
   document.querySelector('.info-block__answer').after(attemptCounter);
