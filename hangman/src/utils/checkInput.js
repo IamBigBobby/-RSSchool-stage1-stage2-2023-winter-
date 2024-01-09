@@ -17,7 +17,6 @@ function checkInput(letter, answer) {
       newInvisibleAnswer = `${firstPart}${letter}${secondPart}`;
 
       answerBlock.innerHTML = newInvisibleAnswer;
-      console.log(answerBlock, oldInvisibleAnswer, newInvisibleAnswer);
 
       if (newInvisibleAnswer === answer.toUpperCase()) {
         console.log('you win');
@@ -27,10 +26,40 @@ function checkInput(letter, answer) {
     }
   }
 
-  numberOfFail++;
-  failCounter.innerHTML = numberOfFail;
+  if (numberOfFail >= 6) {
+    numberOfFail = 6;
+  } else {
+    numberOfFail++;
+    failCounter.innerHTML = numberOfFail;
+  }
+
+  renderLittleMan(numberOfFail);
 
   if (numberOfFail === 6) {
     console.log('you lose');
+    return;
+  }
+}
+
+function renderLittleMan(number) {
+  switch (number) {
+    case 1:
+      document.querySelector('.gallow__head').style.display = 'block';
+      break;
+    case 2:
+      document.querySelector('.gallow__body').style.display = 'block';
+      break;
+    case 3:
+      document.querySelector('.gallow__hand-one').style.display = 'block';
+      break;
+    case 4:
+      document.querySelector('.gallow__hand-two').style.display = 'block';
+      break;
+    case 5:
+      document.querySelector('.gallow__leg-one').style.display = 'block';
+      break;
+    case 6:
+      document.querySelector('.gallow__leg-two').style.display = 'block';
+      break;
   }
 }

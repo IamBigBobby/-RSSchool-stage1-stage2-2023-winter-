@@ -33,6 +33,7 @@
 }
 
 .gallow__head {
+  display: none;
   position: absolute;
   right: 38px;
   top: 100px;
@@ -42,6 +43,7 @@
 }
 
 .gallow__body {
+  display: none;
   position: absolute;
   right: 60px;
   top: 150px;
@@ -51,6 +53,7 @@
 }
 
 .gallow__hand-one {
+  display: none;
   position: absolute;
   right: 65px;
   top: 150px;
@@ -60,6 +63,7 @@
 }
 
 .gallow__hand-two {
+  display: none;
   position: absolute;
   right: 27px;
   top: 150px;
@@ -69,6 +73,7 @@
 }
 
 .gallow__leg-one {
+  display: none;
   position: absolute;
   right: 65px;
   top: 220px;
@@ -78,6 +83,7 @@
 }
 
 .gallow__leg-two {
+  display: none;
   position: absolute;
   right: 27px;
   top: 220px;
