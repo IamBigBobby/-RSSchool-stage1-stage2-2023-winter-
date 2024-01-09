@@ -18,10 +18,19 @@ function checkInput(letter, answer) {
 
       answerBlock.innerHTML = newInvisibleAnswer;
       console.log(answerBlock, oldInvisibleAnswer, newInvisibleAnswer);
+
+      if (newInvisibleAnswer === answer.toUpperCase()) {
+        console.log('you win');
+      }
+
       return;
     }
   }
 
   numberOfFail++;
   failCounter.innerHTML = numberOfFail;
+
+  if (numberOfFail === 6) {
+    console.log('you lose');
+  }
 }
