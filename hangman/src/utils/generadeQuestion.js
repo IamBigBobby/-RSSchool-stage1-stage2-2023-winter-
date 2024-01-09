@@ -13,17 +13,26 @@ function createQuestion() {
     .catch((error) => console.error(error));
 }
 
-function createQuestionBlock() {
-  console.log(questionData);
+function createQuestionBlock(loadAswer, loadQuestion) {
+  // console.log(questionData);
+  console.log(loadAswer, loadQuestion);
   let infoblock = document.createElement('div');
   infoblock.className = 'info-block';
+  console.log(infoblock);
 
-  infoblock.innerHTML = `
+  if (loadAswer && loadQuestion) {
+    infoblock.innerHTML = `
+  <div class="info-block__question">${loadQuestion}</div>
+  <div class="info-block__answer">${loadAswer}</div>
+  `;
+  } else {
+    infoblock.innerHTML = `
   <div class="info-block__question">${questionData.questions[0].question}</div>
   <div class="info-block__answer">${'_'.repeat(
     questionData.questions[0].answer.length,
   )}</div>
   `;
+  }
 
   document.querySelector('.keyboard').after(infoblock);
 }
