@@ -5,17 +5,30 @@ import {
 } from './utils/renderKeyboard.js';
 import { eventsKeyboard } from './utils/eventsKeyboard.js';
 import { createQuestion } from './utils/generadeQuestion.js';
+import { loadGameData } from './utils/loadData.js';
 
-// render field
-renderMain();
-renderGallow();
+document.addEventListener('DOMContentLoaded', function () {
+  let saveGameState = loadGameData();
+  saveGameState = null;
+  console.log(saveGameState);
 
-// render keyboard
-renderWrapperKeyboard();
-renderKeyboard();
+  if (saveGameState) {
+    let answer = saveGameState.answer;
+    let question = saveGameState.question;
+    let countFail = saveGameState.countFail;
+  } else {
+    // render field
+    renderMain();
+    renderGallow();
 
-// listen event keydoard
-eventsKeyboard();
+    // render keyboard
+    renderWrapperKeyboard();
+    renderKeyboard();
 
-// generateQuestionBlock
-createQuestion();
+    // listen event keydoard
+    eventsKeyboard();
+
+    // generateQuestionBlock
+    createQuestion();
+  }
+});
