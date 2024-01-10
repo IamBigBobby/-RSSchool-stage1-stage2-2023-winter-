@@ -1,5 +1,6 @@
 export { eventsKeyboard };
 import { checkInput } from './checkInput.js';
+import { trueAnswer } from './generadeQuestion.js';
 
 function eventsKeyboard() {
   const keyboardKeys = document.querySelectorAll('.keyboard__key');
@@ -8,9 +9,7 @@ function eventsKeyboard() {
     key.addEventListener('click', function (event) {
       checkInput(
         key.innerHTML,
-        // questionData.questions[0].answer,
-        // questionData.questions[0].question,
-        document.querySelector('.info-block__answer').innerHTML,
+        trueAnswer,
         document.querySelector('.info-block__question').innerHTML,
       );
     });
@@ -19,9 +18,7 @@ function eventsKeyboard() {
   document.addEventListener('keydown', function (event) {
     checkInput(
       event.key.toUpperCase(),
-      // questionData.questions[0].answer,
-      // questionData.questions[0].question,
-      document.querySelector('.info-block__answer').innerHTML,
+      trueAnswer,
       document.querySelector('.info-block__question').innerHTML,
     );
   });

@@ -3,9 +3,11 @@ export {
   createQuestionBlock,
   creatFailedAttemptCounter,
   questionData,
+  trueAnswer,
 };
 
-// let questionData;
+let questionData;
+let trueAnswer;
 
 function createQuestion() {
   fetch('./src/data.json')
@@ -18,27 +20,36 @@ function createQuestion() {
     .catch((error) => console.error(error));
 }
 
-function createQuestionBlock(loadAswer, loadQuestion) {
-  // console.log(questionData.questions.length);
-  // console.log(loadAswer, loadQuestion);
+function createQuestionBlock(loadAswer, loadQuestion, baseAnswer) {
   let infoblock = document.createElement('div');
   infoblock.className = 'info-block';
 
-  if (loadAswer && loadQuestion) {
+  if (loadAswer && loadQuestion && baseAnswer) {
     infoblock.innerHTML = `
   <div class="info-block__question">${loadQuestion}</div>
   <div class="info-block__answer">${loadAswer}</div>
   `;
+
+    trueAnswer = baseAnswer;
+    console.log(trueAnswer);
   } else {
+    console.log('check');
     let randomQuestion = getRandomIntInclusive(
       0,
       questionData.questions.length - 1,
     );
 
     infoblock.innerHTML = `
-  <div class="info-block__question">${questionData.questions[randomQuestion].question}</div>
-  <div class="info-block__answer">${questionData.questions[randomQuestion].answer}</div>
+  <div class="info-block__question">${
+    questionData.questions[randomQuestion].question
+  }</div>
+  <div class="info-block__answer">${'_'.repeat(
+    questionData.questions[randomQuestion].answer.length,
+  )}</div>
   `;
+
+    trueAnswer = questionData.questions[randomQuestion].answer;
+    console.log(trueAnswer);
   } /*вернуть lenght*/
 
   document.querySelector('.keyboard').after(infoblock);

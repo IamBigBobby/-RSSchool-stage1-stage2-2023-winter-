@@ -1,8 +1,8 @@
 export { checkInput };
+import { trueAnswer } from './generadeQuestion.js';
 import { saveGameForRealode } from './saveData.js';
 
 function checkInput(letter, answer, question) {
-  // console.log(letter, answer);
   const answerBlock = document.querySelector('.info-block__answer');
 
   const failCounter = document.querySelector('.info-block__fail-attemts');
@@ -29,7 +29,12 @@ function checkInput(letter, answer, question) {
           return;
         }
 
-        saveGameForRealode(newInvisibleAnswer, question, numberOfFail);
+        saveGameForRealode(
+          newInvisibleAnswer,
+          question,
+          numberOfFail,
+          trueAnswer,
+        );
 
         if (i === answer.length - 1) {
           return;
@@ -46,7 +51,12 @@ function checkInput(letter, answer, question) {
 
     renderLittleMan(numberOfFail);
 
-    saveGameForRealode(answerBlock.innerHTML, question, numberOfFail);
+    saveGameForRealode(
+      answerBlock.innerHTML,
+      question,
+      numberOfFail,
+      trueAnswer,
+    );
 
     if (numberOfFail === 6) {
       console.log('you lose');

@@ -26,7 +26,6 @@ function renderGallow(countFail) {
 
   if (countFail) {
     for (let i = 0; i <= countFail; i++) {
-      console.log(i);
       if (i === 0) {
         continue;
       }

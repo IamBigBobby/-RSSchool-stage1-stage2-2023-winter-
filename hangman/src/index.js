@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let answer = saveGameState.answer;
     let question = saveGameState.question;
     let countFail = saveGameState.countFail;
+    let loadAswer = saveGameState.loadAswer;
 
-    console.log(answer, question, countFail);
     // render load galow
     renderGallow(countFail);
 
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
     renderKeyboard();
 
     // render load answer and question
-    createQuestionBlock(answer, question);
+    createQuestionBlock(answer, question, loadAswer);
 
     // render load failed counter
     creatFailedAttemptCounter(countFail);
