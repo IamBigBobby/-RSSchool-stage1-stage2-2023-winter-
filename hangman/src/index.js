@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // render field
   renderMain();
-  renderGallow();
 
   if (saveGameState) {
     let answer = saveGameState.answer;
@@ -28,6 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let countFail = saveGameState.countFail;
 
     console.log(answer, question, countFail);
+    // render load galow
+    renderGallow(countFail);
 
     // render keyboard
     renderWrapperKeyboard();
@@ -42,6 +43,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // listen event keydoard
     eventsKeyboard();
   } else {
+    // render gallow
+    renderGallow();
+
     // render keyboard
     renderWrapperKeyboard();
     renderKeyboard();
