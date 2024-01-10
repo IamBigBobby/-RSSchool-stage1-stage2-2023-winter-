@@ -5,7 +5,7 @@ export {
   questionData,
 };
 
-let questionData;
+// let questionData;
 
 function createQuestion() {
   fetch('./src/data.json')
