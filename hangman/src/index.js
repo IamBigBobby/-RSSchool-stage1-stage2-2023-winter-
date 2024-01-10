@@ -11,7 +11,7 @@ import {
 } from './utils/generadeQuestion.js';
 import { loadGameData } from './utils/loadData.js';
 
-loadGameData();
+// loadGameData();
 
 document.addEventListener('DOMContentLoaded', function () {
   let saveGameState = loadGameData();

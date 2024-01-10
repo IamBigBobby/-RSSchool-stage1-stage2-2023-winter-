@@ -10,32 +10,23 @@ function checkInput(letter, answer, question) {
 
   let checkChar = answer.toUpperCase().includes(letter);
 
-  console.log(checkChar);
-
   if (checkChar) {
     for (let i = 0; i < answer.length; i++) {
-      // console.log(newInvisibleAnswer, oldInvisibleAnswer);
-      console.log(i);
-
       let oldInvisibleAnswer = answerBlock.innerHTML;
       let newInvisibleAnswer = oldInvisibleAnswer;
 
-      console.log(newInvisibleAnswer);
-      console.log(answer[i].toUpperCase(), letter);
-
       if (answer[i].toUpperCase() === letter) {
-        console.log('true');
         const firstPart = oldInvisibleAnswer.slice(0, i);
         const secondPart = oldInvisibleAnswer.slice(i + 1);
 
         newInvisibleAnswer = `${firstPart}${letter}${secondPart}`;
 
-        console.log(newInvisibleAnswer);
-
         answerBlock.innerHTML = newInvisibleAnswer;
 
         if (newInvisibleAnswer === answer.toUpperCase()) {
           console.log('you win');
+          localStorage.clear();
+          return;
         }
 
         saveGameForRealode(newInvisibleAnswer, question, numberOfFail);
@@ -55,10 +46,11 @@ function checkInput(letter, answer, question) {
 
     renderLittleMan(numberOfFail);
 
-    saveGameForRealode(question, numberOfFail);
+    saveGameForRealode(answerBlock.innerHTML, question, numberOfFail);
 
     if (numberOfFail === 6) {
       console.log('you lose');
+      localStorage.clear();
       return;
     }
   }
