@@ -2,46 +2,65 @@ export { checkInput };
 import { saveGameForRealode } from './saveData.js';
 
 function checkInput(letter, answer, question) {
-  console.log(letter, answer);
+  // console.log(letter, answer);
   const answerBlock = document.querySelector('.info-block__answer');
-  const oldInvisibleAnswer = answerBlock.innerHTML;
+
   const failCounter = document.querySelector('.info-block__fail-attemts');
   let numberOfFail = failCounter.innerHTML;
 
-  for (let i = 0; i < answer.length; i++) {
-    let newInvisibleAnswer = oldInvisibleAnswer;
+  let checkChar = answer.toUpperCase().includes(letter);
 
-    if (answer[i].toUpperCase() === letter) {
-      const firstPart = oldInvisibleAnswer.slice(0, i);
-      const secondPart = oldInvisibleAnswer.slice(i + 1);
+  console.log(checkChar);
 
-      newInvisibleAnswer = `${firstPart}${letter}${secondPart}`;
+  if (checkChar) {
+    for (let i = 0; i < answer.length; i++) {
+      // console.log(newInvisibleAnswer, oldInvisibleAnswer);
+      console.log(i);
 
-      answerBlock.innerHTML = newInvisibleAnswer;
+      let oldInvisibleAnswer = answerBlock.innerHTML;
+      let newInvisibleAnswer = oldInvisibleAnswer;
 
-      if (newInvisibleAnswer === answer.toUpperCase()) {
-        console.log('you win');
+      console.log(newInvisibleAnswer);
+      console.log(answer[i].toUpperCase(), letter);
+
+      if (answer[i].toUpperCase() === letter) {
+        console.log('true');
+        const firstPart = oldInvisibleAnswer.slice(0, i);
+        const secondPart = oldInvisibleAnswer.slice(i + 1);
+
+        newInvisibleAnswer = `${firstPart}${letter}${secondPart}`;
+
+        console.log(newInvisibleAnswer);
+
+        answerBlock.innerHTML = newInvisibleAnswer;
+
+        if (newInvisibleAnswer === answer.toUpperCase()) {
+          console.log('you win');
+        }
+
+        saveGameForRealode(newInvisibleAnswer, question, numberOfFail);
+
+        if (i === answer.length - 1) {
+          return;
+        }
       }
+    }
+  } else {
+    if (numberOfFail >= 6) {
+      numberOfFail = 6;
+    } else {
+      numberOfFail++;
+      failCounter.innerHTML = numberOfFail;
+    }
 
-      saveGameForRealode(newInvisibleAnswer, question, numberOfFail);
+    renderLittleMan(numberOfFail);
+
+    saveGameForRealode(question, numberOfFail);
+
+    if (numberOfFail === 6) {
+      console.log('you lose');
       return;
     }
-  }
-
-  if (numberOfFail >= 6) {
-    numberOfFail = 6;
-  } else {
-    numberOfFail++;
-    failCounter.innerHTML = numberOfFail;
-  }
-
-  renderLittleMan(numberOfFail);
-
-  saveGameForRealode(oldInvisibleAnswer, question, numberOfFail);
-
-  if (numberOfFail === 6) {
-    console.log('you lose');
-    return;
   }
 }
 

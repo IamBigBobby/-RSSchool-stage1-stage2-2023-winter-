@@ -1,5 +1,4 @@
 export { eventsKeyboard };
-import { questionData } from './generadeQuestion.js';
 import { checkInput } from './checkInput.js';
 
 function eventsKeyboard() {
@@ -9,8 +8,10 @@ function eventsKeyboard() {
     key.addEventListener('click', function (event) {
       checkInput(
         key.innerHTML,
-        questionData.questions[0].answer,
-        questionData.questions[0].question,
+        // questionData.questions[0].answer,
+        // questionData.questions[0].question,
+        document.querySelector('.info-block__answer').innerHTML,
+        document.querySelector('.info-block__question').innerHTML,
       );
     });
   });
@@ -18,8 +19,10 @@ function eventsKeyboard() {
   document.addEventListener('keydown', function (event) {
     checkInput(
       event.key.toUpperCase(),
-      questionData.questions[0].answer,
-      questionData.questions[0].question,
+      // questionData.questions[0].answer,
+      // questionData.questions[0].question,
+      document.querySelector('.info-block__answer').innerHTML,
+      document.querySelector('.info-block__question').innerHTML,
     );
   });
 }

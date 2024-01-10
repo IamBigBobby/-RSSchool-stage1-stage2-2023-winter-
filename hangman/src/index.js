@@ -5,6 +5,7 @@ import {
 } from './utils/renderKeyboard.js';
 import { eventsKeyboard } from './utils/eventsKeyboard.js';
 import {
+  creatFailedAttemptCounter,
   createQuestion,
   createQuestionBlock,
 } from './utils/generadeQuestion.js';
@@ -26,12 +27,17 @@ document.addEventListener('DOMContentLoaded', function () {
     let question = saveGameState.question;
     let countFail = saveGameState.countFail;
 
+    console.log(answer, question, countFail);
+
     // render keyboard
     renderWrapperKeyboard();
     renderKeyboard();
 
     // render load answer and question
     createQuestionBlock(answer, question);
+
+    // render load failed counter
+    creatFailedAttemptCounter(countFail);
 
     // listen event keydoard
     eventsKeyboard();
