@@ -8,7 +8,6 @@ function keyAnimationDown(event) {
 
 function keyAnimationUp() {
   const keys = document.querySelectorAll('.keyboard__key');
-  console.log(keys);
   keys.forEach((key) => {
     key.classList.remove('keyboard__key_active');
   });

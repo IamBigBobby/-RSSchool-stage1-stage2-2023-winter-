@@ -1,5 +1,6 @@
 export { eventsKeyboard };
 import { checkInput } from './checkInput.js';
+import { clickAnimationDown, clickAnimationUp } from './clickAnimation.js';
 import { trueAnswer } from './generadeQuestion.js';
 import { keyAnimationDown, keyAnimationUp } from './keyAnimation.js';
 
@@ -14,6 +15,14 @@ function eventsKeyboard() {
         trueAnswer,
         document.querySelector('.info-block__question').innerHTML,
       );
+    });
+
+    key.addEventListener('mousedown', function (event) {
+      clickAnimationDown(event);
+    });
+
+    key.addEventListener('mouseup', function (event) {
+      clickAnimationUp();
     });
   });
 
