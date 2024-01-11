@@ -124,6 +124,10 @@
   background-color: yellow;
 }
 
+.keyboard__key_disabled {
+  background-color: gray;
+}
+
 .info-block {
   grid-area: right-top;
   display: flex;
