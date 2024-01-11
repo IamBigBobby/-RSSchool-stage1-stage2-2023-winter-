@@ -4,6 +4,7 @@ import { trueAnswer } from './generadeQuestion.js';
 import { saveGameForRealode } from './saveData.js';
 
 function checkInput(event, letter, answer, question) {
+  console.log(event.target.getAttribute('data'));
   const answerBlock = document.querySelector('.info-block__answer');
 
   const failCounter = document.querySelector('.info-block__fail-attemts');
@@ -38,7 +39,7 @@ function checkInput(event, letter, answer, question) {
           question,
           numberOfFail,
           trueAnswer,
-          event.keyCode,
+          event.keyCode || Number(event.target.getAttribute('data')),
         );
 
         if (i === answer.length - 1) {
