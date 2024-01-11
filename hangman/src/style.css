@@ -120,6 +120,10 @@
   text-align: center;
 }
 
+.keyboard__key_active {
+  background-color: yellow;
+}
+
 .info-block {
   grid-area: right-top;
   display: flex;
