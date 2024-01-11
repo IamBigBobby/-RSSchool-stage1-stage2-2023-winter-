@@ -1,7 +1,6 @@
 export { clickAnimationDown, clickAnimationUp };
 
 function clickAnimationDown(event) {
-  console.log(event.target);
   event.target.classList.add('keyboard__key_active');
 }
 

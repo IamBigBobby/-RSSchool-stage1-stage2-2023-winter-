@@ -1,5 +1,4 @@
 export { checkInput };
-import { eventsKeyboard } from './eventsKeyboard.js';
 import { trueAnswer } from './generadeQuestion.js';
 import { saveGameForRealode } from './saveData.js';
 
@@ -36,6 +35,7 @@ function checkInput(event, letter, answer, question) {
           question,
           numberOfFail,
           trueAnswer,
+          event.keyCode,
         );
 
         if (i === answer.length - 1) {

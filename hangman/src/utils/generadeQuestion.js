@@ -33,7 +33,6 @@ function createQuestionBlock(loadAswer, loadQuestion, baseAnswer) {
     trueAnswer = baseAnswer;
     console.log(trueAnswer);
   } else {
-    console.log('check');
     let randomQuestion = getRandomIntInclusive(
       0,
       questionData.questions.length - 1,

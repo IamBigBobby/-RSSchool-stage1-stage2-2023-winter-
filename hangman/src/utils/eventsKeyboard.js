@@ -21,7 +21,7 @@ function eventsKeyboard() {
       clickAnimationDown(event);
     });
 
-    key.addEventListener('mouseup', function (event) {
+    key.addEventListener('mouseup', function () {
       clickAnimationUp();
     });
   });
@@ -36,7 +36,7 @@ function eventsKeyboard() {
     keyAnimationDown(event);
   });
 
-  document.addEventListener('keyup', function (event) {
+  document.addEventListener('keyup', function () {
     keyAnimationUp();
   });
 }
