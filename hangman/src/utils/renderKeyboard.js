@@ -43,5 +43,4 @@ function renderKeyboard(disabledKeys) {
   disabledKey.forEach((key) => {
     key.style.pointerEvents = 'none';
   });
-  console.log(disabledKey);
 }
