@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // render keyboard
     renderWrapperKeyboard();
-    renderKeyboard();
+    renderKeyboard(disabledKeys);
 
     // render load answer and question
     createQuestionBlock(answer, question, loadAswer);
