@@ -15,8 +15,6 @@ import { loadGameData } from './utils/loadData.js';
 
 document.addEventListener('DOMContentLoaded', function () {
   let saveGameState = loadGameData();
-  // saveGameState = null;
-  // console.log(saveGameState);
 
   // render field
   renderMain();
@@ -27,8 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let countFail = saveGameState.countFail;
     let loadAswer = saveGameState.loadAswer;
     let disabledKeys = saveGameState.disabledKeys;
-
-    console.log(answer, question, countFail, loadAswer, disabledKeys);
 
     // render load galow
     renderGallow(countFail);

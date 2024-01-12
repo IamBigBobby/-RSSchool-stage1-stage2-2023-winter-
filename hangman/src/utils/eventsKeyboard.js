@@ -8,35 +8,45 @@ function eventsKeyboard() {
   const keyboardKeys = document.querySelectorAll('.keyboard__key');
 
   keyboardKeys.forEach((key) => {
-    key.addEventListener('click', function (event) {
-      checkInput(
-        event,
-        key.innerHTML,
-        trueAnswer,
-        document.querySelector('.info-block__question').innerHTML,
-      );
-    });
+    key.addEventListener('click', clickHandler);
 
-    key.addEventListener('mousedown', function (event) {
-      clickAnimationDown(event);
-    });
+    key.addEventListener('mousedown', mousedownHandler);
 
-    key.addEventListener('mouseup', function () {
-      clickAnimationUp();
-    });
+    key.addEventListener('mouseup', mouseupHandler);
   });
 
-  document.addEventListener('keydown', function (event) {
-    checkInput(
-      event,
-      event.key.toUpperCase(),
-      trueAnswer,
-      document.querySelector('.info-block__question').innerHTML,
-    );
-    keyAnimationDown(event);
-  });
+  document.addEventListener('keydown', keydownHandler);
 
-  document.addEventListener('keyup', function () {
-    keyAnimationUp();
-  });
+  document.addEventListener('keyup', keyupHandler);
+}
+
+function clickHandler(event) {
+  checkInput(
+    event,
+    event.target.innerHTML,
+    trueAnswer,
+    document.querySelector('.info-block__question').innerHTML,
+  );
+}
+
+function mousedownHandler(event) {
+  clickAnimationDown(event);
+}
+
+function mouseupHandler() {
+  clickAnimationUp();
+}
+
+function keydownHandler(event) {
+  checkInput(
+    event,
+    event.key.toUpperCase(),
+    trueAnswer,
+    document.querySelector('.info-block__question').innerHTML,
+  );
+  keyAnimationDown(event);
+}
+
+function keyupHandler() {
+  keyAnimationUp();
 }

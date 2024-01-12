@@ -6,7 +6,6 @@ import { trueAnswer } from './generadeQuestion.js';
 import { saveGameForRealode } from './saveData.js';
 
 function checkInput(event, letter, answer, question) {
-  console.log(event.target.getAttribute('data'));
   const answerBlock = document.querySelector('.info-block__answer');
 
   const failCounter = document.querySelector('.info-block__fail-attemts');
@@ -29,7 +28,6 @@ function checkInput(event, letter, answer, question) {
 
         if (newInvisibleAnswer === answer.toUpperCase()) {
           addDisabledKey(event);
-          console.log('you win');
           popupWin(answer);
           localStorage.clear();
           return;
@@ -68,7 +66,6 @@ function checkInput(event, letter, answer, question) {
     );
 
     if (numberOfFail === 6) {
-      console.log('you lose');
       popupLose(answer);
       localStorage.clear();
       return;
