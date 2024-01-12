@@ -6,6 +6,8 @@ export {
   trueAnswer,
 };
 
+import { saveGameForRealode } from './saveData.js';
+
 let questionData;
 let trueAnswer;
 
@@ -31,6 +33,7 @@ function createQuestionBlock(loadAswer, loadQuestion, baseAnswer) {
   `;
 
     trueAnswer = baseAnswer;
+
     console.log(trueAnswer);
   } else {
     let randomQuestion = getRandomIntInclusive(
@@ -49,7 +52,17 @@ function createQuestionBlock(loadAswer, loadQuestion, baseAnswer) {
 
     trueAnswer = questionData.questions[randomQuestion].answer;
     console.log(trueAnswer);
-  } /*вернуть lenght*/
+
+    saveGameForRealode(
+      ...[
+        '_'.repeat(questionData.questions[randomQuestion].answer.length),
+        questionData.questions[randomQuestion].question,
+        0,
+        questionData.questions[randomQuestion].answer,
+        ,
+      ],
+    );
+  }
 
   document.querySelector('.keyboard').after(infoblock);
 }

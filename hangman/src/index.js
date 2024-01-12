@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let loadAswer = saveGameState.loadAswer;
     let disabledKeys = saveGameState.disabledKeys;
 
-    console.log(disabledKeys);
+    console.log(answer, question, countFail, loadAswer, disabledKeys);
 
     // render load galow
     renderGallow(countFail);
