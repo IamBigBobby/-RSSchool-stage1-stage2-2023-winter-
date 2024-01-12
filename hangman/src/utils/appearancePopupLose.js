@@ -1,3 +1,5 @@
+import { refreshGame } from './refreshGame.js';
+
 export { popupLose };
 
 function popupLose(word) {
@@ -10,4 +12,8 @@ function popupLose(word) {
   </div>
   `;
   document.body.prepend(popup);
+
+  const button = document.querySelector('.button');
+
+  button.addEventListener('click', refreshGame);
 }
