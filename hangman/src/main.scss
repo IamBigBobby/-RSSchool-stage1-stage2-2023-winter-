@@ -1,6 +1,9 @@
 // abstracts
 @import 'sass/abstracts/variables';
 
+// base
+@import 'sass/base/base-styles';
+
 // layout
 @import 'sass/layout/main';
 
@@ -8,3 +11,4 @@
 @import 'sass/components/gallow';
 @import 'sass/components/keyboard';
 @import 'sass/components//info-block';
+@import 'sass/components/popup';

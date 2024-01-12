@@ -1,5 +1,6 @@
 export { checkInput };
 import { addDisabledKey } from './addDisabledKey.js';
+import { popupWin } from './appearancePopupWin.js';
 import { trueAnswer } from './generadeQuestion.js';
 import { saveGameForRealode } from './saveData.js';
 
@@ -28,6 +29,7 @@ function checkInput(event, letter, answer, question) {
         if (newInvisibleAnswer === answer.toUpperCase()) {
           addDisabledKey(event);
           console.log('you win');
+          popupWin(answer);
           localStorage.clear();
           return;
         }
