@@ -1,5 +1,6 @@
 export { checkInput };
 import { addDisabledKey } from './addDisabledKey.js';
+import { popupLose } from './appearancePopupLose.js';
 import { popupWin } from './appearancePopupWin.js';
 import { trueAnswer } from './generadeQuestion.js';
 import { saveGameForRealode } from './saveData.js';
@@ -68,6 +69,7 @@ function checkInput(event, letter, answer, question) {
 
     if (numberOfFail === 6) {
       console.log('you lose');
+      popupLose(answer);
       localStorage.clear();
       return;
     }
