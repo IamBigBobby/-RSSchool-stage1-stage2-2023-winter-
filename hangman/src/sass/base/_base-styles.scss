@@ -8,4 +8,10 @@ body {
   height: 100vh;
 
   font-family: 'Josefin Sans', sans-serif;
+
+  background: radial-gradient(circle, #e74c3c, #f39c12);
+
+  @media screen and (max-width: 700px) {
+    display: block;
+  }
 }
