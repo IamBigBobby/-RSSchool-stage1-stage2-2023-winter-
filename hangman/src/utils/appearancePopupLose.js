@@ -1,8 +1,11 @@
 import { refreshGame } from './refreshGame.js';
+import { removeListeners } from './removeListeners.js';
 
-export { popupLose };
+export { popupLose, nextStageEnter };
 
 function popupLose(word) {
+  removeListeners();
+
   let popup = document.createElement('div');
   popup.className = 'popup';
   popup.innerHTML = `
@@ -16,4 +19,12 @@ function popupLose(word) {
   const button = document.querySelector('.button');
 
   button.addEventListener('click', refreshGame);
+
+  document.addEventListener('keydown', nextStageEnter);
+}
+
+function nextStageEnter(event) {
+  if (event.key === 'Enter') {
+    refreshGame();
+  }
 }

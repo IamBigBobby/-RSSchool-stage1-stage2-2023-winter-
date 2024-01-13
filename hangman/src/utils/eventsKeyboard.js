@@ -1,4 +1,11 @@
-export { eventsKeyboard };
+export {
+  eventsKeyboard,
+  clickHandler,
+  mousedownHandler,
+  mouseupHandler,
+  keydownHandler,
+  keyupHandler,
+};
 import { checkInput } from './checkInput.js';
 import { clickAnimationDown, clickAnimationUp } from './clickAnimation.js';
 import { trueAnswer } from './generadeQuestion.js';
