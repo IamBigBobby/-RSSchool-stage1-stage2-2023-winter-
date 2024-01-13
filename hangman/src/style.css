@@ -142,7 +142,7 @@ body {
 }
 
 .keyboard__key_active {
-  background-color: yellow;
+  background-color: rgb(132, 132, 209);
 }
 
 .keyboard__key_disabled {
