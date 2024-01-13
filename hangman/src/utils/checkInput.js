@@ -6,6 +6,40 @@ import { trueAnswer } from './generadeQuestion.js';
 import { saveGameForRealode } from './saveData.js';
 
 function checkInput(event, letter, answer, question) {
+  console.log(event.code);
+  var englishLettersCodes = [
+    'KeyA',
+    'KeyB',
+    'KeyC',
+    'KeyD',
+    'KeyE',
+    'KeyF',
+    'KeyG',
+    'KeyH',
+    'KeyI',
+    'KeyJ',
+    'KeyK',
+    'KeyL',
+    'KeyM',
+    'KeyN',
+    'KeyO',
+    'KeyP',
+    'KeyQ',
+    'KeyR',
+    'KeyS',
+    'KeyT',
+    'KeyU',
+    'KeyV',
+    'KeyW',
+    'KeyX',
+    'KeyY',
+    'KeyZ',
+  ];
+
+  if (!englishLettersCodes.includes(event.code)) {
+    return;
+  }
+
   const answerBlock = document.querySelector('.info-block__answer');
 
   const failCounter = document.querySelector('.info-block__fail-attemts');
