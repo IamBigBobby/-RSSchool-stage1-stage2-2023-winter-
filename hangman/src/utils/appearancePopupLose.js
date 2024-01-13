@@ -1,7 +1,7 @@
 import { refreshGame } from './refreshGame.js';
 import { removeListeners } from './removeListeners.js';
 
-export { popupLose, nextStageEnter };
+export { popupLose };
 
 function popupLose(word) {
   removeListeners();

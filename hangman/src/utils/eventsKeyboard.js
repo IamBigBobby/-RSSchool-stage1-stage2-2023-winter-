@@ -15,11 +15,9 @@ function eventsKeyboard() {
   const keyboardKeys = document.querySelectorAll('.keyboard__key');
 
   keyboardKeys.forEach((key) => {
-    key.addEventListener('click', clickHandler);
-
     key.addEventListener('mousedown', mousedownHandler);
-
     key.addEventListener('mouseup', mouseupHandler);
+    key.addEventListener('click', clickHandler);
   });
 
   document.addEventListener('keydown', keydownHandler);
@@ -45,13 +43,13 @@ function mouseupHandler() {
 }
 
 function keydownHandler(event) {
+  keyAnimationDown(event);
   checkInput(
     event,
     event.key.toUpperCase(),
     trueAnswer,
     document.querySelector('.info-block__question').innerHTML,
   );
-  keyAnimationDown(event);
 }
 
 function keyupHandler() {

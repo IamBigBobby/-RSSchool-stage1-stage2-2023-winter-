@@ -6,8 +6,68 @@ import { trueAnswer } from './generadeQuestion.js';
 import { saveGameForRealode } from './saveData.js';
 
 function checkInput(event, letter, answer, question) {
-  console.log(event.code);
-  var englishLettersCodes = [
+  const englishAlphabetUpperCase = [
+    'A',
+    'B',
+    'C',
+    'D',
+    'E',
+    'F',
+    'G',
+    'H',
+    'I',
+    'J',
+    'K',
+    'L',
+    'M',
+    'N',
+    'O',
+    'P',
+    'Q',
+    'R',
+    'S',
+    'T',
+    'U',
+    'V',
+    'W',
+    'X',
+    'Y',
+    'Z',
+  ];
+  const englishAlphabetLowerCase = [
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    'f',
+    'g',
+    'h',
+    'i',
+    'j',
+    'k',
+    'l',
+    'm',
+    'n',
+    'o',
+    'p',
+    'q',
+    'r',
+    's',
+    't',
+    'u',
+    'v',
+    'w',
+    'x',
+    'y',
+    'z',
+  ];
+
+  const englishAlphabet = [
+    ...englishAlphabetUpperCase,
+    ...englishAlphabetLowerCase,
+  ];
+  const englishLettersCodes = [
     'KeyA',
     'KeyB',
     'KeyC',
@@ -36,7 +96,21 @@ function checkInput(event, letter, answer, question) {
     'KeyZ',
   ];
 
-  if (!englishLettersCodes.includes(event.code)) {
+  if (!englishAlphabet.includes(letter)) {
+    alert('Please use English layout');
+
+    const keys = document.querySelectorAll('.keyboard__key');
+
+    keys.forEach((key) => {
+      key.classList.remove('keyboard__key_active');
+    });
+    return;
+  }
+
+  if (
+    !englishLettersCodes.includes(event.code) &&
+    !event.pointerType === 'mouse'
+  ) {
     return;
   }
 
