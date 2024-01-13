@@ -135,6 +135,11 @@ body {
   margin: 5px;
   text-align: center;
 }
+@media screen and (max-width: 700px) {
+  .keyboard__key {
+    background-color: white;
+  }
+}
 
 .keyboard__key_active {
   background-color: yellow;
