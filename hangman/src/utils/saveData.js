@@ -8,7 +8,7 @@ function saveGameForRealode(
   loadAswer,
   disabledKey,
 ) {
-  let storedGameState = localStorage.getItem('hangmanGameState');
+  let storedGameState = localStorage.getItem('IamBigBobby_hangmanGameState');
   let gameState;
 
   if (storedGameState) {
@@ -29,5 +29,8 @@ function saveGameForRealode(
     gameState.disabledKeys.push(disabledKey);
   }
 
-  localStorage.setItem('hangmanGameState', JSON.stringify(gameState));
+  localStorage.setItem(
+    'IamBigBobby_hangmanGameState',
+    JSON.stringify(gameState),
+  );
 }
