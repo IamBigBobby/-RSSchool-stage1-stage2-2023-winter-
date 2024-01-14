@@ -53,15 +53,15 @@ function createQuestionBlock(loadAswer, loadQuestion, baseAnswer) {
     trueAnswer = questionData.questions[randomQuestion].answer;
     console.log(trueAnswer);
 
-    saveGameForRealode(
-      ...[
-        '_'.repeat(questionData.questions[randomQuestion].answer.length),
-        questionData.questions[randomQuestion].question,
-        0,
-        questionData.questions[randomQuestion].answer,
-        ,
-      ],
-    );
+    // saveGameForRealode(
+    //   ...[
+    //     '_'.repeat(questionData.questions[randomQuestion].answer.length),
+    //     questionData.questions[randomQuestion].question,
+    //     0,
+    //     questionData.questions[randomQuestion].answer,
+    //     ,
+    //   ],
+    // );
   }
 
   document.querySelector('.keyboard').after(infoblock);
