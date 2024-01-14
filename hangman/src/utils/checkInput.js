@@ -164,6 +164,7 @@ function checkInput(event, letter, answer, question) {
       failCounter.innerHTML = numberOfFail;
     }
 
+    addDisabledKey(event);
     renderLittleMan(numberOfFail);
 
     saveGameForRealode(
