@@ -8,7 +8,6 @@ export {
 
 let questionData;
 let trueAnswer;
-let previousRandomQuestion;
 
 function createQuestion() {
   fetch('./src/data.json')
@@ -36,18 +35,18 @@ function createQuestionBlock(loadAswer, loadQuestion, baseAnswer) {
 
     console.log(trueAnswer);
   } else {
-    let randomQuestion;
-    do {
-      randomQuestion = getRandomIntInclusive(
-        0,
-        questionData.questions.length - 1,
-      );
-    } while (randomQuestion === previousRandomQuestion);
-
-    previousRandomQuestion = randomQuestion;
-
+    let randomQuestion = getRandomIntInclusive(
+      0,
+      questionData.questions.length - 1,
+    );
     trueAnswer = questionData.questions[randomQuestion].answer;
-    console.log(trueAnswer);
+
+    if (trueAnswer === localStorage.getItem('IamBigBobby_generateAnswer')) {
+      randomQuestion++;
+      trueAnswer = questionData.questions[randomQuestion].answer;
+    }
+
+    localStorage.setItem('IamBigBobby_generateAnswer', trueAnswer);
 
     infoblock.innerHTML = `
   <div class="info-block__question">${
