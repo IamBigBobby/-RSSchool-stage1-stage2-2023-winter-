@@ -7,11 +7,10 @@ import { renderMain, renderGallow } from './generateField.js';
 import { renderKeyboard, renderWrapperKeyboard } from './renderKeyboard.js';
 
 function refreshGame() {
-  const pastGame = document.querySelector('.main');
-  pastGame.remove();
-
   const popUp = document.querySelector('.popup');
   popUp.remove();
+  const pastGame = document.querySelector('.main');
+  pastGame.remove();
 
   document.removeEventListener('keypress', nextStageEnterLose);
   document.removeEventListener('keypress', nextStageEnterWin);

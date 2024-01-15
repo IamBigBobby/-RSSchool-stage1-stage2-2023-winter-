@@ -138,7 +138,7 @@ function checkInput(event, letter, answer, question) {
 
         if (newInvisibleAnswer === answer.toUpperCase()) {
           popupWin(answer);
-          localStorage.clear();
+          localStorage.removeItem('IamBigBobby_hangmanGameState');
           return;
         }
 
@@ -174,7 +174,7 @@ function checkInput(event, letter, answer, question) {
 
     if (numberOfFail === 6) {
       popupLose(answer);
-      localStorage.clear();
+      localStorage.removeItem('IamBigBobby_hangmanGameState');
       return;
     }
   }
