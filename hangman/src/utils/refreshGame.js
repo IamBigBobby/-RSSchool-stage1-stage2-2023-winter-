@@ -13,7 +13,7 @@ function refreshGame() {
   const pastGame = document.querySelector('.main');
   pastGame.remove();
 
-  document.removeEventListener('keydpress', nextStageEnterLose);
+  document.removeEventListener('keypress', nextStageEnterLose);
   document.removeEventListener('keypress', nextStageEnterWin);
 
   renderMain();
