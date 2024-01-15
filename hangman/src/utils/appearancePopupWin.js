@@ -20,10 +20,10 @@ function popupWin(word) {
 
   button.addEventListener('click', refreshGame);
 
-  document.addEventListener('keypress', nextStageEnter);
+  document.addEventListener('keypress', nextStageEnterWin);
 }
 
-function nextStageEnter(event) {
+function nextStageEnterWin(event) {
   if (event.key === 'Enter') {
     refreshGame();
   }

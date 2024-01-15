@@ -20,10 +20,10 @@ function popupLose(word) {
 
   button.addEventListener('click', refreshGame);
 
-  document.addEventListener('keydown', nextStageEnter);
+  document.addEventListener('keypress', nextStageEnterLose);
 }
 
-function nextStageEnter(event) {
+function nextStageEnterLose(event) {
   if (event.key === 'Enter') {
     refreshGame();
   }

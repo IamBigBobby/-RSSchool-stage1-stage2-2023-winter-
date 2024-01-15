@@ -1,5 +1,6 @@
 export { refreshGame };
-import { nextStageEnter } from './appearancePopupLose.js';
+import { nextStageEnterLose } from './appearancePopupLose.js';
+import { nextStageEnterWin } from './appearancePopupWin.js';
 import { eventsKeyboard } from './eventsKeyboard.js';
 import { createQuestion } from './generadeQuestion.js';
 import { renderMain, renderGallow } from './generateField.js';
@@ -12,7 +13,8 @@ function refreshGame() {
   const pastGame = document.querySelector('.main');
   pastGame.remove();
 
-  document.removeEventListener('keydown', nextStageEnter);
+  document.removeEventListener('keydpress', nextStageEnterLose);
+  document.removeEventListener('keypress', nextStageEnterWin);
 
   renderMain();
   renderGallow();
