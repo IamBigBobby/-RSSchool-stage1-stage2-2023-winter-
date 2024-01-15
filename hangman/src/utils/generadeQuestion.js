@@ -10,6 +10,7 @@ import { saveGameForRealode } from './saveData.js';
 
 let questionData;
 let trueAnswer;
+let previousRandomQuestion;
 
 function createQuestion() {
   fetch('./src/data.json')
@@ -23,6 +24,7 @@ function createQuestion() {
 }
 
 function createQuestionBlock(loadAswer, loadQuestion, baseAnswer) {
+  console.log();
   let infoblock = document.createElement('div');
   infoblock.className = 'info-block';
 
@@ -36,10 +38,18 @@ function createQuestionBlock(loadAswer, loadQuestion, baseAnswer) {
 
     console.log(trueAnswer);
   } else {
-    let randomQuestion = getRandomIntInclusive(
-      0,
-      questionData.questions.length - 1,
-    );
+    let randomQuestion;
+    do {
+      randomQuestion = getRandomIntInclusive(
+        0,
+        questionData.questions.length - 1,
+      );
+    } while (randomQuestion === previousRandomQuestion);
+
+    previousRandomQuestion = randomQuestion;
+
+    trueAnswer = questionData.questions[randomQuestion].answer;
+    console.log(trueAnswer);
 
     infoblock.innerHTML = `
   <div class="info-block__question">${
@@ -49,20 +59,9 @@ function createQuestionBlock(loadAswer, loadQuestion, baseAnswer) {
     questionData.questions[randomQuestion].answer.length,
   )}</div>
   `;
-
-    trueAnswer = questionData.questions[randomQuestion].answer;
-    console.log(trueAnswer);
-
-    // saveGameForRealode(
-    //   ...[
-    //     '_'.repeat(questionData.questions[randomQuestion].answer.length),
-    //     questionData.questions[randomQuestion].question,
-    //     0,
-    //     questionData.questions[randomQuestion].answer,
-    //     ,
-    //   ],
-    // );
   }
+
+  // saveGameForRealode(...[, , , trueAnswer, ,]);
 
   document.querySelector('.keyboard').after(infoblock);
 }

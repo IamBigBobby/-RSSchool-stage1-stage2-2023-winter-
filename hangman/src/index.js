@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // listen event keydoard
     eventsKeyboard();
 
-    // generateQuestionBlock
+    // // generateQuestionBlock
     createQuestion();
   }
 });
