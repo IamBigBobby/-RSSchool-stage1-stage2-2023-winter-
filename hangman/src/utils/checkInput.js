@@ -96,6 +96,8 @@ function checkInput(event, letter, answer, question) {
     'KeyZ',
   ];
 
+  console.log(event.keyCode);
+
   if (!englishAlphabet.includes(letter)) {
     alert('Please use English layout');
 
@@ -121,6 +123,8 @@ function checkInput(event, letter, answer, question) {
 
   let checkChar = answer.toUpperCase().includes(letter);
 
+  addDisabledKey(event);
+
   if (checkChar) {
     for (let i = 0; i < answer.length; i++) {
       let oldInvisibleAnswer = answerBlock.innerHTML;
@@ -135,13 +139,10 @@ function checkInput(event, letter, answer, question) {
         answerBlock.innerHTML = newInvisibleAnswer;
 
         if (newInvisibleAnswer === answer.toUpperCase()) {
-          addDisabledKey(event);
           popupWin(answer);
           localStorage.clear();
           return;
         }
-
-        addDisabledKey(event);
 
         saveGameForRealode(
           newInvisibleAnswer,
@@ -163,8 +164,6 @@ function checkInput(event, letter, answer, question) {
       numberOfFail++;
       failCounter.innerHTML = numberOfFail;
     }
-
-    addDisabledKey(event);
     renderLittleMan(numberOfFail);
 
     saveGameForRealode(
