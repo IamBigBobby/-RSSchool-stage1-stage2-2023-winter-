@@ -96,8 +96,6 @@ function checkInput(event, letter, answer, question) {
     'KeyZ',
   ];
 
-  console.log(event.keyCode, event.target);
-
   if (!englishAlphabet.includes(letter)) {
     alert('Please use English layout');
 
