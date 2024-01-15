@@ -59,6 +59,8 @@ function createQuestionBlock(loadAswer, loadQuestion, baseAnswer) {
   }
 
   document.querySelector('.keyboard').after(infoblock);
+
+  console.log(trueAnswer);
 }
 
 function creatFailedAttemptCounter(countFail) {
