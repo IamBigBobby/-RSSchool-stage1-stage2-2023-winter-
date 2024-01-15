@@ -6,8 +6,6 @@ export {
   trueAnswer,
 };
 
-import { saveGameForRealode } from './saveData.js';
-
 let questionData;
 let trueAnswer;
 let previousRandomQuestion;
@@ -60,8 +58,6 @@ function createQuestionBlock(loadAswer, loadQuestion, baseAnswer) {
   )}</div>
   `;
   }
-
-  // saveGameForRealode(...[, , , trueAnswer, ,]);
 
   document.querySelector('.keyboard').after(infoblock);
 }
