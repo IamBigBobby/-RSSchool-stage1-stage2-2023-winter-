@@ -163,9 +163,7 @@ function checkInput(event, letter, answer, question) {
       let gameState = loadGameData();
 
       let disabledKeys = gameState.disabledKeys;
-      console.log(disabledKeys);
 
-      console.log('wrong');
       if (!disabledKeys.includes(event.keyCode)) {
         numberOfFail++;
         failCounter.innerHTML = numberOfFail;
