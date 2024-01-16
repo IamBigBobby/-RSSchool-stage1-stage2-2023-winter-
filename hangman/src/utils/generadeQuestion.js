@@ -1,3 +1,5 @@
+import { saveGameForRealode } from './saveData';
+
 export {
   createQuestion,
   createQuestionBlock,
@@ -21,7 +23,6 @@ function createQuestion() {
 }
 
 function createQuestionBlock(loadAswer, loadQuestion, baseAnswer) {
-  console.log();
   let infoblock = document.createElement('div');
   infoblock.className = 'info-block';
 
@@ -57,6 +58,8 @@ function createQuestionBlock(loadAswer, loadQuestion, baseAnswer) {
   )}</div>
   `;
   }
+
+  saveGameForRealode(...[, , , , []]);
 
   document.querySelector('.keyboard').after(infoblock);
 

@@ -16,9 +16,14 @@ import { loadGameData } from './utils/loadData.js';
 document.addEventListener('DOMContentLoaded', function () {
   let saveGameState = loadGameData();
 
+  saveGameState = null;
+  // костыль
+
+  localStorage.removeItem('IamBigBobby_hangmanGameState');
+
   // render field
   renderMain();
-
+  // ну и нахрена я снизу все это делал
   if (saveGameState) {
     let answer = saveGameState.answer;
     let question = saveGameState.question;
