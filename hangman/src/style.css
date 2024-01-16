@@ -118,8 +118,8 @@ body {
   grid-area: right-bottom;
   display: flex;
   flex-wrap: wrap;
-  align-self: flex-start;
   justify-content: center;
+  align-self: flex-start;
   max-width: 550px;
 }
 @media screen and (max-width: 700px) {
@@ -161,6 +161,12 @@ body {
 
 .info-block__answer {
   letter-spacing: 5px;
+}
+
+.info-block__answer,
+.info-block__question,
+.info-block__counter {
+  text-align: center;
 }
 
 .popup {
