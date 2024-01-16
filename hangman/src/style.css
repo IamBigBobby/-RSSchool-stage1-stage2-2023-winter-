@@ -10,6 +10,8 @@ body {
 @media screen and (max-width: 700px) {
   body {
     flex-direction: column;
+    height: auto;
+    padding: 20px;
   }
 }
 
