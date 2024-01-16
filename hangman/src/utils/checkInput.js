@@ -3,6 +3,7 @@ import { addDisabledKey } from './addDisabledKey.js';
 import { popupLose } from './appearancePopupLose.js';
 import { popupWin } from './appearancePopupWin.js';
 import { trueAnswer } from './generadeQuestion.js';
+import { loadGameData } from './loadData.js';
 import { saveGameForRealode } from './saveData.js';
 
 function checkInput(event, letter, answer, question) {
@@ -159,6 +160,13 @@ function checkInput(event, letter, answer, question) {
     if (numberOfFail >= 6) {
       numberOfFail = 6;
     } else {
+      let gameState = loadGameData();
+
+      let disabledKeys = gameState.disabledKeys;
+
+      if (disabledKeys.includes(event.keyCode)) {
+        return;
+      }
       numberOfFail++;
       failCounter.innerHTML = numberOfFail;
     }
