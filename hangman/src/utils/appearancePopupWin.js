@@ -11,7 +11,7 @@ function popupWin(word) {
   popup.innerHTML = `
   <div class="popup__content">
     <div class="popup__content-info">Good game! You were right, the answer was ${word}!</div>
-    <button class="button">Next question</button>
+    <button class="button">Play again</button>
   </div>
   `;
   document.body.prepend(popup);
