@@ -1,4 +1,5 @@
-const { test } = require("./utils/test");
+const { createWrapper, createGame } = require("./utils/createField");
 import "./style.scss";
 
-console.log(test());
+createWrapper();
+createGame();

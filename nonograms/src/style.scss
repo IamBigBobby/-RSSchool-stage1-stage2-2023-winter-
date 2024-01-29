@@ -1,3 +1,5 @@
-.hello {
-  color: red;
-}
+// base
+@import "./sass/base/body";
+// layout
+@import "./sass/layout/table";
+@import "./sass/layout/wrapper";

@@ -1,0 +1,24 @@
+.table-nonograms {
+  border-collapse: collapse;
+}
+.table-nonograms td {
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+}
+
+.table-nonograms td:nth-child(5n + 5) {
+  border-right-width: 4px;
+}
+
+.table-nonograms tr:nth-child(5n + 5) td {
+  border-bottom-width: 4px;
+}
+
+.table-nonograms td:first-child {
+  border-left-width: 4px;
+}
+
+.table-nonograms tr:first-child td {
+  border-top-width: 4px;
+}
