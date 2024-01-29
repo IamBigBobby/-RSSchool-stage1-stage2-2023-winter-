@@ -11,13 +11,13 @@ function createGame() {
   const table = document.createElement("table");
   table.className = "table-nonograms";
 
-  for (let i = 0; i < data.easy[1].length; i++) {
+  for (let i = 0; i < data.medium[0].length; i++) {
     const row = document.createElement("tr");
 
-    for (let j = 0; j < data.easy[2].length; j++) {
+    for (let j = 0; j < data.medium[0].length; j++) {
       const cell = document.createElement("td");
       cell.className = "table-nonograms__cell";
-      if (data.easy[2][i][j] === 1) {
+      if (data.medium[0][i][j] === 1) {
         cell.className = "table-nonograms__cell table-nonograms__cell_answer";
         cell.style.backgroundColor = "black";
       }
@@ -87,7 +87,6 @@ function countingKeys() {
     for (let j = 0; j < table.rows.length; j++) {
       const cell = table.rows[j].cells[i];
 
-      console.log(cell);
       if (
         cell.classList.contains("table-nonograms__cell") &&
         cell.classList.contains("table-nonograms__cell_answer")
@@ -95,19 +94,30 @@ function countingKeys() {
         keys++;
         if (j === table.rows.length - 1) {
           if (keys !== 0) {
-            newCell.innerHTML += keys;
-            keys = 0;
+            const keySpan = document.createElement("span");
+            keySpan.textContent = keys;
+            keySpan.style.display = "block";
+            keySpan.style.textAlign = "center";
+            newCell.appendChild(keySpan);
           }
         }
       } else {
         if (keys !== 0) {
-          newCell.innerHTML += keys;
+          const keySpan = document.createElement("span");
+          keySpan.textContent = keys;
+          keySpan.style.display = "block";
+          keySpan.style.textAlign = "center";
+          newCell.appendChild(keySpan);
           keys = 0;
         }
       }
     }
     if (newCell.textContent === "" && i !== 0) {
-      newCell.innerHTML = 0;
+      const keySpan = document.createElement("span");
+      keySpan.textContent = 0;
+      keySpan.style.display = "block";
+      keySpan.style.textAlign = "center";
+      newCell.appendChild(keySpan);
     }
   }
   table.insertBefore(newRow, table.firstChild);
