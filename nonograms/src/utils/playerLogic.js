@@ -4,14 +4,26 @@ import { countingTrueCells } from "./countingAnswersCells";
 function playerLogic() {
   const table = document.querySelector(".table-nonograms");
 
-  table.addEventListener("click", leftClickLogic);
+  document.addEventListener("contextmenu", function (event) {
+    event.preventDefault();
+  });
+  table.addEventListener("mousedown", clickLogic);
 }
 
-function leftClickLogic(event) {
-  const leftClick = event.target;
-  if (leftClick.classList.contains("table-nonograms__cell")) {
-    event.target.classList.toggle("table-nonograms_player-point");
-    checkWin();
+function clickLogic(event) {
+  const click = event.target;
+  const mouseButton = event.button;
+
+  if (mouseButton === 0) {
+    if (click.classList.contains("table-nonograms__cell")) {
+      click.classList.toggle("table-nonograms_player-point");
+      checkWin();
+    }
+  }
+
+  if (mouseButton === 2) {
+    event.preventDefault();
+    console.log("right click");
   }
 }
 
