@@ -19,7 +19,6 @@ function createGame() {
       cell.className = "table-nonograms__cell";
       if (data.medium[0][i][j] === 1) {
         cell.className = "table-nonograms__cell table-nonograms__cell_answer";
-        cell.style.backgroundColor = "black";
       }
       row.appendChild(cell);
     }
