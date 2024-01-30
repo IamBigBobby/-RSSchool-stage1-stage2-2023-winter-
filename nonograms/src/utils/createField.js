@@ -96,8 +96,6 @@ function countingKeys() {
           if (keys !== 0) {
             const keySpan = document.createElement("span");
             keySpan.textContent = keys;
-            keySpan.style.display = "block";
-            keySpan.style.textAlign = "center";
             newCell.appendChild(keySpan);
           }
         }
@@ -105,8 +103,6 @@ function countingKeys() {
         if (keys !== 0) {
           const keySpan = document.createElement("span");
           keySpan.textContent = keys;
-          keySpan.style.display = "block";
-          keySpan.style.textAlign = "center";
           newCell.appendChild(keySpan);
           keys = 0;
         }
@@ -115,8 +111,6 @@ function countingKeys() {
     if (newCell.textContent === "" && i !== 0) {
       const keySpan = document.createElement("span");
       keySpan.textContent = 0;
-      keySpan.style.display = "block";
-      keySpan.style.textAlign = "center";
       newCell.appendChild(keySpan);
     }
   }
