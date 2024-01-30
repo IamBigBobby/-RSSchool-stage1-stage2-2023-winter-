@@ -10,7 +10,7 @@ function playerLogic() {
 function leftClickLogic(event) {
   const leftClick = event.target;
   if (leftClick.classList.contains("table-nonograms__cell")) {
-    event.target.classList.add("table-nonograms_player-point");
+    event.target.classList.toggle("table-nonograms_player-point");
     checkWin();
   }
 }
