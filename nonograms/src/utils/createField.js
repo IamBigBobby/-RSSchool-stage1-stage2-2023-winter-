@@ -21,11 +21,6 @@ function createWrapper() {
   newGameButtonCreate.innerHTML = "new game";
   menu.prepend(newGameButtonCreate);
 
-  const newLevelButtonCreate = document.createElement("button");
-  newLevelButtonCreate.className = "nonagrams__menu__new-level";
-  newLevelButtonCreate.innerHTML = "choose new nonogramm";
-  menu.prepend(newLevelButtonCreate);
-
   const randomGameButtonCreate = document.createElement("button");
   randomGameButtonCreate.className = "nonagrams__menu__random-game";
   randomGameButtonCreate.innerHTML = "random game";
