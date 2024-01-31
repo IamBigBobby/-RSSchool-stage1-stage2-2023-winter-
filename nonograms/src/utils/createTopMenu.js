@@ -1,5 +1,6 @@
 export { createTopMenu };
 import { data } from "../data/dataMatrix";
+import { chooseDifficulty } from "./chooseDifficulty";
 
 function createTopMenu() {
   const nameNonogramCreate = document.createElement("div");
@@ -39,16 +40,43 @@ function createTopMenu() {
   nonogramsChooseLvlCreate.className = "top-menu-nonograms__choose-lvl";
   nameNonogram.append(nonogramsChooseLvlCreate);
 
-  const nonogramsChooseLvl = document.querySelector(
-    ".top-menu-nonograms__choose-lvl"
+  // add listeners
+  const nonogramsLevelEasy = document.querySelector(
+    ".top-menu-nonograms__easy-lvl"
+  );
+  const nonogramsLevelMedium = document.querySelector(
+    ".top-menu-nonograms__medium-lvl"
+  );
+  const nonogramsLevelHard = document.querySelector(
+    ".top-menu-nonograms__hard-lvl"
   );
 
-  for (let i = 0; i < data.easy.length; i++) {
-    const lvlButtonCreate = document.createElement("button");
-    lvlButtonCreate.className = "top-menu-nonograms__easy-choose-button";
-    lvlButtonCreate.innerHTML = `${data.easy[i].name}`;
-    nonogramsChooseLvl.append(lvlButtonCreate);
-  }
+  nonogramsLevelEasy.addEventListener("mousedown", chooseDifficulty);
+  nonogramsLevelMedium.addEventListener("mousedown", chooseDifficulty);
+  nonogramsLevelHard.addEventListener("mousedown", chooseDifficulty);
+
+  chooseDifficulty();
 }
+
+// function createLvl(pick) {
+//   if (pick === undefined) {
+//     const nonogramsChooseLvl = document.querySelector(
+//       ".top-menu-nonograms__choose-lvl"
+//     );
+
+//     for (let i = 0; i < data.easy.length; i++) {
+//       const lvlButtonCreate = document.createElement("button");
+//       lvlButtonCreate.className = "top-menu-nonograms__easy-choose-button";
+//       lvlButtonCreate.innerHTML = `${data.easy[i].name}`;
+//       nonogramsChooseLvl.append(lvlButtonCreate);
+
+//       const lvlButton = document.querySelector(
+//         ".top-menu-nonograms__easy-choose-button"
+//       );
+//     }
+//   }
+
+//   console.log("work");
+// }
 
 // function showLevels()
