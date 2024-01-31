@@ -41,10 +41,19 @@ function checkWin() {
   const trueCellsGame = document.querySelectorAll(
     ".table-nonograms__cell.table-nonograms__cell_answer.table-nonograms_player-point"
   );
+  const pickCellsGame = document.querySelectorAll(
+    ".table-nonograms_player-point"
+  );
+  const answerCellsGame = document.querySelectorAll(
+    ".table-nonograms__cell_answer"
+  );
 
   console.log(trueCellsCounting, trueCellsGame.length);
 
-  if (trueCellsCounting === trueCellsGame.length) {
+  if (
+    trueCellsCounting === trueCellsGame.length &&
+    pickCellsGame.length === answerCellsGame.length
+  ) {
     console.log("you win!");
   } else {
     console.log("not yet");
