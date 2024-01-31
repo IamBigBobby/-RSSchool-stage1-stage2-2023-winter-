@@ -8,16 +8,18 @@ function createWrapper() {
 }
 
 function createGame() {
+  const arr = data.hard[1].matrix;
+
   const table = document.createElement("table");
   table.className = "table-nonograms";
 
-  for (let i = 0; i < data.medium[0].length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     const row = document.createElement("tr");
 
-    for (let j = 0; j < data.medium[0].length; j++) {
+    for (let j = 0; j < arr.length; j++) {
       const cell = document.createElement("td");
       cell.className = "table-nonograms__cell";
-      if (data.medium[0][i][j] === 1) {
+      if (arr[i][j] === 1) {
         cell.className = "table-nonograms__cell table-nonograms__cell_answer";
       }
       row.appendChild(cell);
