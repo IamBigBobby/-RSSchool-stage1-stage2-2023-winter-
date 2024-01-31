@@ -13,20 +13,38 @@ function createWrapper() {
 
   const menu = document.querySelector(".nonagrams__menu");
 
-  const newGameButton = document.createElement("button");
-  newGameButton.className = "nonagrams__menu__new-game";
-  newGameButton.innerHTML = "new game";
-  menu.prepend(newGameButton);
+  const newGameButtonCreate = document.createElement("button");
+  newGameButtonCreate.className = "nonagrams__menu__new-game";
+  newGameButtonCreate.innerHTML = "new game";
+  menu.prepend(newGameButtonCreate);
 
-  const newLevelButton = document.createElement("button");
-  newLevelButton.className = "nonagrams__menu__new-level";
-  newLevelButton.innerHTML = "choose new nonogramm";
-  menu.prepend(newLevelButton);
+  const newLevelButtonCreate = document.createElement("button");
+  newLevelButtonCreate.className = "nonagrams__menu__new-level";
+  newLevelButtonCreate.innerHTML = "choose new nonogramm";
+  menu.prepend(newLevelButtonCreate);
 
-  const randomGameButton = document.createElement("button");
-  randomGameButton.className = "nonagrams__menu__new-level";
-  randomGameButton.innerHTML = "random game";
-  menu.prepend(randomGameButton);
+  const randomGameButtonCreate = document.createElement("button");
+  randomGameButtonCreate.className = "nonagrams__menu__random-game";
+  randomGameButtonCreate.innerHTML = "random game";
+  menu.prepend(randomGameButtonCreate);
+
+  const helpGameButtonCreate = document.createElement("button");
+  helpGameButtonCreate.className = "nonagrams__menu__help";
+  helpGameButtonCreate.innerHTML = "help mode: off";
+  menu.prepend(helpGameButtonCreate);
+
+  const scoreGameButtonCreate = document.createElement("button");
+  scoreGameButtonCreate.className = "nonagrams__menu__score";
+  scoreGameButtonCreate.innerHTML = "score board top 5";
+  menu.prepend(scoreGameButtonCreate);
+
+  const newGameButton = document.querySelector(".nonagrams__menu__new-game");
+  const newLevelButton = document.querySelector(".nonagrams__menu__new-level");
+  const randomGameButton = document.querySelector(
+    ".nonagrams__menu__random-game"
+  );
+  const helpGameButton = document.querySelector(".nonagrams__menu__help");
+  const scoreGameButton = document.querySelector(".nonagrams__menu__score");
 }
 
 function createGame(arr) {
