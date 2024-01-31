@@ -1,9 +1,32 @@
 export { createWrapper, createGame };
 
 function createWrapper() {
-  const wrapper = document.createElement("div");
-  wrapper.className = "wrapper-nonograms";
-  document.body.prepend(wrapper);
+  const wrapperCreate = document.createElement("div");
+  wrapperCreate.className = "wrapper-nonograms";
+  document.body.prepend(wrapperCreate);
+
+  const wrapper = document.querySelector(".wrapper-nonograms");
+
+  const menuCreate = document.createElement("div");
+  menuCreate.className = "nonagrams__menu";
+  wrapper.prepend(menuCreate);
+
+  const menu = document.querySelector(".nonagrams__menu");
+
+  const newGameButton = document.createElement("button");
+  newGameButton.className = "nonagrams__menu__new-game";
+  newGameButton.innerHTML = "new game";
+  menu.prepend(newGameButton);
+
+  const newLevelButton = document.createElement("button");
+  newLevelButton.className = "nonagrams__menu__new-level";
+  newLevelButton.innerHTML = "choose new nonogramm";
+  menu.prepend(newLevelButton);
+
+  const randomGameButton = document.createElement("button");
+  randomGameButton.className = "nonagrams__menu__new-level";
+  randomGameButton.innerHTML = "random game";
+  menu.prepend(randomGameButton);
 }
 
 function createGame(arr) {

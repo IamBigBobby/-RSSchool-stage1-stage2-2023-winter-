@@ -1,5 +1,6 @@
 .table-nonograms {
   border-collapse: collapse;
+  grid-column: 1 / span 2;
 }
 .table-nonograms td {
   border: 1px solid black;
