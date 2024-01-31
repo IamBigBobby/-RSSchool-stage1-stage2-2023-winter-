@@ -1,5 +1,4 @@
 export { createWrapper, createGame };
-import { data } from "../data/dataMatrix";
 
 function createWrapper() {
   const wrapper = document.createElement("div");
@@ -8,8 +7,6 @@ function createWrapper() {
 }
 
 function createGame(arr) {
-  console.log(arr);
-
   const table = document.createElement("table");
   table.className = "table-nonograms";
 
