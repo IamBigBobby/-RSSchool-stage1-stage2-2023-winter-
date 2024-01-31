@@ -1,3 +1,5 @@
+import { openAnswer } from "./openAnswer";
+
 export { createWrapper, createGame };
 
 function createWrapper() {
@@ -45,6 +47,8 @@ function createWrapper() {
   );
   const helpGameButton = document.querySelector(".nonagrams__menu__help");
   const scoreGameButton = document.querySelector(".nonagrams__menu__score");
+
+  helpGameButton.addEventListener("mousedown", openAnswer);
 }
 
 function createGame(arr) {
