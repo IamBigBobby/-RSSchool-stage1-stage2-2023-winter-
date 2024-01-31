@@ -43,10 +43,11 @@
 }
 
 .table-nonograms_player-point {
-  background-color: red;
+  background-color: black;
 }
 
 .table-nonograms_player-cross {
   background-image: url("./assets/svg/cross.svg");
   background-repeat: no-repeat;
+  background-position: center;
 }

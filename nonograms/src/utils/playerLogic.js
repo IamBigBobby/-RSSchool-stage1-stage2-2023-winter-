@@ -15,7 +15,10 @@ function clickLogic(event) {
   const mouseButton = event.button;
 
   if (mouseButton === 0) {
-    if (click.classList.contains("table-nonograms__cell")) {
+    if (
+      click.classList.contains("table-nonograms__cell") &&
+      !click.classList.contains("table-nonograms_player-cross")
+    ) {
       click.classList.toggle("table-nonograms_player-point");
       checkWin();
     }
@@ -24,7 +27,10 @@ function clickLogic(event) {
   if (mouseButton === 2) {
     event.preventDefault();
 
-    if (click.classList.contains("table-nonograms__cell")) {
+    if (
+      click.classList.contains("table-nonograms__cell") &&
+      !click.classList.contains("table-nonograms_player-point")
+    ) {
       click.classList.toggle("table-nonograms_player-cross");
     }
   }
