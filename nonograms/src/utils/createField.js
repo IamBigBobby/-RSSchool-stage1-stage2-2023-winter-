@@ -7,8 +7,8 @@ function createWrapper() {
   document.body.prepend(wrapper);
 }
 
-function createGame() {
-  const arr = data.hard[1].matrix;
+function createGame(arr) {
+  console.log(arr);
 
   const table = document.createElement("table");
   table.className = "table-nonograms";
