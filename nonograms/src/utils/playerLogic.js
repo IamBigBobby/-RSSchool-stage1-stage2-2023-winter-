@@ -23,7 +23,10 @@ function clickLogic(event) {
 
   if (mouseButton === 2) {
     event.preventDefault();
-    console.log("right click");
+
+    if (click.classList.contains("table-nonograms__cell")) {
+      click.classList.toggle("table-nonograms_player-cross");
+    }
   }
 }
 
