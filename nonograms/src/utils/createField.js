@@ -67,7 +67,7 @@ function createGame(arr) {
     table.appendChild(row);
   }
   const wrapper = document.querySelector(".wrapper-nonograms");
-  wrapper.prepend(table);
+  wrapper.append(table);
 
   countingKeys();
 }

@@ -1,8 +1,13 @@
 .table-nonograms {
   border-collapse: collapse;
+  table-layout: fixed;
+
   grid-column: 1 / span 2;
+
+  justify-self: center;
 }
-.table-nonograms td {
+.table-nonograms td,
+th {
   border: 1px solid black;
   width: 30px;
   height: 30px;

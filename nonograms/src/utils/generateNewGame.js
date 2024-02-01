@@ -9,7 +9,6 @@ function generateNewGame(event) {
   let selectedArr;
   for (let difficulty in data) {
     for (let i = 0; i < data[difficulty].length; i++) {
-      console.log();
       if (data[difficulty][i].name === selectedLvlName) {
         selectedArr = data[difficulty][i].matrix;
       }
