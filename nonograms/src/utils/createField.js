@@ -1,3 +1,4 @@
+import { createRandomGame } from "./createRandomGame";
 import { openAnswer } from "./openAnswer";
 import { startNewGame } from "./startNewGame";
 
@@ -46,6 +47,7 @@ function createWrapper() {
 
   helpGameButton.addEventListener("mousedown", openAnswer);
   newGameButton.addEventListener("mousedown", startNewGame);
+  randomGameButton.addEventListener("mousedown", createRandomGame);
 }
 
 function createGame(arr) {
