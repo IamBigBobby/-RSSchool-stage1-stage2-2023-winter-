@@ -1,5 +1,6 @@
 export { chooseDifficulty };
 import { data } from "../data/dataMatrix";
+import { generateNewGame } from "./generateNewGame";
 
 function chooseDifficulty(event) {
   const nonogramsChooseLvl = document.querySelector(
@@ -12,6 +13,14 @@ function chooseDifficulty(event) {
       lvlButtonCreate.className = "top-menu-nonograms__easy-choose-button";
       lvlButtonCreate.innerHTML = `${data.easy[i].name}`;
       nonogramsChooseLvl.append(lvlButtonCreate);
+
+      const lvlButton = document.querySelectorAll(
+        ".top-menu-nonograms__easy-choose-button"
+      );
+
+      lvlButton.forEach((button) => {
+        button.addEventListener("mousedown", generateNewGame);
+      });
     }
   } else {
     const difficultyClass = event.target.className;
@@ -26,9 +35,16 @@ function chooseDifficulty(event) {
 
     for (let i = 0; i < data[difficulty].length; i++) {
       const lvlButtonCreate = document.createElement("button");
-      lvlButtonCreate.className = "top-menu-nonograms__easy-choose-button";
+      lvlButtonCreate.className = `top-menu-nonograms__${difficulty}-choose-button`;
       lvlButtonCreate.innerHTML = `${data[difficulty][i].name}`;
       nonogramsChooseLvl.append(lvlButtonCreate);
+
+      const lvlButton = document.querySelectorAll(
+        `.top-menu-nonograms__${difficulty}-choose-button`
+      );
+      lvlButton.forEach((button) => {
+        button.addEventListener("mousedown", generateNewGame);
+      });
     }
   }
 }

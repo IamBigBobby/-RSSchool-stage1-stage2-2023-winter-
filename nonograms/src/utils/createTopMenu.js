@@ -1,5 +1,4 @@
 export { createTopMenu };
-import { data } from "../data/dataMatrix";
 import { chooseDifficulty } from "./chooseDifficulty";
 
 function createTopMenu() {
@@ -57,26 +56,3 @@ function createTopMenu() {
 
   chooseDifficulty();
 }
-
-// function createLvl(pick) {
-//   if (pick === undefined) {
-//     const nonogramsChooseLvl = document.querySelector(
-//       ".top-menu-nonograms__choose-lvl"
-//     );
-
-//     for (let i = 0; i < data.easy.length; i++) {
-//       const lvlButtonCreate = document.createElement("button");
-//       lvlButtonCreate.className = "top-menu-nonograms__easy-choose-button";
-//       lvlButtonCreate.innerHTML = `${data.easy[i].name}`;
-//       nonogramsChooseLvl.append(lvlButtonCreate);
-
-//       const lvlButton = document.querySelector(
-//         ".top-menu-nonograms__easy-choose-button"
-//       );
-//     }
-//   }
-
-//   console.log("work");
-// }
-
-// function showLevels()

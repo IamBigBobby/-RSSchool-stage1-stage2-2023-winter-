@@ -1,5 +1,8 @@
 .wrapper-nonograms {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 200px 200px 100px;
   gap: 10px;
+  justify-content: center;
+  align-content: center;
+  width: 1440px;
 }
