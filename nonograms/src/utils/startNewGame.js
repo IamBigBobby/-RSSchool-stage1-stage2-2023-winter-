@@ -1,7 +1,6 @@
 export { startNewGame };
 
 function startNewGame() {
-  console.log("click");
   const tableCells = document.querySelectorAll(".table-nonograms__cell");
 
   tableCells.forEach((cell) => {
