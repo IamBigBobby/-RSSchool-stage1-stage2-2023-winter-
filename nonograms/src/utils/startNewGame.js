@@ -1,3 +1,5 @@
+import { stopTimer } from "./timer";
+
 export { startNewGame };
 
 function startNewGame() {
@@ -12,4 +14,5 @@ function startNewGame() {
       cell.classList.remove("table-nonograms_player-cross");
     }
   });
+  stopTimer();
 }
