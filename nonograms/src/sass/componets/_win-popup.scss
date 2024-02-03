@@ -12,13 +12,14 @@
 }
 
 .pop-up-win__content {
-  width: 200px;
+  width: 300px;
   height: 100px;
 
   background-color: white;
   border: 1px dotted black;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -27,4 +28,10 @@
 
 .pop-up-win__content p {
   text-align: center;
+}
+
+.pop-up-win__buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

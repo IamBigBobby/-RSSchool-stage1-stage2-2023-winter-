@@ -13,6 +13,11 @@ function popUpWin() {
   createPopUpWinBackground.innerHTML = `
   <div class="pop-up-win__content">
   <p>Great! You have solved the nonogram in ${seconds} seconds!</p>
+  <div class="pop-up-win__buttons">
+  <button class="pop-up-win__button-random">random game</button>
+  <button class="pop-up-win__button-new-game">new game</button>
+  <button class="pop-up-win__button-close">close</button>
+  </div>
   </div>
   `;
   document.body.prepend(createPopUpWinBackground);
