@@ -1,6 +1,7 @@
 export { chooseDifficulty };
 import { data } from "../data/dataMatrix";
 import { generateNewGame } from "./generateNewGame";
+import { stopTimer } from "./timer";
 
 function chooseDifficulty(event) {
   const nonogramsChooseLvl = document.querySelector(

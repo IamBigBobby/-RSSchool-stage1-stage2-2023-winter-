@@ -1,6 +1,7 @@
 import { data } from "../data/dataMatrix";
 import { createGame } from "./createField";
 import { playerLogic } from "./playerLogic";
+import { stopTimer } from "./timer";
 
 export { generateNewGame };
 
@@ -14,6 +15,8 @@ function generateNewGame(event) {
       }
     }
   }
+  stopTimer();
+
   const table = document.querySelector(".table-nonograms");
   table.remove();
 
