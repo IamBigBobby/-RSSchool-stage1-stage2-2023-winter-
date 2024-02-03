@@ -1,3 +1,4 @@
+import { createRandomGame } from "./createRandomGame";
 import { playerLogic } from "./playerLogic";
 import { startNewGame } from "./startNewGame";
 
@@ -16,7 +17,6 @@ function popUpWin() {
   <div class="pop-up-win__buttons">
   <button class="pop-up-win__button-random">random game</button>
   <button class="pop-up-win__button-new-game">new game</button>
-  <button class="pop-up-win__button-close">close</button>
   </div>
   </div>
   `;
@@ -24,6 +24,13 @@ function popUpWin() {
 
   const popUpWinBackground = document.querySelector(".pop-up-win__background");
   popUpWinBackground.addEventListener("mousedown", closePopUp);
+
+  const randomButton = document.querySelector(".pop-up-win__button-random");
+  randomButton.addEventListener("mousedown", closePopUp);
+  randomButton.addEventListener("mousedown", createRandomGame);
+
+  const newGameButton = document.querySelector(".pop-up-win__button-new-game");
+  newGameButton.addEventListener("mousedown", closePopUp);
 }
 
 function getWinTime() {
@@ -37,7 +44,12 @@ function getWinTime() {
 }
 
 function closePopUp(event) {
-  if (event.target.classList.contains("pop-up-win__background")) {
+  if (
+    event.target.classList.contains("pop-up-win__background") ||
+    event.target.classList.contains("pop-up-win__button-random") ||
+    event.target.classList.contains("pop-up-win__button-new-game") ||
+    event.target.classList.contains("pop-up-win__button-close")
+  ) {
     const popUp = document.querySelector(".pop-up-win__background");
     popUp.remove();
 
