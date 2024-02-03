@@ -1,0 +1,30 @@
+.pop-up-win__background {
+  position: absolute;
+
+  width: 100%;
+  height: 100vh;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pop-up-win__content {
+  width: 200px;
+  height: 100px;
+
+  background-color: white;
+  border: 1px dotted black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+.pop-up-win__content p {
+  text-align: center;
+}

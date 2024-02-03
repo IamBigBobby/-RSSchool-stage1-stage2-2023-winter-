@@ -1,6 +1,7 @@
 export { playerLogic, clickLogic };
+import { popUpWin } from "./appearingPopUpWin";
 import { countingTrueCells } from "./countingAnswersCells";
-import { activateTimer } from "./timer";
+import { activateTimer, stopTimer } from "./timer";
 
 function playerLogic() {
   const table = document.querySelector(".table-nonograms");
@@ -58,6 +59,10 @@ function checkWin() {
     pickCellsGame.length === answerCellsGame.length
   ) {
     console.log("you win!");
+    const table = document.querySelector(".table-nonograms");
+    table.removeEventListener("mousedown", clickLogic);
+    popUpWin();
+    stopTimer();
   } else {
     console.log("not yet");
   }
