@@ -1,14 +1,23 @@
-export { activateTimer, flagTimer };
+export { activateTimer, stopTimer };
 
 let flagTimer = false;
 let currentSeconds = 0;
+let currentTime;
 
-function activateTimer(flagTimer) {
-  if (flagTimer === true) {
-    setInterval(updateTimer, 1000);
-  } else {
-    console.log("pause");
+function activateTimer() {
+  if (!flagTimer) {
+    flagTimer = true;
+    currentTime = setInterval(updateTimer, 1000);
   }
+}
+
+function stopTimer() {
+  flagTimer = false;
+  currentSeconds = 0;
+
+  clearInterval(currentTime);
+  const timer = document.querySelector(".nonograms__timer");
+  timer.innerHTML = "00:00";
 }
 
 function updateTimer() {

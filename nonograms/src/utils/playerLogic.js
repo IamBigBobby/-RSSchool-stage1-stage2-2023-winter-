@@ -1,6 +1,6 @@
-export { playerLogic };
+export { playerLogic, clickLogic };
 import { countingTrueCells } from "./countingAnswersCells";
-import { flagTimer, activateTimer } from "./timer";
+import { activateTimer } from "./timer";
 
 function playerLogic() {
   const table = document.querySelector(".table-nonograms");
@@ -15,10 +15,7 @@ function clickLogic(event) {
   const click = event.target;
   const mouseButton = event.button;
 
-  if (flagTimer === false) {
-    flagTimer = true;
-    activateTimer(flagTimer);
-  }
+  activateTimer();
 
   if (mouseButton === 0) {
     if (
