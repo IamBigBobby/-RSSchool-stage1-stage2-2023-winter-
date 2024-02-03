@@ -2,6 +2,7 @@ export { createRandomGame };
 import { data } from "../data/dataMatrix";
 import { createGame } from "./createField";
 import { playerLogic } from "./playerLogic";
+import { stopTimer } from "./timer";
 
 function createRandomGame() {
   const arrDifficulty = [];
@@ -25,6 +26,8 @@ function createRandomGame() {
   //   console.log(data[arrDifficulty[randomIndexArrDifficulty]]);
   //   console.log(difficultyRandomLenght);
   //   console.log(randomDifficultyLengthIndex);
+
+  stopTimer();
 
   const randomArr =
     data[arrDifficulty[randomIndexArrDifficulty]][randomDifficultyLengthIndex]
