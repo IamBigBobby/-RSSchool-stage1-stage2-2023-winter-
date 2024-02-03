@@ -37,6 +37,11 @@ function createWrapper() {
   scoreGameButtonCreate.innerHTML = "score board top 5";
   menu.prepend(scoreGameButtonCreate);
 
+  const timer = document.createElement("div");
+  timer.classList = "nonograms__timer";
+  timer.innerHTML = "00:00";
+  wrapper.prepend(timer);
+
   const newGameButton = document.querySelector(".nonagrams__menu__new-game");
   const newLevelButton = document.querySelector(".nonagrams__menu__new-level");
   const randomGameButton = document.querySelector(
