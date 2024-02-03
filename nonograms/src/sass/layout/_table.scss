@@ -1,10 +1,11 @@
-.table-nonograms {
-  border-collapse: collapse;
-  table-layout: fixed;
-
+.wrapper-nonograms__table-wrapper {
   grid-column: 1 / span 2;
 
   justify-self: center;
+}
+.table-nonograms {
+  border-collapse: collapse;
+  table-layout: fixed;
 }
 .table-nonograms td,
 th {

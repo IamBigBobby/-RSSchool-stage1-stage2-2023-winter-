@@ -11,6 +11,10 @@ function createWrapper() {
 
   const wrapper = document.querySelector(".wrapper-nonograms");
 
+  const wrapperNonogramCreate = document.createElement("div");
+  wrapperNonogramCreate.className = "wrapper-nonograms__table-wrapper";
+  wrapper.prepend(wrapperNonogramCreate);
+
   const menuCreate = document.createElement("div");
   menuCreate.className = "nonagrams__menu";
   wrapper.prepend(menuCreate);
@@ -43,7 +47,6 @@ function createWrapper() {
   wrapper.prepend(timer);
 
   const newGameButton = document.querySelector(".nonagrams__menu__new-game");
-  const newLevelButton = document.querySelector(".nonagrams__menu__new-level");
   const randomGameButton = document.querySelector(
     ".nonagrams__menu__random-game"
   );
@@ -73,8 +76,10 @@ function createGame(arr) {
 
     table.appendChild(row);
   }
-  const wrapper = document.querySelector(".wrapper-nonograms");
-  wrapper.append(table);
+  const wrapperNonogram = document.querySelector(
+    ".wrapper-nonograms__table-wrapper"
+  );
+  wrapperNonogram.append(table);
 
   countingKeys();
 }
