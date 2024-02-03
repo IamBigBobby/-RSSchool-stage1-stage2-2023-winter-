@@ -36,10 +36,12 @@ function getWinTime() {
   return countingSecond;
 }
 
-function closePopUp() {
-  const popUp = document.querySelector(".pop-up-win__background");
-  popUp.remove();
+function closePopUp(event) {
+  if (event.target.classList.contains("pop-up-win__background")) {
+    const popUp = document.querySelector(".pop-up-win__background");
+    popUp.remove();
 
-  startNewGame();
-  playerLogic();
+    startNewGame();
+    playerLogic();
+  }
 }
