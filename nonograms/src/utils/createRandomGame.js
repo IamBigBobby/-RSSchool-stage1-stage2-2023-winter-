@@ -41,7 +41,7 @@ function createRandomGame() {
 
   const gameInfo = document.querySelector(".top-menu-nonograms__game-info");
 
-  gameInfo.innerHTML = `Difficulty: ${randomDifficulty}<br> Level: ${randomName}`;
+  gameInfo.innerHTML = `Difficulty: ${randomDifficulty} / Level: ${randomName}`;
 
   const table = document.querySelector(".table-nonograms");
   table.remove();

@@ -39,4 +39,9 @@ function loadGame() {
   setCurrentSeconds(saveSeconds);
   console.log(currentSeconds);
   activateTimer();
+
+  // load game info
+  const newGameInfo = localStorage.getItem("IamBigBobby_gameInfo").slice(1, -1);
+  const gameInfo = document.querySelector(".top-menu-nonograms__game-info");
+  gameInfo.innerHTML = newGameInfo;
 }

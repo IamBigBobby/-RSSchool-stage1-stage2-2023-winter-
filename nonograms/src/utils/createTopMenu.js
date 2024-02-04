@@ -56,7 +56,7 @@ function createTopMenu() {
 
   const createInfoAboutGame = document.createElement("div");
   createInfoAboutGame.className = "top-menu-nonograms__game-info";
-  createInfoAboutGame.innerHTML = `Difficulty: easy<br>Level: heart`;
+  createInfoAboutGame.innerHTML = `Difficulty: easy / Level: heart`;
   nameNonogram.append(createInfoAboutGame);
 
   chooseDifficulty();

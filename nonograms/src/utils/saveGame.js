@@ -5,11 +5,13 @@ export { saveGame };
 
 function saveGame() {
   const table = document.querySelector(".table-nonograms");
-  const gameInfo = document.querySelector(".top-menu-nonograms__game-info");
+  const gameInfo = document.querySelector(
+    ".top-menu-nonograms__game-info"
+  ).textContent;
   const timer = currentSeconds;
 
   const saveTable = JSON.stringify(table.outerHTML);
-  const saveGameInfo = JSON.stringify(gameInfo.outerHTML);
+  const saveGameInfo = JSON.stringify(gameInfo);
 
   localStorage.setItem("IamBigBobby_table", saveTable);
   localStorage.setItem("IamBigBobby_gameInfo", saveGameInfo);
