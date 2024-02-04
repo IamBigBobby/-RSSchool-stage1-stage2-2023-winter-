@@ -1,3 +1,4 @@
+import { clickLogic } from "./playerLogic";
 import { startNewGame } from "./startNewGame";
 import { stopTimer } from "./timer";
 
@@ -6,6 +7,7 @@ export { openAnswer };
 function openAnswer(event) {
   const status = event.target.textContent;
   const trueCells = document.querySelectorAll(".table-nonograms__cell_answer");
+  const table = document.querySelector(".table-nonograms");
 
   if (status === "help mode: off") {
     stopTimer();
@@ -13,6 +15,8 @@ function openAnswer(event) {
     trueCells.forEach((cell) => {
       cell.classList.add("table-nonograms__cell_answer_visible");
     });
+
+    table.removeEventListener("mousedown", clickLogic);
 
     event.target.innerHTML = "help mode: on";
   } else {
@@ -22,5 +26,6 @@ function openAnswer(event) {
     event.target.innerHTML = "help mode: off";
 
     startNewGame();
+    table.addEventListener("mousedown", clickLogic);
   }
 }
