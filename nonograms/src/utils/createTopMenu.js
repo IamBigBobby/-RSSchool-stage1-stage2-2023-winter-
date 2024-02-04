@@ -54,5 +54,10 @@ function createTopMenu() {
   nonogramsLevelMedium.addEventListener("mousedown", chooseDifficulty);
   nonogramsLevelHard.addEventListener("mousedown", chooseDifficulty);
 
+  const createInfoAboutGame = document.createElement("div");
+  createInfoAboutGame.className = "top-menu-nonograms__game-info";
+  createInfoAboutGame.innerHTML = `Difficulty: easy<br>Level: heart`;
+  nameNonogram.append(createInfoAboutGame);
+
   chooseDifficulty();
 }
