@@ -6,12 +6,6 @@ function chooseDifficulty(event) {
   const nonogramsChooseLvl = document.querySelector(
     ".top-menu-nonograms__choose-lvl"
   );
-  const nonogramsChooseLvlChilds = Array.from(nonogramsChooseLvl.childNodes);
-
-  console.log(nonogramsChooseLvlChilds);
-  // nonogramsChooseLvlChilds.forEach((element) => {
-  //   element.classList.remove("button_active");
-  // });
 
   if (event === undefined) {
     for (let i = 0; i < data.easy.length; i++) {
@@ -35,15 +29,27 @@ function chooseDifficulty(event) {
       });
     }
   } else {
+    const nonogramsBlockLvl = document.querySelector(
+      ".top-menu-nonograms__lvl-block"
+    );
+    const nonogramsBlockLvlChildren = nonogramsBlockLvl.querySelectorAll(
+      ".top-menu-nonograms__lvl-block > *"
+    );
+
+    nonogramsBlockLvlChildren.forEach((element) => {
+      element.classList.remove("button_active");
+    });
+
     const difficultyClass = event.target.className;
     const difficulty = difficultyClass
       .replace("top-menu-nonograms__", "")
       .replace("-lvl", "");
-    console.log(difficulty);
 
     while (nonogramsChooseLvl.firstChild) {
       nonogramsChooseLvl.removeChild(nonogramsChooseLvl.firstChild);
     }
+
+    event.target.classList.add("button_active");
 
     for (let i = 0; i < data[difficulty].length; i++) {
       const lvlButtonCreate = document.createElement("button");
