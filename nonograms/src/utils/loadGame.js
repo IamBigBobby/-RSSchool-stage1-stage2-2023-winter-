@@ -1,9 +1,15 @@
 import { clickLogic } from "./playerLogic";
+import {
+  activateTimer,
+  currentSeconds,
+  setCurrentSeconds,
+  stopTimer,
+} from "./timer";
 
 export { loadGame };
 
 function loadGame() {
-  console.log("load");
+  // load table
   const saveTable = localStorage
     .getItem("IamBigBobby_table")
     .replace(/\\/g, "")
@@ -24,4 +30,13 @@ function loadGame() {
   wrapper.append(newTable);
 
   newTable.addEventListener("mousedown", clickLogic);
+
+  // load timer
+  console.log(currentSeconds);
+  stopTimer();
+  const saveSeconds = Number(localStorage.getItem("IamBigBobby_timer"));
+  console.log(saveSeconds);
+  setCurrentSeconds(saveSeconds);
+  console.log(currentSeconds);
+  activateTimer();
 }

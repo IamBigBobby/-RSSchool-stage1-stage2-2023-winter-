@@ -1,4 +1,4 @@
-export { activateTimer, stopTimer, currentSeconds };
+export { activateTimer, stopTimer, currentSeconds, setCurrentSeconds };
 
 let flagTimer = false;
 let currentSeconds = 0;
@@ -32,4 +32,8 @@ function updateTimer() {
   const timer = document.querySelector(".nonograms__timer");
 
   timer.innerHTML = `${strMinutes}:${strSeconds}`;
+}
+
+function setCurrentSeconds(seconds) {
+  currentSeconds = seconds;
 }
