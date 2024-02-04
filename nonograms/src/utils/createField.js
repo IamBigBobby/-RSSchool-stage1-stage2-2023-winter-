@@ -1,4 +1,5 @@
 import { createRandomGame } from "./createRandomGame";
+import { loadGame } from "./loadGame";
 import { openAnswer } from "./openAnswer";
 import { saveGame } from "./saveGame";
 import { startNewGame } from "./startNewGame";
@@ -48,7 +49,11 @@ function createWrapper() {
   menu.append(saveGameButtonCreate);
 
   const loadGameButtonCreate = document.createElement("button");
-  loadGameButtonCreate.className = "nonograms__menu__load button_disabled";
+  if (!localStorage.getItem("IamBigBobby_gameInfo")) {
+    loadGameButtonCreate.className = "nonograms__menu__load button_disabled";
+  } else {
+    loadGameButtonCreate.className = "nonograms__menu__load";
+  }
   loadGameButtonCreate.innerHTML = "load game";
   menu.append(loadGameButtonCreate);
 
@@ -64,11 +69,16 @@ function createWrapper() {
   const helpGameButton = document.querySelector(".nonagrams__menu__help");
   const scoreGameButton = document.querySelector(".nonagrams__menu__score");
   const saveGameButton = document.querySelector(".nonograms__menu__save");
+  const loadGameButton = document.querySelector(".nonograms__menu__load");
 
   helpGameButton.addEventListener("mousedown", openAnswer);
   newGameButton.addEventListener("mousedown", startNewGame);
   randomGameButton.addEventListener("mousedown", createRandomGame);
   saveGameButton.addEventListener("mousedown", saveGame);
+
+  if (localStorage.getItem("IamBigBobby_gameInfo")) {
+    loadGameButton.addEventListener("mousedown", loadGame);
+  }
 }
 
 function createGame(arr) {
