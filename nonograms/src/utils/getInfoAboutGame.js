@@ -12,5 +12,5 @@ function showInfoAboutGame(event) {
   const lvl = event.target.textContent;
 
   const gameInfo = document.querySelector(".top-menu-nonograms__game-info");
-  gameInfo.innerHTML = `Difficulty: ${difficulty}<br>Level: ${lvl}`;
+  gameInfo.innerHTML = `Difficulty: ${difficulty} / Level: ${lvl}`;
 }
