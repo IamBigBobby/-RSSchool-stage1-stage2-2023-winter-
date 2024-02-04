@@ -1,7 +1,9 @@
 export { playerLogic, clickLogic };
 import { popUpWin } from "./appearingPopUpWin";
 import { countingTrueCells } from "./countingAnswersCells";
-import { activateTimer, stopTimer } from "./timer";
+import { activateTimer, stopTimer, currentSeconds } from "./timer";
+import { getWinGame, sortWinGame } from "./getWinGame";
+import { showScoreboard } from "./appearingScoreBoard";
 
 function playerLogic() {
   const table = document.querySelector(".table-nonograms");
@@ -62,6 +64,17 @@ function checkWin() {
     const table = document.querySelector(".table-nonograms");
     table.removeEventListener("mousedown", clickLogic);
     popUpWin();
+
+    const lvlInformation = document
+      .querySelector(".top-menu-nonograms__game-info")
+      .textContent.replace("Difficulty:", "")
+      .replace("Level:", "")
+      .replace(/\s/g, "")
+      .split("/");
+
+    const [difficulty, lvl] = lvlInformation;
+    getWinGame(lvl, difficulty, currentSeconds);
+
     stopTimer();
   } else {
     console.log("not yet");
