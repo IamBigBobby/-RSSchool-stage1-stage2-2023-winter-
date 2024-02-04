@@ -22,16 +22,26 @@ function createRandomGame() {
     Math.random() * difficultyRandomLenght
   );
 
-  //   console.log(arrDifficulty[randomIndexArrDifficulty]);
-  //   console.log(data[arrDifficulty[randomIndexArrDifficulty]]);
-  //   console.log(difficultyRandomLenght);
-  //   console.log(randomDifficultyLengthIndex);
+  // console.log(arrDifficulty[randomIndexArrDifficulty]);
+  // console.log(data[arrDifficulty[randomIndexArrDifficulty]]);
+  // console.log(difficultyRandomLenght);
+  // console.log(randomDifficultyLengthIndex);
 
   stopTimer();
 
   const randomArr =
     data[arrDifficulty[randomIndexArrDifficulty]][randomDifficultyLengthIndex]
       .matrix;
+  const randomName =
+    data[arrDifficulty[randomIndexArrDifficulty]][randomDifficultyLengthIndex]
+      .name;
+  const randomDifficulty = arrDifficulty[randomIndexArrDifficulty];
+
+  // console.log(randomArr, randomName, randomDifficulty);
+
+  const gameInfo = document.querySelector(".top-menu-nonograms__game-info");
+
+  gameInfo.innerHTML = `Difficulty: ${randomDifficulty}<br> Level: ${randomName}`;
 
   const table = document.querySelector(".table-nonograms");
   table.remove();
