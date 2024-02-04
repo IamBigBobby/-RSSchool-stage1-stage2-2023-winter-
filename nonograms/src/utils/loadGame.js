@@ -32,12 +32,9 @@ function loadGame() {
   newTable.addEventListener("mousedown", clickLogic);
 
   // load timer
-  console.log(currentSeconds);
   stopTimer();
   const saveSeconds = Number(localStorage.getItem("IamBigBobby_timer"));
-  console.log(saveSeconds);
   setCurrentSeconds(saveSeconds);
-  console.log(currentSeconds);
   activateTimer();
 
   // load game info
