@@ -1,5 +1,9 @@
 .top-menu-nonograms {
   grid-column: 1 / span 2;
+
+  padding: 10px;
+
+  border-bottom: 1px solid black;
 }
 .top-menu-nonograms__lvl-block {
   display: flex;
