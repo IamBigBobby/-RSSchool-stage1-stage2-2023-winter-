@@ -47,6 +47,11 @@ function createWrapper() {
   saveGameButtonCreate.innerHTML = "save game";
   menu.append(saveGameButtonCreate);
 
+  const loadGameButtonCreate = document.createElement("button");
+  loadGameButtonCreate.className = "nonograms__menu__load button_disabled";
+  loadGameButtonCreate.innerHTML = "load game";
+  menu.append(loadGameButtonCreate);
+
   const timer = document.createElement("div");
   timer.classList = "nonograms__timer";
   timer.innerHTML = "00:00";

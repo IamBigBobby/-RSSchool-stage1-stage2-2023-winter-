@@ -15,4 +15,7 @@ function saveGame() {
   localStorage.setItem("IamBigBobby_table", saveTable);
   localStorage.setItem("IamBigBobby_gameInfo", saveGameInfo);
   localStorage.setItem("IamBigBobby_timer", timer);
+
+  const loadButton = document.querySelector(".nonograms__menu__load");
+  loadButton.classList.remove("button_disabled");
 }

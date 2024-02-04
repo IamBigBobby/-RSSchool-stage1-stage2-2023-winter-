@@ -21,3 +21,7 @@ button:hover {
 .button_active {
   background-color: aqua;
 }
+.button_disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
