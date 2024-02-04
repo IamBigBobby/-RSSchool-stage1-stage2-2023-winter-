@@ -1,4 +1,4 @@
-export { activateTimer, stopTimer };
+export { activateTimer, stopTimer, currentSeconds };
 
 let flagTimer = false;
 let currentSeconds = 0;

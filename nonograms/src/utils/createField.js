@@ -1,5 +1,6 @@
 import { createRandomGame } from "./createRandomGame";
 import { openAnswer } from "./openAnswer";
+import { saveGame } from "./saveGame";
 import { startNewGame } from "./startNewGame";
 
 export { createWrapper, createGame };
@@ -57,10 +58,12 @@ function createWrapper() {
   );
   const helpGameButton = document.querySelector(".nonagrams__menu__help");
   const scoreGameButton = document.querySelector(".nonagrams__menu__score");
+  const saveGameButton = document.querySelector(".nonograms__menu__save");
 
   helpGameButton.addEventListener("mousedown", openAnswer);
   newGameButton.addEventListener("mousedown", startNewGame);
   randomGameButton.addEventListener("mousedown", createRandomGame);
+  saveGameButton.addEventListener("mousedown", saveGame);
 }
 
 function createGame(arr) {
