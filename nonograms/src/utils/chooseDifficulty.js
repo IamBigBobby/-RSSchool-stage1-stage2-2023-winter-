@@ -12,8 +12,7 @@ function chooseDifficulty(event) {
       const lvlButtonCreate = document.createElement("button");
 
       if (i === 0) {
-        lvlButtonCreate.className =
-          "top-menu-nonograms__easy-choose-button button_active";
+        lvlButtonCreate.className = "top-menu-nonograms__easy-choose-button";
       } else {
         lvlButtonCreate.className = "top-menu-nonograms__easy-choose-button";
       }
@@ -36,10 +35,6 @@ function chooseDifficulty(event) {
       ".top-menu-nonograms__lvl-block > *"
     );
 
-    nonogramsBlockLvlChildren.forEach((element) => {
-      element.classList.remove("button_active");
-    });
-
     const difficultyClass = event.target.className;
     const difficulty = difficultyClass
       .replace("top-menu-nonograms__", "")
@@ -48,8 +43,6 @@ function chooseDifficulty(event) {
     while (nonogramsChooseLvl.firstChild) {
       nonogramsChooseLvl.removeChild(nonogramsChooseLvl.firstChild);
     }
-
-    event.target.classList.add("button_active");
 
     for (let i = 0; i < data[difficulty].length; i++) {
       const lvlButtonCreate = document.createElement("button");

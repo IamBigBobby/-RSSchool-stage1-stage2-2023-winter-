@@ -20,8 +20,7 @@ function createTopMenu() {
   );
 
   const nonogramsLevelEasyCreate = document.createElement("button");
-  nonogramsLevelEasyCreate.className =
-    "top-menu-nonograms__easy-lvl button_active";
+  nonogramsLevelEasyCreate.className = "top-menu-nonograms__easy-lvl";
   nonogramsLevelEasyCreate.innerHTML = "easy";
   nonogramsLevelsBlock.append(nonogramsLevelEasyCreate);
 
