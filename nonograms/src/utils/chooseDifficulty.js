@@ -11,12 +11,7 @@ function chooseDifficulty(event) {
   if (event === undefined) {
     for (let i = 0; i < data.easy.length; i++) {
       const lvlButtonCreate = document.createElement("button");
-
-      if (i === 0) {
-        lvlButtonCreate.className = "top-menu-nonograms__easy-choose-button";
-      } else {
-        lvlButtonCreate.className = "top-menu-nonograms__easy-choose-button";
-      }
+      lvlButtonCreate.className = "top-menu-nonograms__easy-choose-button";
       lvlButtonCreate.innerHTML = `${data.easy[i].name}`;
       nonogramsChooseLvl.append(lvlButtonCreate);
 
@@ -25,7 +20,9 @@ function chooseDifficulty(event) {
       );
 
       lvlButton.forEach((button) => {
+        console.log(button);
         button.addEventListener("mousedown", generateNewGame);
+        button.addEventListener("mousedown", showInfoAboutGame);
       });
     }
   } else {

@@ -9,6 +9,10 @@ function getDifficulty(event) {
 function showInfoAboutGame(event) {
   const lvl = event.target.textContent;
 
+  if (difficulty === undefined) {
+    difficulty = "easy";
+  }
+
   const gameInfo = document.querySelector(".top-menu-nonograms__game-info");
   gameInfo.innerHTML = `Difficulty: ${difficulty} / Level: ${lvl}`;
 }
