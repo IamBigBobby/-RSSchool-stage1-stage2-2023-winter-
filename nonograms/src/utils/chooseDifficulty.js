@@ -1,6 +1,7 @@
 export { chooseDifficulty };
 import { data } from "../data/dataMatrix";
 import { generateNewGame } from "./generateNewGame";
+import { getDifficulty, showInfoAboutGame } from "./getInfoAboutGame";
 
 function chooseDifficulty(event) {
   const nonogramsChooseLvl = document.querySelector(
@@ -28,12 +29,7 @@ function chooseDifficulty(event) {
       });
     }
   } else {
-    const nonogramsBlockLvl = document.querySelector(
-      ".top-menu-nonograms__lvl-block"
-    );
-    const nonogramsBlockLvlChildren = nonogramsBlockLvl.querySelectorAll(
-      ".top-menu-nonograms__lvl-block > *"
-    );
+    getDifficulty(event);
 
     const difficultyClass = event.target.className;
     const difficulty = difficultyClass
@@ -55,6 +51,7 @@ function chooseDifficulty(event) {
       );
       lvlButton.forEach((button) => {
         button.addEventListener("mousedown", generateNewGame);
+        button.addEventListener("mousedown", showInfoAboutGame);
       });
     }
   }
