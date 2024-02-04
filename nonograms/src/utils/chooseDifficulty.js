@@ -20,7 +20,6 @@ function chooseDifficulty(event) {
       );
 
       lvlButton.forEach((button) => {
-        console.log(button);
         button.addEventListener("mousedown", generateNewGame);
         button.addEventListener("mousedown", showInfoAboutGame);
       });

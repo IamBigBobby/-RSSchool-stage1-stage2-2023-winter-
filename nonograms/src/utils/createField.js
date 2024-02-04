@@ -1,3 +1,4 @@
+import { showScoreboard } from "./appearingScoreBoard";
 import { createRandomGame } from "./createRandomGame";
 import { loadGame } from "./loadGame";
 import { openAnswer } from "./openAnswer";
@@ -75,6 +76,7 @@ function createWrapper() {
   newGameButton.addEventListener("mousedown", startNewGame);
   randomGameButton.addEventListener("mousedown", createRandomGame);
   saveGameButton.addEventListener("mousedown", saveGame);
+  scoreGameButton.addEventListener("mousedown", showScoreboard);
 
   if (localStorage.getItem("IamBigBobby_gameInfo")) {
     loadGameButton.addEventListener("mousedown", loadGame);
