@@ -5,10 +5,10 @@ export { showScoreboard };
 function showScoreboard() {
   const winArr = sortWinGame();
 
-  const createPopUpWinBackground = document.createElement("div");
-  createPopUpWinBackground.classList = "pop-up-win__background";
+  const createPopUpScoreboardBackground = document.createElement("div");
+  createPopUpScoreboardBackground.classList = "pop-up-score__background";
 
-  createPopUpWinBackground.innerHTML = `
+  createPopUpScoreboardBackground.innerHTML = `
   <div class="pop-up-score__content">
   <table class="score__table">
     <thead>
@@ -25,10 +25,9 @@ function showScoreboard() {
   </div>
   `;
 
-  document.body.prepend(createPopUpWinBackground);
+  document.body.prepend(createPopUpScoreboardBackground);
 
   const tableInfo = document.querySelector(".score__table-info");
-  // console.log(tableInfo);
 
   for (let i = 0; i < winArr.length; i++) {
     const stringCreate = document.createElement("tr");
@@ -65,5 +64,17 @@ function showScoreboard() {
 
     timeCellCreate.innerHTML = `${strMinutes}:${strSeconds}`;
     string.append(timeCellCreate);
+  }
+
+  const popUpScoreboardBackground = document.querySelector(
+    ".pop-up-score__background"
+  );
+  popUpScoreboardBackground.addEventListener("mousedown", closeScorePopUp);
+}
+
+function closeScorePopUp(event) {
+  if (event.target.classList.contains("pop-up-score__background")) {
+    const popUp = document.querySelector(".pop-up-score__background");
+    popUp.remove();
   }
 }
