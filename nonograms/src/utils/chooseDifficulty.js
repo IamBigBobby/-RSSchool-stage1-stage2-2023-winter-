@@ -6,11 +6,23 @@ function chooseDifficulty(event) {
   const nonogramsChooseLvl = document.querySelector(
     ".top-menu-nonograms__choose-lvl"
   );
+  const nonogramsChooseLvlChilds = Array.from(nonogramsChooseLvl.childNodes);
+
+  console.log(nonogramsChooseLvlChilds);
+  // nonogramsChooseLvlChilds.forEach((element) => {
+  //   element.classList.remove("button_active");
+  // });
 
   if (event === undefined) {
     for (let i = 0; i < data.easy.length; i++) {
       const lvlButtonCreate = document.createElement("button");
-      lvlButtonCreate.className = "top-menu-nonograms__easy-choose-button";
+
+      if (i === 0) {
+        lvlButtonCreate.className =
+          "top-menu-nonograms__easy-choose-button button_active";
+      } else {
+        lvlButtonCreate.className = "top-menu-nonograms__easy-choose-button";
+      }
       lvlButtonCreate.innerHTML = `${data.easy[i].name}`;
       nonogramsChooseLvl.append(lvlButtonCreate);
 
