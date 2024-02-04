@@ -41,6 +41,11 @@ function createWrapper() {
   scoreGameButtonCreate.innerHTML = "score board top 5";
   menu.prepend(scoreGameButtonCreate);
 
+  const saveGameButtonCreate = document.createElement("button");
+  saveGameButtonCreate.className = "nonograms__menu__save";
+  saveGameButtonCreate.innerHTML = "save game";
+  menu.append(saveGameButtonCreate);
+
   const timer = document.createElement("div");
   timer.classList = "nonograms__timer";
   timer.innerHTML = "00:00";
@@ -59,6 +64,8 @@ function createWrapper() {
 }
 
 function createGame(arr) {
+  console.log;
+
   const table = document.createElement("table");
   table.className = "table-nonograms";
 
