@@ -8,5 +8,9 @@
     "style-loader": "^3.3.4",
     "webpack": "^5.90.0",
     "webpack-cli": "^5.1.4"
+  },
+  "scripts": {
+    "deploy": "npm run build && npx gh-pages -d dist -e hangman",
+    "build": "webpack"
   }
 }
