@@ -3,8 +3,7 @@ import { popUpWin } from "./appearingPopUpWin";
 import { countingTrueCells } from "./countingAnswersCells";
 import { activateTimer, stopTimer, currentSeconds } from "./timer";
 import { getWinGame, sortWinGame } from "./getWinGame";
-import { showScoreboard } from "./appearingScoreBoard";
-import { rightClickSound } from "./makeSound";
+import { leftClickSound, rightClickSound } from "./makeSound";
 
 function playerLogic() {
   const table = document.querySelector(".table-nonograms");
@@ -15,7 +14,8 @@ function playerLogic() {
   });
   table.addEventListener("mousedown", clickLogic);
   cells.forEach((cell) => {
-    cell.addEventListener("click", rightClickSound);
+    cell.addEventListener("mousedown", leftClickSound);
+    cell.addEventListener("mousedown", rightClickSound);
   });
 }
 
