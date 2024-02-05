@@ -5,7 +5,6 @@ import { startNewGame } from "./startNewGame";
 export { popUpWin };
 
 function popUpWin() {
-  console.log("pop up win");
   const createPopUpWinBackground = document.createElement("div");
   createPopUpWinBackground.classList = "pop-up-win__background";
 
@@ -24,6 +23,15 @@ function popUpWin() {
 
   const popUpWinBackground = document.querySelector(".pop-up-win__background");
   popUpWinBackground.addEventListener("mousedown", closePopUp);
+
+  const theme = document.querySelector(
+    ".nonograms__menu__toggle-theme"
+  ).textContent;
+  const popUpContent = document.querySelector(".pop-up-win__content");
+
+  if (theme === "theme: dark") {
+    popUpContent.style.color = "black";
+  }
 
   const randomButton = document.querySelector(".pop-up-win__button-random");
   randomButton.addEventListener("mousedown", closePopUp);

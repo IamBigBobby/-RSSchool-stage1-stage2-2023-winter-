@@ -27,6 +27,15 @@ function showScoreboard() {
 
   document.body.prepend(createPopUpScoreboardBackground);
 
+  const theme = document.querySelector(
+    ".nonograms__menu__toggle-theme"
+  ).textContent;
+  const popUpContent = document.querySelector(".pop-up-score__content");
+
+  if (theme === "theme: dark") {
+    popUpContent.style.color = "black";
+  }
+
   const tableInfo = document.querySelector(".score__table-info");
 
   for (let i = 0; i < winArr.length; i++) {
