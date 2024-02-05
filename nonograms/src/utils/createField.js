@@ -5,6 +5,7 @@ import { openAnswer } from "./openAnswer";
 import { saveGame } from "./saveGame";
 import { startNewGame } from "./startNewGame";
 import { switchSound } from "./soundSwitch";
+import { toggleTheme } from "./changeTheme";
 
 export { createWrapper, createGame };
 
@@ -55,6 +56,11 @@ function createWrapper() {
   saveGameButtonCreate.innerHTML = "save game";
   menu.append(saveGameButtonCreate);
 
+  const toggleThemeButtonCreate = document.createElement("button");
+  toggleThemeButtonCreate.classList = "nonograms__menu__toggle-theme";
+  toggleThemeButtonCreate.innerHTML = "theme: light";
+  menu.prepend(toggleThemeButtonCreate);
+
   const loadGameButtonCreate = document.createElement("button");
   if (!localStorage.getItem("IamBigBobby_gameInfo")) {
     loadGameButtonCreate.className = "nonograms__menu__load button_disabled";
@@ -78,6 +84,9 @@ function createWrapper() {
   const saveGameButton = document.querySelector(".nonograms__menu__save");
   const loadGameButton = document.querySelector(".nonograms__menu__load");
   const soundButton = document.querySelector(".nonograms__menu__sound");
+  const toggleThemeButton = document.querySelector(
+    ".nonograms__menu__toggle-theme"
+  );
 
   helpGameButton.addEventListener("mousedown", openAnswer);
   newGameButton.addEventListener("mousedown", startNewGame);
@@ -85,6 +94,7 @@ function createWrapper() {
   saveGameButton.addEventListener("mousedown", saveGame);
   scoreGameButton.addEventListener("mousedown", showScoreboard);
   soundButton.addEventListener("mousedown", switchSound);
+  toggleThemeButton.addEventListener("mousedown", toggleTheme);
 
   if (localStorage.getItem("IamBigBobby_gameInfo")) {
     loadGameButton.addEventListener("mousedown", loadGame);
