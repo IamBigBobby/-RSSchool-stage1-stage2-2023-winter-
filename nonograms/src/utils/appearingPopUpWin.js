@@ -15,7 +15,7 @@ function popUpWin() {
   <p>Great! You have solved the nonogram in ${seconds} seconds!</p>
   <div class="pop-up-win__buttons">
   <button class="pop-up-win__button-random">random game</button>
-  <button class="pop-up-win__button-new-game">new game</button>
+  <button class="pop-up-win__button-new-game">reset game</button>
   </div>
   </div>
   `;

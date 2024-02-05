@@ -43,10 +43,14 @@ th {
 }
 
 .table-nonograms__cell_keys-left {
-  padding-right: 5px;
+  padding-right: 2px;
   letter-spacing: 5px;
   text-align: right;
 }
+.table-nonograms__cell_keys-top {
+  vertical-align: bottom;
+}
+
 .table-nonograms__cell_keys-top span {
   display: block;
   text-align: center;

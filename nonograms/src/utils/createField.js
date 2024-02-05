@@ -28,7 +28,7 @@ function createWrapper() {
 
   const newGameButtonCreate = document.createElement("button");
   newGameButtonCreate.className = "nonagrams__menu__new-game";
-  newGameButtonCreate.innerHTML = "new game";
+  newGameButtonCreate.innerHTML = "reset game";
   menu.prepend(newGameButtonCreate);
 
   const randomGameButtonCreate = document.createElement("button");
@@ -38,7 +38,7 @@ function createWrapper() {
 
   const helpGameButtonCreate = document.createElement("button");
   helpGameButtonCreate.className = "nonagrams__menu__help";
-  helpGameButtonCreate.innerHTML = "help mode: off";
+  helpGameButtonCreate.innerHTML = "solution: off";
   menu.prepend(helpGameButtonCreate);
 
   const scoreGameButtonCreate = document.createElement("button");
@@ -67,7 +67,7 @@ function createWrapper() {
   } else {
     loadGameButtonCreate.className = "nonograms__menu__load";
   }
-  loadGameButtonCreate.innerHTML = "load game";
+  loadGameButtonCreate.innerHTML = "continue last game";
   menu.append(loadGameButtonCreate);
 
   const timer = document.createElement("div");
@@ -157,7 +157,7 @@ function countingKeys() {
         )
       ) {
         if (keys !== 0) {
-          newCell.innerHTML += keys;
+          newCell.innerHTML += `|${keys}`;
           keys = 0;
         }
       }

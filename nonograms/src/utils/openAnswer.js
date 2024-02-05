@@ -10,7 +10,7 @@ function openAnswer(event) {
   const trueCells = document.querySelectorAll(".table-nonograms__cell_answer");
   const table = document.querySelector(".table-nonograms");
 
-  if (status === "help mode: off") {
+  if (status === "solution: off") {
     stopTimer();
 
     trueCells.forEach((cell) => {
@@ -19,14 +19,14 @@ function openAnswer(event) {
 
     table.removeEventListener("mousedown", clickLogic);
 
-    event.target.innerHTML = "help mode: on";
+    event.target.innerHTML = "solution: on";
 
     button.style.backgroundColor = "aqua";
   } else {
     trueCells.forEach((cell) => {
       cell.classList.remove("table-nonograms__cell_answer_visible");
     });
-    event.target.innerHTML = "help mode: off";
+    event.target.innerHTML = "solution: off";
 
     button.style.backgroundColor = "white";
 
