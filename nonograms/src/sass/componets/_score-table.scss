@@ -1,0 +1,15 @@
+.score__table {
+  border-collapse: collapse;
+  width: 300px;
+  height: auto;
+}
+.score__table th,
+.score__table td {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  text-align: left;
+  background-color: white;
+}
+.score__table th {
+  background-color: #f2f2f2;
+}
