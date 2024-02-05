@@ -2,21 +2,16 @@ export { playerLogic, clickLogic };
 import { popUpWin } from "./appearingPopUpWin";
 import { countingTrueCells } from "./countingAnswersCells";
 import { activateTimer, stopTimer, currentSeconds } from "./timer";
-import { getWinGame, sortWinGame } from "./getWinGame";
-import { leftClickSound, rightClickSound, winSound } from "./makeSound";
+import { getWinGame } from "./getWinGame";
+import { winSound } from "./makeSound";
 
 function playerLogic() {
   const table = document.querySelector(".table-nonograms");
-  const cells = document.querySelectorAll(".table-nonograms__cell");
 
   document.addEventListener("contextmenu", function (event) {
     event.preventDefault();
   });
   table.addEventListener("mousedown", clickLogic);
-  cells.forEach((cell) => {
-    cell.addEventListener("mousedown", leftClickSound);
-    cell.addEventListener("mousedown", rightClickSound);
-  });
 }
 
 function clickLogic(event) {
@@ -80,7 +75,13 @@ function checkWin() {
     const [difficulty, lvl] = lvlInformation;
     getWinGame(lvl, difficulty, currentSeconds);
 
-    winSound();
+    const soundButton = document.querySelector(
+      ".nonograms__menu__sound"
+    ).textContent;
+
+    if (soundButton === "sound: on") {
+      winSound();
+    }
 
     stopTimer();
   } else {

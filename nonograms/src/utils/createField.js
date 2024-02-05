@@ -4,6 +4,7 @@ import { loadGame } from "./loadGame";
 import { openAnswer } from "./openAnswer";
 import { saveGame } from "./saveGame";
 import { startNewGame } from "./startNewGame";
+import { switchSound } from "./soundSwitch";
 
 export { createWrapper, createGame };
 
@@ -76,12 +77,14 @@ function createWrapper() {
   const scoreGameButton = document.querySelector(".nonagrams__menu__score");
   const saveGameButton = document.querySelector(".nonograms__menu__save");
   const loadGameButton = document.querySelector(".nonograms__menu__load");
+  const soundButton = document.querySelector(".nonograms__menu__sound");
 
   helpGameButton.addEventListener("mousedown", openAnswer);
   newGameButton.addEventListener("mousedown", startNewGame);
   randomGameButton.addEventListener("mousedown", createRandomGame);
   saveGameButton.addEventListener("mousedown", saveGame);
   scoreGameButton.addEventListener("mousedown", showScoreboard);
+  soundButton.addEventListener("mousedown", switchSound);
 
   if (localStorage.getItem("IamBigBobby_gameInfo")) {
     loadGameButton.addEventListener("mousedown", loadGame);
