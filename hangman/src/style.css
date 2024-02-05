@@ -1,0 +1,224 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Josefin Sans", sans-serif;
+  background: radial-gradient(circle, #e74c3c, #f39c12);
+}
+@media screen and (max-width: 700px) {
+  body {
+    flex-direction: column;
+    padding: 20px;
+  }
+}
+
+.main {
+  margin: 0 auto;
+  max-width: 1440px;
+  display: grid;
+  grid-template-areas: "left right-top" "left right-bottom";
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 700px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+.gallow {
+  grid-area: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.gallow__block {
+  position: relative;
+  background: url("../assets/svg/gallows.svg") center/contain no-repeat;
+  width: 300px;
+  height: 400px;
+}
+
+.gallow__head {
+  display: none;
+  position: absolute;
+  right: 38px;
+  top: 100px;
+  background: url("../assets/svg/head.svg") center/contain no-repeat;
+  width: 50px;
+  height: 50px;
+}
+
+.gallow__body {
+  display: none;
+  position: absolute;
+  right: 60px;
+  top: 150px;
+  background: url("../assets/svg/body.svg") center/contain no-repeat;
+  width: 5px;
+  height: 70px;
+}
+
+.gallow__hand-one {
+  display: none;
+  position: absolute;
+  right: 65px;
+  top: 150px;
+  background: url("../assets/svg/hand-one.svg") center/contain no-repeat;
+  width: 33px;
+  height: 40px;
+}
+
+.gallow__hand-two {
+  display: none;
+  position: absolute;
+  right: 27px;
+  top: 150px;
+  background: url("../assets/svg/hand-two.svg") center/contain no-repeat;
+  width: 33px;
+  height: 40px;
+}
+
+.gallow__leg-one {
+  display: none;
+  position: absolute;
+  right: 65px;
+  top: 220px;
+  background: url("../assets/svg/leg-one.svg") center/contain no-repeat;
+  width: 33px;
+  height: 40px;
+}
+
+.gallow__leg-two {
+  display: none;
+  position: absolute;
+  right: 27px;
+  top: 220px;
+  background: url("../assets/svg/leg-two.svg") center/contain no-repeat;
+  width: 33px;
+  height: 40px;
+}
+
+@media screen and (max-width: 700px) {
+  .gallow__game-name {
+    order: -1;
+  }
+}
+.keyboard {
+  grid-area: right-bottom;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-self: flex-start;
+  max-width: 550px;
+}
+@media screen and (max-width: 700px) {
+  .keyboard {
+    order: 1;
+    margin: 0 auto;
+  }
+}
+
+.keyboard__key {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+}
+@media screen and (max-width: 700px) {
+  .keyboard__key {
+    background-color: white;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.keyboard__key_active {
+  background-color: rgb(132, 132, 209);
+}
+
+.keyboard__key_disabled {
+  background-color: rgb(132, 132, 209);
+}
+
+.info-block {
+  grid-area: right-top;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-block__answer {
+  letter-spacing: 5px;
+}
+
+.info-block__answer,
+.info-block__question,
+.info-block__counter {
+  text-align: center;
+}
+
+.popup {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(169, 169, 169, 0.5);
+  z-index: 1;
+}
+
+.popup__content {
+  border: 20px solid rgb(132, 132, 209);
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  width: 300px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.popup__content-info {
+  text-align: center;
+}
+
+.main {
+  border: 20px solid rgb(132, 132, 209);
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+}
+@media screen and (max-width: 700px) {
+  .main {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: radial-gradient(circle, #e74c3c, #f39c12);
+    border-radius: 0px;
+  }
+}
+
+.button {
+  display: block;
+}
+
+/*# sourceMappingURL=style.css.map */

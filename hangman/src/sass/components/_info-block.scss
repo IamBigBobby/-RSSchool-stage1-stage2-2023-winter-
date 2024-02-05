@@ -1,0 +1,17 @@
+.info-block {
+  grid-area: right-top;
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.info-block__answer {
+  letter-spacing: 5px;
+}
+
+.info-block__answer,
+.info-block__question,
+.info-block__counter {
+  text-align: center;
+}

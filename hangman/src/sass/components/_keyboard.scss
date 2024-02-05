@@ -1,0 +1,42 @@
+.keyboard {
+  grid-area: right-bottom;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-self: flex-start;
+
+  max-width: 550px;
+
+  @media screen and (max-width: 700px) {
+    order: 1;
+    margin: 0 auto;
+  }
+}
+
+.keyboard__key {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 30px;
+  height: 30px;
+
+  padding: 5px;
+  margin: 5px;
+
+  text-align: center;
+
+  @media screen and (max-width: 700px) {
+    background-color: white;
+
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.keyboard__key_active {
+  background-color: rgb(132, 132, 209);
+}
+
+.keyboard__key_disabled {
+  background-color: rgb(132, 132, 209);
+}
