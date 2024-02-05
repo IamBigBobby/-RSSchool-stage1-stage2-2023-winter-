@@ -1,7 +1,8 @@
-export { leftClickSound, rightClickSound };
+export { leftClickSound, rightClickSound, winSound };
 
 import point from "../assets/sounds/point.mp3";
 import glassKnock from "../assets/sounds/glass-knock.mp3";
+import wow from "../assets/sounds/wow.mp3";
 
 function leftClickSound(event) {
   const pointSound = new Audio(point);
@@ -21,4 +22,9 @@ function rightClickSound(event) {
   ) {
     knockSound.play();
   }
+}
+
+function winSound() {
+  const wowSound = new Audio(wow);
+  wowSound.play();
 }

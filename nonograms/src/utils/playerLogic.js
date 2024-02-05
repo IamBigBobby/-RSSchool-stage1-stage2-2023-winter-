@@ -3,7 +3,7 @@ import { popUpWin } from "./appearingPopUpWin";
 import { countingTrueCells } from "./countingAnswersCells";
 import { activateTimer, stopTimer, currentSeconds } from "./timer";
 import { getWinGame, sortWinGame } from "./getWinGame";
-import { leftClickSound, rightClickSound } from "./makeSound";
+import { leftClickSound, rightClickSound, winSound } from "./makeSound";
 
 function playerLogic() {
   const table = document.querySelector(".table-nonograms");
@@ -79,6 +79,8 @@ function checkWin() {
 
     const [difficulty, lvl] = lvlInformation;
     getWinGame(lvl, difficulty, currentSeconds);
+
+    winSound();
 
     stopTimer();
   } else {
