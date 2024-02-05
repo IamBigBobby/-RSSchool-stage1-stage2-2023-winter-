@@ -4,14 +4,19 @@ import { countingTrueCells } from "./countingAnswersCells";
 import { activateTimer, stopTimer, currentSeconds } from "./timer";
 import { getWinGame, sortWinGame } from "./getWinGame";
 import { showScoreboard } from "./appearingScoreBoard";
+import { rightClickSound } from "./makeSound";
 
 function playerLogic() {
   const table = document.querySelector(".table-nonograms");
+  const cells = document.querySelectorAll(".table-nonograms__cell");
 
   document.addEventListener("contextmenu", function (event) {
     event.preventDefault();
   });
   table.addEventListener("mousedown", clickLogic);
+  cells.forEach((cell) => {
+    cell.addEventListener("click", rightClickSound);
+  });
 }
 
 function clickLogic(event) {
