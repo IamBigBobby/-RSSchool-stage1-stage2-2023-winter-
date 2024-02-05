@@ -44,6 +44,11 @@ function createWrapper() {
   scoreGameButtonCreate.innerHTML = "score board top 5";
   menu.prepend(scoreGameButtonCreate);
 
+  const soundButtonCreate = document.createElement("button");
+  soundButtonCreate.classList = "nonograms__menu__sound";
+  soundButtonCreate.innerHTML = "sound: off";
+  menu.prepend(soundButtonCreate);
+
   const saveGameButtonCreate = document.createElement("button");
   saveGameButtonCreate.className = "nonograms__menu__save";
   saveGameButtonCreate.innerHTML = "save game";
