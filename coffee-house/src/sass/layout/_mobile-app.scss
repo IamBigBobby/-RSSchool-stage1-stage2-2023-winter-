@@ -1,0 +1,48 @@
+.mobile-app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+
+    margin-bottom: 100px;
+
+    @media screen and (max-width: 1230px) {
+        flex-wrap: wrap;
+    }
+
+    @include media-mobilesmall {
+        gap: 40px;
+    }
+}
+.mobile-app h2 {
+    text-align: left;
+}
+.mobile-app__img {
+    display: block;
+    width: 100%;
+    max-width: 630px;
+    height: auto;
+}
+.mobile-app__describe {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.mobile-app__describe p {
+    margin: 0;
+}
+.mobile-app__button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.mobile-app__button-name-container div:first-child {
+    text-align: left;
+    @include font($size: 1rem, $weight: 600, $line-height: 140%);
+}
+.mobile-app__button-name-container {
+    transition: 1s;
+}
+.mobile-app__link-mobile-app {
+    text-decoration: none;
+}

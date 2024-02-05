@@ -1,0 +1,34 @@
+.burger-menu {
+    display: none;
+
+    @include media-tablet {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 6px;
+
+        width: 44px;
+        height: 44px;
+    
+        border: 1px solid $color-border-dark;
+        border-radius: 50%;
+    }
+}
+.burger-menu span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background-color: $color-border-dark;
+    border-radius: 100px;
+
+    transition: 0.5s;
+}
+
+.burger-menu__first-span {
+    transform: translateY(200%) rotate(45deg);
+}
+
+.burger-menu__second-span {
+    transform: translateY(-200%) rotate(-45deg);
+}

@@ -1,0 +1,104 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+
+
+    padding: 100px;
+    background-color: $color-background-container;
+
+    border-radius: 40px;
+
+    @include media-tablet {
+        padding: 100px 60px;
+        flex-direction: column;
+        gap: 100px;
+    }
+
+    @include media-mobilesmall {
+        padding: 60px 16px;
+        gap: 40px;
+    }
+}
+.footer-menu {
+    flex-shrink: 0;
+}
+.footer h2 {
+    text-align: left;
+
+    color: $color-text-light;
+}
+.footer__left, .footer__right {
+    max-width: 530px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.footer__social {
+    display: flex;
+    gap: 12px;
+}
+.footer__social-icon {
+    display: block;
+}
+.footer__right {
+    padding: 32px 0px 28px 0px;
+
+    @include media-tablet {
+        padding: 0px;
+    }
+}
+.footer__header-contact {
+    @include font($size: 2.4rem, $weight: 600, $line-height: 125%);
+
+    color: $color-text-light;
+}
+.footer__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.footer_contacts-container {
+    display: flex;
+    gap: 8px;
+}
+.footer__contacts-icon {
+    display: block;
+}
+.footer__contacts-info {
+    @include font($size: 1.6rem, $weight: 600, $line-height: 150%);
+
+    color: $color-text-light;
+}
+.footer__contacts-info a{
+    @include font($size: 1.6rem, $weight: 600, $line-height: 150%);
+    text-decoration: none;
+    position: relative;
+
+    color: $color-text-light;
+
+    @include hover-link-footer();
+}
+.footer__social-icon {
+    cursor: pointer;
+    fill: transparent;
+
+    transition: 1s;
+
+    @media (hover: hover) {
+        &:hover {
+            transition: 1s;
+            fill: $color-background-body;
+        }
+    
+        & path {
+            transition: 1s;
+            stroke: $color-text-light;
+        }
+    
+        &:hover path {
+            transition: 1s;
+            stroke: $color-text-dark;
+        }
+    }
+}

@@ -1,0 +1,98 @@
+.gallow {
+  grid-area: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.gallow__block {
+  position: relative;
+  background: url('../assets/svg/gallows.svg') center/contain no-repeat;
+  width: 300px;
+  height: 400px;
+}
+
+.gallow__head {
+  display: none;
+
+  position: absolute;
+
+  right: 38px;
+  top: 100px;
+
+  background: url('../assets/svg/head.svg') center/contain no-repeat;
+  width: 50px;
+  height: 50px;
+}
+
+.gallow__body {
+  display: none;
+
+  position: absolute;
+
+  right: 60px;
+  top: 150px;
+
+  background: url('../assets/svg/body.svg') center/contain no-repeat;
+  width: 5px;
+  height: 70px;
+}
+
+.gallow__hand-one {
+  display: none;
+
+  position: absolute;
+
+  right: 65px;
+  top: 150px;
+
+  background: url('../assets/svg/hand-one.svg') center/contain no-repeat;
+  width: 33px;
+  height: 40px;
+}
+
+.gallow__hand-two {
+  display: none;
+
+  position: absolute;
+
+  right: 27px;
+  top: 150px;
+
+  background: url('../assets/svg/hand-two.svg') center/contain no-repeat;
+  width: 33px;
+  height: 40px;
+}
+
+.gallow__leg-one {
+  display: none;
+
+  position: absolute;
+
+  right: 65px;
+  top: 220px;
+
+  background: url('../assets/svg/leg-one.svg') center/contain no-repeat;
+  width: 33px;
+  height: 40px;
+}
+
+.gallow__leg-two {
+  display: none;
+
+  position: absolute;
+
+  right: 27px;
+  top: 220px;
+
+  background: url('../assets/svg/leg-two.svg') center/contain no-repeat;
+  width: 33px;
+  height: 40px;
+}
+
+@media screen and (max-width: 700px) {
+  .gallow__game-name {
+    order: -1;
+  }
+}

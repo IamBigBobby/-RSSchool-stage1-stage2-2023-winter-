@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+
+    scroll-behavior: smooth;
+}
+
+body {
+    @extend %font-inter;
+    @include font($size: 1.6rem, $weight: 400, $line-height: 150%);
+
+    background-color: $color-background-body;
+
+    color: $color-text-dark;
+}
+
+h1 {
+    @include font($size: 7.2rem, $weight: 600, $line-height: 105%);
+
+    color: $color-text-light;
+
+    margin: 0;
+
+    span {
+        font-style: italic;
+
+        color: $color-text-accent;
+    }
+
+    @include media-mobilesmall {
+        @include font($size: 4.2rem, $weight: 600, $line-height: 115%);
+    }
+}
+
+h2 {
+    margin: 0;
+
+    text-align: center;
+
+    @include font($size: 6rem, $weight: 600, $line-height: 125%);
+
+    span {
+        font-style: italic;
+
+        color: $color-text-accent;
+    }
+
+    @include media-mobilesmall {
+        @include font($size: 3.2rem, $weight: 600, $line-height: 125%);
+    }
+}
+
+h3 {
+    @include font($size: 2.4rem, $weight: 600, $line-height: 125%);
+}
+
+.text-link, .button-link {
+    @include font($size: 1.6rem, $weight: 600, $line-height: 150%);
+}
