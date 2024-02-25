@@ -1,18 +1,24 @@
 import News from "./news/news";
 import Sources from "./sources/sources";
+import { ShowNews, appViewInterface } from "../../types/index";
 
-export class AppView {
+export class AppView implements appViewInterface {
+  news: News;
+  sources: Sources;
+
   constructor() {
     this.news = new News();
     this.sources = new Sources();
   }
 
-  drawNews(data) {
+  drawNews(data: ShowNews) {
+    console.log(data);
     const values = data?.articles ? data?.articles : [];
     this.news.draw(values);
   }
 
-  drawSources(data) {
+  drawSources(data: ShowNews) {
+    console.log(data);
     const values = data?.sources ? data?.sources : [];
     this.sources.draw(values);
   }

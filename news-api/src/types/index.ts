@@ -1,9 +1,7 @@
+/* eslint-disable no-unused-vars */
 // news.ts
 export interface NewsContent {
-  source: {
-    id: string;
-    name: string;
-  };
+  source: NewsSource;
   author: string;
   title: string;
   description: string;
@@ -29,3 +27,16 @@ export interface NewsSource {
   url: string;
 }
 // in source.ts we also use NewsDrawer, it's important
+
+// appView.ts
+export type ShowNews = {
+  status: "ok" | "error";
+  sources?: NewsSource[];
+  articles?: NewsContent[];
+};
+
+export interface appViewInterface {
+  // eslint-disable-next-line no-unused-vars
+  drawNews(data: ShowNews): void;
+  drawSources(data: ShowNews): void;
+}
