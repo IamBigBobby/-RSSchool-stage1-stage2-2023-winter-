@@ -1,23 +1,5 @@
 import "./news.css";
-
-interface NewsContent {
-  source: {
-    id: string;
-    name: string;
-  };
-  author: string;
-  title: string;
-  description: string;
-  url: string;
-  urlToImage: string;
-  publishedAt: string;
-  content: string;
-}
-
-interface NewsDrawer {
-  // eslint-disable-next-line no-unused-vars
-  draw(data: NewsContent[]): void;
-}
+import { NewsContent, NewsDrawer } from "types/index";
 
 class News implements NewsDrawer {
   draw(data: NewsContent[]) {
