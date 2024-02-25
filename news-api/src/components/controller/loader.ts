@@ -26,7 +26,10 @@ class Loader {
 
   errorHandler(res: Response) {
     if (!res.ok) {
-      if (res.status === StatusCodes.unauthorized || res.status === StatusCodes.notFound)
+      if (
+        res.status === StatusCodes.unauthorized ||
+        res.status === StatusCodes.notFound
+      )
         console.log(
           `Sorry, but there is ${res.status} error: ${res.statusText}`,
         );
