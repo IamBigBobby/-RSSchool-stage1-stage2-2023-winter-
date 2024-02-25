@@ -3,7 +3,6 @@ import { NewsDrawer, NewsSource } from "types/index";
 
 class Sources implements NewsDrawer<NewsSource[]> {
   draw(data: NewsSource[]) {
-    console.log(data);
     const fragment = document.createDocumentFragment();
     const sourceItemTemp = document.querySelector(
       "#sourceItemTemp",
