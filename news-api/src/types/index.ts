@@ -40,3 +40,35 @@ export interface appViewInterface {
   drawNews(data: ShowNews): void;
   drawSources(data: ShowNews): void;
 }
+
+// loader.ts
+export type Endpoints = 'sources' | 'everything' | 'top-headlines';
+
+export type Query = {
+    endpoint: Endpoints;
+    options: UrlOptions;
+};
+
+export type UrlOptions = {
+    apiKey?: string;
+    sources?: string;
+};
+
+export enum StatusCodes {
+    unauthorized = 401,
+    notFound = 404,
+}
+
+export type CallbackFunction<T> = (data: T) => void;
+// load<T>(
+//     method: string,
+//     endpoint: Endpoints,
+//     callback: CallbackFunction<T>,
+//     options: UrlOptions,
+//   ) {
+//     fetch(this.makeUrl(options, endpoint), { method })
+//       .then(this.errorHandler)
+//       .then((res) => res.json())
+//       .then((data) => callback(data))
+//       .catch((err) => console.error(err));
+//   }

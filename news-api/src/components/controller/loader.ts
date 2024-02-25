@@ -1,11 +1,21 @@
+import {
+  Endpoints,
+  Query,
+  UrlOptions,
+  CallbackFunction,
+} from "../../types/index";
+
 class Loader {
-  constructor(baseLink, options) {
+  baseLink: string;
+  options: UrlOptions;
+
+  constructor(baseLink: string, options: UrlOptions) {
     this.baseLink = baseLink;
     this.options = options;
   }
 
   getResp(
-    { endpoint, options = {} },
+    { endpoint, options = {} }: Query,
     callback = () => {
       console.error("No callback for GET response");
     },
@@ -13,7 +23,7 @@ class Loader {
     this.load("GET", endpoint, callback, options);
   }
 
-  errorHandler(res) {
+  errorHandler(res: Response) {
     if (!res.ok) {
       if (res.status === 401 || res.status === 404)
         console.log(
@@ -25,18 +35,23 @@ class Loader {
     return res;
   }
 
-  makeUrl(options, endpoint) {
+  makeUrl(options: UrlOptions, endpoint: Endpoints) {
     const urlOptions = { ...this.options, ...options };
     let url = `${this.baseLink}${endpoint}?`;
 
     Object.keys(urlOptions).forEach((key) => {
-      url += `${key}=${urlOptions[key]}&`;
+      url += `${key}=${urlOptions[key as keyof UrlOptions]}&`;
     });
 
     return url.slice(0, -1);
   }
 
-  load(method, endpoint, callback, options = {}) {
+  load<T>(
+    method: string,
+    endpoint: Endpoints,
+    callback: CallbackFunction<T>,
+    options: UrlOptions,
+  ) {
     fetch(this.makeUrl(options, endpoint), { method })
       .then(this.errorHandler)
       .then((res) => res.json())
