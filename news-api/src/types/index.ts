@@ -19,7 +19,6 @@ export interface NewsDrawer<T> {
 }
 
 // source.ts
-
 export interface NewsSource {
   category: string;
   country: string;
@@ -29,3 +28,4 @@ export interface NewsSource {
   name: string;
   url: string;
 }
+// in source.ts we also use NewsDrawer, it's important

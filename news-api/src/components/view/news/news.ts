@@ -3,7 +3,6 @@ import { NewsContent, NewsDrawer } from "types/index";
 
 class News implements NewsDrawer<NewsContent[]> {
   draw(data: NewsContent[]) {
-    console.log(data);
     const news =
       data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
 
