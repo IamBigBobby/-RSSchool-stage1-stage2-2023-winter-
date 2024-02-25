@@ -1,6 +1,6 @@
 import "./news.css";
 
-export interface NewsContent {
+interface NewsContent {
   source: {
     id: string;
     name: string;
@@ -14,7 +14,7 @@ export interface NewsContent {
   content: string;
 }
 
-export interface NewsDrawer {
+interface NewsDrawer {
   // eslint-disable-next-line no-unused-vars
   draw(data: NewsContent[]): void;
 }
