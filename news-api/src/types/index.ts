@@ -13,7 +13,19 @@ export interface NewsContent {
   content: string;
 }
 
-export interface NewsDrawer {
+export interface NewsDrawer<T> {
   // eslint-disable-next-line no-unused-vars
-  draw(data: NewsContent[]): void;
+  draw(data: T): void;
+}
+
+// source.ts
+
+export interface NewsSource {
+  category: string;
+  country: string;
+  description: string;
+  id: string;
+  language: string;
+  name: string;
+  url: string;
 }

@@ -1,7 +1,7 @@
 import "./news.css";
 import { NewsContent, NewsDrawer } from "types/index";
 
-class News implements NewsDrawer {
+class News implements NewsDrawer<NewsContent[]> {
   draw(data: NewsContent[]) {
     console.log(data);
     const news =
