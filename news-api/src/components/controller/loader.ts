@@ -3,6 +3,7 @@ import {
   Query,
   UrlOptions,
   CallbackFunction,
+  StatusCodes,
 } from "../../types/index";
 
 class Loader {
@@ -25,7 +26,7 @@ class Loader {
 
   errorHandler(res: Response) {
     if (!res.ok) {
-      if (res.status === 401 || res.status === 404)
+      if (res.status === StatusCodes.unauthorized || res.status === StatusCodes.notFound)
         console.log(
           `Sorry, but there is ${res.status} error: ${res.statusText}`,
         );
