@@ -1,22 +1,28 @@
-import { NewsContent, NewsSource, ShowNews } from '../../types/index';
-import AppController from '../controller/controller';
-import { AppView } from '../view/appView';
+import { ShowNews } from "../../types/index";
+import AppController from "../controller/controller";
+import { AppView } from "../view/appView";
 
 class App {
-    controller: AppController;
-    view: AppView;
+  controller: AppController;
+  view: AppView;
 
-    constructor() {
-        this.controller = new AppController();
-        this.view = new AppView();
-    }
+  constructor() {
+    this.controller = new AppController();
+    this.view = new AppView();
+  }
 
-    start() {
-        (document
-            .querySelector('.sources') as HTMLElement)
-            .addEventListener('click', (e) => this.controller.getNews(e, (data) => this.view.drawNews(data as ShowNews)));
-        this.controller.getSources((data) => this.view.drawSources(data as ShowNews));
-    }
+  start() {
+    (document.querySelector(".sources") as HTMLElement).addEventListener(
+      "click",
+      (e) =>
+        this.controller.getNews(e, (data) =>
+          this.view.drawNews(data as ShowNews),
+        ),
+    );
+    this.controller.getSources((data) =>
+      this.view.drawSources(data as ShowNews),
+    );
+  }
 }
 
 export default App;

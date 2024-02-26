@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 // news.ts
 export interface NewsContent {
   source: NewsSource;
@@ -11,6 +12,7 @@ export interface NewsContent {
 }
 
 export interface NewsDrawer<T> {
+  // eslint-disable-next-line no-unused-vars
   draw(data: T): void;
 }
 
