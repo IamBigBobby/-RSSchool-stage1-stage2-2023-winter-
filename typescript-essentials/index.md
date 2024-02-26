@@ -16,5 +16,7 @@ Here is a collection of badges I earned from completing Microsoft Learn's TypeSc
 ## Reflections
 
 I got a lot of joy to study base TypeScript.
-I figured it out in class and OOP.
+In the section "Declare and Instantiate Classes in TypeScript" I dived more into the concept of OOP.
+I learned about such structures as enums, namespaces, classes, interfaces, type functions.
+
 Thanks RS Scholl for this opportunity!!
