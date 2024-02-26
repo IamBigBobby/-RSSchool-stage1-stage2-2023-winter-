@@ -26,7 +26,6 @@ export interface NewsSource {
   name: string;
   url: string;
 }
-// in source.ts we also use NewsDrawer, it's important
 
 // appView.ts
 export type ShowNews = {
@@ -60,3 +59,10 @@ export enum StatusCodes {
 }
 
 export type CallbackFunction<T> = (data: T) => void;
+
+// controller.ts
+
+export interface Controller {
+  getSources<T>(callback: (data?: T) => void): void;
+  getNews<T>(e: Event, callback: (data?: T) => void): void;
+}
