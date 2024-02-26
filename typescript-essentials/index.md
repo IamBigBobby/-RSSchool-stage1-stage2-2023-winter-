@@ -19,4 +19,4 @@ I got a lot of joy to study base TypeScript.
 In the section "Declare and Instantiate Classes in TypeScript" I dived more into the concept of OOP.
 I learned about such structures as enums, namespaces, classes, interfaces, type functions.
 
-Thanks RS Scholl for this opportunity!!
+Thanks RS Scholl for this opportunity!! It's a great experience!
