@@ -1,4 +1,3 @@
-
 // news.ts
 export interface NewsContent {
   source: NewsSource;
@@ -59,7 +58,6 @@ export enum StatusCodes {
 export type CallbackFunction<T> = (data: T) => void;
 
 // controller.ts
-
 export interface Controller {
   getSources<T>(callback: (data?: T) => void): void;
   getNews<T>(e: Event, callback: (data?: T) => void): void;
