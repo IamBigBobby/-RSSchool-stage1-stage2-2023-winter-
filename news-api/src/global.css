@@ -1,6 +1,6 @@
 body {
   color: #fff;
-  background: #17181c;
+  background: linear-gradient(to right, #1f1204, #25126d);;
   font-family: sans-serif;
 }
 
@@ -11,25 +11,46 @@ header {
 header h1 {
   font-size: 40px;
   font-weight: 800;
+  text-align: center;
 }
 
 footer {
   height: 100px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 footer .copyright {
   font-size: 14px;
-  color: #333;
+  color: white;
   text-align: center;
 }
 footer .copyright a {
-  color: #444;
+  color: white;
 }
 footer .copyright a:hover {
-  color: #555;
+  color: white;
 }
 footer .copyright:before {
   content: "©";
 }
+
+.rs-logo{
+  background-image: url('assets/png/download.png');
+  width: 100px;
+  height: 50px;
+  background-size: cover; 
+  background-position: center;
+}
+
+.students-link__link{
+  text-decoration: none;
+  color: white;
+  transition: 1s;
+}
+
+.students-link__link:hover{
+  color: #3fcc59;;
+}
+
+
