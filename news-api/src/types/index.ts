@@ -29,7 +29,7 @@ export type ShowNews = {
   articles?: NewsContent[];
 };
 
-export interface appViewInterface {
+export interface AppViewInterface {
   drawNews(data: ShowNews): void;
   drawSources(data: ShowNews): void;
 }
