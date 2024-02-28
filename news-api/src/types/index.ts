@@ -1,4 +1,3 @@
-// news.ts
 export interface NewsContent {
   source: NewsSource;
   author: string;
@@ -14,7 +13,6 @@ export interface NewsDrawer<T> {
   draw(data: T): void;
 }
 
-// source.ts
 export interface NewsSource {
   category: string;
   country: string;
@@ -25,7 +23,6 @@ export interface NewsSource {
   url: string;
 }
 
-// appView.ts
 export type ShowNews = {
   status: "ok" | "error";
   sources?: NewsSource[];
@@ -37,7 +34,6 @@ export interface appViewInterface {
   drawSources(data: ShowNews): void;
 }
 
-// loader.ts
 export type Endpoints = "sources" | "everything" | "top-headlines";
 
 export type Query = {
@@ -57,7 +53,6 @@ export enum StatusCodes {
 
 export type CallbackFunction<T> = (data: T) => void;
 
-// controller.ts
 export interface Controller {
   getSources<T>(callback: (data?: T) => void): void;
   getNews<T>(e: Event, callback: (data?: T) => void): void;
