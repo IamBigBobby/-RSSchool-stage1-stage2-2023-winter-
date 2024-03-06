@@ -3,7 +3,7 @@ function colorBodyRed(): void {
   if (bodyElement) {
     bodyElement.style.backgroundColor = 'red';
       }else {
-             console.log('no')
+             console.log('nooooooo')
       }
 }
 
