@@ -1,7 +1,13 @@
 
-const numberOne: number = 1;
-const numberTwo: number = 3;
-export function sum (first: number, second: number): number{
-    return first + second;
-}
-console.log(124)
+function colorBodyRed(): void {
+    const bodyElement: HTMLElement | null = document.body;
+    if (bodyElement) {
+      bodyElement.style.backgroundColor = 'red';
+    } else {
+      console.error('Body element not found.');
+    }
+  }
+  
+  // Пример вызова функции
+  colorBodyRed();
+  

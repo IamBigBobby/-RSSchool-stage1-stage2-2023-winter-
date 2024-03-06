@@ -2,7 +2,8 @@
   "name": "rss-puzzle",
   "private": true,
   "scripts": {
-    "build": "webpack",
+    "buildLocal": "webpack",
+    "build": "webpack --mode production",
     "format": "prettier --write ./src",
     "ci:format": "prettier --check ./src"
   },
