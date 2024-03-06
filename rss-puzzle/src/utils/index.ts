@@ -10,4 +10,3 @@ function colorBodyRed(): void {
 colorBodyRed();
 
 // ^(feat|fix)\/RSS-PZ-[A-Z]{2}-\d{2}_\w+$
-
