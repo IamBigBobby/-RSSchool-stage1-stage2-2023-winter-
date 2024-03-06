@@ -1,1 +1,1 @@
-(()=>{"use strict";!function(){const o=document.body;o?o.style.backgroundColor="red":console.error("Body element not found.")}()})();
+(()=>{var o;(o=document.body)?o.style.backgroundColor="red":console.error("Body element not found.")})();

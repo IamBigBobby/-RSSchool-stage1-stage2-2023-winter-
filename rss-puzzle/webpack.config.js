@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 const commonConfig = {
-  entry: './src/index.ts',
+  entry: './src/utils/index.ts',
   module: {
     rules: [
       {
