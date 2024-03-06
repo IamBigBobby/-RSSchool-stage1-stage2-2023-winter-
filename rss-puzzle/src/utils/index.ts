@@ -3,8 +3,11 @@ function colorBodyRed(): void {
   if (bodyElement) {
     bodyElement.style.backgroundColor = 'red';
   } else {
-    console.log('nooooooadasdaooooo');
+    console.log('nooooooadadasdasdasasdaooooo');
   }
 }
 
 colorBodyRed();
+
+// ^(feat|fix)\/RSS-PZ-[A-Z]{2}-\d{2}_\w+$
+
