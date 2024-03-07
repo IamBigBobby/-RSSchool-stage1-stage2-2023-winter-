@@ -1,27 +1,26 @@
-class Componet {
+class Component {
   node: HTMLElement;
-  children: HTMLElement[];
+  children: Component[];
 
   constructor(
     { tag = 'div', className = '', text = '' }: ComponentProps,
-    ...children: HTMLElement[]
+    ...children: Component[]
   ) {
     const node = document.createElement(tag);
     node.className = className;
     node.textContent = text;
     this.node = node;
+    this.children = [];
+
+    this.appendChildren(children);
   }
 
-  append(child: HTMLElement): void {
+  append(child: Component): void {
     this.children.push(child);
-    if (child instanceof Componet) {
-      this.node.append(child.getNode());
-    } else {
-      this.node.append(child);
-    }
+    this.node.append(child.getNode());
   }
 
-  appendChildren(children: HTMLElement[]) {
+  appendChildren(children: Component[]) {
     children.forEach((element) => {
       this.append(element);
     });
@@ -29,5 +28,32 @@ class Componet {
 
   getNode(): HTMLElement {
     return this.node;
+  }
+
+  setTextContent(content: string): void {
+    this.node.textContent = content;
+  }
+
+  setAttribute(attribute: string, value: string): void {
+    this.node.setAttribute(attribute, value);
+  }
+
+  removeAttribute(attribute: string): void {
+    this.node.removeAttribute(attribute);
+  }
+
+  toggleClass(className: string): void {
+    this.node.classList.toggle(className);
+  }
+
+  addListener(event: string, listener: EventListener, options = false) {
+    this.node.addEventListener(event, listener, options);
+  }
+
+  destroy(): void {
+    this.children.forEach((child) => {
+      child.destroy();
+    });
+    this.node.remove();
   }
 }
