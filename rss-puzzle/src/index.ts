@@ -1,12 +1,5 @@
-function colorBodyRed(): void {
-  const bodyElement: HTMLElement | null = document.body;
-  if (bodyElement) {
-    bodyElement.style.backgroundColor = 'yellow';
-  } else {
-    console.log('nooooooadadasdasdasasdaooooo');
-  }
-}
+// import {}
 
-colorBodyRed();
+// // class App {
 
-// ^(feat|fix)\/RSS-PZ-[A-Z]{2}-\d{2}_\w+$
+// // }
