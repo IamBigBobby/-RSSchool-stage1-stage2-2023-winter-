@@ -1,4 +1,4 @@
-import { ComponentProps } from "../interfaces/intarfaces";
+import { ComponentProps } from "../interfaces/interfaces";
 
 export class Component {
   protected node: HTMLElement;
