@@ -1,6 +1,8 @@
-class Component {
-  node: HTMLElement;
-  children: Component[];
+import { ComponentProps } from "../interfaces/intarfaces";
+
+export class Component {
+  protected node: HTMLElement;
+  protected children: Component[];
 
   constructor(
     { tag = 'div', className = '', text = '' }: ComponentProps,
@@ -15,42 +17,42 @@ class Component {
     this.appendChildren(children);
   }
 
-  append(child: Component): void {
+  public append(child: Component): void {
     this.children.push(child);
     this.node.append(child.getNode());
   }
 
-  appendChildren(children: Component[]) {
+  public appendChildren(children: Component[]) {
     children.forEach((element) => {
       this.append(element);
     });
   }
 
-  getNode(): HTMLElement {
+  public getNode(): HTMLElement {
     return this.node;
   }
 
-  setTextContent(content: string): void {
+  public setTextContent(content: string): void {
     this.node.textContent = content;
   }
 
-  setAttribute(attribute: string, value: string): void {
+  public setAttribute(attribute: string, value: string): void {
     this.node.setAttribute(attribute, value);
   }
 
-  removeAttribute(attribute: string): void {
+  public removeAttribute(attribute: string): void {
     this.node.removeAttribute(attribute);
   }
 
-  toggleClass(className: string): void {
+  public toggleClass(className: string): void {
     this.node.classList.toggle(className);
   }
 
-  addListener(event: string, listener: EventListener, options = false) {
+  public addListener(event: string, listener: EventListener, options = false) {
     this.node.addEventListener(event, listener, options);
   }
 
-  destroy(): void {
+  public destroy(): void {
     this.children.forEach((child) => {
       child.destroy();
     });
