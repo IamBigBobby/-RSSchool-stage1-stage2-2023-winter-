@@ -1,5 +1,5 @@
 interface ComponentProps {
-    tag?: string;
-    className?: string;
-    text?: string;
+  tag?: string;
+  className?: string;
+  text?: string;
 }
