@@ -1,1 +1,0 @@
-(()=>{var o;(o=document.body)?o.style.backgroundColor="red":console.error("Body element not found.")})();

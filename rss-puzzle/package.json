@@ -6,7 +6,7 @@
     "build": "webpack --mode production",
     "format": "prettier --write ./src/utils",
     "ci:format": "prettier --check ./src/utils",
-    "lint": "eslint ./src/utils",
+    "lint": "eslint ./src",
     "prepare": "cd .. && husky rss-puzzle/.husky"
   },
   "devDependencies": {
