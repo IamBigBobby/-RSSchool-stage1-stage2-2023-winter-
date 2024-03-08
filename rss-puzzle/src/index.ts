@@ -1,12 +1,8 @@
-function colorBodyRed(): void {
-  const bodyElement: HTMLElement | null = document.body;
-  if (bodyElement) {
-    bodyElement.style.backgroundColor = 'yellow';
-  } else {
-    console.log('nooooooadadasdasdasasdaooooo');
-  }
-}
+import { Component } from "./componets/componentsFarm";
 
-colorBodyRed();
+const newComponent = new Component({ tag: 'div', className: 'my-class', text: 'Hello, world!' });
 
-// ^(feat|fix)\/RSS-PZ-[A-Z]{2}-\d{2}_\w+$
+const body = document.body;
+console.log(body);
+
+body.appendChild(newComponent.getNode())
