@@ -1,13 +1,10 @@
-import { Component } from './componets/componentsFarm';
-import { div } from './componets/tagsFarm';
+import { main } from './componets/tagsFarm';
+import { createGameFiled } from './utils/createGameFiled';
 
-const newDiv = div('new-class');
+const App = main('main');
 
 const body = document.body;
-console.log(body);
 
-body.appendChild(newDiv.getNode());
+body.appendChild(App.getNode());
 
-setTimeout(() => {
-  newDiv.destroy();
-}, 5000);
+createGameFiled();
