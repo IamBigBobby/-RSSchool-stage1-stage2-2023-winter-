@@ -1,3 +1,4 @@
+import './main.scss';
 import { main } from './componets/tagsFarm';
 import { createGameFiled } from './utils/createGameFiled';
 
