@@ -58,4 +58,12 @@ export class Component {
     });
     this.node.remove();
   }
+
+  public getWidth(): number {
+    return this.node.offsetWidth;
+  }
+
+  public getHeight(): number {
+    return this.node.offsetHeight;
+  }
 }

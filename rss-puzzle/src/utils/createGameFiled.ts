@@ -1,4 +1,4 @@
-import { div, img } from '../componets/tagsFarm';
+import { div } from '../componets/tagsFarm';
 
 export function createGameFiled(): void {
   const gameFiled = div('game-container');
@@ -8,4 +8,6 @@ export function createGameFiled(): void {
   console.log(mainElement);
 
   mainElement.appendChild(gameFiled.getNode());
+
+  console.log(gameFiled.getHeight());
 }

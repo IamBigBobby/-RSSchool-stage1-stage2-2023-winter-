@@ -5,3 +5,10 @@ export interface ComponentProps {
   src?: string;
   alt?: string;
 }
+
+// export interface PuzzleProps {
+//   containerId: string;
+//   imageUrl: string;
+//   numPiecesHorizontal: number;
+//   numPiecesVertical: number;
+// }
