@@ -14,7 +14,7 @@ const newPuzzle = new PuzzleGame(2, '.game-container');
 
 newPuzzle.setupPuzzle();
 
-const newData = new GetCurrentData(2, 3);
+const newData = new GetCurrentData(1, 3);
 
 console.log(newData.getImg());
 
@@ -22,7 +22,7 @@ Promise.all([newData.getImg(), newData.getTextLength()]).then(
   ([img, length]) => {
     createGameFiled(img);
 
-    const newPuzzle = new PuzzleGame(length);
+    const newPuzzle = new PuzzleGame(length, img);
     newPuzzle.setupPuzzle();
   }
 );
