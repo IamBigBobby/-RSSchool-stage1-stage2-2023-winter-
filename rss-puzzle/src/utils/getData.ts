@@ -40,4 +40,9 @@ export class GetCurrentData {
       ' '
     ).length;
   }
+
+  public async getImg(): Promise<string> {
+    await this.fetchData();
+    return this.lvlData.rounds[this.round].levelData.imageSrc;
+  }
 }
