@@ -3,7 +3,7 @@ export class PuzzleGame {
   private rows: number;
   private cols: number;
 
-  constructor(cols: number, container: string, rows = 10) {
+  constructor(cols: number, container = '.game-container', rows = 10) {
     this.rows = rows;
     this.cols = cols;
     this.container = document.querySelector(container);
