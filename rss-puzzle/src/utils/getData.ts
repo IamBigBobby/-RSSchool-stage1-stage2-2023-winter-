@@ -34,6 +34,13 @@ export class GetCurrentData {
     return this.lvlData.rounds[this.round].words[this.words].textExample;
   }
 
+  public async getTextArr(): Promise<string[]> {
+    await this.fetchData();
+    return this.lvlData.rounds[this.round].words[this.words].textExample.split(
+      ' '
+    );
+  }
+
   public async getTextLength(): Promise<number> {
     await this.fetchData();
     return this.lvlData.rounds[this.round].words[this.words].textExample.split(

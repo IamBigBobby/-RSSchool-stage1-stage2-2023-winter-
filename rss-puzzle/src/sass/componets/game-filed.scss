@@ -3,12 +3,12 @@
   position: relative;
   width: 1000px;
   height: 1000px;
-  background-image: url('https://raw.githubusercontent.com/rolling-scopes-school/rss-puzzle-data/main/images/level1/9th_wave.jpg');
   background-position: center;
   background-size: cover;
 }
 
 .puzzle-piece {
   position: absolute;
-  border: 1px solid #000;
+  border: 1px solid yellow;
+  color: yellow;
 }
