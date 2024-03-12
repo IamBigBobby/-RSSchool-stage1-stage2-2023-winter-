@@ -7,15 +7,12 @@ import { GetCurrentData } from './utils/getData';
 createApp();
 createGameFiled();
 
-const newPuzzle = new PuzzleGame(2, '.game-container');
+const newData = new GetCurrentData(1, 2);
 
-newPuzzle.setupPuzzle();
+console.log(newData.getLvlData());
+console.log(newData.getTextExample());
 
-const newData = new GetCurrentData(1, 3);
-
-console.log(newData.getTextArr());
-
-Promise.all([newData.getImg(), newData.getTextLength()]).then(
+Promise.all([newData.getImg(), newData.getTextExample()]).then(
   ([img, length]) => {
     const newPuzzle = new PuzzleGame(length, img);
     newPuzzle.setupPuzzle();

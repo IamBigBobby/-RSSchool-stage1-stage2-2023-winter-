@@ -12,10 +12,9 @@ export class GetCurrentData {
   words: number;
   lvlData: Data;
 
-  constructor(difficulty: number, round = 0, words = 0) {
+  constructor(difficulty: number, round = 0) {
     this.difficulty = difficulty;
     this.round = round;
-    this.words = words;
   }
 
   private async fetchData(): Promise<void> {
@@ -29,23 +28,28 @@ export class GetCurrentData {
     return this.lvlData;
   }
 
-  public async getTextExample(): Promise<string> {
+  public async getTextExample(): Promise<string[][]> {
     await this.fetchData();
-    return this.lvlData.rounds[this.round].words[this.words].textExample;
+    const arrLength: number = this.lvlData.rounds[this.round].words.length;
+    const textArr: string[][] = [];
+    for (let i = 0; i < arrLength; i += 1) {
+      const sentence: string[] =
+        this.lvlData.rounds[this.round].words[i].textExample.split(' ');
+      textArr.push(sentence);
+    }
+    console.log();
+    return textArr;
   }
 
   public async getTextArr(): Promise<string[]> {
     await this.fetchData();
-    return this.lvlData.rounds[this.round].words[this.words].textExample.split(
-      ' '
-    );
+    return this.lvlData.rounds[this.round].words[0].textExample.split(' ');
   }
 
   public async getTextLength(): Promise<number> {
     await this.fetchData();
-    return this.lvlData.rounds[this.round].words[this.words].textExample.split(
-      ' '
-    ).length;
+    return this.lvlData.rounds[this.round].words[0].textExample.split(' ')
+      .length;
   }
 
   public async getImg(): Promise<string> {
