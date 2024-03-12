@@ -1,6 +1,7 @@
 import { ComponentProps } from '../interfaces/interfaces';
 
 export class Component {
+  [x: string]: any;
   protected node: HTMLElement;
   protected children: Component[];
 
@@ -59,11 +60,7 @@ export class Component {
     this.node.remove();
   }
 
-  public getWidth(): number {
-    return this.node.offsetWidth;
-  }
-
-  public getHeight(): number {
-    return this.node.offsetHeight;
+  public setBackgroundImage(imageUrl: string): void {
+    this.node.style.backgroundImage = `url(${imageUrl})`;
   }
 }

@@ -1,13 +1,12 @@
 import { div } from '../componets/tagsFarm';
 
-export function createGameFiled(): void {
-  const gameFiled = div('game-container');
+export function createGameFiled(img: string): void {
+  const gameField = div('game-container');
+  gameField.setBackgroundImage(img);
 
   const mainElement = document.querySelector('main');
 
   console.log(mainElement);
 
-  mainElement.appendChild(gameFiled.getNode());
-
-  console.log(gameFiled.getHeight());
+  mainElement.appendChild(gameField.getNode());
 }
