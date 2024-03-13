@@ -7,7 +7,7 @@ import { GetCurrentData } from './utils/getData';
 createApp();
 createGameFiled();
 
-const newData = new GetCurrentData(1, 2);
+const newData = new GetCurrentData(4, 23);
 
 console.log(newData.getLvlData());
 console.log(newData.getTextExample());
