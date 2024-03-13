@@ -8,16 +8,13 @@
   z-index: 1;
 }
 
+.row-container {
+  display: flex;
+}
 .puzzle-piece {
-  // position: absolute;
+  flex-grow: 1;
   border: 1px solid greenyellow;
   color: greenyellow;
 
   background-color: rgba(128, 128, 128, 0.5);
-}
-
-.row-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }

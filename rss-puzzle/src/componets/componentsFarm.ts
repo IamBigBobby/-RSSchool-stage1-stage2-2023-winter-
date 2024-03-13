@@ -36,6 +36,10 @@ export class Component {
     this.node.textContent = content;
   }
 
+  public setInnerText(content: string): void {
+    this.node.innerText = content;
+  }
+
   public setAttribute(attribute: string, value: string): void {
     this.node.setAttribute(attribute, value);
   }
