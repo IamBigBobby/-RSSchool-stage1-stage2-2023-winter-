@@ -10,26 +10,6 @@
 
 .puzzle-piece {
   position: absolute;
-  border: 1px solid red;
-  color: red;
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    calc(100% + 10px) 50%,
-    100% 100%,
-    0 100%,
-    10px 50%,
-    10px 50%
-  );
-}
-
-.puzzle-piece::after {
-  content: '';
-  position: absolute;
-  width: 10px;
-  height: 100%;
-  background-color: red;
-  top: 0;
-  right: -10px;
-  z-index: 10;
+  border: 1px solid greenyellow;
+  color: greenyellow;
 }

@@ -1,3 +1,5 @@
+import { div } from '../componets/tagsFarm';
+
 export class PuzzleGame {
   public container: HTMLElement;
   private rows: number;
