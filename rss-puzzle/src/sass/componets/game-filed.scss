@@ -1,0 +1,17 @@
+.game-container {
+  display: block;
+  position: relative;
+  width: 760px;
+  height: 760px;
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+}
+
+.puzzle-piece {
+  position: absolute;
+  border: 1px solid greenyellow;
+  color: greenyellow;
+
+  background-color: rgba(128, 128, 128, 0.5);
+}

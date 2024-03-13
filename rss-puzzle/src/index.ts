@@ -1,13 +1,20 @@
-import { Component } from './componets/componentsFarm';
-import { div } from './componets/tagsFarm';
+import './main.scss';
+import { createGameFiled } from './utils/createGameFiled';
+import { createApp } from './utils/app';
+import { PuzzleGame } from './utils/createPuzzle';
+import { GetCurrentData } from './utils/getData';
 
-const newDiv = div('new-class');
+createApp();
+createGameFiled();
 
-const body = document.body;
-console.log(body);
+const newData = new GetCurrentData(4, 23);
 
-body.appendChild(newDiv.getNode());
+console.log(newData.getLvlData());
+console.log(newData.getTextExample());
 
-setTimeout(() => {
-  newDiv.destroy();
-}, 5000);
+Promise.all([newData.getImg(), newData.getTextExample()]).then(
+  ([img, length]) => {
+    const newPuzzle = new PuzzleGame(length, img);
+    newPuzzle.setupPuzzle();
+  }
+);
