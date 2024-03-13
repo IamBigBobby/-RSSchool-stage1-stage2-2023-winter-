@@ -1,5 +1,3 @@
-import { div } from '../componets/tagsFarm';
-
 export class PuzzleGame {
   public container: HTMLElement;
   private rows: number;
@@ -30,8 +28,15 @@ export class PuzzleGame {
     const pieceHeight: number = containerHeight / this.rows;
 
     for (let i = 0; i < this.rows; i++) {
+      const rowContainer: HTMLElement = document.createElement('div');
+      rowContainer.classList.add('row-container');
+      this.container.appendChild(rowContainer);
+
       for (let j = 0; j < this.cols[i].length; j++) {
-        const pieceWidth: number = containerWidth / this.cols[i].length;
+        const word: string = this.cols[i][j];
+        const wordLength: number = word.length;
+        let pieceWidth: number = containerWidth / this.cols[i].length;
+
         const piece: HTMLElement = document.createElement('div');
         piece.classList.add('puzzle-piece');
         piece.style.width = `${pieceWidth}px`;
@@ -41,8 +46,9 @@ export class PuzzleGame {
         piece.style.backgroundImage = `url(https://raw.githubusercontent.com/rolling-scopes-school/rss-puzzle-data/main/images/${this.img})`;
         piece.style.backgroundSize = `${containerWidth}px ${containerHeight}px`;
         piece.style.backgroundPosition = `-${j * pieceWidth}px -${i * pieceHeight}px`;
-        piece.innerText = `${this.cols[i][j]}`;
-        this.container.appendChild(piece);
+        piece.innerText = `${word}`;
+
+        rowContainer.appendChild(piece);
       }
     }
   }
