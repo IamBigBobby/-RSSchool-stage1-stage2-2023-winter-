@@ -1,6 +1,6 @@
 .game-container {
   display: block;
-  position: relative;
+  // position: relative;
   width: 760px;
   height: 760px;
   background-position: center;
@@ -9,9 +9,15 @@
 }
 
 .puzzle-piece {
-  position: absolute;
+  // position: absolute;
   border: 1px solid greenyellow;
   color: greenyellow;
 
   background-color: rgba(128, 128, 128, 0.5);
+}
+
+.row-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
