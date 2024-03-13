@@ -41,7 +41,6 @@ export class PuzzleGame {
         piece.style.backgroundImage = `url(https://raw.githubusercontent.com/rolling-scopes-school/rss-puzzle-data/main/images/${this.img})`;
         piece.style.backgroundSize = `${containerWidth}px ${containerHeight}px`;
         piece.style.backgroundPosition = `-${j * pieceWidth}px -${i * pieceHeight}px`;
-        piece.style.zIndex = '2';
         piece.innerText = `${this.cols[i][j]}`;
         this.container.appendChild(piece);
       }
