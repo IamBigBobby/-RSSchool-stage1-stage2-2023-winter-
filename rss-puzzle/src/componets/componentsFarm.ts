@@ -1,7 +1,6 @@
 import { ComponentProps } from '../interfaces/interfaces';
 
 export class Component {
-  [x: string]: any;
   protected node: HTMLElement;
   protected children: Component[];
 
@@ -23,7 +22,7 @@ export class Component {
     this.node.append(child.getNode());
   }
 
-  public appendChildren(children: Component[]) {
+  public appendChildren(children: Component[]): void {
     children.forEach((element) => {
       this.append(element);
     });
@@ -35,6 +34,10 @@ export class Component {
 
   public setTextContent(content: string): void {
     this.node.textContent = content;
+  }
+
+  public setInnerText(content: string): void {
+    this.node.innerText = content;
   }
 
   public setAttribute(attribute: string, value: string): void {
@@ -49,7 +52,11 @@ export class Component {
     this.node.classList.toggle(className);
   }
 
-  public addListener(event: string, listener: EventListener, options = false) {
+  public addListener(
+    event: string,
+    listener: EventListenerOrEventListenerObject,
+    options = false
+  ): void {
     this.node.addEventListener(event, listener, options);
   }
 
@@ -62,5 +69,9 @@ export class Component {
 
   public setBackgroundImage(imageUrl: string): void {
     this.node.style.backgroundImage = `url(${imageUrl})`;
+  }
+
+  public setStyle(property: string, value: string): void {
+    this.node.style.setProperty(property, value);
   }
 }
