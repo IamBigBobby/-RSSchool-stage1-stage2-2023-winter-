@@ -1,6 +1,6 @@
 .game-container {
+  margin: 0 auto;
   display: block;
-  // position: relative;
   width: 760px;
   height: 760px;
   background-position: center;
@@ -13,8 +13,8 @@
 }
 .puzzle-piece {
   flex-grow: 1;
-  border: 1px solid greenyellow;
-  color: greenyellow;
+  border: 1px solid red;
+  color: red;
 
   background-color: rgba(128, 128, 128, 0.5);
 }
