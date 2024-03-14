@@ -9,7 +9,7 @@ export class PuzzleGame {
   constructor(
     cols: string[][],
     img: string,
-    container = '.game-container',
+    container = '.puzzle-container',
     rows = 10
   ) {
     this.rows = rows;
@@ -31,42 +31,45 @@ export class PuzzleGame {
       const rowContainer = div('row-container');
       this.container.appendChild(rowContainer.getNode());
 
+      if (i !== 0) {
+        rowContainer.setStyle('display', 'none');
+      }
+
       for (let j = 0; j < this.cols[i].length; j++) {
         const piece = div('puzzle-piece');
 
         const word: string = this.cols[i][j];
         const wordLength: number = word.length;
 
-        // Определение длины "короткого" и "длинного" слова
-        const shortWordLength = 5; // Примерное значение, можно настроить
-        const longWordLength = 10; // Примерное значение, можно настроить
+        // const shortWordLength = 5;
+        // const longWordLength = 10;
+        // variable
 
-        // Определение ширины пазла в зависимости от длины слова
-        let pieceWidth: number;
-        if (wordLength <= shortWordLength) {
-          pieceWidth = containerWidth / (this.cols[i].length * 2); // Уменьшаем ширину для коротких слов
-        } else if (wordLength >= longWordLength) {
-          pieceWidth = containerWidth / (this.cols[i].length / 2); // Увеличиваем ширину для длинных слов
-        } else {
-          pieceWidth = containerWidth / this.cols[i].length; // Ширина по умолчанию
-        }
+        let pieceWidth: number = containerWidth / this.cols[i].length;
+        let pieceHeight: number = containerHeight / this.rows;
 
-        const pieceHeight: number = containerHeight / this.rows;
+        // if (wordLength <= shortWordLength) {
+        //   pieceWidth = containerWidth / (this.cols[i].length * 2);
+        // } else if (wordLength >= longWordLength) {
+        //   pieceWidth = containerWidth / (this.cols[i].length / 2);
+        // }
+        // its a flexible width for piece, it dosent work
 
-        piece.setStyle('width', `${pieceWidth}px`);
-        piece.setStyle('height', `${pieceHeight}px`);
         piece.setStyle(
           'background-image',
           `url(https://raw.githubusercontent.com/rolling-scopes-school/rss-puzzle-data/main/images/${this.img})`
         );
 
-        const backgroundPosX = -(containerWidth / this.cols[i].length) * j;
-        const backgroundPosY = -(containerHeight / this.rows) * i;
+        const backgroundPosX = -(pieceWidth * j);
+        const backgroundPosY = -(pieceHeight * i);
 
         piece.setStyle(
           'background-position',
           `${backgroundPosX}px ${backgroundPosY}px`
         );
+
+        piece.setStyle('width', `${pieceWidth}px`);
+        piece.setStyle('height', `${pieceHeight}px`);
 
         piece.setInnerText(`${word}`);
 
