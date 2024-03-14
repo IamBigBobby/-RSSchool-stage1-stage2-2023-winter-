@@ -39,6 +39,7 @@ export class PuzzleGame {
 
         // const shortWordLength = 5;
         // const longWordLength = 10;
+        // variable
 
         let pieceWidth: number = containerWidth / this.cols[i].length;
         let pieceHeight: number = containerHeight / this.rows;
