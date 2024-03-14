@@ -9,7 +9,7 @@ import { addClickmovementPuzzle } from './utils/clickAdding';
 createApp();
 createGameFiled();
 
-const newData = new GetCurrentData(4, 23);
+const newData = new GetCurrentData(1, 10);
 
 console.log(newData.getLvlData());
 console.log(newData.getTextExample());
