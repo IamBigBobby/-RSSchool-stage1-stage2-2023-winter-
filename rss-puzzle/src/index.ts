@@ -4,6 +4,7 @@ import { createApp } from './utils/app';
 import { PuzzleGame } from './utils/createPuzzle';
 import { GetCurrentData } from './utils/getData';
 import { CollectingField } from './utils/createCollectingField';
+import { addClickmovementPuzzle } from './utils/clickAdding';
 
 createApp();
 createGameFiled();
@@ -20,5 +21,7 @@ Promise.all([newData.getImg(), newData.getTextExample()]).then(
 
     const newCollectigField = new CollectingField(length);
     newCollectigField.setupCollectingField();
+
+    addClickmovementPuzzle();
   }
 );

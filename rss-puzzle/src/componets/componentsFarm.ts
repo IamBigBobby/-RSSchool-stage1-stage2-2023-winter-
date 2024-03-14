@@ -60,6 +60,12 @@ export class Component {
     this.node.addEventListener(event, listener, options);
   }
 
+  public removeNode(): void {
+    if (this.node.parentNode) {
+      this.node.parentNode.removeChild(this.node);
+    }
+  }
+
   public destroy(): void {
     this.children.forEach((child) => {
       child.destroy();
