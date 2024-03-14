@@ -31,6 +31,10 @@ export class PuzzleGame {
       const rowContainer = div('row-container');
       this.container.appendChild(rowContainer.getNode());
 
+      if (i !== 0) {
+        rowContainer.setStyle('display', 'none');
+      }
+
       for (let j = 0; j < this.cols[i].length; j++) {
         const piece = div('puzzle-piece');
 
@@ -68,10 +72,6 @@ export class PuzzleGame {
         piece.setStyle('height', `${pieceHeight}px`);
 
         piece.setInnerText(`${word}`);
-
-        if (i !== 0) {
-          piece.setStyle('display', 'none');
-        }
 
         rowContainer.appendChildren([piece]);
       }

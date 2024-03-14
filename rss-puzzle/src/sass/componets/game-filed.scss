@@ -2,14 +2,19 @@
   box-sizing: border-box;
 }
 
+.main {
+  height: 100vh;
+  overflow: hidden;
+}
+
 .puzzle-container {
-  margin: 0 auto;
+  margin: 20px auto;
+  // border: 1px dotted black;
   display: block;
   width: 700px;
-  height: 720px;
+  height: 500px;
   background-position: center;
   background-size: cover;
-  border-top: 1px solid black;
 }
 
 .row-container-collecting {
@@ -25,7 +30,7 @@
   margin: 0 auto;
   display: block;
   width: 700px;
-  height: 720px;
+  height: 500px;
   background-color: gray;
 }
 
