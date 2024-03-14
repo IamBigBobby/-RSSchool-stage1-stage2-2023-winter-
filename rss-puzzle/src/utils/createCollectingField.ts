@@ -36,37 +36,11 @@ export class CollectingField {
         const word: string = this.cols[i][j];
         const wordLength: number = word.length;
 
-        // const shortWordLength = 5;
-        // const longWordLength = 10;
-        // variable
-
-        let pieceWidth: number = containerWidth / this.cols[i].length;
-        let pieceHeight: number = containerHeight / this.rows;
-
-        // if (wordLength <= shortWordLength) {
-        //   pieceWidth = containerWidth / (this.cols[i].length * 2);
-        // } else if (wordLength >= longWordLength) {
-        //   pieceWidth = containerWidth / (this.cols[i].length / 2);
-        // }
-        // its a flexible width for piece, it dosent work
-
-        // piece.setStyle(
-        //   'background-image',
-        //   `url(https://raw.githubusercontent.com/rolling-scopes-school/rss-puzzle-data/main/images/${this.img})`
-        // );
-
-        // const backgroundPosX = -(pieceWidth * j);
-        // const backgroundPosY = -(pieceHeight * i);
-
-        // piece.setStyle(
-        //   'background-position',
-        //   `${backgroundPosX}px ${backgroundPosY}px`
-        // );
+        const pieceWidth: number = containerWidth / this.cols[i].length;
+        const pieceHeight: number = containerHeight / this.rows;
 
         piece.setStyle('width', `${pieceWidth}px`);
         piece.setStyle('height', `${pieceHeight}px`);
-
-        // piece.setInnerText(`${word}`);
 
         rowContainer.appendChildren([piece]);
       }

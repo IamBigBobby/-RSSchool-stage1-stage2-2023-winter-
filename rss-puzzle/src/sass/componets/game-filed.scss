@@ -1,11 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
 .puzzle-container {
   margin: 0 auto;
   display: block;
   width: 700px;
-  height: 700px;
+  height: 720px;
   background-position: center;
   background-size: cover;
-  z-index: 1;
+  border-top: 1px solid black;
 }
 
 .row-container-collecting {
@@ -14,17 +18,15 @@
 
 .collecting-field {
   flex-grow: 1;
-  border: 1px solid yellow;
+  border: 1px solid black;
 }
 
 .collecting-container {
   margin: 0 auto;
   display: block;
   width: 700px;
-  height: 700px;
-  background-position: center;
-  background-size: cover;
-  z-index: 1;
+  height: 720px;
+  background-color: gray;
 }
 
 .row-container {

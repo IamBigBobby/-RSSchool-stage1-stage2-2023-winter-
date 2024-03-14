@@ -69,6 +69,10 @@ export class PuzzleGame {
 
         piece.setInnerText(`${word}`);
 
+        if (i !== 0) {
+          piece.setStyle('display', 'none');
+        }
+
         rowContainer.appendChildren([piece]);
       }
     }

@@ -15,8 +15,8 @@ console.log(newData.getTextExample());
 
 Promise.all([newData.getImg(), newData.getTextExample()]).then(
   ([img, length]) => {
-    const newPuzzle = new PuzzleGame(length, img);
-    newPuzzle.setupPuzzle();
+    // const newPuzzle = new PuzzleGame(length, img);
+    // newPuzzle.setupPuzzle();
 
     const newCollectigField = new CollectingField(length);
     newCollectigField.setupCollectingField();
