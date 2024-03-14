@@ -8,13 +8,33 @@
   z-index: 1;
 }
 
+.row-container-collecting {
+  display: flex;
+}
+
+.collecting-field {
+  flex-grow: 1;
+  border: 1px solid yellow;
+}
+
+.collecting-container {
+  margin: 0 auto;
+  display: block;
+  width: 700px;
+  height: 700px;
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+}
+
 .row-container {
   display: flex;
 }
 .puzzle-piece {
   flex-grow: 1;
   border: 1px solid yellow;
-  color: yellow;
+  color: black;
+  text-shadow: 0 0 5px white;
 
   background-color: rgba(128, 128, 128, 0.5);
   font-size: 14px;
