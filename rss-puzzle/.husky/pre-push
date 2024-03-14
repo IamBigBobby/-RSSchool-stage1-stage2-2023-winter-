@@ -1,2 +1,2 @@
 cd rss-puzzle
-npx validate-branch-name -r '^(feat|fix|refactor|chore|docs)/RSS-PZ-\d{2}_[a-zA-Z]+$'
+npx validate-branch-name -r '^(feat|fix|refactor|chore|docs)\/RSS-PZ-\d{2}_[\w-]+$'
