@@ -4,11 +4,9 @@ export class CollectingField {
   public container: HTMLElement;
   private rows: number;
   private cols: string[][];
-  // private img: string;
 
   constructor(
     cols: string[][],
-    // img: string,
     container = '.collecting-container',
     rows = 10
   ) {
@@ -27,11 +25,17 @@ export class CollectingField {
     const containerHeight: number = this.container.offsetHeight;
 
     for (let i = 0; i < this.rows; i++) {
-      const rowContainer = div('row-container-collecting');
+      const rowContainer =
+        i === 0
+          ? div('row-container-collecting row-container-collecting_active')
+          : div('row-container-collecting');
       this.container.appendChild(rowContainer.getNode());
 
       for (let j = 0; j < this.cols[i].length; j++) {
-        const piece = div('collecting-field');
+        const piece =
+          i === 0
+            ? div('collecting-field collecting-field_active')
+            : div('collecting-field');
 
         const word: string = this.cols[i][j];
         const wordLength: number = word.length;
