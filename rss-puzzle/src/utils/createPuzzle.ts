@@ -9,7 +9,7 @@ export class PuzzleGame {
   constructor(
     cols: string[][],
     img: string,
-    container = '.game-container',
+    container = '.puzzle-container',
     rows = 10
   ) {
     this.rows = rows;
@@ -48,6 +48,7 @@ export class PuzzleGame {
         // } else if (wordLength >= longWordLength) {
         //   pieceWidth = containerWidth / (this.cols[i].length / 2);
         // }
+        // its a flexible width for piece, it dosent work
 
         piece.setStyle(
           'background-image',
