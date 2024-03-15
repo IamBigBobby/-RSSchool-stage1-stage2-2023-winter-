@@ -5,14 +5,12 @@ import { PuzzleGame } from './utils/createPuzzle';
 import { GetCurrentData } from './utils/getData';
 import { CollectingField } from './utils/createCollectingField';
 import { addClickmovementPuzzle } from './utils/clickAdding';
+import { dragAndDropMovementPuzzle } from './utils/dragAndDropAdding';
 
 createApp();
 createGameFiled();
 
 const newData = new GetCurrentData(1, 10);
-
-console.log(newData.getLvlData());
-console.log(newData.getTextExample());
 
 Promise.all([newData.getImg(), newData.getTextExample()]).then(
   ([img, length]) => {
@@ -23,5 +21,6 @@ Promise.all([newData.getImg(), newData.getTextExample()]).then(
     newCollectigField.setupCollectingField();
 
     addClickmovementPuzzle();
+    dragAndDropMovementPuzzle();
   }
 );
