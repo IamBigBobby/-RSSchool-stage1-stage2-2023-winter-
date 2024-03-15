@@ -10,7 +10,7 @@ import { dragAndDropMovementPuzzle } from './utils/dragAndDropAdding';
 createApp();
 createGameFiled();
 
-const newData = new GetCurrentData(1, 10);
+const newData = new GetCurrentData(1, 0);
 
 Promise.all([newData.getImg(), newData.getTextExample()]).then(
   ([img, length]) => {

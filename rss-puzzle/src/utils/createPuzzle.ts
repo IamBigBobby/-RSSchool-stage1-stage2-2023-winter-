@@ -75,6 +75,18 @@ export class PuzzleGame {
 
         rowContainer.appendChildren([piece]);
       }
+
+      const rowContainerChildren = Array.from(rowContainer.getChildren());
+      const childrenArray = rowContainerChildren.slice();
+
+      for (let i = childrenArray.length - 1; i > 0; i--) {
+        const randomNumber = Math.floor(Math.random() * (i + 1));
+        const temp = childrenArray[i];
+        childrenArray[i] = childrenArray[randomNumber];
+        childrenArray[randomNumber] = temp;
+      }
+
+      rowContainer.appendChildren(childrenArray);
     }
   }
 }
