@@ -9,9 +9,32 @@ export function checkSentence(textArr: string[]): void {
     }
   });
 
-  console.log(sentenceLenght);
   if (textArr.length === sentenceLenght) {
     button.disabled = false;
+
+    let status: boolean = true;
+
+    button.addEventListener('click', function () {
+      console.log(textArr);
+      const fieldLine = document.querySelector(
+        '.row-container-collecting_active'
+      );
+      const completePuzzles = fieldLine.querySelectorAll('.puzzle-piece');
+      const checkArr: string[] = [];
+      completePuzzles.forEach((puzzle) => {
+        const text = puzzle.textContent;
+        checkArr.push(text);
+      });
+      console.log(checkArr);
+      for (let i = 0; i < textArr.length; i += 1) {
+        if (checkArr[i] !== textArr[i]) {
+          status = false;
+        }
+      }
+
+      console.log(status);
+    });
+
     return;
   }
 

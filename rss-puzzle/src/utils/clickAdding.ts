@@ -9,7 +9,7 @@ export function addClickmovementPuzzle(textArr: string[]): void {
   const rowContainer = document.querySelector('.row-container') as HTMLElement;
 
   puzzleCards.forEach((card) => {
-    card.addEventListener('click', (event) => {
+    card.addEventListener('click', (event: MouseEvent) => {
       const puzzlePiece = event.target as HTMLElement;
       const parent = puzzlePiece.parentNode as HTMLElement;
 
