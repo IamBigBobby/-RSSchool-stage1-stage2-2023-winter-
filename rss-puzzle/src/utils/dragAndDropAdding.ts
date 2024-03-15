@@ -13,6 +13,19 @@ export function dragAndDropMovementPuzzle(): void {
     field.addEventListener('drop', (event) => {
       event.preventDefault();
       const dropField = event.target as HTMLElement;
+
+      if (dropField.classList.contains('puzzle-piece')) {
+        const dragStart = draggedPuzzle.parentNode;
+
+        draggedPuzzle.parentNode.removeChild(draggedPuzzle);
+
+        dropField.parentNode.appendChild(draggedPuzzle);
+
+        dropField.parentNode.removeChild(dropField);
+
+        dragStart.appendChild(dropField);
+      }
+
       if (dropField.classList.contains('collecting-field_active')) {
         draggedPuzzle.parentNode.removeChild(draggedPuzzle);
         dropField.appendChild(draggedPuzzle);
