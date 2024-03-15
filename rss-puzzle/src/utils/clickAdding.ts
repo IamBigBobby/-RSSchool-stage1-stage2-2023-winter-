@@ -16,6 +16,7 @@ export function addClickmovementPuzzle(textArr: string[]): void {
       if (parent.classList.contains('collecting-field')) {
         parent.removeChild(puzzlePiece);
         rowContainer.appendChild(puzzlePiece);
+        checkSentence(textArr);
         return;
       }
 

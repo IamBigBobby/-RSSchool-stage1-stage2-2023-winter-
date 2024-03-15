@@ -6,6 +6,7 @@ export function createGameFiled(): void {
   const mainElement = document.querySelector('main');
   const button = document.createElement('button');
   button.classList.add('check-button');
+  button.disabled = true;
 
   button.textContent = 'check';
 
