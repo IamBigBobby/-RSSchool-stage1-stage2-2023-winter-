@@ -37,7 +37,6 @@ export class GetCurrentData {
         this.lvlData.rounds[this.round].words[i].textExample.split(' ');
       textArr.push(sentence);
     }
-    console.log();
     return textArr;
   }
 

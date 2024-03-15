@@ -6,21 +6,25 @@ import { GetCurrentData } from './utils/getData';
 import { CollectingField } from './utils/createCollectingField';
 import { addClickmovementPuzzle } from './utils/clickAdding';
 import { dragAndDropMovementPuzzle } from './utils/dragAndDropAdding';
+import { checkSentence } from './utils/checkSentence';
 
 createApp();
 createGameFiled();
 
 const newData = new GetCurrentData(1, 0);
+console.log(newData.getTextArr());
 
-Promise.all([newData.getImg(), newData.getTextExample()]).then(
-  ([img, length]) => {
-    const newPuzzle = new PuzzleGame(length, img);
-    newPuzzle.setupPuzzle();
+Promise.all([
+  newData.getImg(),
+  newData.getTextExample(),
+  newData.getTextArr(),
+]).then(([img, length, textArr]) => {
+  const newPuzzle = new PuzzleGame(length, img);
+  newPuzzle.setupPuzzle();
 
-    const newCollectigField = new CollectingField(length);
-    newCollectigField.setupCollectingField();
+  const newCollectigField = new CollectingField(length);
+  newCollectigField.setupCollectingField();
 
-    addClickmovementPuzzle();
-    dragAndDropMovementPuzzle();
-  }
-);
+  addClickmovementPuzzle(textArr);
+  dragAndDropMovementPuzzle(textArr);
+});

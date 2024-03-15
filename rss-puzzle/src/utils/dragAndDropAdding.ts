@@ -1,4 +1,6 @@
-export function dragAndDropMovementPuzzle(): void {
+import { checkSentence } from './checkSentence';
+
+export function dragAndDropMovementPuzzle(textArr: string[]): void {
   const puzzles = document.querySelectorAll('.puzzle-piece');
   const collectingFields = document.querySelectorAll(
     '.row-container-collecting_active'
@@ -33,6 +35,8 @@ export function dragAndDropMovementPuzzle(): void {
         draggedPuzzle.parentNode.removeChild(draggedPuzzle);
         dropField.appendChild(draggedPuzzle);
       }
+
+      checkSentence(textArr);
     });
   });
 
@@ -87,6 +91,8 @@ export function dragAndDropMovementPuzzle(): void {
         draggedPuzzle.parentNode.removeChild(draggedPuzzle);
         dropField.appendChild(draggedPuzzle);
       }
+
+      checkSentence(textArr);
     });
   });
 }

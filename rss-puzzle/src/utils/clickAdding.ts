@@ -1,4 +1,6 @@
-export function addClickmovementPuzzle(): void {
+import { checkSentence } from './checkSentence';
+
+export function addClickmovementPuzzle(textArr: string[]): void {
   const puzzleCards: NodeListOf<HTMLElement> =
     document.querySelectorAll('.puzzle-piece');
   const collectingFields: NodeListOf<HTMLElement> = document.querySelectorAll(
@@ -25,6 +27,7 @@ export function addClickmovementPuzzle(): void {
           block.appendChild(puzzlePiece);
         }
       }
+      checkSentence(textArr);
     });
   });
 }
