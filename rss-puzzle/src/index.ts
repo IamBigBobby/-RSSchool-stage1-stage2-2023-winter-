@@ -12,7 +12,6 @@ createApp();
 createGameFiled();
 
 const newData = new GetCurrentData(1, 0);
-console.log(newData.getTextArr());
 
 Promise.all([
   newData.getImg(),
