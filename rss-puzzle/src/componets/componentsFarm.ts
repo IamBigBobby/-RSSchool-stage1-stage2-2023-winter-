@@ -80,4 +80,8 @@ export class Component {
   public setStyle(property: string, value: string): void {
     this.node.style.setProperty(property, value);
   }
+
+  public getChildren(): Component[] {
+    return this.children;
+  }
 }
