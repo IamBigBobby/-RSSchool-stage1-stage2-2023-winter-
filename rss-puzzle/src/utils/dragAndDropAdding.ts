@@ -17,6 +17,10 @@ export function dragAndDropMovementPuzzle(): void {
       if (dropField.classList.contains('puzzle-piece')) {
         const dragStart = draggedPuzzle.parentNode;
 
+        if (dragStart === dropField.parentNode) {
+          return;
+        }
+
         draggedPuzzle.parentNode.removeChild(draggedPuzzle);
 
         dropField.parentNode.appendChild(draggedPuzzle);
