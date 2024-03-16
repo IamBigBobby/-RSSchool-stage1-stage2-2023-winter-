@@ -15,7 +15,6 @@ export function checkSentence(textArr: string[]): void {
     let status: boolean = true;
 
     button.addEventListener('click', function () {
-      console.log(textArr);
       const fieldLine = document.querySelector(
         '.row-container-collecting_active'
       );
@@ -30,7 +29,6 @@ export function checkSentence(textArr: string[]): void {
         const text = puzzle.textContent;
         checkArr.push(text);
       });
-
       for (let i = 0; i < textArr.length; i += 1) {
         if (checkArr[i] !== textArr[i]) {
           status = false;
@@ -45,6 +43,30 @@ export function checkSentence(textArr: string[]): void {
             'row-container-collecting_active_complete'
           );
         }, 2000);
+        completePuzzles.forEach((puzzle) => {
+          puzzle.classList.add('puzzle_disable');
+        });
+
+        const childrenFieldLine = fieldLine.children;
+        for (let i = 0; i < childrenFieldLine.length; i += 1) {
+          childrenFieldLine[i].classList.remove('collecting-field_active');
+        }
+
+        fieldLine.classList.remove('row-container-collecting_active');
+        const nextFieldLine = fieldLine.nextSibling as HTMLElement;
+        nextFieldLine.classList.add('row-container-collecting_active');
+
+        const nextActiveFieldLine = document.querySelector(
+          '.row-container-collecting_active'
+        );
+        const nextActiveChildrenFields = nextActiveFieldLine.children;
+
+        console.log(nextActiveFieldLine);
+        console.log(nextActiveChildrenFields);
+
+        for (let i = 0; i < nextActiveChildrenFields.length; i += 1) {
+          nextActiveChildrenFields[i].classList.add('collecting-field_active');
+        }
       }
     });
 
