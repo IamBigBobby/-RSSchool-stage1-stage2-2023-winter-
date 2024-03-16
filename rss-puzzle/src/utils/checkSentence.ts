@@ -20,19 +20,32 @@ export function checkSentence(textArr: string[]): void {
         '.row-container-collecting_active'
       );
       const completePuzzles = fieldLine.querySelectorAll('.puzzle-piece');
+
+      completePuzzles.forEach((puzzle) => {
+        puzzle.classList.remove('puzzle_false');
+      });
+
       const checkArr: string[] = [];
       completePuzzles.forEach((puzzle) => {
         const text = puzzle.textContent;
         checkArr.push(text);
       });
-      console.log(checkArr);
+
       for (let i = 0; i < textArr.length; i += 1) {
         if (checkArr[i] !== textArr[i]) {
           status = false;
+          completePuzzles[i].classList.add('puzzle_false');
         }
       }
 
-      console.log(status);
+      if (status === true) {
+        fieldLine.classList.add('row-container-collecting_active_complete');
+        setTimeout(function () {
+          fieldLine.classList.remove(
+            'row-container-collecting_active_complete'
+          );
+        }, 2000);
+      }
     });
 
     return;
