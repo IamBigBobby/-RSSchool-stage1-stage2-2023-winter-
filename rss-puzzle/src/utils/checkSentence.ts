@@ -61,9 +61,6 @@ export function checkSentence(textArr: string[]): void {
         );
         const nextActiveChildrenFields = nextActiveFieldLine.children;
 
-        console.log(nextActiveFieldLine);
-        console.log(nextActiveChildrenFields);
-
         for (let i = 0; i < nextActiveChildrenFields.length; i += 1) {
           nextActiveChildrenFields[i].classList.add('collecting-field_active');
         }
