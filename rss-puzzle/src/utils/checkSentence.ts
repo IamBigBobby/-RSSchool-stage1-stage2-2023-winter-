@@ -16,13 +16,12 @@ export function checkSentence(textArr: string[][]): void {
     button.disabled = false;
 
     let status: boolean = true;
+    const fieldLine = document.querySelector(
+      '.row-container-collecting_active'
+    );
+    const completePuzzles = fieldLine.querySelectorAll('.puzzle-piece');
 
     button.addEventListener('click', function () {
-      const fieldLine = document.querySelector(
-        '.row-container-collecting_active'
-      );
-      const completePuzzles = fieldLine.querySelectorAll('.puzzle-piece');
-
       completePuzzles.forEach((puzzle) => {
         puzzle.classList.remove('puzzle_false');
       });
@@ -38,53 +37,63 @@ export function checkSentence(textArr: string[][]): void {
           completePuzzles[i].classList.add('puzzle_false');
         }
       }
-
       if (status === true) {
+        fieldLine.classList.add('row-container-collecting_active_complete');
         button.textContent = 'continue';
-      }
 
-      button.addEventListener('click', function () {
-        if (status === true) {
-          fieldLine.classList.add('row-container-collecting_active_complete');
-          setTimeout(function () {
+        button.addEventListener('click', function () {
+          if (status === true) {
             fieldLine.classList.remove(
               'row-container-collecting_active_complete'
             );
-          }, 2000);
-          completePuzzles.forEach((puzzle) => {
-            puzzle.classList.add('puzzle_disable');
-          });
 
-          const childrenFieldLine = fieldLine.children;
-          for (let i = 0; i < childrenFieldLine.length; i += 1) {
-            childrenFieldLine[i].classList.remove('collecting-field_active');
-          }
+            completePuzzles.forEach((puzzle) => {
+              puzzle.classList.add('puzzle_disable');
+            });
 
-          fieldLine.classList.remove('row-container-collecting_active');
-          const nextFieldLine = fieldLine.nextSibling as HTMLElement;
-          nextFieldLine.classList.add('row-container-collecting_active');
+            const childrenFieldLine = fieldLine.children;
+            for (let i = 0; i < childrenFieldLine.length; i += 1) {
+              childrenFieldLine[i].classList.remove('collecting-field_active');
+            }
 
-          const nextActiveFieldLine = document.querySelector(
-            '.row-container-collecting_active'
-          );
-          const nextActiveChildrenFields = nextActiveFieldLine.children;
+            fieldLine.classList.remove('row-container-collecting_active');
+            const nextFieldLine = fieldLine.nextSibling as HTMLElement;
+            nextFieldLine.classList.add('row-container-collecting_active');
 
-          for (let i = 0; i < nextActiveChildrenFields.length; i += 1) {
-            nextActiveChildrenFields[i].classList.add(
-              'collecting-field_active'
+            const nextActiveFieldLine = document.querySelector(
+              '.row-container-collecting_active'
             );
+            const nextActiveChildrenFields = nextActiveFieldLine.children;
+
+            for (let i = 0; i < nextActiveChildrenFields.length; i += 1) {
+              nextActiveChildrenFields[i].classList.add(
+                'collecting-field_active'
+              );
+            }
+            button.disabled = true;
+            button.textContent = 'check';
+            round += 1;
+
+            nextPuzzle();
           }
-          button.disabled = true;
-          button.textContent = 'check';
-          round += 1;
-          console.log(round);
-          console.log(textArr[round]);
-        }
-      });
+        });
+      }
     });
 
     return;
   }
 
   button.disabled = true;
+}
+
+function nextPuzzle(): void {
+  const puzzleRow = document.querySelectorAll(
+    '.row-container'
+  ) as NodeListOf<HTMLElement>;
+  puzzleRow.forEach((puzzle) => {
+    puzzle.style.visibility = 'hidden';
+  });
+
+  puzzleRow[round].style.visibility = 'visible';
+  // puzzleRow[round].style.display = 'flex';
 }

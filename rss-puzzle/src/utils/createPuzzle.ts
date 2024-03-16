@@ -32,7 +32,7 @@ export class PuzzleGame {
       this.container.appendChild(rowContainer.getNode());
 
       if (i !== 0) {
-        rowContainer.setStyle('display', 'none');
+        rowContainer.setStyle('visibility', 'hidden');
       }
 
       for (let j = 0; j < this.cols[i].length; j++) {
