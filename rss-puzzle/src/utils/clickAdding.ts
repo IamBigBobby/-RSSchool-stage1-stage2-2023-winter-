@@ -1,6 +1,6 @@
 import { checkSentence } from './checkSentence';
 
-export function addClickmovementPuzzle(textArr: string[]): void {
+export function addClickmovementPuzzle(textArr: string[][]): void {
   const puzzleCards: NodeListOf<HTMLElement> =
     document.querySelectorAll('.puzzle-piece');
   const collectingFields: NodeListOf<HTMLElement> = document.querySelectorAll(

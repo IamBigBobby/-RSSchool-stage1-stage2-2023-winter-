@@ -1,6 +1,6 @@
 import { checkSentence } from './checkSentence';
 
-export function dragAndDropMovementPuzzle(textArr: string[]): void {
+export function dragAndDropMovementPuzzle(textArr: string[][]): void {
   const puzzles = document.querySelectorAll('.puzzle-piece');
   const collectingFields = document.querySelectorAll(
     '.row-container-collecting_active'

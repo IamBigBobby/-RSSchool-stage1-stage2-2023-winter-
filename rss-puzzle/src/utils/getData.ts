@@ -40,9 +40,10 @@ export class GetCurrentData {
     return textArr;
   }
 
-  public async getTextArr(): Promise<string[]> {
+  public async getTextArr() {
     await this.fetchData();
-    return this.lvlData.rounds[this.round].words[0].textExample.split(' ');
+    console.log();
+    // return this.lvlData.rounds[this.round].words[0].textExample.split(' ');
   }
 
   public async getTextLength(): Promise<number> {
