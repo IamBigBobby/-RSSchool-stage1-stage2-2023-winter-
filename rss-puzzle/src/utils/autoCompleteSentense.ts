@@ -8,7 +8,6 @@ export function autocompleteSentense(textArr: string[][]): void {
     activeFields.forEach((field) => {
       if (field.querySelector('.puzzle-piece')) {
         const dragPuzzle = field.querySelector('.puzzle-piece');
-        console.log(dragPuzzle);
         rowActive.appendChild(dragPuzzle);
       }
     });

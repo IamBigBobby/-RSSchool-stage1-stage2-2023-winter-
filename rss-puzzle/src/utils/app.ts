@@ -1,4 +1,5 @@
 import { main } from '../componets/tagsFarm';
+import { setDifficulty } from './difficulty';
 
 export function createApp(): void {
   const app = main('main');
@@ -11,4 +12,6 @@ export function createApp(): void {
   body.appendChild(app.getNode());
   body.prepend(selectRound);
   body.prepend(selectLevel);
+
+  setDifficulty();
 }

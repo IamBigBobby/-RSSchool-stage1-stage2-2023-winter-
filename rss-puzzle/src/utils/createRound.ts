@@ -3,7 +3,6 @@ import { addClickmovementPuzzle } from './clickAdding';
 import { CollectingField } from './createCollectingField';
 import { createGameFiled } from './createGameFiled';
 import { PuzzleGame } from './createPuzzle';
-import { setDifficulty } from './difficulty';
 import { dragAndDropMovementPuzzle } from './dragAndDropAdding';
 import { GetCurrentData } from './getData';
 import { setRounds } from './rounds';
@@ -27,7 +26,6 @@ export function createRound(difficulty: number, round: number): void {
     addClickmovementPuzzle(textArr);
     dragAndDropMovementPuzzle(textArr);
     autocompleteSentense(textArr);
-    setDifficulty();
     setRounds(roundsCount);
   });
 }

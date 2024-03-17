@@ -31,7 +31,6 @@ function changeDifficulty(event: MouseEvent): void {
   const newData = new GetCurrentData(currentDifficulty);
 
   Promise.all([newData.getRoundsCount()]).then(([roundsCount]) => {
-    console.log(roundsCount);
     setRounds(roundsCount);
   });
 }
