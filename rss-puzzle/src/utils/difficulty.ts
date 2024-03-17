@@ -1,3 +1,5 @@
+export let currentDifficulty: number = 1;
+
 export function setDifficulty(): void {
   const selectLevel = document.querySelector('.selector-lvl');
   const levels = [
@@ -14,4 +16,14 @@ export function setDifficulty(): void {
     level.textContent = levels[i];
     selectLevel.appendChild(level);
   }
+
+  selectLevel.addEventListener('change', changeDifficulty);
+}
+
+function changeDifficulty(event: MouseEvent): void {
+  const selectedIndex = (event.target as HTMLSelectElement).selectedIndex;
+
+  currentDifficulty = selectedIndex + 1;
+
+  console.log(currentDifficulty);
 }

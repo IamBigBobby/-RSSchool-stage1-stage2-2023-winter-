@@ -13,7 +13,7 @@ import { setRounds } from './utils/rounds';
 createApp();
 createGameFiled();
 
-const newData = new GetCurrentData(4, 4);
+const newData = new GetCurrentData(1, 0);
 
 console.log(newData.getLvlData());
 console.log(newData.getRoundsCount());

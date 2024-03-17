@@ -12,7 +12,7 @@ export class GetCurrentData {
   words: number;
   lvlData: Data;
 
-  constructor(difficulty: number, round = 0) {
+  constructor(difficulty: number, round = 1) {
     this.difficulty = difficulty;
     this.round = round;
   }
