@@ -1,4 +1,4 @@
-export let round: number = 0;
+export let step: number = 0;
 
 export function checkSentence(textArr: string[][]): void {
   let sentenceLength: number = 0;
@@ -6,13 +6,15 @@ export function checkSentence(textArr: string[][]): void {
   const checkButton = document.querySelector(
     '.check-button'
   ) as HTMLButtonElement;
-  const currentSentenceLength = textArr[round].length;
+  const currentSentenceLength = textArr[step].length;
 
   activeFields.forEach((field) => {
     if (field.querySelector('.puzzle-piece')) {
       sentenceLength += 1;
     }
   });
+
+  console.log('step in step', step);
 
   if (currentSentenceLength === sentenceLength) {
     checkButton.disabled = false;
@@ -22,7 +24,7 @@ export function checkSentence(textArr: string[][]): void {
         '.row-container-collecting_active'
       );
       const completePuzzles = fieldLine.querySelectorAll('.puzzle-piece');
-      const currentSentence = textArr[round];
+      const currentSentence = textArr[step];
 
       let status: boolean = true;
 
@@ -103,15 +105,15 @@ function continueRound(): void {
     field.classList.add('collecting-field_active');
   });
 
-  round += 1;
+  step += 1;
 
   continueButton.disabled = true;
   continueButton.style.display = 'none';
   checkButton.style.display = 'block';
-  nextPuzzle(round);
+  nextPuzzle(step);
 }
 
-function nextPuzzle(round: number): void {
+function nextPuzzle(step: number): void {
   const puzzleRow = document.querySelectorAll(
     '.row-container'
   ) as NodeListOf<HTMLElement>;
@@ -123,10 +125,14 @@ function nextPuzzle(round: number): void {
   nextRowContainer.classList.add('row-container_active');
 
   puzzleRow.forEach((puzzle, index) => {
-    if (index === round) {
+    if (index === step) {
       puzzle.style.display = 'flex';
     } else {
       puzzle.style.display = 'none';
     }
   });
+}
+
+export function setStep(newStep: number): void {
+  step = newStep;
 }

@@ -40,6 +40,5 @@ function changeRound(event: MouseEvent): void {
     mainElement.removeChild(mainElement.firstChild);
   }
 
-  console.log(currentDifficulty, currentRound);
   createRound(currentDifficulty, currentRound);
 }

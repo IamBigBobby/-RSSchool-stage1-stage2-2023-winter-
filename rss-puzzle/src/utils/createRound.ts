@@ -1,4 +1,5 @@
 import { autocompleteSentense } from './autoCompleteSentense';
+import { setStep } from './checkSentence';
 import { addClickmovementPuzzle } from './clickAdding';
 import { CollectingField } from './createCollectingField';
 import { createGameFiled } from './createGameFiled';
@@ -9,6 +10,8 @@ import { setRounds } from './rounds';
 
 export function createRound(difficulty: number, round: number): void {
   createGameFiled();
+
+  setStep(0);
 
   const newData = new GetCurrentData(difficulty, round);
 

@@ -1,4 +1,4 @@
-import { checkSentence, round } from './checkSentence';
+import { checkSentence, step } from './checkSentence';
 
 export function autocompleteSentense(textArr: string[][]): void {
   const autoCompleteButton = document.querySelector('.auto-complete');
@@ -12,7 +12,7 @@ export function autocompleteSentense(textArr: string[][]): void {
       }
     });
 
-    const trueSentence = textArr[round];
+    const trueSentence = textArr[step];
     const rowContainerActive = document.querySelector('.row-container_active');
     const children = rowContainerActive.querySelectorAll('.puzzle-piece');
     const collectingFields = document.querySelectorAll(
