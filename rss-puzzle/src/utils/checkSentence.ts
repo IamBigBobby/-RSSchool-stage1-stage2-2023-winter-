@@ -52,6 +52,16 @@ export function checkSentence(textArr: string[][]): void {
           fieldLine.classList.add('row-container-collecting_active_complete');
           checkButton.disabled = true;
 
+          const completeFeilds = Array.from(
+            document.querySelectorAll('.collecting-field_active')
+          ) as HTMLElement[];
+
+          completeFeilds.forEach((field) => {
+            const word = field.querySelector('.word');
+            word.classList.add('word_open');
+            console.log(word);
+          });
+
           const continueButton = document.querySelector(
             '.continue-button'
           ) as HTMLButtonElement;
