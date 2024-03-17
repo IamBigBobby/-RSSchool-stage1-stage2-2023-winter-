@@ -4,13 +4,19 @@ export function createGameFiled(): void {
   const puzzleContainer = div('puzzle-container');
   const fieldCollectingContainer = div('collecting-container');
   const mainElement = document.querySelector('main');
-  const button = document.createElement('button');
-  button.classList.add('check-button');
-  button.disabled = true;
+  const checkButton = document.createElement('button');
+  const continueButton = document.createElement('button');
 
-  button.textContent = 'check';
+  checkButton.classList.add('check-button');
+  checkButton.disabled = true;
+  continueButton.classList.add('continue-button');
+  continueButton.disabled = true;
+
+  checkButton.textContent = 'check';
+  continueButton.textContent = 'continue';
 
   mainElement.appendChild(fieldCollectingContainer.getNode());
-  mainElement.appendChild(button);
+  mainElement.appendChild(checkButton);
+  mainElement.appendChild(continueButton);
   mainElement.appendChild(puzzleContainer.getNode());
 }

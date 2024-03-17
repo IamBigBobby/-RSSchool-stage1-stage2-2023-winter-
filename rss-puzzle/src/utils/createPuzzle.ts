@@ -31,6 +31,10 @@ export class PuzzleGame {
       const rowContainer = div('row-container');
       this.container.appendChild(rowContainer.getNode());
 
+      if (i === 0) {
+        rowContainer.addClass('row-container_active');
+      }
+
       if (i !== 0) {
         rowContainer.setStyle('display', 'none');
       }
