@@ -3,6 +3,16 @@ import { checkSentence, round } from './checkSentence';
 export function autocompleteSentense(textArr: string[][]): void {
   const autoCompleteButton = document.querySelector('.auto-complete');
   autoCompleteButton.addEventListener('click', function () {
+    const activeFields = document.querySelectorAll('.collecting-field_active');
+    const rowActive = document.querySelector('.row-container_active');
+    activeFields.forEach((field) => {
+      if (field.querySelector('.puzzle-piece')) {
+        const dragPuzzle = field.querySelector('.puzzle-piece');
+        console.log(dragPuzzle);
+        rowActive.appendChild(dragPuzzle);
+      }
+    });
+
     const trueSentence = textArr[round];
     const rowContainerActive = document.querySelector('.row-container_active');
     const children = rowContainerActive.querySelectorAll('.puzzle-piece');
@@ -20,6 +30,12 @@ export function autocompleteSentense(textArr: string[][]): void {
         }
       });
     });
+    const rowContainerActiveChildren = Array.from(rowContainerActive.children);
+
+    rowContainerActiveChildren.forEach((child) => {
+      child.parentNode.removeChild(child);
+    });
+
     checkSentence(textArr);
   });
 }
