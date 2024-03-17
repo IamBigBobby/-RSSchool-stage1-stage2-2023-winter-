@@ -6,12 +6,12 @@ import { GetCurrentData } from './utils/getData';
 import { CollectingField } from './utils/createCollectingField';
 import { addClickmovementPuzzle } from './utils/clickAdding';
 import { dragAndDropMovementPuzzle } from './utils/dragAndDropAdding';
+import { autocompleteSentense } from './utils/autoCompleteSentense';
 
 createApp();
 createGameFiled();
 
 const newData = new GetCurrentData(1, 0);
-console.log(newData.getTextExample());
 Promise.all([
   newData.getImg(),
   newData.getTextExample(),
@@ -25,4 +25,5 @@ Promise.all([
 
   addClickmovementPuzzle(textArr);
   dragAndDropMovementPuzzle(textArr);
+  autocompleteSentense(textArr);
 });
