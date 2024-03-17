@@ -5,8 +5,10 @@ export let currentRound: number = 0;
 
 export function setRounds(value: number): void {
   const selectRound = document.querySelector('.select-round');
-  console.log(value);
-  console.log(selectRound);
+
+  while (selectRound.firstChild) {
+    selectRound.removeChild(selectRound.firstChild);
+  }
 
   for (let i = 0; i < value; i += 1) {
     const round = document.createElement('option');

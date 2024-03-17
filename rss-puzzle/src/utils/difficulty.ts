@@ -1,3 +1,6 @@
+import { GetCurrentData } from './getData';
+import { setRounds } from './rounds';
+
 export let currentDifficulty: number = 1;
 
 export function setDifficulty(): void {
@@ -25,5 +28,10 @@ function changeDifficulty(event: MouseEvent): void {
 
   currentDifficulty = selectedIndex + 1;
 
-  console.log(currentDifficulty);
+  const newData = new GetCurrentData(currentDifficulty);
+
+  Promise.all([newData.getRoundsCount()]).then(([roundsCount]) => {
+    console.log(roundsCount);
+    setRounds(roundsCount);
+  });
 }
