@@ -31,8 +31,12 @@ export class PuzzleGame {
       const rowContainer = div('row-container');
       this.container.appendChild(rowContainer.getNode());
 
+      if (i === 0) {
+        rowContainer.addClass('row-container_active');
+      }
+
       if (i !== 0) {
-        rowContainer.setStyle('visibility', 'hidden');
+        rowContainer.setStyle('display', 'none');
       }
 
       for (let j = 0; j < this.cols[i].length; j++) {

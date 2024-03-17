@@ -84,4 +84,8 @@ export class Component {
   public getChildren(): Component[] {
     return this.children;
   }
+
+  public addClass(className: string): void {
+    this.node.classList.add(className);
+  }
 }
