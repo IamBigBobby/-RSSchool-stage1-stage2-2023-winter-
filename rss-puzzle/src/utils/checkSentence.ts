@@ -14,8 +14,6 @@ export function checkSentence(textArr: string[][]): void {
     }
   });
 
-  console.log('step in step', step);
-
   if (currentSentenceLength === sentenceLength) {
     checkButton.disabled = false;
 

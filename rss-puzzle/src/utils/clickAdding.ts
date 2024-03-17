@@ -6,7 +6,8 @@ export function addClickmovementPuzzle(textArr: string[][]): void {
 
   puzzleContainer.addEventListener('click', (event: MouseEvent) => {
     const target = event.target as HTMLElement;
-    if (target.classList.contains('puzzle-piece')) {
+    const puzzlePiece = target.closest('.puzzle-piece');
+    if (puzzlePiece) {
       const collectingFields: NodeListOf<HTMLElement> =
         document.querySelectorAll('.collecting-field_active');
 
@@ -14,8 +15,8 @@ export function addClickmovementPuzzle(textArr: string[][]): void {
         const block = collectingFields[i];
 
         if (!block.querySelector('.puzzle-piece')) {
-          target.parentNode.removeChild(target);
-          block.appendChild(target);
+          puzzlePiece.parentNode.removeChild(puzzlePiece);
+          block.appendChild(puzzlePiece);
         }
       }
       checkSentence(textArr);
@@ -24,13 +25,13 @@ export function addClickmovementPuzzle(textArr: string[][]): void {
 
   collectingContainer.addEventListener('click', (event: MouseEvent) => {
     const target = event.target as HTMLElement;
-
     const rowContainer = document.querySelector('.row-container_active');
 
-    if (target.classList.contains('puzzle-piece')) {
-      target.parentNode.removeChild(target);
-      rowContainer.appendChild(target);
+    const puzzlePiece = target.closest('.puzzle-piece');
+    if (puzzlePiece) {
+      puzzlePiece.parentNode.removeChild(puzzlePiece);
+      rowContainer.appendChild(puzzlePiece);
+      checkSentence(textArr);
     }
-    checkSentence(textArr);
   });
 }
