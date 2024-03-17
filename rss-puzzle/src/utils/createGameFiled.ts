@@ -8,6 +8,7 @@ export function createGameFiled(): void {
   const checkButton = document.createElement('button');
   const continueButton = document.createElement('button');
   const buttonAutoComplete = document.createElement('button');
+  const buttonHintImg = document.createElement('button');
 
   checkButton.classList.add('check-button');
   checkButton.disabled = true;
