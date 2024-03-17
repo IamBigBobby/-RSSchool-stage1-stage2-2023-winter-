@@ -1,4 +1,4 @@
-let round: number = 0;
+export let round: number = 0;
 
 export function checkSentence(textArr: string[][]): void {
   let sentenceLength: number = 0;
@@ -118,8 +118,6 @@ function nextPuzzle(round: number): void {
 
   const currentRowContainer = document.querySelector('.row-container_active');
   const nextRowContainer = currentRowContainer.nextElementSibling;
-
-  console.log(nextRowContainer);
 
   currentRowContainer.classList.remove('row-container_active');
   nextRowContainer.classList.add('row-container_active');
