@@ -10,6 +10,7 @@ export function createGameFiled(): void {
   checkButton.classList.add('check-button');
   checkButton.disabled = true;
   continueButton.classList.add('continue-button');
+  continueButton.style.display = 'none';
   continueButton.disabled = true;
 
   checkButton.textContent = 'check';

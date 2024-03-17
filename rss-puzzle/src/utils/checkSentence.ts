@@ -56,6 +56,8 @@ export function checkSentence(textArr: string[][]): void {
             '.continue-button'
           ) as HTMLButtonElement;
           continueButton.disabled = false;
+          continueButton.style.display = 'block';
+          checkButton.style.display = 'none';
           continueButton.addEventListener('click', continueRound);
         }
       }
@@ -68,6 +70,9 @@ export function checkSentence(textArr: string[][]): void {
 function continueRound(): void {
   const continueButton = document.querySelector(
     '.continue-button'
+  ) as HTMLButtonElement;
+  const checkButton = document.querySelector(
+    '.check-button'
   ) as HTMLButtonElement;
   const currentFieldLine = document.querySelector(
     '.row-container-collecting_active'
@@ -101,7 +106,8 @@ function continueRound(): void {
   round += 1;
 
   continueButton.disabled = true;
-
+  continueButton.style.display = 'none';
+  checkButton.style.display = 'block';
   nextPuzzle(round);
 }
 
