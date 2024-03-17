@@ -14,8 +14,6 @@ export function checkSentence(textArr: string[][]): void {
     }
   });
 
-  console.log('step in step', step);
-
   if (currentSentenceLength === sentenceLength) {
     checkButton.disabled = false;
 
@@ -53,6 +51,15 @@ export function checkSentence(textArr: string[][]): void {
         if (status) {
           fieldLine.classList.add('row-container-collecting_active_complete');
           checkButton.disabled = true;
+
+          const completeFeilds = Array.from(
+            document.querySelectorAll('.collecting-field_active')
+          ) as HTMLElement[];
+
+          completeFeilds.forEach((field) => {
+            const word = field.querySelector('.word');
+            word.classList.add('word_open');
+          });
 
           const continueButton = document.querySelector(
             '.continue-button'

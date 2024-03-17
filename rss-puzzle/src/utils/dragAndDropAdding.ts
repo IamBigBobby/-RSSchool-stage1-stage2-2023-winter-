@@ -21,7 +21,7 @@ export function dragAndDropMovementPuzzle(textArr: string[][]): void {
   let draggedElement: HTMLElement;
 
   function dragStart(event: DragEvent): void {
-    draggedElement = event.target as HTMLElement;
+    draggedElement = event.currentTarget as HTMLElement;
   }
 
   function dragOver(event: DragEvent): void {
@@ -44,6 +44,16 @@ export function dragAndDropMovementPuzzle(textArr: string[][]): void {
         dropField.parentNode.appendChild(draggedElement);
         dropField.parentNode.removeChild(dropField);
         dragStart.appendChild(dropField);
+      } else if (dropField.classList.contains('word')) {
+        const dragStart = draggedElement.parentNode;
+
+        const parentDropFile = dropField.parentNode;
+        const grandparentDropFiled = parentDropFile.parentNode;
+
+        draggedElement.parentNode.removeChild(draggedElement);
+        grandparentDropFiled.appendChild(draggedElement);
+        grandparentDropFiled.removeChild(parentDropFile);
+        dragStart.appendChild(parentDropFile);
       } else if (dropField.classList.contains('collecting-field_active')) {
         draggedElement.parentNode.removeChild(draggedElement);
         dropField.appendChild(draggedElement);
