@@ -75,7 +75,10 @@ export class PuzzleGame {
         piece.setStyle('width', `${pieceWidth}px`);
         piece.setStyle('height', `${pieceHeight}px`);
 
-        piece.setInnerText(`${word}`);
+        const textWord = div('word');
+        textWord.setInnerText(`${word}`);
+
+        piece.appendChildren([textWord]);
 
         rowContainer.appendChildren([piece]);
       }

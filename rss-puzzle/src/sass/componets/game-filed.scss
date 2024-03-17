@@ -45,11 +45,17 @@
   border: 1px solid black;
   color: black;
   text-shadow: 0 0 5px white;
-
   background-color: rgba(128, 128, 128, 0.5);
   font-size: 14px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.puzzle-piece_hide {
+  background-color: rgba(128, 128, 128, 0.5);
+}
 .puzzle_false {
   border: 5px solid red;
 }
