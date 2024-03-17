@@ -1,9 +1,10 @@
-import { div, main } from '../componets/tagsFarm';
+import { div } from '../componets/tagsFarm';
 
 export function createGameFiled(): void {
   const puzzleContainer = div('puzzle-container');
   const fieldCollectingContainer = div('collecting-container');
   const mainElement = document.querySelector('main');
+  const bodyElement = document.body;
   const checkButton = document.createElement('button');
   const continueButton = document.createElement('button');
   const buttonAutoComplete = document.createElement('button');
