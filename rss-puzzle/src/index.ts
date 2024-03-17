@@ -7,16 +7,22 @@ import { CollectingField } from './utils/createCollectingField';
 import { addClickmovementPuzzle } from './utils/clickAdding';
 import { dragAndDropMovementPuzzle } from './utils/dragAndDropAdding';
 import { autocompleteSentense } from './utils/autoCompleteSentense';
+import { setDifficulty } from './utils/difficulty';
+import { setRounds } from './utils/rounds';
 
 createApp();
 createGameFiled();
 
-const newData = new GetCurrentData(1, 0);
+const newData = new GetCurrentData(4, 4);
+
+console.log(newData.getLvlData());
+console.log(newData.getRoundsCount());
+
 Promise.all([
   newData.getImg(),
   newData.getTextExample(),
-  newData.getTextArr(),
-]).then(([img, textArr]) => {
+  newData.getRoundsCount(),
+]).then(([img, textArr, roundsCount]) => {
   const newPuzzle = new PuzzleGame(textArr, img);
   newPuzzle.setupPuzzle();
 
@@ -26,4 +32,6 @@ Promise.all([
   addClickmovementPuzzle(textArr);
   dragAndDropMovementPuzzle(textArr);
   autocompleteSentense(textArr);
+  setDifficulty();
+  setRounds(roundsCount);
 });

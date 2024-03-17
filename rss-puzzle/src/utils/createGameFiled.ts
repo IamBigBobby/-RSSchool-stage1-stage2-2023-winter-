@@ -1,4 +1,4 @@
-import { div, main } from '../componets/tagsFarm';
+import { div } from '../componets/tagsFarm';
 
 export function createGameFiled(): void {
   const puzzleContainer = div('puzzle-container');
@@ -19,20 +19,7 @@ export function createGameFiled(): void {
   selectLevel.classList.add('selector-lvl');
   selectRound.classList.add('select-round');
 
-  const levels = [
-    'Difficulty 1',
-    'Difficulty 2',
-    'Difficulty 3',
-    'Difficulty 4',
-  ];
-
   const rounds = ['Round 1', 'Round 2', 'Round 3'];
-
-  for (let i = 0; i < levels.length; i += 1) {
-    const level = document.createElement('option');
-    level.textContent = levels[i];
-    selectLevel.add(level);
-  }
 
   for (let i = 0; i < rounds.length; i += 1) {
     const round = document.createElement('option');
