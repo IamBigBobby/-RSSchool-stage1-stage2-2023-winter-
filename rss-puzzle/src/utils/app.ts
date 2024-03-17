@@ -1,5 +1,6 @@
 import { main } from '../componets/tagsFarm';
 import { setDifficulty } from './difficulty';
+import { showBackground } from './toggleBackgroundHint';
 
 export function createApp(): void {
   const app = main('main');
@@ -10,7 +11,7 @@ export function createApp(): void {
   selectRound.classList.add('select-round');
   buttonHintImg.classList.add('button-hint-img');
 
-  buttonHintImg.textContent = 'Show background';
+  buttonHintImg.textContent = 'Show background: off';
 
   const body = document.body;
   body.appendChild(app.getNode());
@@ -18,5 +19,6 @@ export function createApp(): void {
   body.prepend(selectRound);
   body.prepend(selectLevel);
 
+  showBackground();
   setDifficulty();
 }

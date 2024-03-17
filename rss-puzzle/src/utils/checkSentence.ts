@@ -59,7 +59,6 @@ export function checkSentence(textArr: string[][]): void {
           completeFeilds.forEach((field) => {
             const word = field.querySelector('.word');
             word.classList.add('word_open');
-            console.log(word);
           });
 
           const continueButton = document.querySelector(
