@@ -24,7 +24,7 @@ export function autocompleteSentense(textArr: string[][]): void {
           const blockField = collectingFields[index];
           blockField.appendChild(child.cloneNode(true));
           while (blockField.children.length > 1) {
-            blockField.removeChild(blockField.lastChild);
+            blockField.removeChild(blockField.firstChild);
           }
         }
       });

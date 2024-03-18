@@ -18,10 +18,6 @@ export function showRoundInfo(): void {
     newData.getYear(),
     newData.getName(),
   ]).then(([img, author, year, name]) => {
-    console.log(img);
-    console.log(author);
-    console.log(year);
-    console.log(name);
     const infoBlockWrapper = document.querySelector('.info-block-wrapper');
 
     const imgBlock = document.createElement('img');
@@ -36,6 +32,12 @@ export function showRoundInfo(): void {
     aboutBlock.classList.add('about-result');
     aboutBlock.textContent = `name:${name} autor:${author} year:${year}`;
 
+    const nextRoundButton = document.createElement('button');
+    nextRoundButton.classList.add('nex-round-button');
+    nextRoundButton.style.display = 'block';
+    nextRoundButton.textContent = 'Next round';
+
+    infoBlockWrapper.prepend(nextRoundButton);
     infoBlockWrapper.prepend(aboutBlock);
     infoBlockWrapper.prepend(imgBlock);
   });
