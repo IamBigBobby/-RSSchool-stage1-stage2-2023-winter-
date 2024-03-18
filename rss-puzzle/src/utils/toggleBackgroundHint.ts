@@ -49,7 +49,6 @@ export function showBackground(): void {
       activeFieldPuzzle.forEach((field) => {
         const word = field.querySelector('.word');
         if (word) {
-          // console.log(word);
           word.classList.remove('word_open');
         }
       });
@@ -57,7 +56,6 @@ export function showBackground(): void {
       activeFiledContainer.forEach((field) => {
         const word = field.querySelector('.word');
         if (word) {
-          // console.log(word)
           word.classList.remove('word_open');
         }
       });
