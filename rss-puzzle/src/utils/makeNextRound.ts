@@ -11,7 +11,22 @@ export function makeNextRound(): void {
     while (main.firstChild) {
       main.removeChild(main.firstChild);
     }
+
     makeNextRoundStep();
     createRound(currentDifficulty, currentRound);
+
+    const listRound = document.querySelector(
+      '.select-round'
+    ) as HTMLSelectElement;
+    const listRoundOptions = listRound.options;
+
+    for (let i = 0; i < listRoundOptions.length; i++) {
+      const round = listRoundOptions[i];
+      if (i === currentRound) {
+        round.selected = true;
+      } else {
+        round.selected = false;
+      }
+    }
   });
 }
