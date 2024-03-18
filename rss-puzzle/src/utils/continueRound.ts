@@ -1,4 +1,5 @@
 import { nextStep, step } from './checkSentence';
+import { destroyRound } from './destroyRound';
 
 export function continueRound(): void {
   const continueButton = document.querySelector(
@@ -30,6 +31,7 @@ export function continueRound(): void {
 
   if (nextFieldLine === null) {
     console.log('win');
+    destroyRound();
     return;
   }
 
