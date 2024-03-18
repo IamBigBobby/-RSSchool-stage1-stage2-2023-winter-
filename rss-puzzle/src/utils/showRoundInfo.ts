@@ -1,5 +1,6 @@
 import { currentDifficulty } from './difficulty';
 import { GetCurrentData } from './getData';
+import { makeNextRound } from './makeNextRound';
 import { currentRound } from './rounds';
 
 export function showRoundInfo(): void {
@@ -33,12 +34,14 @@ export function showRoundInfo(): void {
     aboutBlock.textContent = `name:${name} autor:${author} year:${year}`;
 
     const nextRoundButton = document.createElement('button');
-    nextRoundButton.classList.add('nex-round-button');
+    nextRoundButton.classList.add('next-round-button');
     nextRoundButton.style.display = 'block';
     nextRoundButton.textContent = 'Next round';
 
     infoBlockWrapper.prepend(nextRoundButton);
     infoBlockWrapper.prepend(aboutBlock);
     infoBlockWrapper.prepend(imgBlock);
+
+    makeNextRound();
   });
 }
