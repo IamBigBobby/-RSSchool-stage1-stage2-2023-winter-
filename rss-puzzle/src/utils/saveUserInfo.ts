@@ -1,3 +1,4 @@
+import { createGreetingsField } from './createGreetingsField';
 import { destroyPage } from './destroyPage';
 
 export function saveUserInfo(): void {
@@ -12,5 +13,6 @@ export function saveUserInfo(): void {
     localStorage.setItem('IamBigBobby_name', nameInput.value);
     localStorage.setItem('IamBigBobby_surname', surnameInput.value);
     destroyPage();
+    createGreetingsField();
   });
 }
