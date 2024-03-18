@@ -1,3 +1,6 @@
+import { createGreetingsField } from './createGreetingsField';
+import { destroyPage } from './destroyPage';
+
 export function saveUserInfo(): void {
   const loginButton = document.querySelector('.log-in-button');
 
@@ -9,5 +12,7 @@ export function saveUserInfo(): void {
   loginButton.addEventListener('click', function () {
     localStorage.setItem('IamBigBobby_name', nameInput.value);
     localStorage.setItem('IamBigBobby_surname', surnameInput.value);
+    destroyPage();
+    createGreetingsField();
   });
 }
