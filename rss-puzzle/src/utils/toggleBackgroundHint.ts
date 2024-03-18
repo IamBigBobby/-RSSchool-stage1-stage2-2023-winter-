@@ -2,7 +2,6 @@ export function showBackground(): void {
   const buttonHintImg = document.querySelector('.button-hint-img');
 
   buttonHintImg.addEventListener('click', function () {
-    console.log('click');
     if (buttonHintImg.textContent === 'Show background: off') {
       const activeRowPuzzle = document.querySelector(
         '.row-container-collecting_active'
@@ -19,7 +18,6 @@ export function showBackground(): void {
       activeFieldPuzzle.forEach((field) => {
         const word = field.querySelector('.word');
         if (word) {
-          console.log(word);
           word.classList.add('word_open');
         }
       });
@@ -27,7 +25,6 @@ export function showBackground(): void {
       activeFiledContainer.forEach((field) => {
         const word = field.querySelector('.word');
         if (word) {
-          console.log(word);
           word.classList.add('word_open');
         }
       });
@@ -49,7 +46,6 @@ export function showBackground(): void {
       activeFieldPuzzle.forEach((field) => {
         const word = field.querySelector('.word');
         if (word) {
-          // console.log(word);
           word.classList.remove('word_open');
         }
       });
@@ -57,7 +53,6 @@ export function showBackground(): void {
       activeFiledContainer.forEach((field) => {
         const word = field.querySelector('.word');
         if (word) {
-          // console.log(word)
           word.classList.remove('word_open');
         }
       });

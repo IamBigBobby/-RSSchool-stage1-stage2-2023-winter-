@@ -49,4 +49,9 @@ export class GetCurrentData {
     await this.fetchData();
     return this.lvlData.rounds[this.round].levelData.imageSrc;
   }
+
+  public async getTranslation(step: number): Promise<string> {
+    await this.fetchData();
+    return this.lvlData.rounds[this.round].words[step].textExampleTranslate;
+  }
 }

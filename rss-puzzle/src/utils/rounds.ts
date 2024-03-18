@@ -1,7 +1,7 @@
 import { createRound } from './createRound';
 import { currentDifficulty } from './difficulty';
 
-export let currentRound: number = 1;
+export let currentRound: number = 0;
 export let selectedIndex: number;
 
 export function setRounds(value: number): void {
