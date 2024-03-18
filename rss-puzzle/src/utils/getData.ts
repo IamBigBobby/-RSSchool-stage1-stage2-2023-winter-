@@ -54,4 +54,19 @@ export class GetCurrentData {
     await this.fetchData();
     return this.lvlData.rounds[this.round].words[step].textExampleTranslate;
   }
+
+  public async getAuthor(): Promise<string> {
+    await this.fetchData();
+    return this.lvlData.rounds[this.round].levelData.author;
+  }
+
+  public async getYear(): Promise<string> {
+    await this.fetchData();
+    return this.lvlData.rounds[this.round].levelData.year;
+  }
+
+  public async getName(): Promise<string> {
+    await this.fetchData();
+    return this.lvlData.rounds[this.round].levelData.name;
+  }
 }

@@ -27,10 +27,7 @@ export function continueRound(): void {
 
   const nextFieldLine = currentFieldLine.nextSibling as HTMLElement;
 
-  console.log(nextFieldLine);
-
   if (nextFieldLine === null) {
-    console.log('win');
     destroyRound();
     return;
   }
