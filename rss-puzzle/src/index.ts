@@ -1,8 +1,4 @@
 import './main.scss';
-import { createApp } from './utils/app';
-import { createGameFiled } from './utils/createGameFiled';
-import { createRound } from './utils/createRound';
+import { firstGameStart } from './utils/firstStart';
 
-createApp();
-createGameFiled();
-createRound(1, 0);
+firstGameStart();
