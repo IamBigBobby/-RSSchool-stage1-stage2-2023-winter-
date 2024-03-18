@@ -3,6 +3,7 @@
 }
 
 .main {
+  position: relative;
   height: 100vh;
   overflow: hidden;
 }
@@ -85,4 +86,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.info-after-round {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+.info-block-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }

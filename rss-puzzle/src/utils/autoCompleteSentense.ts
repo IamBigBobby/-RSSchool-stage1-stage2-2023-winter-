@@ -24,7 +24,7 @@ export function autocompleteSentense(textArr: string[][]): void {
           const blockField = collectingFields[index];
           blockField.appendChild(child.cloneNode(true));
           while (blockField.children.length > 1) {
-            blockField.removeChild(blockField.lastChild);
+            blockField.removeChild(blockField.firstChild);
           }
         }
       });
@@ -40,7 +40,9 @@ export function autocompleteSentense(textArr: string[][]): void {
     const translationButtonHint = document.querySelector(
       '.button-hint-translation'
     );
+    const imgButtonHint = document.querySelector('.button-hint-img');
     translationButtonHint.textContent = 'Show translate: off';
+    imgButtonHint.textContent = 'Show background: off';
 
     checkSentence(textArr);
   });

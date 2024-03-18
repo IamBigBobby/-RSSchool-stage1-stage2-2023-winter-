@@ -1,4 +1,5 @@
 import { nextStep, step } from './checkSentence';
+import { destroyRound } from './destroyRound';
 
 export function continueRound(): void {
   const continueButton = document.querySelector(
@@ -26,6 +27,11 @@ export function continueRound(): void {
 
   const nextFieldLine = currentFieldLine.nextSibling as HTMLElement;
 
+  if (nextFieldLine === null) {
+    destroyRound();
+    return;
+  }
+
   currentFieldLine.classList.remove('row-container-collecting_active');
 
   nextFieldLine.classList.add('row-container-collecting_active');
@@ -48,6 +54,8 @@ export function continueRound(): void {
     '.button-hint-translation'
   );
   translationButtonHint.textContent = 'Show translate: off';
+  const imgButtonHint = document.querySelector('.button-hint-img');
+  imgButtonHint.textContent = 'Show background: off';
 
   nextPuzzle(step);
 }

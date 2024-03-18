@@ -13,6 +13,13 @@ export function createRound(difficulty: number, round: number): void {
 
   setStep(0);
 
+  const translationButtonHint = document.querySelector(
+    '.button-hint-translation'
+  );
+  const imgButtonHint = document.querySelector('.button-hint-img');
+  translationButtonHint.textContent = 'Show translate: off';
+  imgButtonHint.textContent = 'Show background: off';
+
   const newData = new GetCurrentData(difficulty, round);
 
   Promise.all([

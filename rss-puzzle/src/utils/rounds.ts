@@ -42,3 +42,7 @@ function changeRound(event: MouseEvent): void {
 
   createRound(currentDifficulty, currentRound);
 }
+
+export function makeNextRoundStep(): void {
+  currentRound += 1;
+}
