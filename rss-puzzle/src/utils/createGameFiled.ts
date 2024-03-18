@@ -1,4 +1,4 @@
-import { div } from '../componets/tagsFarm';
+import { div, main } from '../componets/tagsFarm';
 
 export function createGameFiled(): void {
   const puzzleContainer = div('puzzle-container');
