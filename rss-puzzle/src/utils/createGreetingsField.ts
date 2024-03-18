@@ -11,7 +11,8 @@ export function createGreetingsField(): void {
 
   const sayHi = document.createElement('div');
   sayHi.classList.add('say-hi');
-  sayHi.textContent = `Hello! This app create by Denis Svetleihii RS-2023Q4! `;
+  sayHi.innerHTML = `Hello! This is RSS-PUZZLE!<br>It's created by Denis Svetleishii RS-2023q4.<br>In this game you have to solve a puzzle made up of sentences in English and paintings by great artists at the same time!<br>Enjoy!`;
+
   greetingsWrapperCreated.appendChild(sayHi);
 
   const fine = document.createElement('img');
