@@ -14,11 +14,13 @@ export function createInputField(): void {
   name.type = 'text';
   name.style.display = 'block';
   name.placeholder = 'First Name';
+  name.required = true;
   inputContainer.appendChild(name);
 
   const surname = document.createElement('input');
   surname.type = 'text';
   surname.style.display = 'block';
   surname.placeholder = 'Surname';
+  name.required = true;
   inputContainer.appendChild(surname);
 }
