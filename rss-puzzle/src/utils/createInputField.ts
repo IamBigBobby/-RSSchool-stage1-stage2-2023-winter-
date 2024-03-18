@@ -1,3 +1,5 @@
+import { validateInputs } from './validateInputs';
+
 export function createInputField(): void {
   const body = document.body;
 
@@ -11,6 +13,7 @@ export function createInputField(): void {
   inputContainer.appendChild(greetings);
 
   const name = document.createElement('input');
+  name.classList.add('name-input');
   name.type = 'text';
   name.style.display = 'block';
   name.placeholder = 'First Name';
@@ -18,9 +21,19 @@ export function createInputField(): void {
   inputContainer.appendChild(name);
 
   const surname = document.createElement('input');
+  surname.classList.add('surname-input');
   surname.type = 'text';
   surname.style.display = 'block';
   surname.placeholder = 'Surname';
-  name.required = true;
+  surname.required = true;
   inputContainer.appendChild(surname);
+
+  const loginButton = document.createElement('button');
+  loginButton.classList.add('log-in-button');
+  loginButton.textContent = 'Login';
+  loginButton.style.display = 'block';
+  loginButton.disabled = true;
+  inputContainer.appendChild(loginButton);
+
+  validateInputs();
 }
