@@ -1,3 +1,6 @@
+import { destroyPage } from './destroyPage';
+import { firstGameStart } from './firstStart';
+
 export function createGreetingsField(): void {
   const body = document.body;
   const greetingsWrapper = document.createElement('div');
@@ -21,4 +24,9 @@ export function createGreetingsField(): void {
   starPlay.classList.add('start-play');
   starPlay.textContent = 'Start';
   greetingsWrapperCreated.appendChild(starPlay);
+
+  starPlay.addEventListener('click', function () {
+    destroyPage();
+    firstGameStart();
+  });
 }
