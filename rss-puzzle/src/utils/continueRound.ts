@@ -26,6 +26,13 @@ export function continueRound(): void {
 
   const nextFieldLine = currentFieldLine.nextSibling as HTMLElement;
 
+  console.log(nextFieldLine);
+
+  if (nextFieldLine === null) {
+    console.log('win');
+    return;
+  }
+
   currentFieldLine.classList.remove('row-container-collecting_active');
 
   nextFieldLine.classList.add('row-container-collecting_active');
