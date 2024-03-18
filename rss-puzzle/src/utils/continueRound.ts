@@ -54,6 +54,8 @@ export function continueRound(): void {
     '.button-hint-translation'
   );
   translationButtonHint.textContent = 'Show translate: off';
+  const imgButtonHint = document.querySelector('.button-hint-img');
+  imgButtonHint.textContent = 'Show background: off';
 
   nextPuzzle(step);
 }
