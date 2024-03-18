@@ -18,12 +18,6 @@ export function createGreetingsField(): void {
 
   greetingsWrapperCreated.appendChild(sayHi);
 
-  const fine = document.createElement('img');
-  fine.classList.add('fine');
-  fine.src = `../src/assets/fine.jpg`;
-  fine.style.display = 'block';
-  greetingsWrapperCreated.appendChild(fine);
-
   const starPlay = document.createElement('button');
   starPlay.classList.add('start-play');
   starPlay.textContent = 'Start';
