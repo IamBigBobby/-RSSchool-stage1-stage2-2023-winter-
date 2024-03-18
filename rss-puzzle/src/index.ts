@@ -1,6 +1,4 @@
 import './main.scss';
-import { createInputField } from './utils/createInputField';
-import { firstGameStart } from './utils/firstStart';
+import { appStart } from './utils/appStart';
 
-createInputField();
-// firstGameStart();
+appStart();
