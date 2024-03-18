@@ -1,3 +1,4 @@
+import { saveUserInfo } from './saveUserInfo';
 import { validateInputs } from './validateInputs';
 
 export function createInputField(): void {
@@ -36,4 +37,5 @@ export function createInputField(): void {
   inputContainer.appendChild(loginButton);
 
   validateInputs();
+  saveUserInfo();
 }
