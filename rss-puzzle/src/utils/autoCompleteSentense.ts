@@ -35,6 +35,13 @@ export function autocompleteSentense(textArr: string[][]): void {
       child.parentNode.removeChild(child);
     });
 
+    const translationField = document.querySelector('.translation-field');
+    translationField.textContent = '';
+    const translationButtonHint = document.querySelector(
+      '.button-hint-translation'
+    );
+    translationButtonHint.textContent = 'Show translate: off';
+
     checkSentence(textArr);
   });
 }

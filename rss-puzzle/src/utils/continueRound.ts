@@ -41,6 +41,14 @@ export function continueRound(): void {
   continueButton.disabled = true;
   continueButton.style.display = 'none';
   checkButton.style.display = 'block';
+
+  const translationField = document.querySelector('.translation-field');
+  translationField.textContent = '';
+  const translationButtonHint = document.querySelector(
+    '.button-hint-translation'
+  );
+  translationButtonHint.textContent = 'Show translate: off';
+
   nextPuzzle(step);
 }
 
