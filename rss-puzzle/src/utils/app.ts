@@ -1,6 +1,7 @@
 import { main } from '../componets/tagsFarm';
 import { setDifficulty } from './difficulty';
 import { showBackground } from './toggleBackgroundHint';
+import { showTranslation } from './toggleTranslationHint';
 
 export function createApp(): void {
   const app = main('main');
@@ -23,6 +24,7 @@ export function createApp(): void {
   body.prepend(selectRound);
   body.prepend(selectLevel);
 
+  showTranslation();
   showBackground();
   setDifficulty();
 }
