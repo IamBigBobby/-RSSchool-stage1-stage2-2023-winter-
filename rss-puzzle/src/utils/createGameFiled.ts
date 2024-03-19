@@ -8,6 +8,7 @@ export function createGameFiled(): void {
   const continueButton = document.createElement('button');
   const buttonAutoComplete = document.createElement('button');
   const translationFeild = document.createElement('div');
+  const buttonContainer = document.createElement('div');
 
   checkButton.classList.add('check-button');
   checkButton.disabled = true;
@@ -16,6 +17,7 @@ export function createGameFiled(): void {
   continueButton.disabled = true;
   buttonAutoComplete.classList.add('auto-complete');
   translationFeild.classList.add('translation-field');
+  buttonContainer.classList.add('button-container');
 
   checkButton.textContent = 'check';
   continueButton.textContent = 'continue';
@@ -23,8 +25,13 @@ export function createGameFiled(): void {
 
   mainElement.appendChild(translationFeild);
   mainElement.appendChild(fieldCollectingContainer.getNode());
-  mainElement.appendChild(checkButton);
-  mainElement.appendChild(continueButton);
-  mainElement.appendChild(buttonAutoComplete);
+  mainElement.appendChild(buttonContainer);
+  // mainElement.appendChild(checkButton);
+  // mainElement.appendChild(continueButton);
+  // mainElement.appendChild(buttonAutoComplete);
   mainElement.appendChild(puzzleContainer.getNode());
+
+  buttonContainer.appendChild(continueButton);
+  buttonContainer.appendChild(checkButton);
+  buttonContainer.appendChild(buttonAutoComplete);
 }
