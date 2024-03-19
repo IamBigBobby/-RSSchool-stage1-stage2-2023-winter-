@@ -26,7 +26,7 @@ export function showRoundInfo(): void {
     imgBlock.src = `https://raw.githubusercontent.com/rolling-scopes-school/rss-puzzle-data/main/images/${img}`;
 
     imgBlock.style.display = 'block';
-    imgBlock.style.width = '70%';
+    imgBlock.style.width = '500px';
     imgBlock.style.height = 'auto';
 
     const aboutBlock = document.createElement('div');
