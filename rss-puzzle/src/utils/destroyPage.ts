@@ -1,4 +1,4 @@
-export function destroyPage(): void {
+export default function destroyPage(): void {
   const { body } = document;
 
   while (body.firstChild) {

@@ -1,10 +1,10 @@
 import { main } from '../componets/tagsFarm';
-import { setDifficulty } from './difficulty';
-import { logOut } from './logOut';
-import { showBackground } from './toggleBackgroundHint';
-import { showTranslation } from './toggleTranslationHint';
+import setDifficulty from './difficulty';
+import logOut from './logOut';
+import showBackground from './toggleBackgroundHint';
+import showTranslation from './toggleTranslationHint';
 
-export function createApp(): void {
+export default function createApp(): void {
   const app = main('main');
   const selectLevel = document.createElement('select');
   const selectRound = document.createElement('select');

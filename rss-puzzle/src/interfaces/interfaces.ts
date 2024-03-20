@@ -1,4 +1,4 @@
-export interface ComponentProps {
+export default interface ComponentProps {
   tag?: string;
   className?: string;
   text?: string;

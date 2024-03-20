@@ -1,26 +1,20 @@
-import { ComponentProps } from '../interfaces/interfaces';
+import ComponentProps from '../interfaces/interfaces';
 
-export class Component {
-  protected node: HTMLElement;
+export default class Component {
+  node: HTMLElement;
 
-  protected children: Component[];
+  children: Component[];
 
   constructor(
     { tag = 'div', className = '', text = '' }: ComponentProps,
     ...children: Component[]
   ) {
-    const node = document.createElement(tag);
-    node.className = className;
-    node.textContent = text;
-    this.node = node;
+    this.node = document.createElement(tag);
+    this.node.className = className;
+    this.node.textContent = text;
     this.children = [];
 
     this.appendChildren(children);
-  }
-
-  public append(child: Component): void {
-    this.children.push(child);
-    this.node.append(child.getNode());
   }
 
   public appendChildren(children: Component[]): void {
@@ -88,5 +82,10 @@ export class Component {
 
   public addClass(className: string): void {
     this.node.classList.add(className);
+  }
+
+  public append(child: Component): void {
+    this.children.push(child);
+    this.node.append(child.getNode());
   }
 }

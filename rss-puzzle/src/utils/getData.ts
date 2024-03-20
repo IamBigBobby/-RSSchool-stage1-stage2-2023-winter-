@@ -11,9 +11,9 @@ export class GetCurrentData {
 
   round: number;
 
-  words: number;
+  words: number | undefined;
 
-  lvlData: Data;
+  lvlData!: Data;
 
   constructor(difficulty: number, round = 1) {
     this.difficulty = difficulty;
@@ -36,7 +36,8 @@ export class GetCurrentData {
     const arrLength: number = this.lvlData.rounds[this.round].words.length;
     const textArr: string[][] = [];
     for (let i = 0; i < arrLength; i += 1) {
-      const sentence: string[] = this.lvlData.rounds[this.round].words[i].textExample.split(' ');
+      const sentence: string[] =
+        this.lvlData.rounds[this.round].words[i].textExample.split(' ');
       textArr.push(sentence);
     }
     return textArr;

@@ -1,24 +1,9 @@
-import { checkSentence } from './checkSentence';
+import checkSentence from './checkSentence';
 
-export function dragAndDropMovementPuzzle(textArr: string[][]): void {
+export default function dragAndDropMovementPuzzle(textArr: string[][]): void {
   const puzzlePieces = document.querySelectorAll('.puzzle-piece');
 
-  puzzlePieces.forEach((puzzle) => {
-    puzzle.setAttribute('draggable', 'true');
-    puzzle.addEventListener('drag', dragStart);
-  });
-
-  updateEventListeners();
-
-  function updateEventListeners() {
-    const activeField = document.querySelectorAll('.collecting-field');
-    activeField.forEach((filed) => {
-      filed.addEventListener('drop', dragDrop);
-      filed.addEventListener('dragover', dragOver);
-    });
-  }
-
-  let draggedElement: HTMLElement;
+  let draggedElement: HTMLElement | null = null;
 
   function dragStart(event: DragEvent): void {
     draggedElement = event.currentTarget as HTMLElement;
@@ -34,31 +19,52 @@ export function dragAndDropMovementPuzzle(textArr: string[][]): void {
       const dropField = event.target as HTMLElement;
 
       if (dropField.classList.contains('puzzle-piece')) {
-        const dragStart = draggedElement.parentNode;
+        const dragStartParent = draggedElement.parentNode as Node;
 
-        if (dragStart === dropField.parentNode) {
+        if (dragStartParent === dropField.parentNode) {
           return;
         }
 
-        draggedElement.parentNode.removeChild(draggedElement);
-        dropField.parentNode.appendChild(draggedElement);
-        dropField.parentNode.removeChild(dropField);
-        dragStart.appendChild(dropField);
+        draggedElement.parentNode?.removeChild(draggedElement);
+        dropField.parentNode?.appendChild(draggedElement);
+        dropField.parentNode?.removeChild(dropField);
+        dragStartParent.appendChild(dropField);
       } else if (dropField.classList.contains('word')) {
-        const dragStart = draggedElement.parentNode;
+        const dragStartParent = draggedElement.parentNode as Node;
 
-        const parentDropFile = dropField.parentNode;
-        const grandparentDropFiled = parentDropFile.parentNode;
+        const parentDropFile = dropField.parentNode as Node;
+        const grandparentDropFile = parentDropFile.parentNode as Node;
 
-        draggedElement.parentNode.removeChild(draggedElement);
-        grandparentDropFiled.appendChild(draggedElement);
-        grandparentDropFiled.removeChild(parentDropFile);
-        dragStart.appendChild(parentDropFile);
+        draggedElement.parentNode?.removeChild(draggedElement);
+        grandparentDropFile.appendChild(draggedElement);
+        grandparentDropFile.removeChild(parentDropFile);
+        dragStartParent.appendChild(parentDropFile);
       } else if (dropField.classList.contains('collecting-field_active')) {
-        draggedElement.parentNode.removeChild(draggedElement);
+        draggedElement.parentNode?.removeChild(draggedElement);
         dropField.appendChild(draggedElement);
         checkSentence(textArr);
       }
     }
   }
+
+  puzzlePieces.forEach((puzzle) => {
+    puzzle.setAttribute('draggable', 'true');
+    puzzle.addEventListener('drag', (event: Event) =>
+      dragStart(event as DragEvent),
+    );
+  });
+
+  function updateEventListeners(): void {
+    const activeFields = document.querySelectorAll('.collecting-field');
+    activeFields.forEach((field) => {
+      field.addEventListener('drop', (event: Event) =>
+        dragDrop(event as DragEvent),
+      );
+      field.addEventListener('dragover', (event: Event) =>
+        dragOver(event as DragEvent),
+      );
+    });
+  }
+
+  updateEventListeners();
 }

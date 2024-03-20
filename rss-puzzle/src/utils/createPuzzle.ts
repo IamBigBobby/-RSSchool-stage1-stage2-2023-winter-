@@ -1,6 +1,6 @@
 import { div } from '../componets/tagsFarm';
 
-export class PuzzleGame {
+export default class PuzzleGame {
   public container: HTMLElement;
 
   private rows: number;
@@ -17,20 +17,15 @@ export class PuzzleGame {
   ) {
     this.rows = rows;
     this.cols = cols;
-    this.container = document.querySelector(container);
+    this.container = document.querySelector(container)!;
     this.img = img;
   }
 
   public setupPuzzle(): void {
-    if (!this.container) {
-      console.error('setupPuzzle, dont have any container');
-      return;
-    }
-
     const containerWidth: number = this.container.offsetWidth;
     const containerHeight: number = this.container.offsetHeight;
 
-    for (let i = 0; i < this.rows; i++) {
+    for (let i = 0; i < this.rows; i += 1) {
       const rowContainer = div('row-container');
       this.container.appendChild(rowContainer.getNode());
 
@@ -42,25 +37,13 @@ export class PuzzleGame {
         rowContainer.setStyle('display', 'none');
       }
 
-      for (let j = 0; j < this.cols[i].length; j++) {
+      for (let j = 0; j < this.cols[i].length; j += 1) {
         const piece = div('puzzle-piece');
 
         const word: string = this.cols[i][j];
-        const wordLength: number = word.length;
-
-        // const shortWordLength = 5;
-        // const longWordLength = 10;
-        // variable
 
         const pieceWidth: number = containerWidth / this.cols[i].length;
         const pieceHeight: number = containerHeight / this.rows;
-
-        // if (wordLength <= shortWordLength) {
-        //   pieceWidth = containerWidth / (this.cols[i].length * 2);
-        // } else if (wordLength >= longWordLength) {
-        //   pieceWidth = containerWidth / (this.cols[i].length / 2);
-        // }
-        // its a flexible width for piece, it dosent work
 
         piece.setStyle(
           'background-image',
@@ -89,10 +72,10 @@ export class PuzzleGame {
       const rowContainerChildren = Array.from(rowContainer.getChildren());
       const childrenArray = rowContainerChildren.slice();
 
-      for (let i = childrenArray.length - 1; i > 0; i--) {
-        const randomNumber = Math.floor(Math.random() * (i + 1));
-        const temp = childrenArray[i];
-        childrenArray[i] = childrenArray[randomNumber];
+      for (let k = childrenArray.length - 1; k > 0; k -= 1) {
+        const randomNumber = Math.floor(Math.random() * (k + 1));
+        const temp = childrenArray[k];
+        childrenArray[k] = childrenArray[randomNumber];
         childrenArray[randomNumber] = temp;
       }
 

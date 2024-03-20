@@ -1,7 +1,7 @@
-import { saveUserInfo } from './saveUserInfo';
-import { validateInputs } from './validateInputs';
+import saveUserInfo from './saveUserInfo';
+import validateInputs from './validateInputs';
 
-export function createInputField(): void {
+export default function createInputField(): void {
   const { body } = document;
 
   const inputContainer = document.createElement('div');

@@ -1,4 +1,4 @@
-export function validateInputs(): void {
+export default function validateInputs(): void {
   const nameInput = document.querySelector('.name-input') as HTMLInputElement;
   const surnameInput = document.querySelector(
     '.surname-input',
@@ -6,16 +6,15 @@ export function validateInputs(): void {
   const loginButton = document.querySelector(
     '.log-in-button',
   ) as HTMLButtonElement;
-  const inputContainer = document.querySelector('.input-container');
 
-  nameInput.addEventListener('input', validateInputs);
-  surnameInput.addEventListener('input', validateInputs);
-
-  function validateInputs() {
+  function validate() {
     if (nameInput.value.trim() !== '' && surnameInput.value.trim() !== '') {
       loginButton.removeAttribute('disabled');
     } else {
       loginButton.setAttribute('disabled', 'disabled');
     }
   }
+
+  nameInput.addEventListener('input', validate);
+  surnameInput.addEventListener('input', validate);
 }

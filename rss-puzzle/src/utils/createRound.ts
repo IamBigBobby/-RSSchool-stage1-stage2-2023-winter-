@@ -1,15 +1,15 @@
-import { autocompleteSentense } from './autoCompleteSentense';
+import autocompleteSentence from './autoCompleteSentense';
 import { setStep } from './checkSentence';
-import { addClickmovementPuzzle } from './clickAdding';
-import { CollectingField } from './createCollectingField';
-import { createGameFiled } from './createGameFiled';
-import { PuzzleGame } from './createPuzzle';
-import { dragAndDropMovementPuzzle } from './dragAndDropAdding';
+import addClickMovementPuzzle from './clickAdding';
+import CollectingField from './createCollectingField';
+import createGameField from './createGameFiled';
+import PuzzleGame from './createPuzzle';
+import dragAndDropMovementPuzzle from './dragAndDropAdding';
 import { GetCurrentData } from './getData';
-import { setRounds } from './rounds';
+import setRounds from './rounds';
 
-export function createRound(difficulty: number, round: number): void {
-  createGameFiled();
+export default function createRound(difficulty: number, round: number): void {
+  createGameField();
 
   setStep(0);
 
@@ -17,8 +17,14 @@ export function createRound(difficulty: number, round: number): void {
     '.button-hint-translation',
   );
   const imgButtonHint = document.querySelector('.button-hint-img');
-  translationButtonHint.textContent = 'Show translate: off';
-  imgButtonHint.textContent = 'Show background: off';
+
+  if (translationButtonHint) {
+    translationButtonHint.textContent = 'Show translate: off';
+  }
+
+  if (imgButtonHint) {
+    imgButtonHint.textContent = 'Show background: off';
+  }
 
   const newData = new GetCurrentData(difficulty, round);
 
@@ -33,9 +39,9 @@ export function createRound(difficulty: number, round: number): void {
     const newCollectigField = new CollectingField(textArr);
     newCollectigField.setupCollectingField();
 
-    addClickmovementPuzzle(textArr);
+    addClickMovementPuzzle(textArr);
     dragAndDropMovementPuzzle(textArr);
-    autocompleteSentense(textArr);
+    autocompleteSentence(textArr);
     setRounds(roundsCount);
   });
 }

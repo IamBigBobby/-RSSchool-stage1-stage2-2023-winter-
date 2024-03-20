@@ -1,9 +1,9 @@
-import { createApp } from './app';
-import { createGameFiled } from './createGameFiled';
-import { createRound } from './createRound';
+import createApp from './app';
+import createGameField from './createGameFiled';
+import createRound from './createRound';
 
-export function firstGameStart(): void {
+export default function firstGameStart(): void {
   createApp();
-  createGameFiled();
+  createGameField();
   createRound(1, 0);
 }

@@ -1,7 +1,7 @@
-import { createGreetingsField } from './createGreetingsField';
-import { destroyPage } from './destroyPage';
+import createGreetingsField from './createGreetingsField';
+import destroyPage from './destroyPage';
 
-export function saveUserInfo(): void {
+export default function saveUserInfo(): void {
   const loginButton = document.querySelector('.log-in-button');
 
   const nameInput = document.querySelector('.name-input') as HTMLInputElement;
@@ -9,10 +9,12 @@ export function saveUserInfo(): void {
     '.surname-input',
   ) as HTMLInputElement;
 
-  loginButton.addEventListener('click', () => {
-    localStorage.setItem('IamBigBobby_name', nameInput.value);
-    localStorage.setItem('IamBigBobby_surname', surnameInput.value);
-    destroyPage();
-    createGreetingsField();
-  });
+  if (loginButton) {
+    loginButton.addEventListener('click', () => {
+      localStorage.setItem('IamBigBobby_name', nameInput.value);
+      localStorage.setItem('IamBigBobby_surname', surnameInput.value);
+      destroyPage();
+      createGreetingsField();
+    });
+  }
 }

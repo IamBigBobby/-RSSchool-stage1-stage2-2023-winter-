@@ -1,32 +1,38 @@
-import { createRound } from './createRound';
+// eslint-disable-next-line import/extensions
+import createRound from './createRound';
 import { currentDifficulty } from './difficulty';
 import { currentRound, makeNextRoundStep } from './rounds';
 
-export function makeNextRound(): void {
-  const nextRoundButton = document.querySelector('.next-round-button');
+export default function makeNextRound(): void {
+  const nextRoundButton: HTMLButtonElement | null =
+    document.querySelector('.next-round-button');
 
-  nextRoundButton.addEventListener('click', () => {
-    console.log('click');
-    const main = document.querySelector('.main');
-    while (main.firstChild) {
-      main.removeChild(main.firstChild);
-    }
+  if (nextRoundButton) {
+    nextRoundButton.addEventListener('click', () => {
+      const main: HTMLElement | null = document.querySelector('.main');
 
-    makeNextRoundStep();
-    createRound(currentDifficulty, currentRound);
+      if (main) {
+        while (main.firstChild) {
+          main.removeChild(main.firstChild);
+        }
 
-    const listRound = document.querySelector(
-      '.select-round',
-    ) as HTMLSelectElement;
-    const listRoundOptions = listRound.options;
+        makeNextRoundStep();
+        createRound(currentDifficulty, currentRound);
 
-    for (let i = 0; i < listRoundOptions.length; i++) {
-      const round = listRoundOptions[i];
-      if (i === currentRound) {
-        round.selected = true;
-      } else {
-        round.selected = false;
+        const listRound = document.querySelector(
+          '.select-round',
+        ) as HTMLSelectElement;
+        const listRoundOptions = listRound.options;
+
+        for (let i = 0; i < listRoundOptions.length; i += 1) {
+          const round = listRoundOptions[i];
+          if (i === currentRound) {
+            round.selected = true;
+          } else {
+            round.selected = false;
+          }
+        }
       }
-    }
-  });
+    });
+  }
 }

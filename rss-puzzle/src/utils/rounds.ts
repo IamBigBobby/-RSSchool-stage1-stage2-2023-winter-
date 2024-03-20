@@ -1,10 +1,27 @@
-import { createRound } from './createRound';
+import createRound from './createRound';
 import { currentDifficulty } from './difficulty';
 
 export let currentRound: number = 0;
 export let selectedIndex: number;
 
-export function setRounds(value: number): void {
+function changeRound(event: Event): void {
+  const { selectedIndex: targetSelectedIndex } =
+    event.target as HTMLSelectElement;
+
+  currentRound = targetSelectedIndex;
+
+  const mainElement = document.querySelector('main');
+
+  if (mainElement) {
+    while (mainElement.firstChild) {
+      mainElement.removeChild(mainElement.firstChild);
+    }
+
+    createRound(currentDifficulty, currentRound);
+  }
+}
+
+export default function setRounds(value: number): void {
   const selectRound = document.querySelector(
     '.select-round',
   ) as HTMLSelectElement;
@@ -27,20 +44,6 @@ export function setRounds(value: number): void {
   }
 
   selectRound.addEventListener('change', changeRound);
-}
-
-function changeRound(event: MouseEvent): void {
-  const { selectedIndex } = event.target as HTMLSelectElement;
-
-  currentRound = selectedIndex;
-
-  const mainElement = document.querySelector('main');
-
-  while (mainElement.firstChild) {
-    mainElement.removeChild(mainElement.firstChild);
-  }
-
-  createRound(currentDifficulty, currentRound);
 }
 
 export function makeNextRoundStep(): void {

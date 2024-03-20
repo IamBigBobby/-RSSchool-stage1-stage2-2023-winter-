@@ -1,11 +1,12 @@
-import { showRoundInfo } from './showRoundInfo';
+import showRoundInfo from './showRoundInfo';
 
-export function destroyRound(): void {
+export default function destroyRound(): void {
   const infoBlock = document.createElement('div');
   infoBlock.classList.add('info-after-round');
 
   const main = document.querySelector('.main');
-  main.prepend(infoBlock);
-
-  showRoundInfo();
+  if (main) {
+    main.prepend(infoBlock);
+    showRoundInfo();
+  }
 }
