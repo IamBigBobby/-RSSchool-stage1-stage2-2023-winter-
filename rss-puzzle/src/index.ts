@@ -1,4 +1,4 @@
 import './main.scss';
-import { appStart } from './utils/appStart';
+import appStart from './utils/appStart';
 
 appStart();

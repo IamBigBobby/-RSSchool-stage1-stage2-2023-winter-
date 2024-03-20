@@ -1,30 +1,34 @@
-import { destroyPage } from './destroyPage';
-import { firstGameStart } from './firstStart';
+// eslint-disable-next-line import/extensions
+import destroyPage from './destroyPage';
+import firstGameStart from './firstStart';
 
-export function createGreetingsField(): void {
+export default function createGreetingsField(): void {
   const name = localStorage.getItem('IamBigBobby_name');
   const surname = localStorage.getItem('IamBigBobby_surname');
 
-  const body = document.body;
+  const { body } = document;
   const greetingsWrapper = document.createElement('div');
   greetingsWrapper.classList.add('greetings-wrapper');
   body.appendChild(greetingsWrapper);
 
-  const greetingsWrapperCreated = document.querySelector('.greetings-wrapper');
+  const greetingsWrapperCreated =
+    document.querySelector<HTMLDivElement>('.greetings-wrapper');
 
-  const sayHi = document.createElement('div');
-  sayHi.classList.add('say-hi');
-  sayHi.innerHTML = `Hello ${name} ${surname}! This is RSS-PUZZLE!<br>It's created by Denis Svetleishii RS-2023q4.<br>In this game you have to solve a puzzle made up of sentences in English and paintings by great artists at the same time!<br>Enjoy!`;
+  if (greetingsWrapperCreated) {
+    const sayHi = document.createElement('div');
+    sayHi.classList.add('say-hi');
+    sayHi.innerHTML = `Hello ${name} ${surname}! This is RSS-PUZZLE!<br>It's created by Denis Svetleishii RS-2023q4.<br>In this game you have to solve a puzzle made up of sentences in English and paintings by great artists at the same time!<br>Enjoy!`;
 
-  greetingsWrapperCreated.appendChild(sayHi);
+    greetingsWrapperCreated.appendChild(sayHi);
 
-  const starPlay = document.createElement('button');
-  starPlay.classList.add('start-play');
-  starPlay.textContent = 'Start';
-  greetingsWrapperCreated.appendChild(starPlay);
+    const starPlay = document.createElement('button');
+    starPlay.classList.add('start-play');
+    starPlay.textContent = 'Start';
+    greetingsWrapperCreated.appendChild(starPlay);
 
-  starPlay.addEventListener('click', function () {
-    destroyPage();
-    firstGameStart();
-  });
+    starPlay.addEventListener('click', () => {
+      destroyPage();
+      firstGameStart();
+    });
+  }
 }

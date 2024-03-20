@@ -3,28 +3,29 @@ import { currentDifficulty } from './difficulty';
 import { GetCurrentData } from './getData';
 import { currentRound } from './rounds';
 
-export function showTranslation(): void {
-  const buttonHintTranslation = document.querySelector(
-    '.button-hint-translation'
-  );
+export default function showTranslation(): void {
+  const buttonHintTranslation: HTMLButtonElement | null =
+    document.querySelector('.button-hint-translation') as HTMLButtonElement;
 
-  buttonHintTranslation.addEventListener('click', function () {
-    const translationField = document.querySelector('.translation-field');
-    if (buttonHintTranslation.textContent === 'Show translate: off') {
-      console.log(currentDifficulty, currentRound, step);
+  if (buttonHintTranslation) {
+    buttonHintTranslation.addEventListener('click', () => {
+      const translationField: HTMLElement | null =
+        document.querySelector('.translation-field');
+      if (buttonHintTranslation.textContent === 'Show translate: off') {
+        const newData = new GetCurrentData(currentDifficulty, currentRound);
 
-      const newData = new GetCurrentData(currentDifficulty, currentRound);
-
-      console.log(newData.getTranslation(step));
-
-      newData.getTranslation(step).then((translate) => {
-        translationField.textContent = translate;
-      });
-      buttonHintTranslation.textContent = 'Show translate: on';
-      return;
-    } else if (buttonHintTranslation.textContent === 'Show translate: on') {
-      translationField.textContent = '';
-      buttonHintTranslation.textContent = 'Show translate: off';
-    }
-  });
+        newData.getTranslation(step).then((translate) => {
+          if (translationField) {
+            translationField.textContent = translate;
+          }
+        });
+        buttonHintTranslation.textContent = 'Show translate: on';
+      } else if (buttonHintTranslation.textContent === 'Show translate: on') {
+        if (translationField) {
+          translationField.textContent = '';
+        }
+        buttonHintTranslation.textContent = 'Show translate: off';
+      }
+    });
+  }
 }

@@ -8,9 +8,12 @@ export async function getLvlData(url: string) {
 
 export class GetCurrentData {
   difficulty: number;
+
   round: number;
-  words: number;
-  lvlData: Data;
+
+  words: number | undefined;
+
+  lvlData!: Data;
 
   constructor(difficulty: number, round = 1) {
     this.difficulty = difficulty;
@@ -19,7 +22,7 @@ export class GetCurrentData {
 
   private async fetchData(): Promise<void> {
     this.lvlData = await getLvlData(
-      `https://raw.githubusercontent.com/rolling-scopes-school/rss-puzzle-data/main/data/wordCollectionLevel${this.difficulty}.json`
+      `https://raw.githubusercontent.com/rolling-scopes-school/rss-puzzle-data/main/data/wordCollectionLevel${this.difficulty}.json`,
     );
   }
 
