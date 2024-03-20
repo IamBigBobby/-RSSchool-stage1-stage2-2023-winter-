@@ -2,6 +2,7 @@ import { ComponentProps } from '../interfaces/interfaces';
 
 export class Component {
   protected node: HTMLElement;
+
   protected children: Component[];
 
   constructor(
@@ -55,7 +56,7 @@ export class Component {
   public addListener(
     event: string,
     listener: EventListenerOrEventListenerObject,
-    options = false
+    options = false,
   ): void {
     this.node.addEventListener(event, listener, options);
   }

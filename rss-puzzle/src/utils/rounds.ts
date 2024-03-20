@@ -6,7 +6,7 @@ export let selectedIndex: number;
 
 export function setRounds(value: number): void {
   const selectRound = document.querySelector(
-    '.select-round'
+    '.select-round',
   ) as HTMLSelectElement;
 
   selectedIndex = selectRound.selectedIndex;
@@ -30,7 +30,7 @@ export function setRounds(value: number): void {
 }
 
 function changeRound(event: MouseEvent): void {
-  const selectedIndex = (event.target as HTMLSelectElement).selectedIndex;
+  const { selectedIndex } = event.target as HTMLSelectElement;
 
   currentRound = selectedIndex;
 

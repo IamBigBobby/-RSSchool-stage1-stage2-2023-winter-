@@ -24,7 +24,7 @@ export function createApp(): void {
   buttonHintTranslation.textContent = 'Show translate: off';
   logOutButton.textContent = 'Logout';
 
-  const body = document.body;
+  const { body } = document;
   body.appendChild(app.getNode());
   body.prepend(logOutButton);
   body.prepend(buttonHintTranslation);

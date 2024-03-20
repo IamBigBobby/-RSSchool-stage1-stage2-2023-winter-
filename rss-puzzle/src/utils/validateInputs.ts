@@ -1,10 +1,10 @@
 export function validateInputs(): void {
   const nameInput = document.querySelector('.name-input') as HTMLInputElement;
   const surnameInput = document.querySelector(
-    '.surname-input'
+    '.surname-input',
   ) as HTMLInputElement;
   const loginButton = document.querySelector(
-    '.log-in-button'
+    '.log-in-button',
   ) as HTMLButtonElement;
   const inputContainer = document.querySelector('.input-container');
 

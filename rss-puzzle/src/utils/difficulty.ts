@@ -24,7 +24,7 @@ export function setDifficulty(): void {
 }
 
 function changeDifficulty(event: MouseEvent): void {
-  const selectedIndex = (event.target as HTMLSelectElement).selectedIndex;
+  const { selectedIndex } = event.target as HTMLSelectElement;
 
   currentDifficulty = selectedIndex + 1;
 

@@ -5,10 +5,10 @@ import { currentRound } from './rounds';
 
 export function showTranslation(): void {
   const buttonHintTranslation = document.querySelector(
-    '.button-hint-translation'
+    '.button-hint-translation',
   );
 
-  buttonHintTranslation.addEventListener('click', function () {
+  buttonHintTranslation.addEventListener('click', () => {
     const translationField = document.querySelector('.translation-field');
     if (buttonHintTranslation.textContent === 'Show translate: off') {
       console.log(currentDifficulty, currentRound, step);
@@ -21,7 +21,6 @@ export function showTranslation(): void {
         translationField.textContent = translate;
       });
       buttonHintTranslation.textContent = 'Show translate: on';
-      return;
     } else if (buttonHintTranslation.textContent === 'Show translate: on') {
       translationField.textContent = '';
       buttonHintTranslation.textContent = 'Show translate: off';

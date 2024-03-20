@@ -6,10 +6,10 @@ export function saveUserInfo(): void {
 
   const nameInput = document.querySelector('.name-input') as HTMLInputElement;
   const surnameInput = document.querySelector(
-    '.surname-input'
+    '.surname-input',
   ) as HTMLInputElement;
 
-  loginButton.addEventListener('click', function () {
+  loginButton.addEventListener('click', () => {
     localStorage.setItem('IamBigBobby_name', nameInput.value);
     localStorage.setItem('IamBigBobby_surname', surnameInput.value);
     destroyPage();

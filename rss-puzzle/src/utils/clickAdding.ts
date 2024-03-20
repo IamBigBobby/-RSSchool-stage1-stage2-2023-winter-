@@ -8,8 +8,7 @@ export function addClickmovementPuzzle(textArr: string[][]): void {
     const target = event.target as HTMLElement;
     const puzzlePiece = target.closest('.puzzle-piece');
     if (puzzlePiece) {
-      const collectingFields: NodeListOf<HTMLElement> =
-        document.querySelectorAll('.collecting-field_active');
+      const collectingFields: NodeListOf<HTMLElement> = document.querySelectorAll('.collecting-field_active');
 
       for (let i = collectingFields.length - 1; i >= 0; i--) {
         const block = collectingFields[i];

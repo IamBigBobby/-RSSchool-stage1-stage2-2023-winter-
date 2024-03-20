@@ -5,7 +5,7 @@ export function createGreetingsField(): void {
   const name = localStorage.getItem('IamBigBobby_name');
   const surname = localStorage.getItem('IamBigBobby_surname');
 
-  const body = document.body;
+  const { body } = document;
   const greetingsWrapper = document.createElement('div');
   greetingsWrapper.classList.add('greetings-wrapper');
   body.appendChild(greetingsWrapper);
@@ -23,7 +23,7 @@ export function createGreetingsField(): void {
   starPlay.textContent = 'Start';
   greetingsWrapperCreated.appendChild(starPlay);
 
-  starPlay.addEventListener('click', function () {
+  starPlay.addEventListener('click', () => {
     destroyPage();
     firstGameStart();
   });

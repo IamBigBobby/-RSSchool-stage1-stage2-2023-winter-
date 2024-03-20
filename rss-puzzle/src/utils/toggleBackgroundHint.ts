@@ -1,18 +1,18 @@
 export function showBackground(): void {
   const buttonHintImg = document.querySelector('.button-hint-img');
 
-  buttonHintImg.addEventListener('click', function () {
+  buttonHintImg.addEventListener('click', () => {
     if (buttonHintImg.textContent === 'Show background: off') {
       const activeRowPuzzle = document.querySelector(
-        '.row-container-collecting_active'
+        '.row-container-collecting_active',
       );
       const activeRowContainerPuzzle = document.querySelector(
-        '.row-container_active'
+        '.row-container_active',
       );
 
       const activeFieldPuzzle = Array.from(activeRowPuzzle.children);
       const activeFiledContainer = Array.from(
-        activeRowContainerPuzzle.children
+        activeRowContainerPuzzle.children,
       );
 
       activeFieldPuzzle.forEach((field) => {
@@ -29,18 +29,17 @@ export function showBackground(): void {
         }
       });
       buttonHintImg.textContent = 'Show background: on';
-      return;
     } else if (buttonHintImg.textContent === 'Show background: on') {
       const activeRowPuzzle = document.querySelector(
-        '.row-container-collecting_active'
+        '.row-container-collecting_active',
       );
       const activeRowContainerPuzzle = document.querySelector(
-        '.row-container_active'
+        '.row-container_active',
       );
 
       const activeFieldPuzzle = Array.from(activeRowPuzzle.children);
       const activeFiledContainer = Array.from(
-        activeRowContainerPuzzle.children
+        activeRowContainerPuzzle.children,
       );
 
       activeFieldPuzzle.forEach((field) => {
@@ -57,7 +56,6 @@ export function showBackground(): void {
         }
       });
       buttonHintImg.textContent = 'Show background: off';
-      return;
     }
   });
 }

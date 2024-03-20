@@ -2,7 +2,7 @@ import { saveUserInfo } from './saveUserInfo';
 import { validateInputs } from './validateInputs';
 
 export function createInputField(): void {
-  const body = document.body;
+  const { body } = document;
 
   const inputContainer = document.createElement('div');
   inputContainer.classList.add('input-container');

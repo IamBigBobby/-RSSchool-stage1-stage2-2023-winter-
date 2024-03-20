@@ -5,7 +5,7 @@ import { currentRound, makeNextRoundStep } from './rounds';
 export function makeNextRound(): void {
   const nextRoundButton = document.querySelector('.next-round-button');
 
-  nextRoundButton.addEventListener('click', function () {
+  nextRoundButton.addEventListener('click', () => {
     console.log('click');
     const main = document.querySelector('.main');
     while (main.firstChild) {
@@ -16,7 +16,7 @@ export function makeNextRound(): void {
     createRound(currentDifficulty, currentRound);
 
     const listRound = document.querySelector(
-      '.select-round'
+      '.select-round',
     ) as HTMLSelectElement;
     const listRoundOptions = listRound.options;
 

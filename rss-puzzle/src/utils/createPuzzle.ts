@@ -2,15 +2,18 @@ import { div } from '../componets/tagsFarm';
 
 export class PuzzleGame {
   public container: HTMLElement;
+
   private rows: number;
+
   private cols: string[][];
+
   private img: string;
 
   constructor(
     cols: string[][],
     img: string,
     container = '.puzzle-container',
-    rows = 10
+    rows = 10,
   ) {
     this.rows = rows;
     this.cols = cols;
@@ -49,8 +52,8 @@ export class PuzzleGame {
         // const longWordLength = 10;
         // variable
 
-        let pieceWidth: number = containerWidth / this.cols[i].length;
-        let pieceHeight: number = containerHeight / this.rows;
+        const pieceWidth: number = containerWidth / this.cols[i].length;
+        const pieceHeight: number = containerHeight / this.rows;
 
         // if (wordLength <= shortWordLength) {
         //   pieceWidth = containerWidth / (this.cols[i].length * 2);
@@ -61,7 +64,7 @@ export class PuzzleGame {
 
         piece.setStyle(
           'background-image',
-          `url(https://raw.githubusercontent.com/rolling-scopes-school/rss-puzzle-data/main/images/${this.img})`
+          `url(https://raw.githubusercontent.com/rolling-scopes-school/rss-puzzle-data/main/images/${this.img})`,
         );
 
         const backgroundPosX = -(pieceWidth * j);
@@ -69,7 +72,7 @@ export class PuzzleGame {
 
         piece.setStyle(
           'background-position',
-          `${backgroundPosX}px ${backgroundPosY}px`
+          `${backgroundPosX}px ${backgroundPosY}px`,
         );
 
         piece.setStyle('width', `${pieceWidth}px`);

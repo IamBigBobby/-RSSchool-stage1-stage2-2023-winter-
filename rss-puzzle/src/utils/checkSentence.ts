@@ -6,7 +6,7 @@ export function checkSentence(textArr: string[][]): void {
   let sentenceLength: number = 0;
   const activeFields = document.querySelectorAll('.collecting-field_active');
   const checkButton = document.querySelector(
-    '.check-button'
+    '.check-button',
   ) as HTMLButtonElement;
   const currentSentenceLength = textArr[step].length;
 
@@ -19,9 +19,9 @@ export function checkSentence(textArr: string[][]): void {
   if (currentSentenceLength === sentenceLength) {
     checkButton.disabled = false;
 
-    checkButton.addEventListener('click', function checkAndUpdate() {
+    checkButton.addEventListener('click', () => {
       const fieldLine = document.querySelector(
-        '.row-container-collecting_active'
+        '.row-container-collecting_active',
       );
       const completePuzzles = fieldLine.querySelectorAll('.puzzle-piece');
       const currentSentence = textArr[step];
@@ -55,7 +55,7 @@ export function checkSentence(textArr: string[][]): void {
           checkButton.disabled = true;
 
           const completeFeilds = Array.from(
-            document.querySelectorAll('.collecting-field_active')
+            document.querySelectorAll('.collecting-field_active'),
           ) as HTMLElement[];
 
           completeFeilds.forEach((field) => {
@@ -64,7 +64,7 @@ export function checkSentence(textArr: string[][]): void {
           });
 
           const continueButton = document.querySelector(
-            '.continue-button'
+            '.continue-button',
           ) as HTMLButtonElement;
           continueButton.disabled = false;
           continueButton.style.display = 'block';

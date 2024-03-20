@@ -3,17 +3,16 @@ import { destroyRound } from './destroyRound';
 
 export function continueRound(): void {
   const continueButton = document.querySelector(
-    '.continue-button'
+    '.continue-button',
   ) as HTMLButtonElement;
   const checkButton = document.querySelector(
-    '.check-button'
+    '.check-button',
   ) as HTMLButtonElement;
   const currentFieldLine = document.querySelector(
-    '.row-container-collecting_active'
+    '.row-container-collecting_active',
   );
   const activeFields = document.querySelectorAll('.collecting-field_active');
-  const completeRightPuzzles =
-    currentFieldLine.querySelectorAll('.puzzle-piece');
+  const completeRightPuzzles = currentFieldLine.querySelectorAll('.puzzle-piece');
 
   currentFieldLine.classList.remove('row-container-collecting_active_complete');
 
@@ -51,7 +50,7 @@ export function continueRound(): void {
   const translationField = document.querySelector('.translation-field');
   translationField.textContent = '';
   const translationButtonHint = document.querySelector(
-    '.button-hint-translation'
+    '.button-hint-translation',
   );
   translationButtonHint.textContent = 'Show translate: off';
   const imgButtonHint = document.querySelector('.button-hint-img');
@@ -62,7 +61,7 @@ export function continueRound(): void {
 
 function nextPuzzle(step: number): void {
   const puzzleRow = document.querySelectorAll(
-    '.row-container'
+    '.row-container',
   ) as NodeListOf<HTMLElement>;
 
   const currentRowContainer = document.querySelector('.row-container_active');

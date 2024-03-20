@@ -8,8 +8,11 @@ export async function getLvlData(url: string) {
 
 export class GetCurrentData {
   difficulty: number;
+
   round: number;
+
   words: number;
+
   lvlData: Data;
 
   constructor(difficulty: number, round = 1) {
@@ -19,7 +22,7 @@ export class GetCurrentData {
 
   private async fetchData(): Promise<void> {
     this.lvlData = await getLvlData(
-      `https://raw.githubusercontent.com/rolling-scopes-school/rss-puzzle-data/main/data/wordCollectionLevel${this.difficulty}.json`
+      `https://raw.githubusercontent.com/rolling-scopes-school/rss-puzzle-data/main/data/wordCollectionLevel${this.difficulty}.json`,
     );
   }
 
@@ -33,8 +36,7 @@ export class GetCurrentData {
     const arrLength: number = this.lvlData.rounds[this.round].words.length;
     const textArr: string[][] = [];
     for (let i = 0; i < arrLength; i += 1) {
-      const sentence: string[] =
-        this.lvlData.rounds[this.round].words[i].textExample.split(' ');
+      const sentence: string[] = this.lvlData.rounds[this.round].words[i].textExample.split(' ');
       textArr.push(sentence);
     }
     return textArr;

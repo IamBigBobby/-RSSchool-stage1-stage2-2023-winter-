@@ -14,7 +14,7 @@ export function createRound(difficulty: number, round: number): void {
   setStep(0);
 
   const translationButtonHint = document.querySelector(
-    '.button-hint-translation'
+    '.button-hint-translation',
   );
   const imgButtonHint = document.querySelector('.button-hint-img');
   translationButtonHint.textContent = 'Show translate: off';

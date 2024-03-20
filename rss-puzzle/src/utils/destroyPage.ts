@@ -1,5 +1,5 @@
 export function destroyPage(): void {
-  const body = document.body;
+  const { body } = document;
 
   while (body.firstChild) {
     body.removeChild(body.firstChild);
