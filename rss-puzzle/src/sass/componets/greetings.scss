@@ -1,0 +1,12 @@
+.greetings-wrapper {
+  width: 400px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.say-hi {
+  text-align: center;
+}
