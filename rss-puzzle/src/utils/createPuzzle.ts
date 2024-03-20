@@ -72,10 +72,10 @@ export default class PuzzleGame {
       const rowContainerChildren = Array.from(rowContainer.getChildren());
       const childrenArray = rowContainerChildren.slice();
 
-      for (let k = childrenArray.length - 1; k > 0; k -= 1) {
-        const randomNumber = Math.floor(Math.random() * (k + 1));
-        const temp = childrenArray[k];
-        childrenArray[k] = childrenArray[randomNumber];
+      for (let l = childrenArray.length - 1; l > 0; l -= 1) {
+        const randomNumber = Math.floor(Math.random() * (l + 1));
+        const temp = childrenArray[l];
+        childrenArray[l] = childrenArray[randomNumber];
         childrenArray[randomNumber] = temp;
       }
 
