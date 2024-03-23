@@ -8,10 +8,14 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
   },
-  devServer: {
-    open: true,
-    host: "localhost",
-  },
+  module: {
+    rules: [
+  {
+        test: /\.(jpg|png|svg|jpeg|gif)$/,
+        type: 'asset/resource',
+      },
+    ],
+   },
   plugins: [
     new HtmlWebpackPlugin({
         template: path.resolve(__dirname, "src/index.html"),
