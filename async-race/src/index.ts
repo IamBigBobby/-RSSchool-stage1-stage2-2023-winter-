@@ -1,2 +1,2 @@
 import "./style.scss";
-import './assets/car.svg'
+import "./assets/car.svg";
