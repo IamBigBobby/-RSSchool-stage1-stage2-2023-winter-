@@ -1,5 +1,6 @@
 const path = require("path");
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const EslintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -24,11 +25,15 @@ module.exports = {
           },
     ],
    },
+   resolve: {
+    extensions: ['.ts', '.js']
+ },
   plugins: [
     new HtmlWebpackPlugin({
         template: path.resolve(__dirname, "src/index.html"),
         filename: "index.html",
         // favicon: path.join(__dirname, 'src', 'favicon.ico'),
     }),
+    new EslintPlugin({ extensions: ['ts'] }),
 ],
 };
