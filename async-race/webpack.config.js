@@ -8,6 +8,10 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
   },
+  devServer: {
+    open: true,
+    host: "localhost",
+  },
   plugins: [
     new HtmlWebpackPlugin({
         template: path.resolve(__dirname, "src/index.html"),
