@@ -1,6 +1,6 @@
 const path = require("path");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const EslintPlugin = require('eslint-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const EslintPlugin = require("eslint-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -11,29 +11,30 @@ module.exports = {
   },
   module: {
     rules: [
-        {
+      {
         test: /\.(jpg|png|svg|jpeg|gif)$/,
-        type: 'asset/resource',
-        },
-        {
-            test: /\.s[ac]ss$/i,
-            use: [
-              "style-loader",
-              "css-loader",
-              "sass-loader",
-            ],
-          },
+        type: "asset/resource",
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.ts$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
     ],
-   },
-   resolve: {
-    extensions: ['.ts', '.js']
- },
+  },
+  resolve: {
+    extensions: [".ts", ".js"],
+  },
   plugins: [
     new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, "src/index.html"),
-        filename: "index.html",
-        // favicon: path.join(__dirname, 'src', 'favicon.ico'),
+      template: path.resolve(__dirname, "src/index.html"),
+      filename: "index.html",
+      // favicon: path.join(__dirname, 'src', 'favicon.ico'),
     }),
-    new EslintPlugin({ extensions: ['ts'] }),
-],
+    new EslintPlugin({ extensions: ["ts"] }),
+  ],
 };
