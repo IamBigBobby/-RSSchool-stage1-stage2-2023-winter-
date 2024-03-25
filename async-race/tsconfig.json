@@ -5,7 +5,13 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitAny": true,
+    "moduleResolution": "node",
     "skipLibCheck": true
   },
-  "include": ["src/**/*", ".eslintrc.js"]
+  "include": [
+    "src/**/*",
+    ".eslintrc.js",
+    "src/components",
+    "custom.d.ts"
+  ]
 }
