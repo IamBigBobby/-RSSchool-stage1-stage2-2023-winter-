@@ -3,4 +3,9 @@ export interface Car {
   color: string;
 }
 
+export interface EngineStat {
+  velocity: number;
+  distance: number;
+}
+
 export interface CarsArray extends Array<Car> {}

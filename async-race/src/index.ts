@@ -1,17 +1,16 @@
 import "./style.scss";
 import "./assets/car.svg";
-import GarageData from "./api/getData";
+import GarageData from "./api/getDataGarage";
+import EngineData from "./api/getDataEngine";
 
-const newData = new GarageData();
+const newDataGarage = new GarageData();
+const newDataEngien = new EngineData();
 
-// const newItem = {
-//   name: "BMW",
-//   color: "#8a8a8a",
-// };
-
-// console.log(newData.getGarageData());
-// console.log(newData.getCar(1));
-newData.deleteCar(1);
-newData.deleteCar(3);
-newData.deleteCar(5);
-console.log(newData.getGarageData());
+// newDataGarage.deleteCar(1);
+// newDataGarage.deleteCar(3);
+// newDataGarage.deleteCar(5);
+console.log(newDataEngien.switchEngien(2, "started"));
+console.log(newDataEngien.switchEngien(4, "started"));
+console.log(newDataEngien.switchEngien(1, "started"));
+console.log(newDataEngien.switchEngien(123, "started"));
+console.log(newDataGarage.getGarageData());
