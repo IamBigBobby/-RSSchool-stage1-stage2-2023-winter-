@@ -8,4 +8,8 @@ export interface EngineStat {
   distance: number;
 }
 
+export interface DriveModeStatus {
+  success: boolean;
+}
+
 export interface CarsArray extends Array<Car> {}
