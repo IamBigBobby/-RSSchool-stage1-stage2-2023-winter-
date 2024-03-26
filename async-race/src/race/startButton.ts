@@ -1,28 +1,20 @@
-import EngineData from "../api/getDataEngine";
+import getCurrentVelocity from "./getCurrentVelocity";
+// import { getCurrentVelocityObj } from "./getCurrentVelocityObj";
 
 export default function startCar(): void {
   const startButtons = document.querySelectorAll(".button-start");
+  const cars = document.querySelectorAll(".car-container");
 
   startButtons.forEach((button, index) => {
     button.addEventListener("click", () => {
-      console.log("start");
+      console.log("Нажата кнопка с индексом:", index + 1);
+      cars[index].classList.add("car-container_move");
 
-      const newEngineData = new EngineData();
+      cars[index].addEventListener("animationiteration", () => {
+        cars[index].classList.remove("car-container_move");
+      });
 
-      newEngineData
-        .switchEngien(index + 1, "started")
-        .then((data) => {
-          console.log(data);
-          const { velocity } = data;
-          const { distance } = data;
-
-          const animationTime = distance / velocity;
-
-          return animationTime;
-        })
-        .then((animationTime) => {
-          console.log(animationTime, index + 1);
-        });
+      getCurrentVelocity();
     });
   });
 }
