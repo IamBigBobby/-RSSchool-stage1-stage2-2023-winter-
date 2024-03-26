@@ -51,7 +51,7 @@ export default class GarageData {
 
   public getLimitedGarageData(
     page: number = 1,
-    limit: number = 2,
+    limit: number = 7,
   ): Promise<CarsArray> {
     const url = `${this.link}/?_page=${page}&_limit=${limit}`;
     return fetch(url)
