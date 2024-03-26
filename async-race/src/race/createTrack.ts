@@ -126,7 +126,17 @@ export default function createTrack(): void {
       track.appendChild(carName);
       track.appendChild(road);
 
+      const buttonStart = document.createElement("button");
+      const buttonStop = document.createElement("button");
+
+      buttonStart.classList.add("button-start");
+      buttonStop.classList.add("button-stop");
+      buttonStart.textContent = "A";
+      buttonStop.textContent = "B";
+
       raceContainer?.appendChild(track);
+      raceContainer?.appendChild(buttonStart);
+      raceContainer?.appendChild(buttonStop);
     }
   });
 }
