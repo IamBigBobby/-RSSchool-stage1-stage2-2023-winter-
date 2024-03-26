@@ -6,9 +6,6 @@ export default class GarageData {
   public getGarageData(): Promise<CarsArray> {
     return fetch(this.link)
       .then((response) => {
-        if (!response.ok) {
-          throw new Error("HTTP Error");
-        }
         return response.json();
       })
       .catch((error) => {
@@ -26,9 +23,6 @@ export default class GarageData {
     };
     fetch(this.link, requestOptions)
       .then((response) => {
-        if (!response.ok) {
-          throw new Error("HTTP Error");
-        }
         return response.json();
       })
       .catch((error) => {
@@ -39,9 +33,6 @@ export default class GarageData {
   public getCar(carNumber: number): Promise<Car> {
     return fetch(`${this.link}/${carNumber}`)
       .then((response) => {
-        if (!response.ok) {
-          throw new Error("HTTP Error");
-        }
         return response.json();
       })
       .catch((error) => {
@@ -56,9 +47,6 @@ export default class GarageData {
     const url = `${this.link}/?_page=${page}&_limit=${limit}`;
     return fetch(url)
       .then((response) => {
-        if (!response.ok) {
-          throw new Error("HTTP Error");
-        }
         return response.json();
       })
       .catch((error) => {

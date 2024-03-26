@@ -19,7 +19,16 @@ export default function startCar(): void {
           return animationTime;
         })
         .then((animationTime) => {
-          console.log(animationTime.toFixed(0));
+          newEngineData
+            .driveModeEngien(index + 1)
+            .then((data) => {
+              console.log(data);
+            })
+            .catch(() => {
+              const car = cars[index] as HTMLElement;
+              car.style.animationPlayState = "paused";
+              newEngineData.switchEngien(index + 1, "stopped");
+            });
           const car = cars[index] as HTMLElement;
           car.classList.add("car-container_move");
 
