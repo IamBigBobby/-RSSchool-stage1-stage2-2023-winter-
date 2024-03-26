@@ -1,4 +1,6 @@
 import GarageData from "../api/getDataGarage";
+import getCurrentVelocity from "./getCurrentVelocity";
+import startCar from "./startButton";
 // import svgCar from "../assets/car.svg";
 
 export default function createTrack(): void {
@@ -135,8 +137,10 @@ export default function createTrack(): void {
       buttonStop.textContent = "B";
 
       raceContainer?.appendChild(track);
-      raceContainer?.appendChild(buttonStart);
-      raceContainer?.appendChild(buttonStop);
+      track?.appendChild(buttonStart);
+      track?.appendChild(buttonStop);
     }
+    getCurrentVelocity();
+    startCar();
   });
 }
