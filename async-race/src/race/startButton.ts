@@ -10,40 +10,35 @@ export default function startCar(): void {
 
       const newEngineData = new EngineData();
 
-      newEngineData
-        .switchEngien(index + 1, "started")
-        .then((data) => {
-          console.log(data);
-          const { velocity } = data;
-          const { distance } = data;
-          const animationTime = distance / velocity;
-          return animationTime;
-        })
-        .then((animationTime) => {
-          newEngineData
-            .driveModeEngien(index + 1)
-            .then((data) => {
-              console.log(data);
-            })
-            .catch(() => {
-              const car = cars[index] as HTMLElement;
-              car.style.animationPlayState = "paused";
-              newEngineData.switchEngien(index + 1, "stopped");
-            });
+      newEngineData.switchEngien(index + 1, "started").then((dataStart) => {
+        console.log(dataStart);
+        const { velocity } = dataStart;
+        const { distance } = dataStart;
+        const animationTime = distance / velocity;
 
-          const car = cars[index] as HTMLElement;
-          car.classList.add("car-container_move");
+        const car = cars[index] as HTMLElement;
+        car.classList.add("car-container_move");
 
-          car.addEventListener("animationiteration", () => {
-            car.classList.remove("car-container_move");
-          });
-
-          car.addEventListener("animationend", () => {
-            car.style.animationPlayState = "running";
-          });
-
-          car.style.animationDuration = `${animationTime.toFixed(0)}ms`;
+        car.addEventListener("animationiteration", () => {
+          car.classList.remove("car-container_move");
         });
+
+        car.addEventListener("animationend", () => {
+          car.style.animationPlayState = "running";
+        });
+
+        car.style.animationDuration = `${animationTime.toFixed(0)}ms`;
+
+        newEngineData
+          .driveModeEngien(index + 1)
+          .then((data) => {
+            console.log(data);
+          })
+          .catch(() => {
+            car.style.animationPlayState = "paused";
+            newEngineData.switchEngien(index + 1, "stopped");
+          });
+      });
     });
   });
 }
