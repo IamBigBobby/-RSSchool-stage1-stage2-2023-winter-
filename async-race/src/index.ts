@@ -1,4 +1,4 @@
 import "./style.scss";
-import createApp from "./app/app";
+import createRace from "./app/app";
 
-createApp();
+createRace();
