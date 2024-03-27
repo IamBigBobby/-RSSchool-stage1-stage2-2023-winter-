@@ -14,6 +14,7 @@ export default function backCar() {
         console.log(data);
         const car = cars[index] as HTMLElement;
         car.classList.remove("car-container_move");
+        car.style.animationPlayState = "running";
       });
     });
   });
