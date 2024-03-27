@@ -19,9 +19,6 @@ export default class EngineData {
       requestOptions,
     )
       .then((response) => {
-        if (!response.ok) {
-          throw new Error("HTTP Error");
-        }
         return response.json();
       })
       .catch((error) => {
@@ -46,9 +43,6 @@ export default class EngineData {
       requestOptions,
     )
       .then((response) => {
-        if (!response.ok) {
-          throw new Error("HTTP Error");
-        }
         return response.json();
       })
       .catch((error) => {

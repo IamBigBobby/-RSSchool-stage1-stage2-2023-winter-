@@ -15,6 +15,10 @@
     left: 0;
 }
 
+.car-container_pause {
+    animation-play-state: paused;
+}
+
 .car-container_move{
     animation: move 5s linear forwards;
 }

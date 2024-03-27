@@ -1,5 +1,5 @@
 import GarageData from "../api/getDataGarage";
-import getCurrentVelocity from "./getCurrentVelocity";
+import backCar from "./backButton";
 import startCar from "./startButton";
 // import svgCar from "../assets/car.svg";
 
@@ -140,7 +140,7 @@ export default function createTrack(): void {
       track?.appendChild(buttonStart);
       track?.appendChild(buttonStop);
     }
-    getCurrentVelocity();
     startCar();
+    backCar();
   });
 }
