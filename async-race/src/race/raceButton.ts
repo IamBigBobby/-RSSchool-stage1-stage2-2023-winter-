@@ -1,8 +1,11 @@
 import moveCar from "./startCar";
 
 export default function raceButton(): void {
-  const raceButtonElement = document.querySelector(".button-start-race");
+  const raceButtonElement = document.querySelector(
+    ".button-start-race",
+  ) as HTMLButtonElement;
   raceButtonElement?.addEventListener("click", () => {
+    raceButtonElement.disabled = true;
     const carsLenght = document.querySelectorAll(".car-container").length;
 
     const carsTimes = [];
@@ -10,6 +13,12 @@ export default function raceButton(): void {
       carsTimes.push(moveCar(i));
     }
 
-    Promise.any(carsTimes).then((winer) => console.log(winer));
+    Promise.any(carsTimes).then((winer) => {
+      const resetButton = document.querySelector(
+        ".button-reset-race",
+      ) as HTMLButtonElement;
+      resetButton.disabled = false;
+      console.log(winer);
+    });
   });
 }

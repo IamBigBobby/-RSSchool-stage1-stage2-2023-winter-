@@ -14,6 +14,7 @@ export default function createRace(): void {
 
   buttonStartRace.textContent = "RACE";
   buttonResetRace.textContent = "RESET";
+  buttonResetRace.disabled = true;
 
   body.appendChild(buttonStartRace);
   body.appendChild(buttonResetRace);
