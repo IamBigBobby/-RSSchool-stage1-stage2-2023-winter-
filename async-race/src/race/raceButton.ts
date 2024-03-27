@@ -5,6 +5,19 @@ export default function raceButton(): void {
     ".button-start-race",
   ) as HTMLButtonElement;
   raceButtonElement?.addEventListener("click", () => {
+    const backButtons = document.querySelectorAll(".button-stop");
+    const startButtons = document.querySelectorAll(".button-start");
+
+    backButtons.forEach((button) => {
+      const currentButton = button as HTMLButtonElement;
+      currentButton.disabled = true;
+    });
+
+    startButtons.forEach((button) => {
+      const currentButton = button as HTMLButtonElement;
+      currentButton.disabled = true;
+    });
+
     raceButtonElement.disabled = true;
     const carsLenght = document.querySelectorAll(".car-container").length;
 
@@ -18,6 +31,12 @@ export default function raceButton(): void {
         ".button-reset-race",
       ) as HTMLButtonElement;
       resetButton.disabled = false;
+
+      backButtons.forEach((button) => {
+        const currentButton = button as HTMLButtonElement;
+        currentButton.disabled = false;
+      });
+
       console.log(winer);
     });
   });
