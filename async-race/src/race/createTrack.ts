@@ -1,4 +1,5 @@
 import GarageData from "../api/getDataGarage";
+import backCar from "./backButton";
 import startCar from "./startButton";
 // import svgCar from "../assets/car.svg";
 
@@ -140,5 +141,6 @@ export default function createTrack(): void {
       track?.appendChild(buttonStop);
     }
     startCar();
+    backCar();
   });
 }

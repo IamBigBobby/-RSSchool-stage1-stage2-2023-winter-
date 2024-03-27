@@ -6,13 +6,14 @@ export default function startCar(): void {
 
   startButtons.forEach((button, index) => {
     button.addEventListener("click", () => {
-      console.log("Нажата кнопка с индексом:", index + 1);
+      console.log("Нажата кнопка старта с индексом:", index + 1);
 
       const newEngineData = new EngineData();
 
       newEngineData
         .switchEngien(index + 1, "started")
         .then((data) => {
+          console.log(data);
           const { velocity } = data;
           const { distance } = data;
           const animationTime = distance / velocity;
@@ -29,12 +30,18 @@ export default function startCar(): void {
               car.style.animationPlayState = "paused";
               newEngineData.switchEngien(index + 1, "stopped");
             });
+
           const car = cars[index] as HTMLElement;
           car.classList.add("car-container_move");
 
           car.addEventListener("animationiteration", () => {
             car.classList.remove("car-container_move");
           });
+
+          car.addEventListener("animationend", () => {
+            car.style.animationPlayState = "running";
+          });
+
           car.style.animationDuration = `${animationTime.toFixed(0)}ms`;
         });
     });
