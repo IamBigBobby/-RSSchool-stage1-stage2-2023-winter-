@@ -1,4 +1,5 @@
 import crateRaceContainer from "../race/createRaceContainer";
+import raceButton from "../race/raceButton";
 
 export default function createRace(): void {
   const { body } = document;
@@ -17,5 +18,6 @@ export default function createRace(): void {
   body.appendChild(buttonResetRace);
   body.appendChild(main);
 
+  raceButton();
   crateRaceContainer();
 }
