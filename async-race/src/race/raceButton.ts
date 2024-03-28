@@ -1,3 +1,4 @@
+import resetButton from "./resetButton";
 import moveCar from "./startCar";
 
 export default function raceButton(): void {
@@ -5,6 +6,7 @@ export default function raceButton(): void {
     ".button-start-race",
   ) as HTMLButtonElement;
   raceButtonElement?.addEventListener("click", () => {
+    resetButton();
     const backButtons = document.querySelectorAll(".button-stop");
     const startButtons = document.querySelectorAll(".button-start");
 
@@ -27,10 +29,10 @@ export default function raceButton(): void {
     }
 
     Promise.any(carsTimes).then((winer) => {
-      const resetButton = document.querySelector(
+      const resetButtonElements = document.querySelector(
         ".button-reset-race",
       ) as HTMLButtonElement;
-      resetButton.disabled = false;
+      resetButtonElements.disabled = false;
 
       backButtons.forEach((button) => {
         const currentButton = button as HTMLButtonElement;
