@@ -1,9 +1,23 @@
 import GarageData from "../api/getDataGarage";
 import backCarButton from "./backButton";
+import raceButton from "./raceButton";
+import resetButton from "./resetButton";
 import startCarButton from "./startButton";
 
 export default function createTrack(): void {
   const raceContainer = document.querySelector(".race-container");
+  const buttonStartRace = document.createElement("button");
+  const buttonResetRace = document.createElement("button");
+
+  buttonStartRace.classList.add("button-start-race");
+  buttonResetRace.classList.add("button-reset-race");
+
+  buttonStartRace.textContent = "RACE";
+  buttonResetRace.textContent = "RESET";
+  buttonResetRace.disabled = true;
+
+  raceContainer?.appendChild(buttonStartRace);
+  raceContainer?.appendChild(buttonResetRace);
 
   const newGarage = new GarageData();
 
@@ -142,6 +156,8 @@ export default function createTrack(): void {
       track?.appendChild(buttonStart);
       track?.appendChild(buttonStop);
     }
+    raceButton();
+    resetButton();
     startCarButton();
     backCarButton();
   });
