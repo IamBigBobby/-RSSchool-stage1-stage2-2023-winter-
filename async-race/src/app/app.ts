@@ -1,3 +1,4 @@
+import createAddInput from "../inputs/createAddInput";
 import crateRaceContainer from "../race/createRaceContainer";
 
 export default function createRace(): void {
@@ -12,5 +13,6 @@ export default function createRace(): void {
   body.appendChild(inputCreateCarContainer);
   body.appendChild(main);
 
+  createAddInput();
   crateRaceContainer();
 }
