@@ -17,14 +17,9 @@ export default class EngineData {
     return fetch(
       `${this.link}/?id=${carNumber}&status=${status}`,
       requestOptions,
-    )
-      .then((response) => {
-        return response.json();
-      })
-      .catch((error) => {
-        console.error(error.message);
-        throw error;
-      });
+    ).then((response) => {
+      return response.json();
+    });
   }
 
   public driveModeEngien(
@@ -41,13 +36,8 @@ export default class EngineData {
     return fetch(
       `${this.link}/?id=${carNumber}&status=${status}`,
       requestOptions,
-    )
-      .then((response) => {
-        return response.json();
-      })
-      .catch((error) => {
-        console.error(error.message);
-        throw error;
-      });
+    ).then((response) => {
+      return response.json();
+    });
   }
 }

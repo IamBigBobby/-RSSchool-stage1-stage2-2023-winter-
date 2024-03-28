@@ -1,7 +1,6 @@
 import GarageData from "../api/getDataGarage";
-import backCar from "./backButton";
-import startCar from "./startButton";
-// import svgCar from "../assets/car.svg";
+import backCarButton from "./backButton";
+import startCarButton from "./startButton";
 
 export default function createTrack(): void {
   const raceContainer = document.querySelector(".race-container");
@@ -133,14 +132,17 @@ export default function createTrack(): void {
 
       buttonStart.classList.add("button-start");
       buttonStop.classList.add("button-stop");
+
       buttonStart.textContent = "A";
       buttonStop.textContent = "B";
+      buttonStop.disabled = true;
 
       raceContainer?.appendChild(track);
+
       track?.appendChild(buttonStart);
       track?.appendChild(buttonStop);
     }
-    startCar();
-    backCar();
+    startCarButton();
+    backCarButton();
   });
 }

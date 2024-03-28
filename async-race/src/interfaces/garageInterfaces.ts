@@ -13,3 +13,8 @@ export interface DriveModeStatus {
 }
 
 export interface CarsArray extends Array<Car> {}
+
+export interface MoveCarResult {
+  time: string;
+  winCar: string | null;
+}
