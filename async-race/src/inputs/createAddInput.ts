@@ -1,8 +1,13 @@
-import { newCar } from "../interfaces/garageInterfaces";
+import GarageData from "../api/getDataGarage";
+import destroyRaceContainer from "../app/destroyRaceContainer";
+// import destroyRaceContainer from "../app/destroyRaceContainer";
+import { NewCar } from "../interfaces/garageInterfaces";
+import crateRaceContainer from "../race/createRaceContainer";
+// import crateRaceContainer from "../race/createRaceContainer";
 
-const car: newCar = {
+const car: NewCar = {
   name: "",
-  color: "",
+  color: "#000000",
 };
 
 function pickColor(): void {
@@ -13,6 +18,7 @@ function pickColor(): void {
   colorPicker?.addEventListener("input", () => {
     const selectedColor = colorPicker.value;
     car.color = selectedColor;
+    console.log(car.color);
   });
 }
 
@@ -33,8 +39,13 @@ function addCarButton(): void {
   updateButton?.addEventListener("click", () => {
     if (car.name && car.color) {
       console.log("Creating car:", car);
+      const newGarageData = new GarageData();
+      newGarageData.addCar(car).then(() => {
+        destroyRaceContainer();
+        crateRaceContainer();
+      });
     } else {
-      console.log("Please enter both car name and color");
+      console.log("Please enter car name");
     }
   });
 }

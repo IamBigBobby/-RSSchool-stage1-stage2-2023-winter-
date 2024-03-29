@@ -13,21 +13,22 @@ export default class GarageData {
       });
   }
 
-  public addCar(newCar: Car): void {
-    const requestOptions = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newCar),
-    };
-    fetch(this.link, requestOptions)
-      .then((response) => {
-        return response.json();
-      })
-      .catch((error) => {
-        console.error(error.message);
+  public addCar(newCar: Car): Promise<void> {
+    return new Promise<void>((resolve) => {
+      const requestOptions = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newCar),
+      };
+
+      fetch(this.link, requestOptions).then((response) => {
+        if (response.ok) {
+          resolve();
+        }
       });
+    });
   }
 
   public getCar(carNumber: number): Promise<Car> {
