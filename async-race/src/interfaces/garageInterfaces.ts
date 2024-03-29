@@ -18,3 +18,8 @@ export interface MoveCarResult {
   time: string;
   winCar: string | null;
 }
+
+export interface newCar {
+  name: string;
+  color: string;
+}
