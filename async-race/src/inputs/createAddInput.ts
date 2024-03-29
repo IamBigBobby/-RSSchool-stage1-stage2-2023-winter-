@@ -1,9 +1,7 @@
 import GarageData from "../api/getDataGarage";
 import destroyRaceContainer from "../app/destroyRaceContainer";
-// import destroyRaceContainer from "../app/destroyRaceContainer";
 import { NewCar } from "../interfaces/garageInterfaces";
 import crateRaceContainer from "../race/createRaceContainer";
-// import crateRaceContainer from "../race/createRaceContainer";
 
 const car: NewCar = {
   name: "",
@@ -38,9 +36,12 @@ function addCarButton(): void {
 
   updateButton?.addEventListener("click", () => {
     if (car.name && car.color) {
-      console.log("Creating car:", car);
       const newGarageData = new GarageData();
       newGarageData.addCar(car).then(() => {
+        const inputElement = document.querySelector(
+          ".input-create",
+        ) as HTMLInputElement;
+        inputElement.value = "";
         destroyRaceContainer();
         crateRaceContainer();
       });
