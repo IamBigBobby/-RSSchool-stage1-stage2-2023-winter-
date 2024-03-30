@@ -1,3 +1,4 @@
+import GarageData from "../api/getDataGarage";
 import backCar from "./backCar";
 
 export default function resetButton(): void {
@@ -23,7 +24,15 @@ export default function resetButton(): void {
     const carsLenght = document.querySelectorAll(".car-container").length;
 
     for (let i = 0; i < carsLenght; i += 1) {
-      backCar(i);
+      const newGarageData = new GarageData();
+      newGarageData.getGarageData().then((data) => {
+        const selectedIndexButton = i;
+        const selectedCar = data[i];
+        if (selectedCar && selectedCar.id) {
+          const idCar = selectedCar.id;
+          backCar(idCar, selectedIndexButton);
+        }
+      });
     }
   });
 }

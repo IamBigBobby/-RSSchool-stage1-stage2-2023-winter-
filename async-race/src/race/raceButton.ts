@@ -1,5 +1,8 @@
+import GarageData from "../api/getDataGarage";
+import { MoveCarResult } from "../interfaces/garageInterfaces";
 import resetButton from "./resetButton";
 import moveCar from "./startCar";
+// import moveCar from "./startCar";
 
 export default function raceButton(): void {
   const raceButtonElement = document.querySelector(
@@ -23,23 +26,35 @@ export default function raceButton(): void {
     raceButtonElement.disabled = true;
     const carsLenght = document.querySelectorAll(".car-container").length;
 
-    const carsTimes = [];
+    const carsTimes: Promise<MoveCarResult>[] = [];
+    const promises: Promise<void>[] = [];
+
     for (let i = 0; i < carsLenght; i += 1) {
-      carsTimes.push(moveCar(i));
+      const newGarageData = new GarageData();
+      const promise = newGarageData.getGarageData().then((data) => {
+        const selectedIndexButton = i;
+        const selectedCar = data[i];
+        if (selectedCar && selectedCar.id) {
+          const idCar = selectedCar.id;
+          carsTimes.push(moveCar(idCar, selectedIndexButton));
+        }
+      });
+      promises.push(promise);
     }
 
-    Promise.any(carsTimes).then((winer) => {
-      const resetButtonElements = document.querySelector(
-        ".button-reset-race",
-      ) as HTMLButtonElement;
-      resetButtonElements.disabled = false;
+    Promise.all(promises).then(() => {
+      Promise.any(carsTimes).then((result) => {
+        console.log(result);
+        const resetButtonElements = document.querySelector(
+          ".button-reset-race",
+        ) as HTMLButtonElement;
+        resetButtonElements.disabled = false;
 
-      backButtons.forEach((button) => {
-        const currentButton = button as HTMLButtonElement;
-        currentButton.disabled = false;
+        backButtons.forEach((button) => {
+          const currentButton = button as HTMLButtonElement;
+          currentButton.disabled = false;
+        });
       });
-
-      console.log(winer);
     });
   });
 }

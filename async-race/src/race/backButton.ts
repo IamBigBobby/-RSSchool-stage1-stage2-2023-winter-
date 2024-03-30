@@ -1,3 +1,4 @@
+import GarageData from "../api/getDataGarage";
 import backCar from "./backCar";
 
 export default function backCarButton() {
@@ -32,8 +33,15 @@ export default function backCarButton() {
         raceButton.disabled = false;
         resetButton.disabled = true;
       }
-
-      backCar(index);
+      const newGarageData = new GarageData();
+      newGarageData.getGarageData().then((data) => {
+        const selectedIndexButton = index;
+        const selectedCar = data[index];
+        if (selectedCar && selectedCar.id) {
+          const idCar = selectedCar.id;
+          backCar(idCar, selectedIndexButton);
+        }
+      });
     });
   });
 }
