@@ -2,6 +2,7 @@ import GarageData from "../api/getDataGarage";
 import backCarButton from "./backButton";
 import raceButton from "./raceButton";
 import resetButton from "./resetButton";
+import selectButton from "./selectButton";
 import startCarButton from "./startButton";
 
 export default function createTrack(): void {
@@ -21,7 +22,7 @@ export default function createTrack(): void {
 
   const newGarage = new GarageData();
 
-  newGarage.getLimitedGarageData().then((garage) => {
+  newGarage.getLimitedGarageData(1).then((garage) => {
     for (let i = 0; i < garage.length; i += 1) {
       const track = document.createElement("div");
       track.classList.add("track");
@@ -164,6 +165,7 @@ export default function createTrack(): void {
       track?.appendChild(buttonStart);
       track?.appendChild(buttonStop);
     }
+    selectButton();
     raceButton();
     resetButton();
     startCarButton();

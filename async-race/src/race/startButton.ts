@@ -18,6 +18,7 @@ export default function startCarButton(): void {
         .then((data) => {
           const selectedIndexButton = index;
           const selectedCar = data[index];
+          console.log(selectedCar);
           return { selectedCar, selectedIndexButton };
         })
         .then(({ selectedCar, selectedIndexButton }) => {

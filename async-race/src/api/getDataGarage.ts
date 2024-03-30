@@ -42,7 +42,7 @@ export default class GarageData {
   }
 
   public getLimitedGarageData(
-    page: number = 1,
+    page: number,
     limit: number = 7,
   ): Promise<CarsArray> {
     const url = `${this.link}/?_page=${page}&_limit=${limit}`;
@@ -60,6 +60,29 @@ export default class GarageData {
       const deleteUrl = `${this.link}/${carNumber}`;
       const requestOptions = {
         method: "DELETE",
+      };
+      fetch(deleteUrl, requestOptions)
+        .then((response) => {
+          if (response.ok) {
+            console.log("Car deleted successfully");
+            resolve();
+          }
+        })
+        .catch((error) => {
+          console.error(error.message);
+        });
+    });
+  }
+
+  public updateCar(carNumber: number, updateCar: Car): Promise<void> {
+    return new Promise((resolve) => {
+      const deleteUrl = `${this.link}/${carNumber}`;
+      const requestOptions = {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updateCar),
       };
       fetch(deleteUrl, requestOptions)
         .then((response) => {

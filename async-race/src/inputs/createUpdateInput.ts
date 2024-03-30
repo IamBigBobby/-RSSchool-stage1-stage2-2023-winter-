@@ -1,49 +1,68 @@
 import GarageData from "../api/getDataGarage";
 import destroyRaceContainer from "../app/destroyRaceContainer";
-import crateRaceContainer from "../race/createRaceContainer";
+import createRaceContainer from "../race/createRaceContainer";
+import { idCarSelected } from "../race/selectButton";
 
-const car = {
+export const carUpdate = {
   name: "",
-  color: "#000000",
+  color: "",
 };
 
-export function pickColor(): void {
+function updateColor(): void {
   const colorPicker = document.querySelector(
-    ".color-picker-create",
+    ".color-picker-update",
   ) as HTMLInputElement;
 
   colorPicker?.addEventListener("input", () => {
     const selectedColor = colorPicker.value;
-    car.color = selectedColor;
+    carUpdate.color = selectedColor;
   });
 }
 
-export function createCarName(): void {
+function updateCarName(): void {
   const inputElement = document.querySelector(
-    ".input-create",
+    ".input-update",
   ) as HTMLInputElement;
 
   inputElement?.addEventListener("input", () => {
     const newCarName = inputElement.value;
-    car.name = newCarName;
+    carUpdate.name = newCarName;
   });
 }
 
-export function addCarButton(): void {
-  const updateButton = document.querySelector(".create-car-button");
+export function updateCarButton(): void {
+  const updateButton = document.querySelector(".update-car-button");
   updateButton?.addEventListener("click", () => {
-    if (car.name && car.color) {
+    if (carUpdate.name && carUpdate.color) {
+      console.log("полученный id", idCarSelected.id);
+      const currentId = idCarSelected.id;
       const newGarageData = new GarageData();
-      newGarageData.addCar(car).then(() => {
-        const inputElement = document.querySelector(
-          ".input-create",
-        ) as HTMLInputElement;
-        inputElement.value = "";
-        destroyRaceContainer();
-        crateRaceContainer();
-      });
+      const updateCar = {
+        name: carUpdate.name,
+        color: carUpdate.color,
+      };
+      if (currentId) {
+        newGarageData.updateCar(currentId, updateCar).then(() => {
+          const updateInput = document.querySelector(
+            ".input-update",
+          ) as HTMLInputElement;
+          const updateColorInput = document.querySelector(
+            ".color-picker-update",
+          ) as HTMLInputElement;
+          const updateButtonInput = document.querySelector(
+            ".update-car-button",
+          ) as HTMLButtonElement;
+          updateInput.disabled = true;
+          updateInput.value = "";
+          updateColorInput.disabled = true;
+          updateColorInput.value = "";
+          updateButtonInput.disabled = true;
+          destroyRaceContainer();
+          createRaceContainer();
+        });
+      }
     } else {
-      console.log("Please enter car name");
+      console.log("Please update your car name and color");
     }
   });
 }
@@ -63,12 +82,15 @@ export default function createUpdateInput(): void {
   colorPicker.setAttribute("type", "color");
   updateButton.classList.add("update-car-button");
   updateButton.textContent = "UPDATE";
+  inputElement.disabled = true;
+  colorPicker.disabled = true;
+  updateButton.disabled = true;
 
   inputCreateCarContainer?.appendChild(inputElement);
   inputCreateCarContainer?.appendChild(colorPicker);
   inputCreateCarContainer?.appendChild(updateButton);
 
-  pickColor();
-  createCarName();
-  addCarButton();
+  updateColor();
+  updateCarName();
+  updateCarButton();
 }

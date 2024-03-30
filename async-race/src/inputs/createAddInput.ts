@@ -29,7 +29,7 @@ export function createCarName(): void {
   });
 }
 
-export function addCarButton(): void {
+function addCarButton(): void {
   const updateButton = document.querySelector(".create-car-button");
   updateButton?.addEventListener("click", () => {
     if (car.name && car.color) {

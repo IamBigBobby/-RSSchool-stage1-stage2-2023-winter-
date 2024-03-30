@@ -1,0 +1,41 @@
+import GarageData from "../api/getDataGarage";
+
+export const idCarSelected: { id: number | undefined } = {
+  id: 0,
+};
+
+export default function selectButton(): void {
+  const main = document.querySelector(".main");
+
+  main?.addEventListener("click", (event) => {
+    const target = event.target as HTMLElement;
+
+    if (target.classList.contains("button-select")) {
+      const selectButtons = document.querySelectorAll(".button-select");
+      const index = [...selectButtons].indexOf(target);
+
+      const newGarageData = new GarageData();
+      newGarageData.getGarageData().then((data) => {
+        const selectedCar = data[index];
+        const oldName = selectedCar.name;
+        const oldColor = selectedCar.color;
+        idCarSelected.id = selectedCar.id;
+        console.log(idCarSelected.id);
+        const updateInput = document.querySelector(
+          ".input-update",
+        ) as HTMLInputElement;
+        const updateColor = document.querySelector(
+          ".color-picker-update",
+        ) as HTMLInputElement;
+        const updateButton = document.querySelector(
+          ".update-car-button",
+        ) as HTMLButtonElement;
+        updateInput.disabled = false;
+        updateInput.value = oldName;
+        updateColor.disabled = false;
+        updateColor.value = oldColor;
+        updateButton.disabled = false;
+      });
+    }
+  });
+}
