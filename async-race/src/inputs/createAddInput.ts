@@ -16,7 +16,6 @@ function pickColor(): void {
   colorPicker?.addEventListener("input", () => {
     const selectedColor = colorPicker.value;
     car.color = selectedColor;
-    console.log(car.color);
   });
 }
 

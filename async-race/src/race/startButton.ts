@@ -1,17 +1,31 @@
+import GarageData from "../api/getDataGarage";
 import moveCar from "./startCar";
 
 export default function startCarButton(): void {
   const startButtons = document.querySelectorAll(".button-start");
   const backButtons = document.querySelectorAll(".button-stop");
 
-  startButtons.forEach((button, index) => {
-    button.addEventListener("click", () => {
-      console.log("Нажата кнопка старта с индексом:", index + 1);
+  startButtons.forEach((startButton, index) => {
+    startButton.addEventListener("click", () => {
       const curentBackButton = backButtons[index] as HTMLButtonElement;
       const curentStartButton = startButtons[index] as HTMLButtonElement;
       curentBackButton.disabled = false;
       curentStartButton.disabled = true;
-      moveCar(index);
+
+      const newGarageData = new GarageData();
+      newGarageData
+        .getGarageData()
+        .then((data) => {
+          const selectedIndexButton = index;
+          const selectedCar = data[index];
+          return { selectedCar, selectedIndexButton };
+        })
+        .then(({ selectedCar, selectedIndexButton }) => {
+          const idCar = selectedCar.id;
+          if (idCar) {
+            moveCar(idCar, selectedIndexButton);
+          }
+        });
     });
   });
 }
