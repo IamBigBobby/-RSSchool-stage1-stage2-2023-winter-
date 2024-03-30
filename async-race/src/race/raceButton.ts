@@ -2,7 +2,6 @@ import GarageData from "../api/getDataGarage";
 import { MoveCarResult } from "../interfaces/garageInterfaces";
 import resetButton from "./resetButton";
 import moveCar from "./startCar";
-// import moveCar from "./startCar";
 
 export default function raceButton(): void {
   const raceButtonElement = document.querySelector(

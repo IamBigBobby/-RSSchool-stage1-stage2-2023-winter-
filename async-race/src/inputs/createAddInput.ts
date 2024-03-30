@@ -1,6 +1,5 @@
 import GarageData from "../api/getDataGarage";
 import destroyRaceContainer from "../app/destroyRaceContainer";
-// import { Car } from "../interfaces/garageInterfaces";
 import crateRaceContainer from "../race/createRaceContainer";
 
 const car = {
@@ -8,7 +7,7 @@ const car = {
   color: "#000000",
 };
 
-function pickColor(): void {
+export function pickColor(): void {
   const colorPicker = document.querySelector(
     ".color-picker-create",
   ) as HTMLInputElement;
@@ -19,7 +18,7 @@ function pickColor(): void {
   });
 }
 
-function createCarName(): void {
+export function createCarName(): void {
   const inputElement = document.querySelector(
     ".input-create",
   ) as HTMLInputElement;
