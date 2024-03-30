@@ -1,6 +1,7 @@
 export interface Car {
   name: string;
   color: string;
+  id?: number;
 }
 
 export interface EngineStat {
@@ -17,9 +18,4 @@ export interface CarsArray extends Array<Car> {}
 export interface MoveCarResult {
   time: string;
   winCar: string | null;
-}
-
-export interface NewCar {
-  name: string;
-  color: string;
 }

@@ -55,17 +55,22 @@ export default class GarageData {
       });
   }
 
-  public deleteCar(carNumber: number): void {
-    const deleteUrl = `${this.link}/${carNumber}`;
-    const requestOptions = {
-      method: "DELETE",
-    };
-    fetch(deleteUrl, requestOptions)
-      .then(() => {
-        console.log("Car deleted successfully");
-      })
-      .catch((error) => {
-        console.error(error.message);
-      });
+  public deleteCar(carNumber: number): Promise<void> {
+    return new Promise((resolve) => {
+      const deleteUrl = `${this.link}/${carNumber}`;
+      const requestOptions = {
+        method: "DELETE",
+      };
+      fetch(deleteUrl, requestOptions)
+        .then((response) => {
+          if (response.ok) {
+            console.log("Car deleted successfully");
+            resolve();
+          }
+        })
+        .catch((error) => {
+          console.error(error.message);
+        });
+    });
   }
 }

@@ -6,8 +6,6 @@ export default function backCarButton() {
 
   backButtons.forEach((button, index) => {
     button.addEventListener("click", () => {
-      console.log("Нажата кнопка возврата с индексом:", index + 1);
-
       const curentBackButton = backButtons[index] as HTMLButtonElement;
       const curentStartButton = startButtons[index] as HTMLButtonElement;
       curentBackButton.disabled = true;
@@ -17,8 +15,6 @@ export default function backCarButton() {
 
       for (let i = 0; i < startButtons.length; i += 1) {
         const currentButton = startButtons[i] as HTMLButtonElement;
-        // console.log(currentButton);
-        // console.log(currentButton.disabled);
         if (currentButton.disabled === true) {
           isAllStartActive = false;
           break;
