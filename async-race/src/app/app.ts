@@ -1,5 +1,6 @@
 import createAddInput from "../inputs/createAddInput";
 import crateRaceContainer from "../race/createRaceContainer";
+import removeCarButton from "../race/removeButton";
 
 export default function createRace(): void {
   const { body } = document;
@@ -14,5 +15,6 @@ export default function createRace(): void {
   body.appendChild(main);
 
   createAddInput();
+  removeCarButton();
   crateRaceContainer();
 }
