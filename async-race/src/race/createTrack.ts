@@ -144,18 +144,22 @@ export default function createTrack(): void {
       const buttonStart = document.createElement("button");
       const buttonStop = document.createElement("button");
       const buttonDeleteCar = document.createElement("button");
+      const buttonSelectCar = document.createElement("button");
 
       buttonStart.classList.add("button-start");
       buttonStop.classList.add("button-stop");
       buttonDeleteCar.classList.add("button-delete");
+      buttonSelectCar.classList.add("button-select");
 
       buttonStart.textContent = "A";
       buttonStop.textContent = "B";
       buttonDeleteCar.textContent = "REMOVE";
+      buttonSelectCar.textContent = "SELECT";
       buttonStop.disabled = true;
 
       raceContainer?.appendChild(track);
 
+      track?.appendChild(buttonSelectCar);
       track?.appendChild(buttonDeleteCar);
       track?.appendChild(buttonStart);
       track?.appendChild(buttonStop);
