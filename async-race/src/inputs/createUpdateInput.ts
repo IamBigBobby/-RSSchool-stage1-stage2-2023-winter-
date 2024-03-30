@@ -48,21 +48,21 @@ export function addCarButton(): void {
   });
 }
 
-export default function createAddInput(): void {
+export default function createUpdateInput(): void {
   const inputCreateCarContainer = document.querySelector(
-    ".input-create-container",
+    ".input-update-container",
   );
   const inputElement = document.createElement("input");
   const colorPicker = document.createElement("input");
   const updateButton = document.createElement("button");
 
-  inputElement.classList.add("input-create");
+  inputElement.classList.add("input-update");
   inputElement.setAttribute("type", "text");
-  colorPicker.classList.add("color-picker-create");
+  colorPicker.classList.add("color-picker-update");
   inputElement.setAttribute("placeholder", "Input car name");
   colorPicker.setAttribute("type", "color");
-  updateButton.classList.add("create-car-button");
-  updateButton.textContent = "CREATE";
+  updateButton.classList.add("update-car-button");
+  updateButton.textContent = "UPDATE";
 
   inputCreateCarContainer?.appendChild(inputElement);
   inputCreateCarContainer?.appendChild(colorPicker);
