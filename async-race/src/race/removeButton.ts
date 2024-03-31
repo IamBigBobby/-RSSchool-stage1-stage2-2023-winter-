@@ -1,5 +1,6 @@
 import GarageData from "../api/getDataGarage";
 import destroyRaceContainer from "../app/destroyRaceContainer";
+import paginationPageAmendment from "../pagination/paginationStatus";
 import createRaceContainer from "./createRaceContainer";
 
 export default function removeCarButton(): void {
@@ -15,7 +16,7 @@ export default function removeCarButton(): void {
       newGarageData
         .getGarageData()
         .then((data) => {
-          const selectedCar = data[index];
+          const selectedCar = data[index + paginationPageAmendment.amendment];
           return selectedCar;
         })
         .then((selectedCar) => {
