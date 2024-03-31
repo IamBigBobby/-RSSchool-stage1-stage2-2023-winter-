@@ -4,6 +4,7 @@ import { MoveCarResult } from "../interfaces/garageInterfaces";
 export default function moveCar(
   idCar: number,
   selectedIndexButton: number,
+  colorCar: string,
 ): Promise<MoveCarResult> {
   return new Promise((resolve) => {
     const newEngineData = new EngineData();
@@ -27,7 +28,7 @@ export default function moveCar(
         .then(() => {
           const time = (animationTime / 1000).toFixed(2);
           const winCar = nameCars[selectedIndexButton].textContent;
-          resolve({ time, winCar, idCar });
+          resolve({ time, winCar, idCar, colorCar });
         })
         .catch(() => {
           car.style.animationPlayState = "paused";

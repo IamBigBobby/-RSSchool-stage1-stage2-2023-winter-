@@ -19,4 +19,5 @@ export interface MoveCarResult {
   time: string;
   winCar: string | null;
   idCar: number;
+  colorCar: string;
 }

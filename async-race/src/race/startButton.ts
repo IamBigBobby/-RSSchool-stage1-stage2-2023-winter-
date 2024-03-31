@@ -23,8 +23,9 @@ export default function startCarButton(): void {
         })
         .then(({ selectedCar, selectedIndexButton }) => {
           const idCar = selectedCar.id;
+          const colorCar = selectedCar.color;
           if (idCar) {
-            moveCar(idCar, selectedIndexButton);
+            moveCar(idCar, selectedIndexButton, colorCar);
           }
         });
     });

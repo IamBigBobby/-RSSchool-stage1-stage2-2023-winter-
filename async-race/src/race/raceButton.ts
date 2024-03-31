@@ -37,7 +37,8 @@ export default function raceButton(): void {
         const selectedCar = data[i + paginationPageAmendment.amendment];
         if (selectedCar && selectedCar.id) {
           const idCar = selectedCar.id;
-          carsTimes.push(moveCar(idCar, selectedIndexButton));
+          const colorCar = selectedCar.color;
+          carsTimes.push(moveCar(idCar, selectedIndexButton, colorCar));
         }
       });
       promises.push(promise);
