@@ -1,4 +1,5 @@
 import GarageData from "../api/getDataGarage";
+import paginationPageAmendment from "../pagination/paginationStatus";
 import backCar from "./backCar";
 
 export default function resetButton(): void {
@@ -27,7 +28,8 @@ export default function resetButton(): void {
       const newGarageData = new GarageData();
       newGarageData.getGarageData().then((data) => {
         const selectedIndexButton = i;
-        const selectedCar = data[i];
+        const selectedCar = data[i + paginationPageAmendment.amendment];
+        console.log(selectedCar);
         if (selectedCar && selectedCar.id) {
           const idCar = selectedCar.id;
           backCar(idCar, selectedIndexButton);
