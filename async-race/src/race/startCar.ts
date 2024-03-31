@@ -27,7 +27,7 @@ export default function moveCar(
         .then(() => {
           const time = (animationTime / 1000).toFixed(2);
           const winCar = nameCars[selectedIndexButton].textContent;
-          resolve({ time, winCar });
+          resolve({ time, winCar, idCar });
         })
         .catch(() => {
           car.style.animationPlayState = "paused";
