@@ -44,7 +44,6 @@ export default function raceButton(): void {
 
     Promise.all(promises).then(() => {
       Promise.any(carsTimes).then((result) => {
-        console.log(result);
         const resetButtonElements = document.querySelector(
           ".button-reset-race",
         ) as HTMLButtonElement;
@@ -54,6 +53,7 @@ export default function raceButton(): void {
           const currentButton = button as HTMLButtonElement;
           currentButton.disabled = false;
         });
+        console.log(result);
       });
     });
   });
