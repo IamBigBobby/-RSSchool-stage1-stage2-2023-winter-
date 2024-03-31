@@ -1,4 +1,5 @@
 import GarageData from "../api/getDataGarage";
+import paginationPageAmendment from "../pagination/paginationStatus";
 
 export const idCarSelected: { id: number | undefined } = {
   id: 0,
@@ -16,11 +17,10 @@ export default function selectButton(): void {
 
       const newGarageData = new GarageData();
       newGarageData.getGarageData().then((data) => {
-        const selectedCar = data[index];
+        const selectedCar = data[index + paginationPageAmendment.amendment];
         const oldName = selectedCar.name;
         const oldColor = selectedCar.color;
         idCarSelected.id = selectedCar.id;
-        console.log(idCarSelected.id);
         const updateInput = document.querySelector(
           ".input-update",
         ) as HTMLInputElement;

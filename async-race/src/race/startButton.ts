@@ -1,4 +1,5 @@
 import GarageData from "../api/getDataGarage";
+import paginationPageAmendment from "../pagination/paginationStatus";
 import moveCar from "./startCar";
 
 export default function startCarButton(): void {
@@ -17,8 +18,7 @@ export default function startCarButton(): void {
         .getGarageData()
         .then((data) => {
           const selectedIndexButton = index;
-          const selectedCar = data[index];
-          console.log(selectedCar);
+          const selectedCar = data[index + paginationPageAmendment.amendment];
           return { selectedCar, selectedIndexButton };
         })
         .then(({ selectedCar, selectedIndexButton }) => {

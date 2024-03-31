@@ -1,5 +1,6 @@
 import GarageData from "../api/getDataGarage";
 import { MoveCarResult } from "../interfaces/garageInterfaces";
+import paginationPageAmendment from "../pagination/paginationStatus";
 import resetButton from "./resetButton";
 import moveCar from "./startCar";
 
@@ -32,7 +33,7 @@ export default function raceButton(): void {
       const newGarageData = new GarageData();
       const promise = newGarageData.getGarageData().then((data) => {
         const selectedIndexButton = i;
-        const selectedCar = data[i];
+        const selectedCar = data[i + paginationPageAmendment.amendment];
         if (selectedCar && selectedCar.id) {
           const idCar = selectedCar.id;
           carsTimes.push(moveCar(idCar, selectedIndexButton));
@@ -43,7 +44,6 @@ export default function raceButton(): void {
 
     Promise.all(promises).then(() => {
       Promise.any(carsTimes).then((result) => {
-        console.log(result);
         const resetButtonElements = document.querySelector(
           ".button-reset-race",
         ) as HTMLButtonElement;
@@ -53,6 +53,7 @@ export default function raceButton(): void {
           const currentButton = button as HTMLButtonElement;
           currentButton.disabled = false;
         });
+        console.log(result);
       });
     });
   });

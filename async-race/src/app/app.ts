@@ -1,5 +1,6 @@
 import createAddInput from "../inputs/createAddInput";
 import createUpdateInput from "../inputs/createUpdateInput";
+import createButtonsPagination from "../pagination/createPagination";
 import crateRaceContainer from "../race/createRaceContainer";
 import removeCarButton from "../race/removeButton";
 
@@ -18,6 +19,7 @@ export default function createRace(): void {
   body.appendChild(inputCreateCarContainer);
   body.appendChild(main);
 
+  createButtonsPagination();
   createUpdateInput();
   createAddInput();
   removeCarButton();

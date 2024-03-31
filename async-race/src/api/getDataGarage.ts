@@ -87,7 +87,7 @@ export default class GarageData {
       fetch(deleteUrl, requestOptions)
         .then((response) => {
           if (response.ok) {
-            console.log("Car deleted successfully");
+            console.log("Car updated successfully");
             resolve();
           }
         })
