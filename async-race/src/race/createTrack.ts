@@ -10,18 +10,31 @@ export default function createTrack(): void {
   const raceContainer = document.querySelector(".race-container");
   const buttonStartRace = document.createElement("button");
   const buttonResetRace = document.createElement("button");
+  const garageStatistics = document.createElement("div");
+  const currentPage = document.createElement("div");
 
   buttonStartRace.classList.add("button-start-race");
   buttonResetRace.classList.add("button-reset-race");
+  garageStatistics.classList.add("garage-statistics");
+  currentPage.classList.add("current-page");
 
   buttonStartRace.textContent = "RACE";
   buttonResetRace.textContent = "RESET";
+  currentPage.textContent = `Page #${paginationPageAmendment.page}`;
   buttonResetRace.disabled = true;
 
   raceContainer?.appendChild(buttonStartRace);
   raceContainer?.appendChild(buttonResetRace);
 
   const newGarage = new GarageData();
+
+  newGarage.getGarageData().then((data) => {
+    const countCars = data.length;
+    garageStatistics.textContent = `Garage(${countCars})`;
+    raceContainer?.appendChild(garageStatistics);
+  });
+
+  raceContainer?.appendChild(currentPage);
 
   newGarage
     .getLimitedGarageData(paginationPageAmendment.page)
