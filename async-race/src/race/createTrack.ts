@@ -28,14 +28,6 @@ export default function createTrack(): void {
 
   const newGarage = new GarageData();
 
-  newGarage.getGarageData().then((data) => {
-    const countCars = data.length;
-    garageStatistics.textContent = `Garage(${countCars})`;
-    raceContainer?.appendChild(garageStatistics);
-  });
-
-  raceContainer?.appendChild(currentPage);
-
   newGarage
     .getLimitedGarageData(paginationPageAmendment.page)
     .then((garage) => {
@@ -186,5 +178,14 @@ export default function createTrack(): void {
       resetButton();
       startCarButton();
       backCarButton();
+    })
+    .then(() => {
+      newGarage.getGarageData().then((data) => {
+        const countCars = data.length;
+        garageStatistics.textContent = `Garage(${countCars})`;
+        raceContainer?.appendChild(garageStatistics);
+      });
+
+      raceContainer?.appendChild(currentPage);
     });
 }
