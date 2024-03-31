@@ -34,7 +34,6 @@ export function updateCarButton(): void {
   const updateButton = document.querySelector(".update-car-button");
   updateButton?.addEventListener("click", () => {
     if (carUpdate.name && carUpdate.color) {
-      console.log("полученный id", idCarSelected.id);
       const currentId = idCarSelected.id;
       const newGarageData = new GarageData();
       const updateCar = {

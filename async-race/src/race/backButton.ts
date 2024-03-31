@@ -38,7 +38,6 @@ export default function backCarButton() {
       newGarageData.getGarageData().then((data) => {
         const selectedIndexButton = index;
         const selectedCar = data[index + paginationPageAmendment.amendment];
-        console.log(selectedCar);
         if (selectedCar && selectedCar.id) {
           const idCar = selectedCar.id;
           backCar(idCar, selectedIndexButton);

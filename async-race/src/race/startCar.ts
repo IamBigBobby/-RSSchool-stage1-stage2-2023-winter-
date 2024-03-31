@@ -27,6 +27,7 @@ export default function moveCar(
         .then(() => {
           const time = (animationTime / 1000).toFixed(2);
           const winCar = nameCars[selectedIndexButton].textContent;
+          // console.log({ time, winCar, idCar });
           resolve({ time, winCar, idCar });
         })
         .catch(() => {

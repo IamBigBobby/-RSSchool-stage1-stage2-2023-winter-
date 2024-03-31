@@ -5,7 +5,6 @@ import paginationPageAmendment from "./paginationStatus";
 export function stepLeft(): void {
   paginationPageAmendment.page -= 1;
   paginationPageAmendment.amendment -= 7;
-  console.log(paginationPageAmendment.page, paginationPageAmendment.amendment);
   destroyRaceContainer();
   createRaceContainer();
 }
@@ -13,7 +12,6 @@ export function stepLeft(): void {
 export function stepRight(): void {
   paginationPageAmendment.page += 1;
   paginationPageAmendment.amendment += 7;
-  console.log(paginationPageAmendment.page, paginationPageAmendment.amendment);
   destroyRaceContainer();
   createRaceContainer();
 }
