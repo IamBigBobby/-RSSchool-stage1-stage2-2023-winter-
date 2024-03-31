@@ -1,6 +1,6 @@
 import createAddInput from "../inputs/createAddInput";
 import createUpdateInput from "../inputs/createUpdateInput";
-import createButtonsPagination from "../pagination/pagination";
+import createButtonsPagination from "../pagination/createPagination";
 import crateRaceContainer from "../race/createRaceContainer";
 import removeCarButton from "../race/removeButton";
 

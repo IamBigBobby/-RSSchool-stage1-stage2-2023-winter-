@@ -1,19 +1,4 @@
-export const paginationPageAmendment: { page: number; amendment: number } = {
-  page: 1,
-  amendment: 0,
-};
-
-function stepLeft(): void {
-  paginationPageAmendment.page -= 1;
-  paginationPageAmendment.amendment -= 7;
-  console.log(paginationPageAmendment.page, paginationPageAmendment.amendment);
-}
-
-function stepRight(): void {
-  paginationPageAmendment.page += 1;
-  paginationPageAmendment.amendment += 7;
-  console.log(paginationPageAmendment.page, paginationPageAmendment.amendment);
-}
+import { stepLeft, stepRight } from "./movePagination";
 
 export default function createButtonsPagination(): void {
   const { body } = document;

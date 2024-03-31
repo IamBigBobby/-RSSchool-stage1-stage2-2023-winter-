@@ -1,4 +1,5 @@
 import GarageData from "../api/getDataGarage";
+import paginationPageAmendment from "../pagination/paginationStatus";
 import backCarButton from "./backButton";
 import raceButton from "./raceButton";
 import resetButton from "./resetButton";
@@ -22,21 +23,23 @@ export default function createTrack(): void {
 
   const newGarage = new GarageData();
 
-  newGarage.getLimitedGarageData(1).then((garage) => {
-    for (let i = 0; i < garage.length; i += 1) {
-      const track = document.createElement("div");
-      track.classList.add("track");
+  newGarage
+    .getLimitedGarageData(paginationPageAmendment.page)
+    .then((garage) => {
+      for (let i = 0; i < garage.length; i += 1) {
+        const track = document.createElement("div");
+        track.classList.add("track");
 
-      const carName = document.createElement("div");
-      const road = document.createElement("div");
+        const carName = document.createElement("div");
+        const road = document.createElement("div");
 
-      carName.classList.add("car-name");
-      carName.textContent = garage[i].name;
-      road.classList.add("road");
+        carName.classList.add("car-name");
+        carName.textContent = garage[i].name;
+        road.classList.add("road");
 
-      const carSvg = document.createElement("div");
-      carSvg.classList.add("car-container");
-      carSvg.innerHTML = `
+        const carSvg = document.createElement("div");
+        carSvg.classList.add("car-container");
+        carSvg.innerHTML = `
       <svg class="car" version="1.0" xmlns="http://www.w3.org/2000/svg"
       width="1280.000000pt" height="640.000000pt" viewBox="0 0 1280.000000 640.000000"
       preserveAspectRatio="xMidYMid meet">
@@ -137,38 +140,38 @@ export default function createTrack(): void {
       </svg>
       `;
 
-      road.appendChild(carSvg);
+        road.appendChild(carSvg);
 
-      track.appendChild(carName);
-      track.appendChild(road);
+        track.appendChild(carName);
+        track.appendChild(road);
 
-      const buttonStart = document.createElement("button");
-      const buttonStop = document.createElement("button");
-      const buttonDeleteCar = document.createElement("button");
-      const buttonSelectCar = document.createElement("button");
+        const buttonStart = document.createElement("button");
+        const buttonStop = document.createElement("button");
+        const buttonDeleteCar = document.createElement("button");
+        const buttonSelectCar = document.createElement("button");
 
-      buttonStart.classList.add("button-start");
-      buttonStop.classList.add("button-stop");
-      buttonDeleteCar.classList.add("button-delete");
-      buttonSelectCar.classList.add("button-select");
+        buttonStart.classList.add("button-start");
+        buttonStop.classList.add("button-stop");
+        buttonDeleteCar.classList.add("button-delete");
+        buttonSelectCar.classList.add("button-select");
 
-      buttonStart.textContent = "A";
-      buttonStop.textContent = "B";
-      buttonDeleteCar.textContent = "REMOVE";
-      buttonSelectCar.textContent = "SELECT";
-      buttonStop.disabled = true;
+        buttonStart.textContent = "A";
+        buttonStop.textContent = "B";
+        buttonDeleteCar.textContent = "REMOVE";
+        buttonSelectCar.textContent = "SELECT";
+        buttonStop.disabled = true;
 
-      raceContainer?.appendChild(track);
+        raceContainer?.appendChild(track);
 
-      track?.appendChild(buttonSelectCar);
-      track?.appendChild(buttonDeleteCar);
-      track?.appendChild(buttonStart);
-      track?.appendChild(buttonStop);
-    }
-    selectButton();
-    raceButton();
-    resetButton();
-    startCarButton();
-    backCarButton();
-  });
+        track?.appendChild(buttonSelectCar);
+        track?.appendChild(buttonDeleteCar);
+        track?.appendChild(buttonStart);
+        track?.appendChild(buttonStop);
+      }
+      selectButton();
+      raceButton();
+      resetButton();
+      startCarButton();
+      backCarButton();
+    });
 }
