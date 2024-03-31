@@ -29,7 +29,6 @@ export default function resetButton(): void {
       newGarageData.getGarageData().then((data) => {
         const selectedIndexButton = i;
         const selectedCar = data[i + paginationPageAmendment.amendment];
-        console.log(selectedCar);
         if (selectedCar && selectedCar.id) {
           const idCar = selectedCar.id;
           backCar(idCar, selectedIndexButton);
