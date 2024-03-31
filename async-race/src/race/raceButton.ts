@@ -27,10 +27,11 @@ export default function raceButton(): void {
     const carsLenght = document.querySelectorAll(".car-container").length;
 
     const carsTimes: Promise<MoveCarResult>[] = [];
-    const promises: Promise<void>[] = [];
+    const promises = [];
+
+    const newGarageData = new GarageData();
 
     for (let i = 0; i < carsLenght; i += 1) {
-      const newGarageData = new GarageData();
       const promise = newGarageData.getGarageData().then((data) => {
         const selectedIndexButton = i;
         const selectedCar = data[i + paginationPageAmendment.amendment];

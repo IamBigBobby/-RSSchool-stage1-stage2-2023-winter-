@@ -1,3 +1,7 @@
+import GarageData from "../api/getDataGarage";
+import destroyRaceContainer from "../app/destroyRaceContainer";
+import createRaceContainer from "./createRaceContainer";
+
 function getRandomElement(array: string[]) {
   const randomIndex = Math.floor(Math.random() * array.length);
   return array[randomIndex];
@@ -54,6 +58,18 @@ function generateCar(): { name: string; color: string } {
 }
 
 export default function addNewCars(): void {
-  const newCar = generateCar();
-  console.log(newCar);
+  const promises = [];
+
+  const newGarageData = new GarageData();
+
+  for (let i = 0; i < 100; i += 1) {
+    const newCar = generateCar();
+    const promise = newGarageData.addCar(newCar);
+    promises.push(promise);
+  }
+
+  Promise.all(promises).then(() => {
+    destroyRaceContainer();
+    createRaceContainer();
+  });
 }
