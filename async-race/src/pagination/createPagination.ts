@@ -7,8 +7,9 @@ export default function createButtonsPagination(): void {
 
   leftPagination.classList.add("button-left-pagination");
   rightPagination.classList.add("button-right-pagiantion");
-  leftPagination.textContent = "LEFT";
-  rightPagination.textContent = "RIGHT";
+  leftPagination.textContent = "PREV";
+  rightPagination.textContent = "NEXT";
+  leftPagination.disabled = true;
 
   body.appendChild(leftPagination);
   body.appendChild(rightPagination);

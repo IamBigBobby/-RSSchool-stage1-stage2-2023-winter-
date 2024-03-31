@@ -19,7 +19,6 @@ export default function startCarButton(): void {
         .then((data) => {
           const selectedIndexButton = index;
           const selectedCar = data[index + paginationPageAmendment.amendment];
-          console.log(selectedCar);
           return { selectedCar, selectedIndexButton };
         })
         .then(({ selectedCar, selectedIndexButton }) => {
