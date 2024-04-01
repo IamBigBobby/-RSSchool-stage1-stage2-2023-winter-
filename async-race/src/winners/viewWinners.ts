@@ -76,14 +76,22 @@ export default function viewWinners(
 
   const currentPage = document.createElement("div");
   const currentNumberPage = document.createElement("div");
+  const leftWinnerPagination = document.createElement("button");
+  const rightWinnerPagination = document.createElement("button");
 
   currentPage.classList.add("current-page-winner");
   currentNumberPage.classList.add("current-page-winner-number");
+  leftWinnerPagination.classList.add("left-winner-pagination");
+  rightWinnerPagination.classList.add("right-winner-pagination");
 
   currentNumberPage.textContent = `Page# ${paginationWinners.page}`;
+  leftWinnerPagination.textContent = "PREV";
+  rightWinnerPagination.textContent = "NEXT";
 
   winnersPage?.appendChild(currentNumberPage);
   winnersPage?.appendChild(currentPage);
+  winnersPage?.appendChild(leftWinnerPagination);
+  winnersPage?.appendChild(rightWinnerPagination);
 
   const arrWinCars: WinCarsArray = [];
 
