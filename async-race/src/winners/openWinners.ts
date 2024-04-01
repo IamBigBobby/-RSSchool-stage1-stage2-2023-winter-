@@ -1,5 +1,4 @@
 export default function openWinners(): void {
-  console.log("open winners");
   const winnerView = document.querySelector(".winners-page") as HTMLElement;
   const inputUpdateContainer = document.querySelector(
     ".input-update-container",

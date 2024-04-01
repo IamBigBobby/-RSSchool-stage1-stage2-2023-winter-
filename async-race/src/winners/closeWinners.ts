@@ -1,5 +1,4 @@
 export default function closeWinners(): void {
-  console.log("close winners");
   const winnerView = document.querySelector(".winners-page") as HTMLElement;
   const raceViewButton = document.querySelector(
     ".race-view-button",
