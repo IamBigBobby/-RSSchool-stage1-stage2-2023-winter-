@@ -2,6 +2,7 @@ import GarageData from "../api/getDataGarage";
 import { MoveCarResult } from "../interfaces/garageInterfaces";
 import { UpdateWinCar, WinCar } from "../interfaces/winnerInterfaces";
 import paginationPageAmendment from "../pagination/paginationStatus";
+import showPopUpWinner from "../popUp/showPopUpWinner";
 import destroyViewWinners from "../winners/destroyViewWinners";
 import paginationWinners from "../winners/paginationWinnersStatus";
 import viewWinners from "../winners/viewWinners";
@@ -50,6 +51,8 @@ export default function raceButton(): void {
 
     Promise.all(promises).then(() => {
       Promise.any(carsTimes).then((result) => {
+        showPopUpWinner();
+
         const resetButtonElements = document.querySelector(
           ".button-reset-race",
         ) as HTMLButtonElement;
