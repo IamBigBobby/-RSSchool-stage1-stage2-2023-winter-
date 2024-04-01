@@ -3,6 +3,7 @@ import { MoveCarResult } from "../interfaces/garageInterfaces";
 import { UpdateWinCar, WinCar } from "../interfaces/winnerInterfaces";
 import paginationPageAmendment from "../pagination/paginationStatus";
 import destroyViewWinners from "../winners/destroyViewWinners";
+import paginationWinners from "../winners/paginationWinnersStatus";
 import viewWinners from "../winners/viewWinners";
 import resetButton from "./resetButton";
 import moveCar from "./startCar";
@@ -69,7 +70,7 @@ export default function raceButton(): void {
             };
             newGarageData.addCarWinner(newWinner).then(() => {
               destroyViewWinners().then(() => {
-                viewWinners();
+                viewWinners(paginationWinners.page, paginationWinners.sortBy);
               });
             });
           } else {
@@ -88,7 +89,7 @@ export default function raceButton(): void {
               };
               newGarageData.updateWinCar(currentId, updateDate).then(() => {
                 destroyViewWinners().then(() => {
-                  viewWinners();
+                  viewWinners(paginationWinners.page, paginationWinners.sortBy);
                 });
               });
             });

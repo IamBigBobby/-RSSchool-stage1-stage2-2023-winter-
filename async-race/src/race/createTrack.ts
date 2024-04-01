@@ -2,6 +2,7 @@ import GarageData from "../api/getDataGarage";
 import paginationPageAmendment from "../pagination/paginationStatus";
 import closeWinners from "../winners/closeWinners";
 import openWinners from "../winners/openWinners";
+import paginationWinners from "../winners/paginationWinnersStatus";
 import viewWinners from "../winners/viewWinners";
 import backCarButton from "./backButton";
 import raceButton from "./raceButton";
@@ -199,6 +200,6 @@ export default function createTrack(): void {
       });
 
       raceContainer?.appendChild(currentPage);
-      viewWinners();
+      viewWinners(paginationWinners.page, paginationWinners.sortBy);
     });
 }

@@ -66,8 +66,8 @@ function createWinners(arrWinCars: WinCarsArray): void {
 }
 
 export default function viewWinners(
-  page = 1,
-  sortBy: "time" | "id" | "wins" = "id",
+  page: number,
+  sortBy: "time" | "id" | "wins",
 ): void {
   const winnersPage = document.querySelector(".winners-page");
 
