@@ -51,7 +51,11 @@ export default function raceButton(): void {
 
     Promise.all(promises).then(() => {
       Promise.any(carsTimes).then((result) => {
-        showPopUpWinner();
+        console.log(result);
+        const winName = result.winCar;
+        if (winName) {
+          showPopUpWinner(winName);
+        }
 
         const resetButtonElements = document.querySelector(
           ".button-reset-race",

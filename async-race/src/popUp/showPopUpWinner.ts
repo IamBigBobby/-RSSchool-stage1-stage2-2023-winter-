@@ -1,9 +1,9 @@
-export default function showPopUpWinner(): void {
+export default function showPopUpWinner(winCar: string): void {
   const { body } = document;
 
   const popUp = document.createElement("div");
   popUp.classList.add("pop-up");
-  popUp.textContent = "Тест";
+  popUp.textContent = `${winCar} win!!!`;
 
   body.appendChild(popUp);
 
