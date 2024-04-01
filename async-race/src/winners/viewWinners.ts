@@ -4,6 +4,7 @@ import {
   PushWinCarArr,
   WinCarsArray,
 } from "../interfaces/winnerInterfaces";
+import paginationWinners from "./paginationWinnersStatus";
 
 function renderFunction(arrWinnresRender: PushWinCarArr): void {
   const currentWinnerPage = document.querySelector(".current-page-winner");
@@ -69,15 +70,20 @@ export default function viewWinners(
   page: number,
   sortBy: "time" | "id" | "wins",
 ): void {
+  const newDataGarage = new GarageData();
+
   const winnersPage = document.querySelector(".winners-page");
 
   const currentPage = document.createElement("div");
+  const currentNumberPage = document.createElement("div");
 
   currentPage.classList.add("current-page-winner");
+  currentNumberPage.classList.add("current-page-winner-number");
 
+  currentNumberPage.textContent = `Page# ${paginationWinners.page}`;
+
+  winnersPage?.appendChild(currentNumberPage);
   winnersPage?.appendChild(currentPage);
-
-  const newDataGarage = new GarageData();
 
   const arrWinCars: WinCarsArray = [];
 

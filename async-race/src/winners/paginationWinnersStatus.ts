@@ -1,5 +1,5 @@
 const paginationWinners = {
-  page: 1,
+  page: 2,
   sortBy: "id" as "time" | "id" | "wins",
 };
 
