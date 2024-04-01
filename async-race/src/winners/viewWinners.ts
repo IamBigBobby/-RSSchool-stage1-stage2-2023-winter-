@@ -65,7 +65,10 @@ function createWinners(arrWinCars: WinCarsArray): void {
   });
 }
 
-export default function viewWinners(): void {
+export default function viewWinners(
+  page = 1,
+  sortBy: "time" | "id" | "wins" = "id",
+): void {
   const winnersPage = document.querySelector(".winners-page");
 
   const currentPage = document.createElement("div");
@@ -78,7 +81,7 @@ export default function viewWinners(): void {
 
   const arrWinCars: WinCarsArray = [];
 
-  newDataGarage.getWinnersGarageData(1, "id", "ASC").then((data) => {
+  newDataGarage.getWinnersGarageData(page, sortBy, "ASC").then((data) => {
     const promises = data.map((carData) =>
       newDataGarage.getCarWinner(carData.id),
     );
