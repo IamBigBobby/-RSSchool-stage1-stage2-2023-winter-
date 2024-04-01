@@ -1,0 +1,33 @@
+.winners-page {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    z-index: 1;
+    display: none;
+}
+
+.win-car {
+    display: flex;
+    width: 200px;
+}
+
+.win-car * {
+    border: 1px solid black;
+}
+
+.number-of-table {
+    width: 30px;
+}
+
+.win-car-name {
+    width: 100px;
+}
+
+.win-car-wins {
+    width: 30px;
+}
+
+.win-car-time {
+    width: 30px;
+}

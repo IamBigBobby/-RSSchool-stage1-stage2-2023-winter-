@@ -1,6 +1,10 @@
 import GarageData from "../api/getDataGarage";
 import { MoveCarResult } from "../interfaces/garageInterfaces";
+import { UpdateWinCar, WinCar } from "../interfaces/winnerInterfaces";
 import paginationPageAmendment from "../pagination/paginationStatus";
+import destroyViewWinners from "../winners/destroyViewWinners";
+import paginationWinners from "../winners/paginationWinnersStatus";
+import viewWinners from "../winners/viewWinners";
 import resetButton from "./resetButton";
 import moveCar from "./startCar";
 
@@ -55,7 +59,42 @@ export default function raceButton(): void {
           const currentButton = button as HTMLButtonElement;
           currentButton.disabled = false;
         });
-        console.log(result);
+        const idWinCar = result.idCar;
+        const winTime = Number(result.time);
+        newGarageData.getCarWinner(idWinCar).then((winCar) => {
+          if (Object.keys(winCar).length === 0) {
+            const newWinner: WinCar = {
+              id: idWinCar,
+              wins: 1,
+              time: winTime,
+            };
+            newGarageData.addCarWinner(newWinner).then(() => {
+              destroyViewWinners().then(() => {
+                viewWinners(paginationWinners.page, paginationWinners.sortBy);
+              });
+            });
+          } else {
+            newGarageData.getCarWinner(idWinCar).then((idWinCarBase) => {
+              const currentId = idWinCarBase.id;
+              let currentTime;
+              if (idWinCarBase.time > winTime) {
+                currentTime = winTime;
+              } else {
+                currentTime = idWinCarBase.time;
+              }
+              const updatedWins = idWinCarBase.wins + 1;
+              const updateDate: UpdateWinCar = {
+                wins: updatedWins,
+                time: currentTime,
+              };
+              newGarageData.updateWinCar(currentId, updateDate).then(() => {
+                destroyViewWinners().then(() => {
+                  viewWinners(paginationWinners.page, paginationWinners.sortBy);
+                });
+              });
+            });
+          }
+        });
       });
     });
   });
