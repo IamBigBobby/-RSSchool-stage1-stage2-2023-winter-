@@ -17,6 +17,20 @@ export default function raceButton(): void {
     resetButton();
     const backButtons = document.querySelectorAll(".button-stop");
     const startButtons = document.querySelectorAll(".button-start");
+    const selectButtons = document.querySelectorAll(".button-select");
+    const removeButtons = document.querySelectorAll(".button-delete");
+    const racePaginationLeft = document.querySelector(
+      ".button-left-pagination",
+    ) as HTMLButtonElement;
+    const racePaginationRight = document.querySelector(
+      ".button-right-pagiantion",
+    ) as HTMLButtonElement;
+    const generateButton = document.querySelector(
+      ".button-generate-cars",
+    ) as HTMLButtonElement;
+    const createButton = document.querySelector(
+      ".create-car-button",
+    ) as HTMLButtonElement;
 
     backButtons.forEach((button) => {
       const currentButton = button as HTMLButtonElement;
@@ -28,7 +42,22 @@ export default function raceButton(): void {
       currentButton.disabled = true;
     });
 
+    selectButtons.forEach((button) => {
+      const currentButton = button as HTMLButtonElement;
+      currentButton.disabled = true;
+    });
+
+    removeButtons.forEach((button) => {
+      const currentButton = button as HTMLButtonElement;
+      currentButton.disabled = true;
+    });
+
     raceButtonElement.disabled = true;
+    racePaginationLeft.disabled = true;
+    racePaginationRight.disabled = true;
+    generateButton.disabled = true;
+    createButton.disabled = true;
+
     const carsLenght = document.querySelectorAll(".car-container").length;
 
     const carsTimes: Promise<MoveCarResult>[] = [];
@@ -51,7 +80,6 @@ export default function raceButton(): void {
 
     Promise.all(promises).then(() => {
       Promise.any(carsTimes).then((result) => {
-        console.log(result);
         const winName = result.winCar;
         if (winName) {
           showPopUpWinner(winName);
@@ -66,6 +94,25 @@ export default function raceButton(): void {
           const currentButton = button as HTMLButtonElement;
           currentButton.disabled = false;
         });
+
+        selectButtons.forEach((button) => {
+          const currentButton = button as HTMLButtonElement;
+          currentButton.disabled = false;
+        });
+
+        removeButtons.forEach((button) => {
+          const currentButton = button as HTMLButtonElement;
+          currentButton.disabled = false;
+        });
+
+        racePaginationLeft.disabled = false;
+
+        racePaginationRight.disabled = false;
+
+        generateButton.disabled = false;
+
+        createButton.disabled = false;
+
         const idWinCar = result.idCar;
         const winTime = Number(result.time);
         newGarageData.getCarWinner(idWinCar).then((winCar) => {
