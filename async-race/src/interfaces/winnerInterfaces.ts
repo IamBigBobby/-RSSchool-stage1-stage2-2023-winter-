@@ -5,3 +5,8 @@ export interface WinCar {
 }
 
 export interface WinCarsArray extends Array<WinCar> {}
+
+export interface UpdateWinCar {
+  wins: number;
+  time: number;
+}

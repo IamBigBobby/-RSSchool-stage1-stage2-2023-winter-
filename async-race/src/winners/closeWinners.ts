@@ -19,6 +19,9 @@ export default function closeWinners(): void {
   const buttonRightPagination = document.querySelector(
     ".button-right-pagiantion",
   ) as HTMLButtonElement;
+  const generateButton = document.querySelector(
+    ".button-generate-cars",
+  ) as HTMLButtonElement;
   winnerView.style.display = "none";
   inputUpdateContainer.style.display = "flex";
   inputCreateContainer.style.display = "flex";
@@ -26,4 +29,5 @@ export default function closeWinners(): void {
   winnersButton.style.display = "block";
   buttonLeftPagination.style.display = "inline-block";
   buttonRightPagination.style.display = "inline-block";
+  generateButton.style.display = "block";
 }

@@ -19,9 +19,10 @@ export default function viewWinners(): void {
     for (let i = 0; i < countCars; i += 1) {
       newDataGarage.getCar(data[i].id).then((car) => {
         arrWinCars.push(car);
+        if (Object.keys(car).length === 0) {
+          console.log("first time");
+        }
       });
     }
   });
-
-  console.log(arrWinCars);
 }

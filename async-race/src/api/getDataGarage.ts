@@ -1,5 +1,9 @@
 import { Car, CarsArray } from "../interfaces/garageInterfaces";
-import { WinCarsArray } from "../interfaces/winnerInterfaces";
+import {
+  UpdateWinCar,
+  WinCar,
+  WinCarsArray,
+} from "../interfaces/winnerInterfaces";
 
 export default class GarageData {
   private garage: string = "http://127.0.0.1:3000/garage";
@@ -114,5 +118,59 @@ export default class GarageData {
       .catch((error) => {
         console.error(error.message);
       });
+  }
+
+  public getCarWinner(carNumber: number): Promise<WinCar> {
+    return fetch(`${this.winners}/${carNumber}`)
+      .then((response) => {
+        return response.json();
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+  }
+
+  public addCarWinner(newCar: WinCar): Promise<void> {
+    return new Promise<void>((resolve) => {
+      const requestOptions = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newCar),
+      };
+
+      fetch(this.winners, requestOptions).then((response) => {
+        if (response.ok) {
+          resolve();
+        }
+      });
+    });
+  }
+
+  public updateWinCar(
+    carNumber: number,
+    updateCar: UpdateWinCar,
+  ): Promise<void> {
+    return new Promise((resolve) => {
+      const deleteUrl = `${this.winners}/${carNumber}`;
+      const requestOptions = {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updateCar),
+      };
+      fetch(deleteUrl, requestOptions)
+        .then((response) => {
+          if (response.ok) {
+            console.log("Car updated successfully");
+            resolve();
+          }
+        })
+        .catch((error) => {
+          console.error(error.message);
+        });
+    });
   }
 }
