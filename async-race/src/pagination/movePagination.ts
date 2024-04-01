@@ -10,7 +10,6 @@ export function stepLeft(): void {
   const newGarageData = new GarageData();
   paginationPageAmendment.page -= 1;
   paginationPageAmendment.amendment -= 7;
-  console.log(paginationPageAmendment.page);
   destroyRaceContainer();
   createRaceContainer();
   newGarageData.getLimitedGarageData(paginationPageAmendment.page);
@@ -20,7 +19,6 @@ export function stepRight(): void {
   const newGarageData = new GarageData();
   paginationPageAmendment.page += 1;
   paginationPageAmendment.amendment += 7;
-  console.log(paginationPageAmendment.page);
   destroyRaceContainer();
   createRaceContainer();
   newGarageData.getLimitedGarageData(paginationPageAmendment.page);
