@@ -1,5 +1,8 @@
 import GarageData from "../api/getDataGarage";
 import paginationPageAmendment from "../pagination/paginationStatus";
+import closeWinners from "../winners/closeWinners";
+import openWinners from "../winners/openWinners";
+import viewWinners from "../winners/viewWinners";
 import backCarButton from "./backButton";
 import raceButton from "./raceButton";
 import resetButton from "./resetButton";
@@ -7,15 +10,23 @@ import selectButton from "./selectButton";
 import startCarButton from "./startButton";
 
 export default function createTrack(): void {
+  const openWinnersButton = document.querySelector(".winner-view-button");
+  const closeWinnerButton = document.querySelector(".race-view-button");
+
+  openWinnersButton?.addEventListener("click", openWinners);
+  closeWinnerButton?.addEventListener("click", closeWinners);
+
   const raceContainer = document.querySelector(".race-container");
   const buttonStartRace = document.createElement("button");
   const buttonResetRace = document.createElement("button");
   const garageStatistics = document.createElement("div");
   const currentPage = document.createElement("div");
+  const winnerPage = document.createElement("div");
 
   buttonStartRace.classList.add("button-start-race");
   buttonResetRace.classList.add("button-reset-race");
   garageStatistics.classList.add("garage-statistics");
+  winnerPage.classList.add("winners-page");
   currentPage.classList.add("current-page");
 
   buttonStartRace.textContent = "RACE";
@@ -25,6 +36,7 @@ export default function createTrack(): void {
 
   raceContainer?.appendChild(buttonStartRace);
   raceContainer?.appendChild(buttonResetRace);
+  raceContainer?.appendChild(winnerPage);
 
   const newGarage = new GarageData();
 
@@ -187,5 +199,6 @@ export default function createTrack(): void {
       });
 
       raceContainer?.appendChild(currentPage);
+      viewWinners();
     });
 }
