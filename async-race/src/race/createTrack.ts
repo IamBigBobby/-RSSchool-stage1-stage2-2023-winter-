@@ -1,6 +1,7 @@
 import GarageData from "../api/getDataGarage";
 import paginationPageAmendment from "../pagination/paginationStatus";
 import closeWinners from "../winners/closeWinners";
+import createWinnerPagination from "../winners/createWinnerPagiantion";
 import openWinners from "../winners/openWinners";
 import paginationWinners from "../winners/paginationWinnersStatus";
 import viewWinners from "../winners/viewWinners";
@@ -201,5 +202,6 @@ export default function createTrack(): void {
 
       raceContainer?.appendChild(currentPage);
       viewWinners(paginationWinners.page, paginationWinners.sortBy);
+      createWinnerPagination();
     });
 }
