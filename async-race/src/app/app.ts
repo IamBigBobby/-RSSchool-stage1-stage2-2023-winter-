@@ -24,11 +24,12 @@ export default function createRace(): void {
   generateButton.textContent = "GENERATE";
   raceViewButton.textContent = "RACE VIEW";
   winnerViewButton.textContent = "WINNER VIEW";
+  raceViewButton.style.display = "none";
 
-  body.appendChild(inputUpdateContainer);
-  body.appendChild(inputCreateCarContainer);
   body.appendChild(winnerViewButton);
   body.appendChild(raceViewButton);
+  body.appendChild(inputUpdateContainer);
+  body.appendChild(inputCreateCarContainer);
   body.appendChild(generateButton);
   body.appendChild(main);
 

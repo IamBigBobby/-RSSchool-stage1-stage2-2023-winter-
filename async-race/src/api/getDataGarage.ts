@@ -1,10 +1,13 @@
 import { Car, CarsArray } from "../interfaces/garageInterfaces";
+import { WinCarsArray } from "../interfaces/winnerInterfaces";
 
 export default class GarageData {
-  private link: string = "http://127.0.0.1:3000/garage";
+  private garage: string = "http://127.0.0.1:3000/garage";
+
+  private winners: string = "http://127.0.0.1:3000/winners";
 
   public getGarageData(): Promise<CarsArray> {
-    return fetch(this.link)
+    return fetch(this.garage)
       .then((response) => {
         return response.json();
       })
@@ -23,7 +26,7 @@ export default class GarageData {
         body: JSON.stringify(newCar),
       };
 
-      fetch(this.link, requestOptions).then((response) => {
+      fetch(this.garage, requestOptions).then((response) => {
         if (response.ok) {
           resolve();
         }
@@ -32,7 +35,7 @@ export default class GarageData {
   }
 
   public getCar(carNumber: number): Promise<Car> {
-    return fetch(`${this.link}/${carNumber}`)
+    return fetch(`${this.garage}/${carNumber}`)
       .then((response) => {
         return response.json();
       })
@@ -45,7 +48,7 @@ export default class GarageData {
     page: number,
     limit: number = 7,
   ): Promise<CarsArray> {
-    const url = `${this.link}/?_page=${page}&_limit=${limit}`;
+    const url = `${this.garage}/?_page=${page}&_limit=${limit}`;
     return fetch(url)
       .then((response) => {
         return response.json();
@@ -57,7 +60,7 @@ export default class GarageData {
 
   public deleteCar(carNumber: number): Promise<void> {
     return new Promise((resolve) => {
-      const deleteUrl = `${this.link}/${carNumber}`;
+      const deleteUrl = `${this.garage}/${carNumber}`;
       const requestOptions = {
         method: "DELETE",
       };
@@ -76,7 +79,7 @@ export default class GarageData {
 
   public updateCar(carNumber: number, updateCar: Car): Promise<void> {
     return new Promise((resolve) => {
-      const deleteUrl = `${this.link}/${carNumber}`;
+      const deleteUrl = `${this.garage}/${carNumber}`;
       const requestOptions = {
         method: "PUT",
         headers: {
@@ -95,5 +98,21 @@ export default class GarageData {
           console.error(error.message);
         });
     });
+  }
+
+  public getWinnersGarageData(
+    page: number,
+    sort: "id" | "wins" | "time",
+    order: "ASC" | "DESC",
+    limit: number = 7,
+  ): Promise<WinCarsArray> {
+    const url = `${this.winners}/?_page=${page}&_limit=${limit}&_sort=${sort}&_order=${order}`;
+    return fetch(url)
+      .then((response) => {
+        return response.json();
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
   }
 }

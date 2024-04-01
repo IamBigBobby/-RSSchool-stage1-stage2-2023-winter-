@@ -34,9 +34,9 @@ export default function createTrack(): void {
   currentPage.textContent = `Page #${paginationPageAmendment.page}`;
   buttonResetRace.disabled = true;
 
+  raceContainer?.appendChild(winnerPage);
   raceContainer?.appendChild(buttonStartRace);
   raceContainer?.appendChild(buttonResetRace);
-  raceContainer?.appendChild(winnerPage);
 
   const newGarage = new GarageData();
 
