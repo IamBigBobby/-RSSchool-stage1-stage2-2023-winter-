@@ -23,8 +23,10 @@ export default function removeCarButton(): void {
           const idCar = selectedCar.id;
           if (idCar) {
             newGarageData.deleteCar(idCar).then(() => {
-              destroyRaceContainer();
-              createRaceContainer();
+              newGarageData.deleteWinnerCar(idCar).then(() => {
+                destroyRaceContainer();
+                createRaceContainer();
+              });
             });
           }
         });

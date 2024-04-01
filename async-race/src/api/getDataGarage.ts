@@ -71,7 +71,6 @@ export default class GarageData {
       fetch(deleteUrl, requestOptions)
         .then((response) => {
           if (response.ok) {
-            console.log("Car deleted successfully");
             resolve();
           }
         })
@@ -94,7 +93,6 @@ export default class GarageData {
       fetch(deleteUrl, requestOptions)
         .then((response) => {
           if (response.ok) {
-            console.log("Car updated successfully");
             resolve();
           }
         })
@@ -125,9 +123,7 @@ export default class GarageData {
       .then((response) => {
         return response.json();
       })
-      .catch((error) => {
-        console.error(error.message);
-      });
+      .catch(() => {});
   }
 
   public addCarWinner(newCar: WinCar): Promise<void> {
@@ -164,7 +160,24 @@ export default class GarageData {
       fetch(deleteUrl, requestOptions)
         .then((response) => {
           if (response.ok) {
-            console.log("Car updated successfully");
+            resolve();
+          }
+        })
+        .catch((error) => {
+          console.error(error.message);
+        });
+    });
+  }
+
+  public deleteWinnerCar(carNumber: number): Promise<void> {
+    return new Promise((resolve) => {
+      const deleteUrl = `${this.winners}/${carNumber}`;
+      const requestOptions = {
+        method: "DELETE",
+      };
+      fetch(deleteUrl, requestOptions)
+        .then((response) => {
+          if (response.ok) {
             resolve();
           }
         })
