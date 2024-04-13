@@ -6,6 +6,7 @@ export default function renderTestButtons(): void {
   const { body } = document;
 
   const buttonsData = [
+    { tagName: "input", classNames: ["input-name"] },
     { tagName: "button", classNames: ["log-in-button"], textContent: "login" },
     {
       tagName: "button",

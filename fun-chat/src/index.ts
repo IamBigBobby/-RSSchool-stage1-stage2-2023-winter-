@@ -1,10 +1,16 @@
+import WebSocketClient from "./api/server";
 import renderTestButtons from "./render/test";
 import "./style.scss";
 
-// const socket = new WebSocket("ws://127.0.0.1:4000/");
-
-// socket.addEventListener("open", () => {
-//   console.log("Hello server!");
-// });
-
 renderTestButtons();
+
+const client = new WebSocketClient();
+
+client.connect();
+
+client.onConnect(() => {
+  console.log(
+    "Соединение с WebSocket установлено, отправляю запрос на вход пользователя...",
+  );
+  client.addUser("Boba", "123");
+});
