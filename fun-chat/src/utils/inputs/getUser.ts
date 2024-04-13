@@ -1,12 +1,24 @@
 import client from "../../constants/currentClient";
+import currentUser from "../../constants/currentUser";
 
 export default function getUser(): void {
-  const firstName = (
-    document.querySelector(".input-first-name") as HTMLInputElement
-  )?.value;
-  const secondName = (
-    document.querySelector(".input-second-name") as HTMLInputElement
-  )?.value;
+  const loginInput = document.querySelector(
+    ".input-first-name",
+  ) as HTMLInputElement;
+  const passwordInput = document.querySelector(
+    ".input-second-name",
+  ) as HTMLInputElement;
 
-  client.addUser(firstName, secondName);
+  const login = loginInput.value;
+  const password = passwordInput.value;
+
+  currentUser.login = login;
+  currentUser.password = password;
+
+  console.log(currentUser);
+
+  client.addUser(login, password);
+
+  loginInput.value = "";
+  passwordInput.value = "";
 }

@@ -54,6 +54,21 @@ export default class WebSocketClient {
     this.send(JSON.stringify(request));
   }
 
+  logout(login: string, password: string): void {
+    const request = {
+      id: generateRandomId(),
+      type: "USER_LOGOUT",
+      payload: {
+        user: {
+          login,
+          password,
+        },
+      },
+    };
+
+    this.send(JSON.stringify(request));
+  }
+
   send(data: string): void {
     if (this.socket && this.socket.readyState === WebSocket.OPEN) {
       this.socket.send(data);

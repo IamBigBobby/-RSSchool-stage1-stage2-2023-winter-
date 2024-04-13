@@ -4,3 +4,8 @@ export interface ElementData {
   textContent?: string;
   attributes?: Record<string, string>;
 }
+
+export interface CurrentUser {
+  login: string;
+  password: string;
+}
