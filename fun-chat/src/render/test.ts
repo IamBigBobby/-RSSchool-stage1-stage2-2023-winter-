@@ -5,8 +5,23 @@ import logOutButtonHandler from "../utils/buttons/logOut";
 export default function renderTestButtons(): void {
   const { body } = document;
 
-  const buttonsData = [
-    { tagName: "input", classNames: ["input-name"] },
+  const elementsData = [
+    {
+      tagName: "input",
+      classNames: ["input-first-name"],
+      attributes: {
+        type: "text",
+        placeholder: "login",
+      },
+    },
+    {
+      tagName: "input",
+      classNames: ["input-second-name"],
+      attributes: {
+        type: "text",
+        placeholder: "password",
+      },
+    },
     { tagName: "button", classNames: ["log-in-button"], textContent: "login" },
     {
       tagName: "button",
@@ -15,7 +30,7 @@ export default function renderTestButtons(): void {
     },
   ];
 
-  addElementsToParent(body, buttonsData);
+  addElementsToParent(body, elementsData);
 
   const logInButton = document.querySelector(
     ".log-in-button",

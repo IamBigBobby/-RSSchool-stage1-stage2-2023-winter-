@@ -1,4 +1,5 @@
-import currentSocket from "../constants/constants";
+import currentSocket from "../constants/currentSocket";
+import generateRandomId from "../utils/randomId";
 
 export default class WebSocketClient {
   private url: string;
@@ -40,7 +41,7 @@ export default class WebSocketClient {
 
   addUser(login: string, password: string): void {
     const request = {
-      id: Math.random().toString(36).substring(2),
+      id: generateRandomId(),
       type: "USER_LOGIN",
       payload: {
         user: {
