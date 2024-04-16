@@ -8,7 +8,8 @@
     "build": "webpack --mode=production --node-env=production",
     "format": "npx prettier --write .",
     "ci:format": "npx prettier --check .",
-    "lint": "npx eslint src/**/*.ts"
+    "lint": "npx eslint src/**/*.ts",
+    "start": "webpack serve --open --mode=development"
   },
   "keywords": [],
   "author": "",
