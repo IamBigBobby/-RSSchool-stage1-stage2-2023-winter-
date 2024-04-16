@@ -6,11 +6,44 @@
     justify-content: center;
     align-items: center;
 
-    gap: 20px;
+    gap: 40px;
 
     border: 3px dotted black;
 
     padding: 10px;
 
     border-radius: 10px;
+}
+
+.log-in-button{
+    cursor: pointer;
+}
+
+.log-in-button_disabled{
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: default;
+}
+
+.invalid_value_count, .invalid_value_register{
+    border-color: red;
+    position: relative;
+}
+
+.invalid_value_count::before {
+    content: "value cannot be shorter than four characters";
+    position: absolute;
+    bottom: -30px;
+    display: block;
+    color: red;
+    font-size: 12px;
+}
+
+.invalid_value_register::before {
+    content: "value must contain at least one capital letter";
+    position: absolute;
+    bottom: -30px;
+    display: block;
+    color: red;
+    font-size: 12px;
 }
