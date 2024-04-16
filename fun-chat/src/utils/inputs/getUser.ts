@@ -15,8 +15,6 @@ export default function getUser(): void {
   currentUser.login = login;
   currentUser.password = password;
 
-  console.log(currentUser);
-
   client.addUser(login, password);
 
   loginInput.value = "";
