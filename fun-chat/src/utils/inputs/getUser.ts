@@ -2,12 +2,13 @@ import client from "../../constants/currentClient";
 import currentUser from "../../constants/currentUser";
 
 export default function getUser(): void {
-  const loginInput = document.querySelector(
-    ".input-first-name",
-  ) as HTMLInputElement;
+  const loginInput = document.querySelector(".input-login") as HTMLInputElement;
   const passwordInput = document.querySelector(
-    ".input-second-name",
+    ".input-password",
   ) as HTMLInputElement;
+  const logInButton = document.querySelector(
+    ".log-in-button",
+  ) as HTMLButtonElement;
 
   const login = loginInput.value;
   const password = passwordInput.value;
@@ -19,4 +20,6 @@ export default function getUser(): void {
 
   loginInput.value = "";
   passwordInput.value = "";
+
+  logInButton.classList.add("log-in-button_disabled");
 }

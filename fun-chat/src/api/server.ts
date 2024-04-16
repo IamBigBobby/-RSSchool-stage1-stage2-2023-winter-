@@ -77,6 +77,16 @@ export default class WebSocketClient {
     }
   }
 
+  showMessageData(callback: (data: string) => void): void {
+    if (this.socket) {
+      this.socket.addEventListener("message", (event) => {
+        callback(event.data);
+      });
+    } else {
+      console.error("WebSocket connection not established");
+    }
+  }
+
   disconnect(): void {
     if (this.socket) {
       this.socket.close();

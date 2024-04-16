@@ -1,5 +1,5 @@
 .login{
-    width: 500px;
+    width: 30vw;
 
     display: flex;
     flex-direction: column;
@@ -13,6 +13,14 @@
     padding: 10px;
 
     border-radius: 10px;
+}
+
+.input-first-name-wrapper, .input-password-wrapper{
+    width: 70%;
+}
+
+.input-password, .input-login{
+    width: 100%;
 }
 
 .log-in-button{

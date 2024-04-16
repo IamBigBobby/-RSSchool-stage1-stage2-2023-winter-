@@ -9,3 +9,11 @@ export interface CurrentUser {
   login: string;
   password: string;
 }
+
+export interface ParsedData {
+  id: string;
+  type: string;
+  payload: {
+    error: string;
+  };
+}
