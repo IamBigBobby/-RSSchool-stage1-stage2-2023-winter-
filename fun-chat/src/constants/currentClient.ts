@@ -14,6 +14,8 @@ client.showMessageData((data) => {
   if (errorStatus === "ERROR") {
     console.log("error popup");
     showPopUp(errorType);
+  } else {
+    window.location.pathname = "./messenger";
   }
 });
 

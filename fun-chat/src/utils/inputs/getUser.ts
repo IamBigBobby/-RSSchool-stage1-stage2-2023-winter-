@@ -23,5 +23,5 @@ export default function getUser(): void {
 
   logInButton.classList.add("log-in-button_disabled");
 
-  window.location.pathname = "./messenger";
+  // window.location.pathname = "./messenger";
 }
