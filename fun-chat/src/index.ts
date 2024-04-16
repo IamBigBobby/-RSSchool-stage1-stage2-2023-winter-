@@ -1,4 +1,5 @@
-import renderTestButtons from "./render/test";
+import renderLogInField from "./render/logIn.ts/loginField";
 import "./style.scss";
+import renderWrapper from "./utils/loginWrapper";
 
-renderTestButtons();
+renderWrapper("login", renderLogInField);

@@ -1,9 +1,9 @@
-import addElementsToParent from "../utils/addElementsToParent";
-import logInButtonHandler from "../utils/buttons/logIn";
-import logOutButtonHandler from "../utils/buttons/logOut";
+import addElementsToParent from "../../utils/addElementsToParent";
+import logInButtonHandler from "../../utils/buttons/logIn";
+import logOutButtonHandler from "../../utils/buttons/logOut";
 
-export default function renderTestButtons(): void {
-  const { body } = document;
+export default function renderLogInField(page: string): void {
+  const currentPage = document.querySelector(`.${page}`) as HTMLElement;
 
   const elementsData = [
     {
@@ -30,7 +30,7 @@ export default function renderTestButtons(): void {
     },
   ];
 
-  addElementsToParent(body, elementsData);
+  addElementsToParent(currentPage, elementsData);
 
   const logInButton = document.querySelector(
     ".log-in-button",
