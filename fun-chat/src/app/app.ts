@@ -12,18 +12,19 @@ const routes: { [key: string]: () => void } = {
 };
 
 export default function app() {
-  let path = window.location.pathname;
-  console.log(path);
+  //   let path = window.location.pathname;
+  //   console.log(path);
+  const path = "/messenger";
   const routeHandler = routes[path];
-  const userDataExists = sessionStorage.getItem("userData_iambigbobby");
-  if (path === "/" && !userDataExists) {
-    console.log("login page");
-    routeHandler();
-  } else if (path === "/messenger" && userDataExists) {
-    routeHandler();
-  } else if (path === "/messenger" && !userDataExists) {
-    path = "/";
-    const currentPage = routes[path];
-    currentPage();
-  }
+  //   const userDataExists = sessionStorage.getItem("userData_iambigbobby");
+  //   if (path === "/" && !userDataExists) {
+  //     routeHandler();
+  //   } else if (path === "/messenger" && userDataExists) {
+  //     routeHandler();
+  //   } else if (path === "/messenger" && !userDataExists) {
+  //     path = "/";
+  //     const currentPage = routes[path];
+  //     currentPage();
+  //   }
+  routeHandler();
 }
