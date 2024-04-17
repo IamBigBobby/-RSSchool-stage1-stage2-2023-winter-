@@ -1,5 +1,5 @@
-import handleRouting from "./app/app";
+import app from "./app/app";
 import "./style.scss";
 
-document.addEventListener("DOMContentLoaded", handleRouting);
-window.addEventListener("popstate", handleRouting);
+document.addEventListener("DOMContentLoaded", app);
+window.addEventListener("popstate", app);

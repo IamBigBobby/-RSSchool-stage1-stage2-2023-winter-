@@ -1,5 +1,4 @@
 import client from "../../constants/currentClient";
-import currentUser from "../../constants/currentUser";
 
 export default function getUser(): void {
   const loginInput = document.querySelector(".input-login") as HTMLInputElement;
@@ -13,15 +12,11 @@ export default function getUser(): void {
   const login = loginInput.value;
   const password = passwordInput.value;
 
-  currentUser.login = login;
-  currentUser.password = password;
+  const userData = JSON.stringify({ login, password });
+
+  localStorage.setItem("userData_iambigbobby", userData);
 
   client.addUser(login, password);
 
-  loginInput.value = "";
-  passwordInput.value = "";
-
   logInButton.classList.add("log-in-button_disabled");
-
-  // window.location.pathname = "./messenger";
 }

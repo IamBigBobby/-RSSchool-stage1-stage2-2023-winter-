@@ -12,7 +12,6 @@ client.showMessageData((data) => {
   const errorType = parsedData.payload.error;
 
   if (errorStatus === "ERROR") {
-    console.log("error popup");
     showPopUp(errorType);
   } else {
     window.location.pathname = "./messenger";
