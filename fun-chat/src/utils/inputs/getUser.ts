@@ -14,7 +14,7 @@ export default function getUser(): void {
 
   const userData = JSON.stringify({ login, password });
 
-  localStorage.setItem("userData_iambigbobby", userData);
+  sessionStorage.setItem("userData_iambigbobby", userData);
 
   client.addUser(login, password);
 

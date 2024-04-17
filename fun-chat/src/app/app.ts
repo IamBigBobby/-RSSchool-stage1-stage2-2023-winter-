@@ -13,9 +13,11 @@ const routes: { [key: string]: () => void } = {
 
 export default function app() {
   let path = window.location.pathname;
+  console.log(path);
   const routeHandler = routes[path];
-  const userDataExists = localStorage.getItem("userData_iambigbobby");
+  const userDataExists = sessionStorage.getItem("userData_iambigbobby");
   if (path === "/" && !userDataExists) {
+    console.log("login page");
     routeHandler();
   } else if (path === "/messenger" && userDataExists) {
     routeHandler();
