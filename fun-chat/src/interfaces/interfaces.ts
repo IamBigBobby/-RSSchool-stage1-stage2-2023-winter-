@@ -17,3 +17,5 @@ export interface ParsedData {
     error: string;
   };
 }
+
+export type PageType = "messenger" | "login";

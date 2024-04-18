@@ -11,7 +11,7 @@ export default class WebSocketClient {
     this.socket = null;
   }
 
-  connect(): void {
+  public connect(): void {
     this.socket = new WebSocket(this.url);
 
     this.socket.addEventListener("open", () => {
@@ -31,7 +31,7 @@ export default class WebSocketClient {
     });
   }
 
-  onConnect(callback: () => void): void {
+  public onConnect(callback: () => void): void {
     if (this.socket) {
       this.socket.addEventListener("open", callback);
     } else {
@@ -39,7 +39,7 @@ export default class WebSocketClient {
     }
   }
 
-  addUser(login: string, password: string): void {
+  public addUser(login: string, password: string): void {
     const request = {
       id: generateRandomId(),
       type: "USER_LOGIN",
@@ -54,7 +54,7 @@ export default class WebSocketClient {
     this.send(JSON.stringify(request));
   }
 
-  logout(login: string, password: string): void {
+  public logout(login: string, password: string): void {
     const request = {
       id: generateRandomId(),
       type: "USER_LOGOUT",
@@ -70,14 +70,14 @@ export default class WebSocketClient {
   }
 
   send(data: string): void {
-    if (this.socket && this.socket.readyState === WebSocket.OPEN) {
+    if (this.socket) {
       this.socket.send(data);
     } else {
       console.error("WebSocket connection not established or closed");
     }
   }
 
-  showMessageData(callback: (data: string) => void): void {
+  public showMessageData(callback: (data: string) => void): void {
     if (this.socket) {
       this.socket.addEventListener("message", (event) => {
         callback(event.data);
@@ -87,7 +87,17 @@ export default class WebSocketClient {
     }
   }
 
-  disconnect(): void {
+  public getAllAuthenticatedUsers() {
+    const request = {
+      id: generateRandomId(),
+      type: "USER_ACTIVE",
+      payload: null,
+    };
+
+    this.send(JSON.stringify(request));
+  }
+
+  public disconnect(): void {
     if (this.socket) {
       this.socket.close();
       this.socket = null;
