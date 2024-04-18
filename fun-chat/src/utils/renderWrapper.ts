@@ -4,7 +4,7 @@ export default function renderWrapper(
   page: string,
   callback: (page: string) => void,
 ) {
-  const { body } = document;
+  const app = document.querySelector(".app") as HTMLElement;
 
   const elementsData = [
     {
@@ -13,7 +13,7 @@ export default function renderWrapper(
     },
   ];
 
-  addElementsToParent(body, elementsData);
+  addElementsToParent(app, elementsData);
 
   callback(page);
 }

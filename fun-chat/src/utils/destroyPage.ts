@@ -1,6 +1,6 @@
 export default function destroyPage() {
-  const { body } = document;
-  while (body.firstChild) {
-    body.removeChild(body.firstChild);
+  const app = document.querySelector(".app") as HTMLElement;
+  while (app.firstChild) {
+    app.removeChild(app.firstChild);
   }
 }

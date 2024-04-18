@@ -1,8 +1,10 @@
+import client from "../../constants/currentClient";
 import addElementsToParent from "../../utils/addElementsToParent";
 
 export default function renderMessengerField(page: string): void {
   const currentPage = document.querySelector(`.${page}`) as HTMLElement;
 
+  client.getAllAuthenticatedUsers();
   const headerData = [
     {
       tagName: "div",
@@ -67,7 +69,7 @@ export default function renderMessengerField(page: string): void {
 
   addElementsToParent(messengerContainerCreated, messengegContainerData);
 
-  const { body } = document;
+  const app = document.querySelector(".app") as HTMLElement;
 
   const footerData = [
     {
@@ -75,7 +77,7 @@ export default function renderMessengerField(page: string): void {
       classNames: ["footer"],
     },
   ];
-  addElementsToParent(body, footerData);
+  addElementsToParent(app, footerData);
 
   const footerCreated = document.querySelector(".footer") as HTMLElement;
 

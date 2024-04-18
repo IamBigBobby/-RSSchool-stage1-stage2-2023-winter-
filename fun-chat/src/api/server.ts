@@ -18,9 +18,9 @@ export default class WebSocketClient {
       console.log("Connected to WebSocket server");
     });
 
-    this.socket.addEventListener("message", (event) => {
-      console.log("Received message:", event.data);
-    });
+    // this.socket.addEventListener("message", (event) => {
+    //   console.log("Received message:", event.data);
+    // });
 
     this.socket.addEventListener("close", () => {
       console.log("Disconnected from WebSocket server");
