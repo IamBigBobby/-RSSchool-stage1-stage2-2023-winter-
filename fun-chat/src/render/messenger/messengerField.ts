@@ -4,7 +4,6 @@ import addElementsToParent from "../../utils/addElementsToParent";
 export default function renderMessengerField(page: string): void {
   const currentPage = document.querySelector(`.${page}`) as HTMLElement;
 
-  client.getAllAuthenticatedUsers();
   const headerData = [
     {
       tagName: "div",
@@ -18,11 +17,16 @@ export default function renderMessengerField(page: string): void {
     ".messenger__header",
   ) as HTMLElement;
 
+  const user = sessionStorage.getItem("userData_iambigbobby") as string;
+  const userParse = JSON.parse(user);
+
+  console.log(userParse);
+
   const headerDataContent = [
     {
       tagName: "div",
       classNames: ["header__user"],
-      textContent: "user",
+      textContent: `user: ${userParse.login}`,
     },
     {
       tagName: "div",
@@ -100,4 +104,6 @@ export default function renderMessengerField(page: string): void {
   ];
 
   addElementsToParent(footerCreated, footerContent);
+
+  client.getAllAuthenticatedUsers();
 }
