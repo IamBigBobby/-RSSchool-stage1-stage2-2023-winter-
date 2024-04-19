@@ -40,3 +40,16 @@
     border: 3px dotted black;
     border-radius: 10px;
 }
+
+.input-find-users {
+    width: 90%;
+    margin: 10px;
+}
+
+.messenger__users-list-element_active {
+    color: black;
+}
+
+.messenger__users-list-element_unactive {
+    color: red;
+}

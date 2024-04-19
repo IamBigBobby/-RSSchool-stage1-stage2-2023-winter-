@@ -7,14 +7,15 @@ export default function renderActiveUsers(activeUsers: UsersStatus[]) {
   const messengerUsersContainer = document.querySelector(
     ".messenger__users-list",
   ) as HTMLUListElement;
-  console.log("data in render function: ", activeUsers);
   activeUsers.forEach((user) => {
-    console.log(user.login, userParsed.login);
     if (user.login !== userParsed.login) {
       const userData = [
         {
           tagName: "li",
-          className: ["messenger__users-list-element"],
+          classNames: [
+            "messenger__users-list-element",
+            "messenger__users-list-element_active",
+          ],
           textContent: `${user.login}`,
         },
       ];
