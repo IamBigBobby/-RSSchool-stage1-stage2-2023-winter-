@@ -20,8 +20,6 @@ export default function renderMessengerField(page: string): void {
   const user = sessionStorage.getItem("userData_iambigbobby") as string;
   const userParse = JSON.parse(user);
 
-  console.log(userParse);
-
   const headerDataContent = [
     {
       tagName: "div",

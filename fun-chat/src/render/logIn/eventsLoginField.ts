@@ -1,12 +1,12 @@
-import logInButtonHandler from "../../utils/buttons/logIn";
+// import logInButtonHandler from "../../utils/buttons/logIn";
 import validateInputs from "../../utils/inputs/validateInputs";
 
 export default function eventsLoginFiled(): void {
-  const logInButton = document.querySelector(
-    ".log-in-button",
-  ) as HTMLButtonElement;
+  // const logInButton = document.querySelector(
+  //   ".log-in-button",
+  // ) as HTMLButtonElement;
 
-  logInButtonHandler(logInButton);
+  // logInButtonHandler(logInButton);
 
   const inputName = document.querySelector(".input-login") as HTMLInputElement;
   const inputPassword = document.querySelector(

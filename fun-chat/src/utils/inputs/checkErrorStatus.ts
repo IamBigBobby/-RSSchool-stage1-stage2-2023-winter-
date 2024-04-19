@@ -1,4 +1,5 @@
 import client from "../../constants/currentClient";
+import eventsMessengerField from "../../render/messenger/eventsMessengerField";
 import renderMessengerField from "../../render/messenger/messengerField";
 import destroyPage from "../destroyPage";
 import parseData from "../parseData";
@@ -28,6 +29,7 @@ export default function checkErrorStatus(): void {
       destroyPage();
       window.history.replaceState(null, "", "message");
       renderWrapper("message", renderMessengerField);
+      eventsMessengerField();
     }
   });
 }
