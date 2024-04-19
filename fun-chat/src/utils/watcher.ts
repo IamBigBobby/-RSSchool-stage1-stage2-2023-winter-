@@ -1,4 +1,6 @@
 import client from "../constants/currentClient";
+import makeUserActive from "../render/messenger/makeUserActive";
+import makeUserInactive from "../render/messenger/makeUserInactive";
 import renderActiveUsers from "../render/messenger/renderActiveUsers";
 import renderUnactiveUsers from "../render/messenger/renderUnactiveUsers";
 
@@ -12,6 +14,12 @@ export default function watcher() {
     }
     if (typeData === "USER_INACTIVE") {
       renderUnactiveUsers(dataPares.payload.users);
+    }
+    if (typeData === "USER_EXTERNAL_LOGIN") {
+      makeUserActive(dataPares.payload.user);
+    }
+    if (typeData === "USER_EXTERNAL_LOGOUT") {
+      makeUserInactive(dataPares.payload.user);
     }
   });
 }
