@@ -32,6 +32,7 @@
     height: 100%;
     border: 3px dotted black;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .messenger__chat {
@@ -57,4 +58,10 @@
 .messenger__users-list-element:hover {
     background-color: rgb(243, 233, 233);
     cursor: pointer;
+}
+
+.messenger__users-list{
+    display: block;
+    height: 90%;
+    overflow: scroll;
 }

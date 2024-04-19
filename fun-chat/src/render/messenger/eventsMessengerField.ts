@@ -1,5 +1,3 @@
-// import logOutButtonHandler from "../../utils/buttons/logOut";
-
 export default function eventsMessengerField(): void {
-  //   logOutButtonHandler();
+  console.log("ивенты месенджера");
 }
