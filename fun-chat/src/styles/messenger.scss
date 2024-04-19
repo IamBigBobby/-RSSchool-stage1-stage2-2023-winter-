@@ -60,6 +60,10 @@
     cursor: pointer;
 }
 
+.messenger__users-list-element_hidden {
+    display: none;
+}
+
 .messenger__users-list{
     display: block;
     height: 90%;
