@@ -1,6 +1,4 @@
 import addElementsToParent from "../../utils/addElementsToParent";
-import logInButtonHandler from "../../utils/buttons/logIn";
-import validateInputs from "../../utils/inputs/validateInputs";
 
 export default function renderLogInField(page: string): void {
   const currentPage = document.querySelector(`.${page}`) as HTMLElement;
@@ -51,17 +49,4 @@ export default function renderLogInField(page: string): void {
 
   addElementsToParent(inputNameWrapper, [inputsData[0]]);
   addElementsToParent(inputPasswordWrapper, [inputsData[1]]);
-
-  const logInButton = document.querySelector(
-    ".log-in-button",
-  ) as HTMLButtonElement;
-
-  logInButtonHandler(logInButton);
-
-  const inputName = document.querySelector(".input-login") as HTMLInputElement;
-  const inputPassword = document.querySelector(
-    ".input-password",
-  ) as HTMLInputElement;
-
-  validateInputs(inputName, inputPassword);
 }

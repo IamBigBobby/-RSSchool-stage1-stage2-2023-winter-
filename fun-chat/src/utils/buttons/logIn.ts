@@ -1,3 +1,4 @@
+import checkErrorStatus from "../inputs/checkErrorStatus";
 import getUser from "../inputs/getUser";
 
 export default function logInButtonHandler(
@@ -7,6 +8,7 @@ export default function logInButtonHandler(
     const currentElement = event.target as HTMLElement;
     if (currentElement.classList.contains("log-in-button")) {
       getUser();
+      checkErrorStatus();
     }
   });
   document.addEventListener("keydown", (event) => {

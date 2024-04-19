@@ -1,5 +1,5 @@
-import renderLogInField from "../render/logIn/loginField";
-// import renderMessengerField from "../render/messenger/messengerField";
+import eventsLoginFiled from "../render/logIn/eventsLoginField";
+import renderLogInField from "../render/logIn/renderLoginField";
 import addElementsToParent from "../utils/addElementsToParent";
 import renderWrapper from "../utils/renderWrapper";
 import watcher from "../utils/watcher";
@@ -15,6 +15,7 @@ export default function app() {
     },
   ];
   addElementsToParent(body, containerApp);
-  window.history.replaceState(null, "", "/login");
+  window.history.replaceState(null, "", "login");
   renderWrapper("login", renderLogInField);
+  eventsLoginFiled();
 }

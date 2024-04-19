@@ -1,24 +1,5 @@
 import client from "../../constants/currentClient";
-import changePage from "../changePage";
-import parseData from "../parseData";
-import showPopUp from "../popUp";
-
-function checkErrorStatus() {
-  return new Promise((resolve) => {
-    let errorStatusBoolean = false;
-    client.showMessageData((data) => {
-      const parsedData = parseData(data);
-      const errorStatus = parsedData.type;
-      const errorType = parsedData.payload.error;
-
-      if (errorStatus === "ERROR") {
-        errorStatusBoolean = true;
-        showPopUp(errorType);
-      }
-      resolve(errorStatusBoolean);
-    });
-  });
-}
+import checkErrorStatus from "./checkErrorStatus";
 
 export default function getUser(): void {
   const loginInput = document.querySelector(".input-login") as HTMLInputElement;
@@ -43,9 +24,5 @@ export default function getUser(): void {
 
   logInButton.classList.add("log-in-button_disabled");
 
-  checkErrorStatus().then((errorStatusBoolean) => {
-    if (errorStatusBoolean === false) {
-      changePage("messenger");
-    }
-  });
+  checkErrorStatus();
 }
