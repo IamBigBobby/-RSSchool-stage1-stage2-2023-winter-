@@ -97,6 +97,16 @@ export default class WebSocketClient {
     this.send(JSON.stringify(request));
   }
 
+  public getAllUnauthenticatedUsers() {
+    const request = {
+      id: generateRandomId(),
+      type: "USER_INACTIVE",
+      payload: null,
+    };
+
+    this.send(JSON.stringify(request));
+  }
+
   public disconnect(): void {
     if (this.socket) {
       this.socket.close();

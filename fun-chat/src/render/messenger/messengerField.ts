@@ -71,6 +71,25 @@ export default function renderMessengerField(page: string): void {
 
   addElementsToParent(messengerContainerCreated, messengegContainerData);
 
+  const usersField = document.querySelector(".messenger__users") as HTMLElement;
+
+  const usersContainerData = [
+    {
+      tagName: "input",
+      classNames: ["input-find-users"],
+      attributes: {
+        type: "text",
+        placeholder: "enter user name",
+      },
+    },
+    {
+      tagName: "ul",
+      classNames: ["messenger__users-list"],
+    },
+  ];
+
+  addElementsToParent(usersField, usersContainerData);
+
   const app = document.querySelector(".app") as HTMLElement;
 
   const footerData = [
@@ -104,4 +123,5 @@ export default function renderMessengerField(page: string): void {
   addElementsToParent(footerCreated, footerContent);
 
   client.getAllAuthenticatedUsers();
+  client.getAllUnauthenticatedUsers();
 }

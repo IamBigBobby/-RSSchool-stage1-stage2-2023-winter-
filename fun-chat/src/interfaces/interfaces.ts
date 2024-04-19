@@ -10,6 +10,11 @@ export interface CurrentUser {
   password: string;
 }
 
+export interface UsersStatus {
+  login: string;
+  isLogined: boolean;
+}
+
 export interface ParsedData {
   id: string;
   type: string;
