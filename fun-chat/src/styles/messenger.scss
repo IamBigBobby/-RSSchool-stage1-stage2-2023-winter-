@@ -59,6 +59,10 @@
     color: red;
 }
 
+.messenger__users-list_selected {
+    background-color: rgb(243, 233, 233); 
+}
+
 .messenger__users-list-element:hover {
     background-color: rgb(243, 233, 233);
     cursor: pointer;

@@ -6,7 +6,16 @@ export default function selectUser(event: Event) {
   message.text = "";
   message.to = "";
 
+  const allUsers = document.querySelectorAll(".messenger__users-list-element");
+
+  allUsers.forEach((user) => {
+    user.classList.remove("messenger__users-list_selected");
+  });
+
   const selectedUser = event.target as HTMLElement;
+
+  selectedUser.classList.add("messenger__users-list_selected");
+
   const stringSelectedUser = selectedUser.textContent as string;
   message.to = stringSelectedUser;
 
