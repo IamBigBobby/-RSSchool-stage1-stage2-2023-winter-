@@ -107,6 +107,21 @@ export default class WebSocketClient {
     this.send(JSON.stringify(request));
   }
 
+  public sendingMessage(to: string, text: string) {
+    const request = {
+      id: generateRandomId(),
+      type: "MSG_SEND",
+      payload: {
+        message: {
+          to,
+          text,
+        },
+      },
+    };
+
+    this.send(JSON.stringify(request));
+  }
+
   public disconnect(): void {
     if (this.socket) {
       this.socket.close();

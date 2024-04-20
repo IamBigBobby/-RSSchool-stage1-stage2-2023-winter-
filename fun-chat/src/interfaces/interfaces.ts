@@ -28,3 +28,8 @@ export interface ParsedData {
 }
 
 export type PageType = "messenger" | "login";
+
+export interface Message {
+  to: string;
+  text: string;
+}

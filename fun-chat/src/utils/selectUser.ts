@@ -1,7 +1,14 @@
+import message from "../constants/message";
 import destroyWindowChat from "./destroyWindowChat";
 
 export default function selectUser(event: Event) {
-  console.log(event.target);
+  message.text = "";
+  message.to = "";
+
+  const selectedUser = event.target as HTMLElement;
+  const stringSelectedUser = selectedUser.textContent as string;
+  message.to = stringSelectedUser;
+
   destroyWindowChat();
 
   const messengerInputField = document.querySelector(
