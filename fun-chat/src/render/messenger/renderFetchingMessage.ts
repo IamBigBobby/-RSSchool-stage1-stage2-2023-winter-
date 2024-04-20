@@ -1,5 +1,6 @@
 import { ResevedMessage } from "../../interfaces/interfaces";
 import addElementsToParent from "../../utils/addElementsToParent";
+import scrollBottom from "../../utils/scrollBottom";
 
 export default function renderFetchingMessage(
   fetchingMessages: ResevedMessage[],
@@ -25,4 +26,5 @@ export default function renderFetchingMessage(
     ];
     addElementsToParent(messengerChatWindow, messageData);
   });
+  scrollBottom();
 }

@@ -12,10 +12,12 @@ export default function sendMessage() {
   ) as HTMLInputElement;
 
   sendMessageButton.addEventListener("click", () => {
-    client.sendingMessage(message.to, message.text);
-    renderSendMessage(message.text);
-    inputMessengerField.value = "";
-    message.text = "";
-    scrollBottom();
+    if (message.text.trim() !== "") {
+      client.sendingMessage(message.to, message.text);
+      renderSendMessage(message.text);
+      inputMessengerField.value = "";
+      message.text = "";
+      scrollBottom();
+    }
   });
 }
