@@ -71,6 +71,49 @@ export default function renderMessengerField(page: string): void {
 
   addElementsToParent(messengerContainerCreated, messengegContainerData);
 
+  const messengerChatContainer = document.querySelector(
+    ".messenger__chat",
+  ) as HTMLElement;
+
+  const messengerChatContainerData = [
+    {
+      tagName: "div",
+      classNames: ["messenger__chat-window"],
+    },
+    {
+      tagName: "input",
+      classNames: ["messenger__chat-input", "messenger__chat-input_disabled"],
+      attributes: {
+        type: "text",
+        placeholder: "send message",
+      },
+    },
+    {
+      tagName: "button",
+      classNames: [
+        "messenger__chat-send-button",
+        "messenger__chat-send-button_disabled",
+      ],
+      textContent: "send",
+    },
+  ];
+
+  addElementsToParent(messengerChatContainer, messengerChatContainerData);
+
+  const messengerWindow = document.querySelector(
+    ".messenger__chat-window",
+  ) as HTMLElement;
+
+  const messengerWindowData = [
+    {
+      tagName: "div",
+      classNames: ["messenger__window-messenger"],
+      textContent: "select user",
+    },
+  ];
+
+  addElementsToParent(messengerWindow, messengerWindowData);
+
   const usersField = document.querySelector(".messenger__users") as HTMLElement;
 
   const usersContainerData = [

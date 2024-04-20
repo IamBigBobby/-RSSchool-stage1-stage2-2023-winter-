@@ -69,3 +69,23 @@
     height: 90%;
     overflow: scroll;
 }
+
+.messenger__chat-window{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.messenger__window-messenger{
+    text-align: center;
+}
+
+.messenger__chat-input {
+    width: 89%;
+}
+
+.messenger__chat-send-button_disabled, .messenger__chat-input_disabled{
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: default;
+}
