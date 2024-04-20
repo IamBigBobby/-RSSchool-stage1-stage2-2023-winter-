@@ -1,6 +1,7 @@
 import client from "../../constants/currentClient";
 import message from "../../constants/message";
 import renderSendMessage from "../../render/messenger/renderSendMessage";
+import scrollBottom from "../scrollBottom";
 
 export default function sendMessage() {
   const sendMessageButton = document.querySelector(
@@ -15,5 +16,6 @@ export default function sendMessage() {
     renderSendMessage(message.text);
     inputMessengerField.value = "";
     message.text = "";
+    scrollBottom();
   });
 }
