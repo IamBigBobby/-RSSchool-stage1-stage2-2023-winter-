@@ -9,6 +9,7 @@ export default function selectUser(event: Event) {
   const stringSelectedUser = selectedUser.textContent as string;
   message.to = stringSelectedUser;
 
+  console.log("selected user: ", message.to);
   destroyWindowChat();
 
   const messengerInputField = document.querySelector(

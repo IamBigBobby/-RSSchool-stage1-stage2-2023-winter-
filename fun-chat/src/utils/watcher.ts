@@ -3,6 +3,7 @@ import addNewUser from "../render/messenger/addNewUser";
 import makeUserActive from "../render/messenger/makeUserActive";
 import makeUserInactive from "../render/messenger/makeUserInactive";
 import renderActiveUsers from "../render/messenger/renderActiveUsers";
+import renderResponseMessage from "../render/messenger/renderResponseMessage";
 import renderUnactiveUsers from "../render/messenger/renderUnactiveUsers";
 
 export default function watcher() {
@@ -24,6 +25,9 @@ export default function watcher() {
     }
     if (typeData === "USER_EXTERNAL_LOGIN") {
       addNewUser(dataPares.payload.user);
+    }
+    if (typeData === "MSG_SEND") {
+      renderResponseMessage(dataPares.payload.message);
     }
   });
 }

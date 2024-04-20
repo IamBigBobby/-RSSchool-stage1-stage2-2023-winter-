@@ -78,7 +78,7 @@
     height: 90%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:end;
 }
 .messenger__window-messenger{
     text-align: center;
@@ -92,4 +92,8 @@
     pointer-events: none;
     opacity: 0.5;
     cursor: default;
+}
+
+.messenger__sended-message {
+    align-self: flex-end;
 }
