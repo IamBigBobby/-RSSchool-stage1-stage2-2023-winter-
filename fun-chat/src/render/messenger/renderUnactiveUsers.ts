@@ -1,5 +1,6 @@
 import { UsersStatus } from "../../interfaces/interfaces";
 import addElementsToParent from "../../utils/addElementsToParent";
+import selectUser from "../../utils/selectUser";
 
 export default function renderUnactiveUsers(activeUsers: UsersStatus[]) {
   const messengerUsersContainer = document.querySelector(
@@ -14,6 +15,12 @@ export default function renderUnactiveUsers(activeUsers: UsersStatus[]) {
           "messenger__users-list-element_unactive",
         ],
         textContent: `${user.login}`,
+        eventListener: {
+          eventType: "click",
+          listener: (event: Event) => {
+            selectUser(event);
+          },
+        },
       },
     ];
     addElementsToParent(messengerUsersContainer, userData);

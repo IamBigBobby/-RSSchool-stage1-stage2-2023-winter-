@@ -1,5 +1,6 @@
 import { UsersStatus } from "../../interfaces/interfaces";
 import addElementsToParent from "../../utils/addElementsToParent";
+import selectUser from "../../utils/selectUser";
 
 export default function addNewUser(user: UsersStatus) {
   const allUser = document.querySelectorAll(".messenger__users-list-element");
@@ -24,6 +25,12 @@ export default function addNewUser(user: UsersStatus) {
           "messenger__users-list-element_active",
         ],
         textContent: `${user.login}`,
+        eventListener: {
+          eventType: "click",
+          listener: (event: Event) => {
+            selectUser(event);
+          },
+        },
       },
     ];
     addElementsToParent(messengerUsersContainer, newUserData);

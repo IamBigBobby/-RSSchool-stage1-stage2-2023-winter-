@@ -3,6 +3,10 @@ export interface ElementData {
   classNames?: string[];
   textContent?: string;
   attributes?: Record<string, string>;
+  eventListener?: {
+    eventType: string;
+    listener: EventListenerOrEventListenerObject;
+  };
 }
 
 export interface CurrentUser {

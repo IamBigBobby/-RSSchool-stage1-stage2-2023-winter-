@@ -5,7 +5,8 @@ export default function addElementsToParent(
   elementsData: ElementData[],
 ): void {
   elementsData.forEach((elementData) => {
-    const { tagName, classNames, textContent, attributes } = elementData;
+    const { tagName, classNames, textContent, attributes, eventListener } =
+      elementData;
     const element = document.createElement(tagName);
     if (classNames) {
       classNames.forEach((className) => {
@@ -19,6 +20,9 @@ export default function addElementsToParent(
       Object.keys(attributes).forEach((attr) => {
         element.setAttribute(attr, attributes[attr]);
       });
+    }
+    if (eventListener) {
+      element.addEventListener(eventListener.eventType, eventListener.listener);
     }
     parent.appendChild(element);
   });
