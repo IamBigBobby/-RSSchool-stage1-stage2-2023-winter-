@@ -1,4 +1,5 @@
 import client from "../../constants/currentClient";
+import message from "../../constants/message";
 // eslint-disable-next-line
 import eventsLoginFiled from "../../render/logIn/eventsLoginField";
 import renderLogInField from "../../render/logIn/renderLoginField";
@@ -10,6 +11,8 @@ export default function logOutButtonHandler(): void {
     const currentElement = event.target as HTMLElement;
     if (currentElement.classList.contains("log-out-button")) {
       console.log("log-out");
+      message.to = "";
+      message.text = "";
       const user = sessionStorage.getItem("userData_iambigbobby") as string;
       const userParse = JSON.parse(user);
       client.logout(userParse.login, userParse.password);
