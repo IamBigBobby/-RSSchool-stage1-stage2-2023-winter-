@@ -1,3 +1,4 @@
+import client from "../constants/currentClient";
 import message from "../constants/message";
 import destroyWindowChat from "./destroyWindowChat";
 
@@ -9,8 +10,9 @@ export default function selectUser(event: Event) {
   const stringSelectedUser = selectedUser.textContent as string;
   message.to = stringSelectedUser;
 
-  console.log("selected user: ", message.to);
   destroyWindowChat();
+
+  client.fetchingMessageHistory(stringSelectedUser);
 
   const messengerInputField = document.querySelector(
     ".messenger__chat-input",

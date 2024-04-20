@@ -8,7 +8,7 @@ export default function renderSendMessage(message: string) {
   const sendedMessageData = [
     {
       tagName: "div",
-      classNames: ["messenger__sended-message"],
+      classNames: ["messenger__message", "messenger__sended-message"],
       textContent: message,
     },
   ];

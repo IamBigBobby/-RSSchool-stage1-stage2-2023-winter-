@@ -71,14 +71,16 @@
 .messenger__users-list{
     display: block;
     height: 90%;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .messenger__chat-window{
     height: 90%;
+    overflow-y: scroll;
     display: flex;
     flex-direction: column;
-    justify-content:end;
+    // justify-content: flex-end;
+    gap: 10px;
 }
 .messenger__window-messenger{
     text-align: center;
@@ -94,10 +96,18 @@
     cursor: default;
 }
 
+.messenger__message {
+    // margin-top: auto;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: auto;
+    padding: 5px;
+}
+
 .messenger__sended-message {
     align-self: flex-end;
 }
 
 .messenger__response-message {
-    align-items: flex-start;
+    align-self: flex-start;
 }

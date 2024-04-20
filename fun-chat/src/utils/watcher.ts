@@ -3,6 +3,7 @@ import addNewUser from "../render/messenger/addNewUser";
 import makeUserActive from "../render/messenger/makeUserActive";
 import makeUserInactive from "../render/messenger/makeUserInactive";
 import renderActiveUsers from "../render/messenger/renderActiveUsers";
+import renderFetchingMessage from "../render/messenger/renderFetchingMessage";
 import renderResponseMessage from "../render/messenger/renderResponseMessage";
 import renderUnactiveUsers from "../render/messenger/renderUnactiveUsers";
 
@@ -28,6 +29,9 @@ export default function watcher() {
     }
     if (typeData === "MSG_SEND") {
       renderResponseMessage(dataPares.payload.message);
+    }
+    if (typeData === "MSG_FROM_USER") {
+      renderFetchingMessage(dataPares.payload.messages);
     }
   });
 }

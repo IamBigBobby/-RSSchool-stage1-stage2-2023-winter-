@@ -16,7 +16,7 @@ export default function renderResponseMessage(resevedMessage: ResevedMessage) {
     const resevedMessageData = [
       {
         tagName: "div",
-        classNames: ["messenger__response-message"],
+        classNames: ["messenger__message", "messenger__response-message"],
         textContent: resevedMessage.text,
       },
     ];
