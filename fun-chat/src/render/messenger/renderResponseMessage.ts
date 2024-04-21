@@ -21,6 +21,9 @@ export default function renderResponseMessage(resevedMessage: ResevedMessage) {
       {
         tagName: "div",
         classNames: ["messenger__message", "messenger__response-message"],
+        attributes: {
+          id: resevedMessage.id,
+        },
       },
     ];
     addElementsToParent(messengerChatWindow, resevedMessageData);
