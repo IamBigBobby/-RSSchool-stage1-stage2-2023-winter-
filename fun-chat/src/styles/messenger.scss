@@ -74,7 +74,7 @@
 
 .messenger__users-list{
     display: block;
-    height: 90%;
+    height: 80%;
     overflow-y: scroll;
 }
 
@@ -102,7 +102,6 @@
 }
 
 .messenger__message {
-    // margin-top: auto;
     border: 1px solid black;
     border-radius: 5px;
     width: auto;
@@ -115,4 +114,8 @@
 
 .messenger__response-message {
     align-self: flex-start;
+}
+
+.messenger__time {
+    font-size: 10px;
 }

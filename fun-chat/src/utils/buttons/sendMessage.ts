@@ -9,8 +9,8 @@ function sendingClick() {
   ) as HTMLInputElement;
 
   if (message.text.trim() !== "") {
-    client.sendingMessage(message.to, message.text);
     renderSendMessage(message.text);
+    client.sendingMessage(message.to, message.text);
     inputMessengerField.value = "";
     message.text = "";
     scrollBottom();
@@ -52,19 +52,3 @@ export default function sendMessage() {
   sendMessageButton.addEventListener("click", sendingClick);
   document.addEventListener("keydown", sendingEnter);
 }
-
-// document.addEventListener("keydown", (event) => {
-//   const logInButton = document.querySelector(
-//     ".log-in-button",
-//   ) as HTMLButtonElement;
-//   if (logInButton) {
-//     if (
-//       !logInButton.classList.contains("log-in-button_disabled") &&
-//       event.key === "Enter"
-//     ) {
-//       console.log("log-in");
-//       event.preventDefault();
-//       getUser();
-//     }
-//   }
-// });

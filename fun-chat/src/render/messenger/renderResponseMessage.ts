@@ -4,6 +4,10 @@ import addElementsToParent from "../../utils/addElementsToParent";
 
 export default function renderResponseMessage(resevedMessage: ResevedMessage) {
   console.log(resevedMessage);
+
+  // const timestamp = resevedMessage.datetime;
+  // const date = new Date(timestamp);
+
   const messengerChatWindow = document.querySelector(
     ".messenger__chat-window",
   ) as HTMLElement;
