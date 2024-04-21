@@ -33,6 +33,7 @@
     border: 3px dotted black;
     border-radius: 10px;
     overflow: hidden;
+    padding: 5px;
 }
 
 .messenger__chat {
@@ -40,6 +41,7 @@
     height: 100%;
     border: 3px dotted black;
     border-radius: 10px;
+    padding: 5px;
 }
 
 .input-find-users {
@@ -97,7 +99,7 @@
 }
 
 .messenger__chat-input {
-    width: 89%;
+    width: 85%;
 }
 
 .messenger__chat-send-button_disabled, .messenger__chat-input_disabled{
