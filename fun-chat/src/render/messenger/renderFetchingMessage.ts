@@ -13,7 +13,6 @@ export default function renderFetchingMessage(
   const currentUserparsed = JSON.parse(currentUser);
 
   fetchingMessages.forEach((message) => {
-    console.log(message.id);
     let messageClasses: string[];
     if (currentUserparsed.login === message.from) {
       messageClasses = ["messenger__message", "messenger__sended-message"];

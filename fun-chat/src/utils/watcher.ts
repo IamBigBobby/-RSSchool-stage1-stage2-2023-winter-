@@ -6,7 +6,7 @@ import renderActiveUsers from "../render/messenger/renderActiveUsers";
 import renderFetchingMessage from "../render/messenger/renderFetchingMessage";
 import renderResponseMessage from "../render/messenger/renderResponseMessage";
 import renderUnactiveUsers from "../render/messenger/renderUnactiveUsers";
-import pinIdForSendedMessage from "./buttons/pinIdForSendedMessage";
+import pinIdForSendedMessage from "./pinIdForSendedMessage";
 
 export default function watcher() {
   client.showMessageData((data) => {
@@ -30,7 +30,6 @@ export default function watcher() {
     }
     if (typeData === "MSG_SEND") {
       if (dataPares.id === null) {
-        console.log("сообщение пришло");
         renderResponseMessage(dataPares.payload.message);
       } else {
         pinIdForSendedMessage(dataPares.payload.message.id);

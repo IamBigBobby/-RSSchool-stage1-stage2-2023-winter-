@@ -16,6 +16,7 @@ export default function logOutButtonHandler(): void {
       const user = sessionStorage.getItem("userData_iambigbobby") as string;
       const userParse = JSON.parse(user);
       client.logout(userParse.login, userParse.password);
+      sessionStorage.removeItem("userData_iambigbobby");
       destroyPage();
       window.history.replaceState(null, "", "login");
       renderWrapper("login", renderLogInField);
