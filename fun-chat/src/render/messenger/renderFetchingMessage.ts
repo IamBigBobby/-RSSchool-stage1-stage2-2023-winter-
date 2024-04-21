@@ -53,6 +53,29 @@ export default function renderFetchingMessage(
     ];
 
     addElementsToParent(lastMessage, sendedMessageContent);
+
+    const messengerStatusCreated =
+      document.querySelectorAll(".messenger__status");
+    const lastMessengerStatus = messengerStatusCreated[
+      messengerStatusCreated.length - 1
+    ] as HTMLElement;
+
+    const messengerStatusContent = [
+      {
+        tagName: "div",
+        classNames: ["messenger__send-satus"],
+      },
+      {
+        tagName: "div",
+        classNames: ["messenger__read-status"],
+      },
+      {
+        tagName: "div",
+        classNames: ["messenger__eidt-status"],
+      },
+    ];
+
+    addElementsToParent(lastMessengerStatus, messengerStatusContent);
   });
   scrollBottom();
 }
