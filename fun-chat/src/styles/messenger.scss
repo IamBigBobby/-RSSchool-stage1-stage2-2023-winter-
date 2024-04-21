@@ -98,8 +98,18 @@
     padding-top: 50px;
 }
 
+.messenger__container-input {
+    display: flex;
+}
+
 .messenger__chat-input {
-    width: 85%;
+    display: block;
+    width: auto;
+    flex-grow: 1;
+}
+
+.messenger__chat-send-button {
+    display: block;
 }
 
 .messenger__chat-send-button_disabled, .messenger__chat-input_disabled{

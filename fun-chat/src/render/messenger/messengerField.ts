@@ -107,6 +107,19 @@ export default function renderMessengerField(page: string): void {
       classNames: ["messenger__chat-window"],
     },
     {
+      tagName: "div",
+      classNames: ["messenger__container-input"],
+    },
+  ];
+
+  addElementsToParent(messengerChatContainer, messengerChatContainerData);
+
+  const containerInput = document.querySelector(
+    ".messenger__container-input",
+  ) as HTMLElement;
+
+  const containerInputData = [
+    {
       tagName: "input",
       classNames: ["messenger__chat-input", "messenger__chat-input_disabled"],
       attributes: {
@@ -124,7 +137,7 @@ export default function renderMessengerField(page: string): void {
     },
   ];
 
-  addElementsToParent(messengerChatContainer, messengerChatContainerData);
+  addElementsToParent(containerInput, containerInputData);
 
   const messengerWindow = document.querySelector(
     ".messenger__chat-window",
