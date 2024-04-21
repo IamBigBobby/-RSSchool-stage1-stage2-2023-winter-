@@ -7,6 +7,7 @@ import renderFetchingMessage from "../render/messenger/renderFetchingMessage";
 import renderResponseMessage from "../render/messenger/renderResponseMessage";
 import renderUnactiveUsers from "../render/messenger/renderUnactiveUsers";
 import addDeliveredStatus from "./addDeliveredStatus";
+import addTrueDeliveredStatus from "./addTrueDiliveredStatus";
 import pinIdForSendedMessage from "./pinIdForSendedMessage";
 
 export default function watcher() {
@@ -39,6 +40,9 @@ export default function watcher() {
     }
     if (typeData === "MSG_FROM_USER") {
       renderFetchingMessage(dataPares.payload.messages);
+    }
+    if (typeData === "MSG_DELIVER") {
+      addTrueDeliveredStatus(dataPares.payload.message.id);
     }
   });
 }

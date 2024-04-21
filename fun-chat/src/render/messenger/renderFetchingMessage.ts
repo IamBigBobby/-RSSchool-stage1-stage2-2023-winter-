@@ -59,10 +59,19 @@ export default function renderFetchingMessage(
       messengerStatusCreated.length - 1
     ] as HTMLElement;
 
+    let status;
+
+    if (message.status.isDelivered === true) {
+      status = "delivererd";
+    } else {
+      status = "";
+    }
+
     const messengerStatusContent = [
       {
         tagName: "div",
         classNames: ["messenger__send-satus"],
+        textContent: status,
       },
       {
         tagName: "div",
