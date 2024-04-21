@@ -1,5 +1,6 @@
 import { ResevedMessage } from "../../interfaces/interfaces";
 import addElementsToParent from "../../utils/addElementsToParent";
+import getCurrentTime from "../../utils/getCurrentTime";
 import scrollBottom from "../../utils/scrollBottom";
 
 export default function renderFetchingMessage(
@@ -21,10 +22,32 @@ export default function renderFetchingMessage(
       {
         tagName: "div",
         classNames: messageClasses,
-        textContent: message.text,
       },
     ];
     addElementsToParent(messengerChatWindow, messageData);
+
+    const messages = document.querySelectorAll(".messenger__message");
+    const lastMessage = messages[messages.length - 1] as HTMLElement;
+    const date = new Date(message.datetime);
+
+    const sendedMessageContent = [
+      {
+        tagName: "div",
+        classNames: ["messenger__time"],
+        textContent: getCurrentTime(date),
+      },
+      {
+        tagName: "div",
+        classNames: ["messenger__text"],
+        textContent: message.text,
+      },
+      {
+        tagName: "div",
+        classNames: ["messenger__status"],
+      },
+    ];
+
+    addElementsToParent(lastMessage, sendedMessageContent);
   });
   scrollBottom();
 }

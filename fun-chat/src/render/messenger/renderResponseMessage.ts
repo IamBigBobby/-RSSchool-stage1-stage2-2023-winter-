@@ -5,8 +5,6 @@ import getCurrentTime from "../../utils/getCurrentTime";
 import scrollBottom from "../../utils/scrollBottom";
 
 export default function renderResponseMessage(resevedMessage: ResevedMessage) {
-  console.log(resevedMessage);
-
   const timestamp = resevedMessage.datetime;
   const date = new Date(timestamp);
 
