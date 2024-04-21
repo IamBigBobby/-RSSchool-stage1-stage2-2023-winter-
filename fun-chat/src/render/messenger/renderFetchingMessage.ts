@@ -11,7 +11,9 @@ export default function renderFetchingMessage(
   ) as HTMLElement;
   const currentUser = sessionStorage.getItem("userData_iambigbobby") as string;
   const currentUserparsed = JSON.parse(currentUser);
+
   fetchingMessages.forEach((message) => {
+    console.log(message.id);
     let messageClasses: string[];
     if (currentUserparsed.login === message.from) {
       messageClasses = ["messenger__message", "messenger__sended-message"];
@@ -22,6 +24,9 @@ export default function renderFetchingMessage(
       {
         tagName: "div",
         classNames: messageClasses,
+        attributes: {
+          id: message.id,
+        },
       },
     ];
     addElementsToParent(messengerChatWindow, messageData);
