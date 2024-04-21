@@ -59,9 +59,15 @@ export default function renderFetchingMessage(
       messengerStatusCreated.length - 1
     ] as HTMLElement;
 
+    const grandparentElement = lastMessengerStatus.parentElement || null;
+
     let status;
 
-    if (message.status.isDelivered === true) {
+    if (
+      message.status.isDelivered === true &&
+      grandparentElement?.classList.contains("messenger__sended-message")
+    ) {
+      console.log("статус добавлен");
       status = "delivererd";
     } else {
       status = "";
