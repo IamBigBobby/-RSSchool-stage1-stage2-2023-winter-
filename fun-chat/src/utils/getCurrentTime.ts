@@ -20,5 +20,5 @@ export default function getCurrentTime(time: Date): string {
   const minute = String(time.getMinutes());
   const second = String(time.getSeconds());
 
-  return `${date} ${monthsArr[month]} ${year} ${hour}/${minute}/${second}`;
+  return `${date} ${monthsArr[month]} ${year} ${hour}:${minute}:${second}`;
 }
