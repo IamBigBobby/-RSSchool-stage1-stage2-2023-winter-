@@ -89,6 +89,7 @@
 .messenger__window-messenger{
     text-align: center;
     align-self: center;
+    padding-top: 50px;
 }
 
 .messenger__chat-input {
@@ -116,6 +117,6 @@
     align-self: flex-start;
 }
 
-.messenger__time {
+.messenger__time, .messenger__send-satus {
     font-size: 10px;
 }
