@@ -45,6 +45,32 @@ export default function renderMessengerField(page: string): void {
 
   addElementsToParent(headerCreated, headerDataContent);
 
+  const editMenuData = [
+    {
+      tagName: "div",
+      classNames: ["edit-menu"],
+    },
+  ];
+
+  addElementsToParent(currentPage, editMenuData);
+
+  const editMenu = document.querySelector(".edit-menu") as HTMLElement;
+
+  const editMenuDataContent = [
+    {
+      tagName: "div",
+      classNames: ["edit-menu__edit"],
+      textContent: "edit",
+    },
+    {
+      tagName: "div",
+      classNames: ["edit-menu__delete"],
+      textContent: "delete",
+    },
+  ];
+
+  addElementsToParent(editMenu, editMenuDataContent);
+
   const messengerContainer = [
     {
       tagName: "div",
