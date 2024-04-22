@@ -44,6 +44,10 @@
   display: block;
   color: red;
   font-size: 12px;
+  @media (max-width: 750px) {
+    bottom: -35px;
+    font-size: 10px;
+  }
 }
 
 .invalid_value_register::before {
@@ -53,4 +57,8 @@
   display: block;
   color: red;
   font-size: 12px;
+  @media (max-width: 750px) {
+    bottom: -35px;
+    font-size: 10px;
+  }
 }
