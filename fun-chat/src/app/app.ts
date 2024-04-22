@@ -6,14 +6,14 @@ import logInButtonHandler from "../utils/buttons/logIn";
 import logOutButtonHandler from "../utils/buttons/logOut";
 import openAbout from "../utils/buttons/openAbout";
 import renderWrapper from "../utils/renderWrapper";
-import watcher from "../utils/watcher";
+// import watcher from "../utils/watcher";
 
 export default function app() {
   window.addEventListener("beforeunload", () => {
     sessionStorage.removeItem("userData_iambigbobby");
   });
 
-  watcher();
+  // watcher();
 
   const { body } = document;
   const containerApp = [

@@ -1,6 +1,10 @@
+// eslint-disable-next-line
+import client from "../constants/currentClient";
 import currentSocket from "../constants/currentSocket";
 import showConnectingPopUp from "../utils/inputs/popUpErrorConnection";
 import generateRandomId from "../utils/randomId";
+// eslint-disable-next-line
+import watcher from "../utils/watcher";
 
 export default class WebSocketClient {
   private url: string;
@@ -17,6 +21,23 @@ export default class WebSocketClient {
 
     this.socket.addEventListener("open", () => {
       console.log("Connected to WebSocket server");
+      watcher();
+
+      const wrapperDataConnecting = document.querySelector(
+        ".wrapper-popup-connecting",
+      ) as HTMLElement;
+      const userData = sessionStorage.getItem("userData_iambigbobby") as string;
+      const userDataParsed = JSON.parse(userData);
+      if (wrapperDataConnecting) {
+        const parentWrapper = wrapperDataConnecting.parentElement;
+        if (parentWrapper) {
+          parentWrapper.removeChild(wrapperDataConnecting);
+        }
+      }
+
+      if (userDataParsed !== null) {
+        client.addUser(userDataParsed.login, userDataParsed.password);
+      }
     });
 
     this.socket.addEventListener("close", () => {
