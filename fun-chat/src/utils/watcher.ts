@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import client from "../constants/currentClient";
 import addNewUser from "../render/messenger/addNewUser";
 import makeUserActive from "../render/messenger/makeUserActive";
