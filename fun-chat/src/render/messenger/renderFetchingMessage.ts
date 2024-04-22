@@ -61,23 +61,32 @@ export default function renderFetchingMessage(
 
     const grandparentElement = lastMessengerStatus.parentElement || null;
 
-    let status;
+    let statusDelivered;
+    let statusEdited;
+    // let statusReaded;
+
+    console.log(message.status);
 
     if (
       message.status.isDelivered === true &&
       grandparentElement?.classList.contains("messenger__sended-message")
     ) {
-      console.log("статус добавлен");
-      status = "delivererd";
+      statusDelivered = "delivererd";
     } else {
-      status = "";
+      statusDelivered = "";
+    }
+
+    if (message.status.isEdited === true) {
+      statusEdited = "edited";
+    } else {
+      statusEdited = "";
     }
 
     const messengerStatusContent = [
       {
         tagName: "div",
         classNames: ["messenger__send-satus"],
-        textContent: status,
+        textContent: statusDelivered,
       },
       {
         tagName: "div",
@@ -86,6 +95,7 @@ export default function renderFetchingMessage(
       {
         tagName: "div",
         classNames: ["messenger__eidt-status"],
+        textContent: statusEdited,
       },
     ];
 
