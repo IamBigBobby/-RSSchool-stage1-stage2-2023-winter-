@@ -1,5 +1,25 @@
 import addElementsToParent from "../addElementsToParent";
 
+function animationConnecting() {
+  const textConnection = document.querySelector(
+    ".popup-connecting-container",
+  ) as HTMLElement;
+  let countOfDot = 0;
+  const maxCoutDot = 3;
+
+  function addDot() {
+    if (countOfDot < maxCoutDot) {
+      textConnection.textContent += ".";
+      countOfDot += 1;
+    } else {
+      textConnection.textContent = "Lost connection. Try to connect";
+      countOfDot = 0;
+    }
+  }
+
+  setInterval(addDot, 1000);
+}
+
 export default function showConnectingPopUp() {
   const { body } = document;
 
@@ -25,4 +45,6 @@ export default function showConnectingPopUp() {
   ];
 
   addElementsToParent(wrapperPopupConnecting, popupContainer);
+
+  animationConnecting();
 }
