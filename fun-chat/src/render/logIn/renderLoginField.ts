@@ -17,6 +17,11 @@ export default function renderLogInField(page: string): void {
       classNames: ["log-in-button", "log-in-button_disabled"],
       textContent: "login",
     },
+    {
+      tagName: "button",
+      classNames: ["about-button"],
+      textContent: "about",
+    },
   ];
 
   addElementsToParent(currentPage, elementsData);

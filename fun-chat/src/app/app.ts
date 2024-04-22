@@ -3,6 +3,7 @@ import renderLogInField from "../render/logIn/renderLoginField";
 import addElementsToParent from "../utils/addElementsToParent";
 import logInButtonHandler from "../utils/buttons/logIn";
 import logOutButtonHandler from "../utils/buttons/logOut";
+import openAbout from "../utils/buttons/openAbout";
 import renderWrapper from "../utils/renderWrapper";
 import watcher from "../utils/watcher";
 
@@ -23,4 +24,5 @@ export default function app() {
 
   logInButtonHandler();
   logOutButtonHandler();
+  openAbout();
 }
