@@ -10,12 +10,13 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
   },
   resolve: {
-    extensions: ['.ts', '.js'] // Добавляем расширение .ts
+    extensions: ['.ts', '.js']
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src/index.html"),
       filename: "index.html",
+      favicon: path.join(__dirname, "src/favicon.ico"),
     }),
     new EslintPlugin({ extensions: ['ts'] }),
   ],
