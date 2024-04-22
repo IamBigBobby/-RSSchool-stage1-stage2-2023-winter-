@@ -1,3 +1,4 @@
+import closeEditButtonsEvent from "../../utils/buttons/closeEditButtonsEvent";
 import sendMessage from "../../utils/buttons/sendMessage";
 import closeEditMenu from "../../utils/closeEditMenu";
 import editMessage from "../../utils/editMessage";
@@ -14,4 +15,5 @@ export default function eventsMessengerField(): void {
   selectEditMenu();
   closeEditMenu();
   editMessage();
+  closeEditButtonsEvent();
 }
