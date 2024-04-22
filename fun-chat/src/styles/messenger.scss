@@ -1,153 +1,157 @@
-.messenger{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.messenger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.messenger__header{
-    display: flex;
-    width: 80vw;
-    justify-content: space-around;
-    align-items: center;
+.messenger__header {
+  display: flex;
+  width: 80vw;
+  justify-content: space-around;
+  align-items: center;
 
-    padding: 10px;
+  padding: 10px;
 
-    border: 3px dotted black;
+  border: 3px dotted black;
 
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
-.messenger__container{
-    display: flex;
-    width: 80vw;
-    height: 50vh;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
+.messenger__container {
+  display: flex;
+  width: 80vw;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
 }
 
-.messenger__users{
-    width: 30vw;
-    height: 100%;
-    border: 3px dotted black;
-    border-radius: 10px;
-    overflow: hidden;
-    padding: 5px;
+.messenger__users {
+  width: 30vw;
+  height: 100%;
+  border: 3px dotted black;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 5px;
 }
 
 .messenger__chat {
-    width: 70vw;
-    height: 100%;
-    border: 3px dotted black;
-    border-radius: 10px;
-    padding: 5px;
+  width: 70vw;
+  height: 100%;
+  border: 3px dotted black;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 .input-find-users {
-    width: 90%;
-    margin: 10px;
+  width: 90%;
+  margin: 10px;
 }
 
 .messenger__users-list-element {
-    color: green;
-    min-width: 30px;
+  color: green;
+  min-width: 30px;
 }
 
 .messenger__users-list-element_active {
-    color: green;
+  color: green;
 }
 
 .messenger__users-list-element_unactive {
-    color: red;
+  color: red;
 }
 
 .messenger__users-list_selected {
-    background-color: rgb(243, 233, 233); 
+  background-color: rgb(243, 233, 233);
 }
 
 .messenger__users-list-element:hover {
-    background-color: rgb(243, 233, 233);
-    cursor: pointer;
+  background-color: rgb(243, 233, 233);
+  cursor: pointer;
 }
 
 .messenger__users-list-element_hidden {
-    display: none;
+  display: none;
 }
 
-.messenger__text{
-    padding: 5px;
+.messenger__text {
+  padding: 5px;
 }
 
-.messenger__users-list{
-    display: block;
-    height: 80%;
-    overflow-y: scroll;
+.messenger__users-list {
+  display: block;
+  height: 80%;
+  overflow-y: scroll;
 }
 
-.messenger__chat-window{
-    height: 90%;
-    overflow-y: scroll;
-    display: flex;
-    flex-direction: column;
-    // justify-content: flex-end;
-    gap: 10px;
+.messenger__chat-window {
+  height: 90%;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  // justify-content: flex-end;
+  gap: 10px;
 }
-.messenger__window-messenger, .messenger__empty-history{
-    text-align: center;
-    align-self: center;
-    padding-top: 50px;
+.messenger__window-messenger,
+.messenger__empty-history {
+  text-align: center;
+  align-self: center;
+  padding-top: 50px;
 }
 
 .messenger__container-input {
-    display: flex;
+  display: flex;
 }
 
 .messenger__chat-input {
-    display: block;
-    width: auto;
-    flex-grow: 1;
+  display: block;
+  width: auto;
+  flex-grow: 1;
 }
 
 .messenger__chat-send-button {
-    display: block;
+  display: block;
 }
 
-.messenger__chat-send-button_disabled, .messenger__chat-input_disabled{
-    pointer-events: none;
-    opacity: 0.5;
-    cursor: default;
+.messenger__chat-send-button_disabled,
+.messenger__chat-input_disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: default;
 }
 
 .messenger__chat-send-button_hidden {
-    display: none;
+  display: none;
 }
 
 .messenger__message {
-    border: 1px solid black;
-    border-radius: 5px;
-    width: auto;
-    padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: auto;
+  padding: 5px;
 }
 
 .messenger__sended-message {
-    align-self: flex-end;
+  align-self: flex-end;
 }
 
 .messenger__response-message {
-    align-self: flex-start;
+  align-self: flex-start;
 }
 
-.messenger__time, .messenger__send-satus, .messenger__eidt-status {
-    font-size: 10px;
+.messenger__time,
+.messenger__send-satus,
+.messenger__eidt-status {
+  font-size: 10px;
 }
 
 .messenger__status {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .messenger__from-name {
-    font-size: 12px;
+  font-size: 12px;
 }

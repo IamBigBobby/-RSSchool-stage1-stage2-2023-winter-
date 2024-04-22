@@ -1,53 +1,56 @@
-.login{
-    width: 30vw;
+.login {
+  width: 30vw;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    gap: 40px;
+  gap: 40px;
 
-    border: 3px dotted black;
+  border: 3px dotted black;
 
-    padding: 10px;
+  padding: 10px;
 
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
-.input-first-name-wrapper, .input-password-wrapper{
-    width: 70%;
+.input-first-name-wrapper,
+.input-password-wrapper {
+  width: 70%;
 }
 
-.input-password, .input-login{
-    width: 100%;
+.input-password,
+.input-login {
+  width: 100%;
 }
 
-.log-in-button_disabled{
-    pointer-events: none;
-    opacity: 0.5;
-    cursor: default;
+.log-in-button_disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: default;
 }
 
-.invalid_value_count, .invalid_value_register{
-    border-color: red;
-    position: relative;
+.invalid_value_count,
+.invalid_value_register {
+  border-color: red;
+  position: relative;
 }
 
 .invalid_value_count::before {
-    content: "value cannot be shorter than four characters";
-    position: absolute;
-    bottom: -30px;
-    display: block;
-    color: red;
-    font-size: 12px;
+  content: "value cannot be shorter than four characters";
+  position: absolute;
+  bottom: -30px;
+  display: block;
+  color: red;
+  font-size: 12px;
 }
 
 .invalid_value_register::before {
-    content: "value must contain at least one capital letter";
-    position: absolute;
-    bottom: -30px;
-    display: block;
-    color: red;
-    font-size: 12px;
+  content: "value must contain at least one capital letter";
+  position: absolute;
+  bottom: -30px;
+  display: block;
+  color: red;
+  font-size: 12px;
 }

@@ -1,32 +1,34 @@
 .edit-menu {
-    display: none;
-    position: absolute;
-    width: 100px;
-    border: 1px solid black;
-    background-color: white;
+  display: none;
+  position: absolute;
+  width: 100px;
+  border: 1px solid black;
+  background-color: white;
 }
 
-.edit-menu__edit, .edit-menu__delete {
-    text-align: center;
+.edit-menu__edit,
+.edit-menu__delete {
+  text-align: center;
 }
 
-.edit-menu__edit:hover, .edit-menu__delete:hover {
-    cursor: pointer;
-    background-color: rgb(243, 233, 233);
+.edit-menu__edit:hover,
+.edit-menu__delete:hover {
+  cursor: pointer;
+  background-color: rgb(243, 233, 233);
 }
 
 .messenger__chat-edit-button {
-    display: none;
+  display: none;
 }
 
 .messenger__chat-edit-button_visible {
-    display: block;
+  display: block;
 }
 
 .messenger__chat-cancel-edit-button {
-    display: none;
+  display: none;
 }
 
 .messenger__chat-cancel-edit-button_visible {
-    display: block;
+  display: block;
 }

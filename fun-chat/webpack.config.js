@@ -1,6 +1,6 @@
 const path = require("path");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const EslintPlugin = require('eslint-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const EslintPlugin = require("eslint-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -10,7 +10,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
   },
   resolve: {
-    extensions: ['.ts', '.js']
+    extensions: [".ts", ".js"],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -18,21 +18,17 @@ module.exports = {
       filename: "index.html",
       favicon: path.join(__dirname, "src/favicon.ico"),
     }),
-    new EslintPlugin({ extensions: ['ts'] }),
+    new EslintPlugin({ extensions: ["ts"] }),
   ],
   module: {
     rules: [
       {
         test: /\.(jpg|png|svg|jpeg|gif)$/,
-        type: 'asset/resource',
+        type: "asset/resource",
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [
-          "style-loader",
-          "css-loader",
-          "sass-loader",
-        ],
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
         test: /\.ts$/i,
