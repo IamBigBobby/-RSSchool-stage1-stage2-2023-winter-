@@ -10,21 +10,21 @@
   width: 80vw;
   justify-content: space-around;
   align-items: center;
-
-  padding: 10px;
-
-  border: 3px dotted black;
-
+  padding: 40px;
   border-radius: 10px;
 }
 
 .messenger__container {
+  margin: 0 auto;
   display: flex;
   width: 80vw;
   height: 50vh;
   justify-content: center;
   align-items: center;
   padding: 5px;
+  @media (max-width: 750px) {
+    flex-direction: column;
+  }
 }
 
 .messenger__users {
@@ -34,6 +34,9 @@
   border-radius: 10px;
   overflow: hidden;
   padding: 5px;
+  @media (max-width: 750px) {
+    width: 100%;
+  }
 }
 
 .messenger__chat {
@@ -42,6 +45,9 @@
   border: 3px dotted black;
   border-radius: 10px;
   padding: 5px;
+  @media (max-width: 750px) {
+    width: 100%;
+  }
 }
 
 .input-find-users {
@@ -86,12 +92,16 @@
 }
 
 .messenger__chat-window {
-  height: 90%;
+  height: 95%;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
   // justify-content: flex-end;
   gap: 10px;
+
+  @media (max-width: 750px) {
+    height: 90%;
+  }
 }
 .messenger__window-messenger,
 .messenger__empty-history {
@@ -154,4 +164,12 @@
 
 .messenger__from-name {
   font-size: 12px;
+}
+
+.messenger__explonation {
+  margin: 0 auto;
+  width: 300px;
+  padding-top: 40px;
+  text-align: center;
+  font-size: 20px;
 }

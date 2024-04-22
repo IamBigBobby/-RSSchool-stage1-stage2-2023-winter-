@@ -182,6 +182,16 @@ export default function renderMessengerField(page: string): void {
 
   addElementsToParent(usersField, usersContainerData);
 
+  const explonationData = [
+    {
+      tagName: "div",
+      classNames: ["messenger__explonation"],
+      textContent: "to delete or edit messages please use right mouse click",
+    },
+  ];
+
+  addElementsToParent(currentPage, explonationData);
+
   const app = document.querySelector(".app") as HTMLElement;
 
   const footerData = [
