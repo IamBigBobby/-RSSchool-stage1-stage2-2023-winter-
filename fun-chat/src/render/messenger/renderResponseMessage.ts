@@ -52,18 +52,29 @@ export default function renderResponseMessage(resevedMessage: ResevedMessage) {
 
     addElementsToParent(sendedMessageCreated, sendedMessageContent);
 
-    const messengerStatusCreated = document.querySelector(
-      ".messenger__status",
-    ) as HTMLElement;
+    const messengerStatusCreated =
+      document.querySelectorAll(".messenger__status");
+    const lastMessengerStatus = messengerStatusCreated[
+      messengerStatusCreated.length - 1
+    ] as HTMLElement;
 
-    const messengerStatusContent = [
+    const messegeStatusContent = [
       {
         tagName: "div",
         classNames: ["messenger__send-satus"],
       },
+      {
+        tagName: "div",
+        classNames: ["messenger__read-status"],
+      },
+      {
+        tagName: "div",
+        classNames: ["messenger__eidt-status"],
+      },
     ];
 
-    addElementsToParent(messengerStatusCreated, messengerStatusContent);
+    addElementsToParent(lastMessengerStatus, messegeStatusContent);
+
     scrollBottom();
   }
 }

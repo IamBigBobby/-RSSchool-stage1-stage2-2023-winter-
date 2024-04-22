@@ -5,7 +5,7 @@ export default function closeEditButtonsEvent() {
     ".messenger__chat-cancel-edit-button",
   ) as HTMLElement;
 
-  cancelEditButton?.addEventListener("click", () => {
+  cancelEditButton.addEventListener("click", () => {
     closeEditButtons();
   });
 }

@@ -1,3 +1,4 @@
+import client from "../constants/currentClient";
 import messageId from "../constants/messageId";
 import closeEditButtons from "./buttons/closeEditButtons";
 
@@ -23,6 +24,7 @@ export default function editMessage() {
 
     textContentMessage.textContent = inputField.value;
     statusEdited.textContent = "edited";
+    client.messageTextEditing(messageId.id, inputField.value);
     inputField.value = "";
     closeEditButtons();
   });

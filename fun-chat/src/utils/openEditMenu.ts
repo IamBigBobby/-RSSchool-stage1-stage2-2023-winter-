@@ -20,7 +20,6 @@ export default function openEditMenu() {
       editMenu.style.top = `${event.clientY}px`;
       messageId.id = idMessage;
       messageId.text = textMessage;
-      console.log(messageId.id);
     }
   });
 }
