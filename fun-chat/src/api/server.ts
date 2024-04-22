@@ -1,4 +1,5 @@
 import currentSocket from "../constants/currentSocket";
+import showConnectingPopUp from "../utils/inputs/popUpErrorConnection";
 import generateRandomId from "../utils/randomId";
 
 export default class WebSocketClient {
@@ -18,12 +19,15 @@ export default class WebSocketClient {
       console.log("Connected to WebSocket server");
     });
 
-    // this.socket.addEventListener("message", (event) => {
-    //   console.log("Received message:", event.data);
-    // });
-
     this.socket.addEventListener("close", () => {
       console.log("Disconnected from WebSocket server");
+      const wrapperDataConnecting = document.querySelector(
+        ".wrapper-popup-connecting",
+      );
+      if (!wrapperDataConnecting) {
+        showConnectingPopUp();
+      }
+      this.reconnect();
     });
 
     this.socket.addEventListener("error", () => {
@@ -170,5 +174,12 @@ export default class WebSocketClient {
       this.socket.close();
       this.socket = null;
     }
+  }
+
+  private reconnect(): void {
+    setTimeout(() => {
+      this.connect();
+      console.log("try to reconect");
+    }, 1000);
   }
 }

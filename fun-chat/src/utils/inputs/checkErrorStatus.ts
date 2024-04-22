@@ -3,7 +3,7 @@ import eventsMessengerField from "../../render/messenger/eventsMessengerField";
 import renderMessengerField from "../../render/messenger/messengerField";
 import destroyPage from "../destroyPage";
 import parseData from "../parseData";
-import showPopUp from "../popUp";
+import showPopUp from "../popUpError";
 import renderWrapper from "../renderWrapper";
 
 function errorPromise() {
