@@ -198,12 +198,10 @@ export default function renderMessengerField(page: string): void {
     {
       tagName: "div",
       classNames: ["footer__logo"],
-      textContent: "RSSchool",
     },
     {
       tagName: "div",
       classNames: ["footer__creater"],
-      textContent: "Denis Svetleishii",
     },
     {
       tagName: "div",
@@ -213,6 +211,38 @@ export default function renderMessengerField(page: string): void {
   ];
 
   addElementsToParent(footerCreated, footerContent);
+
+  const footerLogo = document.querySelector(".footer__logo") as HTMLElement;
+
+  const footerLogoContent = [
+    {
+      tagName: "a",
+      classNames: ["footer__logo-link"],
+      textContent: "RSSchool",
+      attributes: {
+        href: "https://rs.school/",
+      },
+    },
+  ];
+
+  addElementsToParent(footerLogo, footerLogoContent);
+
+  const footerCreater = document.querySelector(
+    ".footer__creater",
+  ) as HTMLElement;
+
+  const footerCreaterContent = [
+    {
+      tagName: "a",
+      classNames: ["footer__creater-link"],
+      textContent: "Denis Svetleishii",
+      attributes: {
+        href: "https://github.com/IamBigBobby",
+      },
+    },
+  ];
+
+  addElementsToParent(footerCreater, footerCreaterContent);
 
   client.getAllAuthenticatedUsers();
   client.getAllUnauthenticatedUsers();
