@@ -1,4 +1,5 @@
 import messageId from "../constants/messageId";
+import deleteMessage from "./deleteMessage";
 
 function editMessageInput(message: string) {
   const editButton = document.querySelector(
@@ -23,12 +24,21 @@ function editMessageInput(message: string) {
 
 export default function selectEditMenu() {
   const editButton = document.querySelector(".edit-menu__edit") as HTMLElement;
-  //   const deleteButton = document.querySelector(".edit-menu__delete") as HTMLElement;
+  const deleteButton = document.querySelector(
+    ".edit-menu__delete",
+  ) as HTMLElement;
   editButton.addEventListener("click", (event) => {
     const currentMessage = event.target as HTMLElement;
     if (currentMessage.classList.contains("edit-menu__edit")) {
       const textMessage = messageId.text;
       editMessageInput(textMessage);
+    }
+  });
+  deleteButton.addEventListener("click", (event) => {
+    const currentMessage = event.target as HTMLElement;
+    if (currentMessage.classList.contains("edit-menu__delete")) {
+      const idMessage = messageId.id;
+      deleteMessage(idMessage);
     }
   });
 }

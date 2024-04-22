@@ -151,6 +151,20 @@ export default class WebSocketClient {
     this.send(JSON.stringify(request));
   }
 
+  public deleteMessage(id: string) {
+    const request = {
+      id: generateRandomId(),
+      type: "MSG_DELETE",
+      payload: {
+        message: {
+          id,
+        },
+      },
+    };
+
+    this.send(JSON.stringify(request));
+  }
+
   public disconnect(): void {
     if (this.socket) {
       this.socket.close();

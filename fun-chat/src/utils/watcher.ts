@@ -8,6 +8,8 @@ import renderResponseMessage from "../render/messenger/renderResponseMessage";
 import renderUnactiveUsers from "../render/messenger/renderUnactiveUsers";
 import addDeliveredStatus from "./addDeliveredStatus";
 import addTrueDeliveredStatus from "./addTrueDiliveredStatus";
+import deleteGetMessage from "./deleteGetMessage";
+// import deleteMessage from "./deleteMessage";
 import editMessageGetter from "./editMessageGetter";
 import pinIdForSendedMessage from "./pinIdForSendedMessage";
 
@@ -51,6 +53,11 @@ export default function watcher() {
           dataPares.payload.message.id,
           dataPares.payload.message.text,
         );
+      }
+    }
+    if (typeData === "MSG_DELETE") {
+      if (dataPares.id === null) {
+        deleteGetMessage(dataPares.payload.message.id);
       }
     }
   });
