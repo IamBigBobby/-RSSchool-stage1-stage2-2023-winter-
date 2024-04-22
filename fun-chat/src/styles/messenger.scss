@@ -50,6 +50,7 @@
 }
 
 .messenger__users-list-element {
+    color: green;
     min-width: 30px;
 }
 
@@ -145,4 +146,8 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+
+.messenger__from-name {
+    font-size: 12px;
 }

@@ -8,6 +8,9 @@ export default function renderSendMessage(message: string) {
 
   const time = new Date();
 
+  const userData = sessionStorage.getItem("userData_iambigbobby") as string;
+  const userDataParse = JSON.parse(userData);
+
   const sendedMessageData = [
     {
       tagName: "div",
@@ -27,6 +30,11 @@ export default function renderSendMessage(message: string) {
       tagName: "div",
       classNames: ["messenger__time"],
       textContent: getCurrentTime(time),
+    },
+    {
+      tagName: "div",
+      classNames: ["messenger__from-name"],
+      textContent: userDataParse.login,
     },
     {
       tagName: "div",

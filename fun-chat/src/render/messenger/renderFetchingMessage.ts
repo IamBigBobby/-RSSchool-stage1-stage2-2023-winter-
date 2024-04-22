@@ -6,7 +6,6 @@ import scrollBottom from "../../utils/scrollBottom";
 export default function renderFetchingMessage(
   fetchingMessages: ResevedMessage[],
 ) {
-  console.log(fetchingMessages, fetchingMessages.length);
   const messengerChatWindow = document.querySelector(
     ".messenger__chat-window",
   ) as HTMLElement;
@@ -17,12 +16,18 @@ export default function renderFetchingMessage(
     ) as string;
     const currentUserparsed = JSON.parse(currentUser);
 
+    let messageClasses: string[];
+    let nameUser: string;
+
     fetchingMessages.forEach((message) => {
-      let messageClasses: string[];
+      console.log(message);
+      console.log(currentUserparsed.login, message.from);
       if (currentUserparsed.login === message.from) {
         messageClasses = ["messenger__message", "messenger__sended-message"];
-      } else {
+        nameUser = message.from;
+      } else if (currentUserparsed.login !== message.from) {
         messageClasses = ["messenger__message", "messenger__response-message"];
+        nameUser = message.from;
       }
       const messageData = [
         {
@@ -44,6 +49,11 @@ export default function renderFetchingMessage(
           tagName: "div",
           classNames: ["messenger__time"],
           textContent: getCurrentTime(date),
+        },
+        {
+          tagName: "div",
+          classNames: ["messenger__from-name"],
+          textContent: nameUser,
         },
         {
           tagName: "div",

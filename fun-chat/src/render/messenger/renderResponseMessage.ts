@@ -49,6 +49,11 @@ export default function renderResponseMessage(resevedMessage: ResevedMessage) {
       },
       {
         tagName: "div",
+        classNames: ["messenger__from-name"],
+        textContent: resevedMessage.from,
+      },
+      {
+        tagName: "div",
         classNames: ["messenger__text"],
         textContent: resevedMessage.text,
       },
