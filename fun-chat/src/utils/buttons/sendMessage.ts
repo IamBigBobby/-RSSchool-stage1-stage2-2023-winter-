@@ -26,12 +26,19 @@ function sendingEnter(event: KeyboardEvent) {
     ".messenger__chat-send-button",
   ) as HTMLButtonElement;
 
+  const editMessageButton = document.querySelector(
+    ".messenger__chat-edit-button",
+  ) as HTMLButtonElement;
+
   if (sendMessageButton) {
     if (
       !sendMessageButton.classList.contains(
         "messenger__chat-send-button_disabled",
       ) &&
-      event.key === "Enter"
+      event.key === "Enter" &&
+      !editMessageButton.classList.contains(
+        "messenger__chat-edit-button_visible",
+      )
     ) {
       if (message.text.trim() !== "") {
         client.sendingMessage(message.to, message.text);
