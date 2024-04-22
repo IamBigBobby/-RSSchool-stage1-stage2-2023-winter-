@@ -7,6 +7,7 @@ export default function openAbout() {
     const currentElement = event.target as HTMLElement;
     if (currentElement.classList.contains("about-button")) {
       destroyPage();
+      window.history.replaceState(null, "", "about");
       renderWrapper("about", renderAbout);
     }
   });
