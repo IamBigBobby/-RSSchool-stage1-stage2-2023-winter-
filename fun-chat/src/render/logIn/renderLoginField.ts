@@ -54,4 +54,18 @@ export default function renderLogInField(page: string): void {
 
   addElementsToParent(inputNameWrapper, [inputsData[0]]);
   addElementsToParent(inputPasswordWrapper, [inputsData[1]]);
+
+  const explainData = [
+    {
+      tagName: "a",
+      classNames: ["copy-link"],
+      textContent: "clone app",
+      attributes: {
+        href: "https://rolling-scopes-school.github.io/iambigbobby-JSFE2023Q4/fun-chat",
+        target: "_blank",
+      },
+    },
+  ];
+
+  addElementsToParent(currentPage, explainData);
 }
