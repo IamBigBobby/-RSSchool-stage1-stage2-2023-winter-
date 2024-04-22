@@ -2,9 +2,17 @@ import message from "../../constants/message";
 import { ResevedMessage } from "../../interfaces/interfaces";
 import addElementsToParent from "../../utils/addElementsToParent";
 import getCurrentTime from "../../utils/getCurrentTime";
+import removeEmptyHistory from "../../utils/removeEmpptyHistory";
 import scrollBottom from "../../utils/scrollBottom";
 
 export default function renderResponseMessage(resevedMessage: ResevedMessage) {
+  const emptyHistory = document.querySelector(
+    ".messenger__empty-history",
+  ) as HTMLElement;
+  if (emptyHistory) {
+    removeEmptyHistory();
+  }
+
   const timestamp = resevedMessage.datetime;
   const date = new Date(timestamp);
 

@@ -1,6 +1,7 @@
 import client from "../../constants/currentClient";
 import message from "../../constants/message";
 import renderSendMessage from "../../render/messenger/renderSendMessage";
+import removeEmptyHistory from "../removeEmpptyHistory";
 import scrollBottom from "../scrollBottom";
 
 function sendingClick() {
@@ -9,6 +10,12 @@ function sendingClick() {
   ) as HTMLInputElement;
 
   if (message.text.trim() !== "") {
+    const emptyHistory = document.querySelector(
+      ".messenger__empty-history",
+    ) as HTMLElement;
+    if (emptyHistory) {
+      removeEmptyHistory();
+    }
     renderSendMessage(message.text);
     client.sendingMessage(message.to, message.text);
     inputMessengerField.value = "";
@@ -41,6 +48,12 @@ function sendingEnter(event: KeyboardEvent) {
       )
     ) {
       if (message.text.trim() !== "") {
+        const emptyHistory = document.querySelector(
+          ".messenger__empty-history",
+        ) as HTMLElement;
+        if (emptyHistory) {
+          removeEmptyHistory();
+        }
         client.sendingMessage(message.to, message.text);
         renderSendMessage(message.text);
         inputMessengerField.value = "";
