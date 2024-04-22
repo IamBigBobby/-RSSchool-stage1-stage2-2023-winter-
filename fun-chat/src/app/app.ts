@@ -9,6 +9,10 @@ import renderWrapper from "../utils/renderWrapper";
 import watcher from "../utils/watcher";
 
 export default function app() {
+  window.addEventListener("beforeunload", () => {
+    sessionStorage.removeItem("userData_iambigbobby");
+  });
+
   watcher();
 
   const { body } = document;
