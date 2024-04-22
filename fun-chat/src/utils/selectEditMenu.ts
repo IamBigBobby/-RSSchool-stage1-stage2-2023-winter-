@@ -25,7 +25,6 @@ export default function selectEditMenu() {
   const editButton = document.querySelector(".edit-menu__edit") as HTMLElement;
   //   const deleteButton = document.querySelector(".edit-menu__delete") as HTMLElement;
   editButton.addEventListener("click", (event) => {
-    console.log(event.target);
     const currentMessage = event.target as HTMLElement;
     if (currentMessage.classList.contains("edit-menu__edit")) {
       const textMessage = messageId.text;

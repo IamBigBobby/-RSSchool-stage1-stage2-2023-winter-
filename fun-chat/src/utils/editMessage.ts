@@ -1,6 +1,5 @@
 import client from "../constants/currentClient";
 import messageId from "../constants/messageId";
-import closeEditButtons from "./buttons/closeEditButtons";
 
 export default function editMessage() {
   const editMessageButton = document.querySelector(
@@ -18,7 +17,7 @@ export default function editMessage() {
     const statusEdited = changedMessage.querySelector(
       ".messenger__eidt-status",
     ) as HTMLElement;
-    const textContentMessage = document.querySelector(
+    const textContentMessage = changedMessage.querySelector(
       ".messenger__text",
     ) as HTMLElement;
 
@@ -26,6 +25,5 @@ export default function editMessage() {
     statusEdited.textContent = "edited";
     client.messageTextEditing(messageId.id, inputField.value);
     inputField.value = "";
-    closeEditButtons();
   });
 }

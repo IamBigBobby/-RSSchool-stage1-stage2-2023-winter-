@@ -65,8 +65,6 @@ export default function renderFetchingMessage(
     let statusEdited;
     // let statusReaded;
 
-    console.log(message.status);
-
     if (
       message.status.isDelivered === true &&
       grandparentElement?.classList.contains("messenger__sended-message")

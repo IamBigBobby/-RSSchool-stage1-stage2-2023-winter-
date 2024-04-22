@@ -3,7 +3,8 @@ export default function editMessageGetter(id: string, text: string) {
   const messageStatusEdit = message.querySelector(
     ".messenger__eidt-status",
   ) as HTMLElement;
-  const messageText = document.querySelector(".messenger__text") as HTMLElement;
+
+  const messageText = message.querySelector(".messenger__text") as HTMLElement;
 
   messageStatusEdit.textContent = "edited";
   messageText.textContent = text;
