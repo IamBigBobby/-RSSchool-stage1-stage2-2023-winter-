@@ -135,6 +135,16 @@ export default function renderMessengerField(page: string): void {
       ],
       textContent: "send",
     },
+    {
+      tagName: "button",
+      classNames: ["messenger__chat-edit-button"],
+      textContent: "edit",
+    },
+    {
+      tagName: "button",
+      classNames: ["messenger__chat-cancel-edit-button"],
+      textContent: "cancel edit",
+    },
   ];
 
   addElementsToParent(containerInput, containerInputData);

@@ -14,3 +14,19 @@
     cursor: pointer;
     background-color: rgb(243, 233, 233);
 }
+
+.messenger__chat-edit-button {
+    display: none;
+}
+
+.messenger__chat-edit-button_visible {
+    display: block;
+}
+
+.messenger__chat-cancel-edit-button {
+    display: none;
+}
+
+.messenger__chat-cancel-edit-button_visible {
+    display: block;
+}

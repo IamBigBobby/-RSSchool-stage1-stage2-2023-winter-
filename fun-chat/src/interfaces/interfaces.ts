@@ -34,6 +34,11 @@ export interface Message {
   text: string;
 }
 
+export interface MessageId {
+  id: string;
+  text: string;
+}
+
 export interface ResevedMessage {
   id: string;
   from: string;

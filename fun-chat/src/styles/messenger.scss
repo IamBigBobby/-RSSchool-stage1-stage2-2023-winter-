@@ -118,6 +118,10 @@
     cursor: default;
 }
 
+.messenger__chat-send-button_hidden {
+    display: none;
+}
+
 .messenger__message {
     border: 1px solid black;
     border-radius: 5px;
@@ -133,6 +137,12 @@
     align-self: flex-start;
 }
 
-.messenger__time, .messenger__send-satus {
+.messenger__time, .messenger__send-satus, .messenger__eidt-status {
     font-size: 10px;
+}
+
+.messenger__status {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
