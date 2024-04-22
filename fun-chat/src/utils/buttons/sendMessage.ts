@@ -1,7 +1,7 @@
 import client from "../../constants/currentClient";
 import message from "../../constants/message";
 import renderSendMessage from "../../render/messenger/renderSendMessage";
-import removeEmptyHistory from "../removeEmpptyHistory";
+import removeEmptyHistory from "../removeEmptyHistory";
 import scrollBottom from "../scrollBottom";
 
 function sendingClick() {

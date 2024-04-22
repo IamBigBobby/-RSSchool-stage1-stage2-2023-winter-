@@ -2,7 +2,7 @@ import message from "../../constants/message";
 import { ResevedMessage } from "../../interfaces/interfaces";
 import addElementsToParent from "../../utils/addElementsToParent";
 import getCurrentTime from "../../utils/getCurrentTime";
-import removeEmptyHistory from "../../utils/removeEmpptyHistory";
+import removeEmptyHistory from "../../utils/removeEmptyHistory";
 import scrollBottom from "../../utils/scrollBottom";
 
 export default function renderResponseMessage(resevedMessage: ResevedMessage) {
